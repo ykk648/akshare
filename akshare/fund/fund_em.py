@@ -347,10 +347,11 @@ def fund_open_fund_info_em(
     """
     from akshare.utils.cons import headers
 
-    url = f"https://fund.eastmoney.com/pingzhongdata/{symbol}.js"  # 各类数据都在里面
-    r = requests.get(url, headers=headers)
-    data_text = r.text
-
+    if indicator not in ["分红送配详情", "拆分详情"]:
+        url = f"http://fund.eastmoney.com/pingzhongdata/{symbol}.js"  # 各类数据都在里面
+        r = requests.get(url, headers=headers)
+        data_text = r.text
+    
     # 单位净值走势
     if indicator == "单位净值走势":
         try:
