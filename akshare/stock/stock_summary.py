@@ -56,7 +56,7 @@ def stock_szse_area_summary(date: str = "202203") -> pd.DataFrame:
     :return: 地区交易排序
     :rtype: pandas.DataFrame
     """
-    url = "http://www.szse.cn/api/report/ShowReport"
+    url = "https://www.szse.cn/api/report/ShowReport"
     params = {
         "SHOWTYPE": "xlsx",
         "CATALOGID": "1803_sczm",
@@ -78,8 +78,8 @@ def stock_szse_area_summary(date: str = "202203") -> pd.DataFrame:
         "债券交易额",
     ]
     temp_df["总交易额"] = temp_df["总交易额"].str.replace(",", "")
-    temp_df["总交易额"] = pd.to_numeric(temp_df["总交易额"])
-    temp_df["占市场"] = pd.to_numeric(temp_df["占市场"])
+    temp_df["总交易额"] = pd.to_numeric(temp_df["总交易额"], errors="coerce")
+    temp_df["占市场"] = pd.to_numeric(temp_df["占市场"], errors="coerce")
     temp_df["股票交易额"] = temp_df["股票交易额"].str.replace(",", "")
     temp_df["股票交易额"] = pd.to_numeric(temp_df["股票交易额"], errors="coerce")
     temp_df["基金交易额"] = temp_df["基金交易额"].str.replace(",", "")
@@ -90,7 +90,7 @@ def stock_szse_area_summary(date: str = "202203") -> pd.DataFrame:
 
 
 def stock_szse_sector_summary(
-    symbol: str = "当月", date: str = "202303"
+    symbol: str = "当月", date: str = "202501"
 ) -> pd.DataFrame:
     """
     深圳证券交易所-统计资料-股票行业成交数据
@@ -126,7 +126,7 @@ def stock_szse_sector_summary(
         )
     )
     date_format = "-".join([date[:4], date[4:]])
-    url = f"http://www.szse.cn/market/periodical/month/{date_url_dict[date_format]}"
+    url = f"https://www.szse.cn/market/periodical/month/{date_url_dict[date_format]}"
     r = requests.get(url)
     r.encoding = "utf8"
     soup = BeautifulSoup(r.text, features="lxml")
@@ -225,10 +225,10 @@ def stock_sse_summary() -> pd.DataFrame:
     return temp_df
 
 
-def stock_sse_deal_daily(date: str = "20180117") -> pd.DataFrame:
+def stock_sse_deal_daily(date: str = "20060712") -> pd.DataFrame:
     """
     上海证券交易所-数据-股票数据-成交概况-股票成交概况-每日股票情况
-    http://www.sse.com.cn/market/stockdata/overview/day/
+    https://www.sse.com.cn/market/stockdata/overview/day/
     :return: 每日股票情况
     :rtype: pandas.DataFrame
     """
@@ -242,7 +242,8 @@ def stock_sse_deal_daily(date: str = "20180117") -> pd.DataFrame:
         }
         headers = {
             "Referer": "http://www.sse.com.cn/",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/89.0.4389.90 Safari/537.36",
         }
         r = requests.get(url, params=params, headers=headers)
         data_json = r.json()
@@ -632,11 +633,11 @@ if __name__ == "__main__":
     stock_szse_summary_df = stock_szse_summary(date="20240901")
     print(stock_szse_summary_df)
 
-    stock_szse_area_summary_df = stock_szse_area_summary(date="202203")
+    stock_szse_area_summary_df = stock_szse_area_summary(date="202412")
     print(stock_szse_area_summary_df)
 
     stock_szse_sector_summary_df = stock_szse_sector_summary(
-        symbol="当月", date="202303"
+        symbol="当月", date="202501"
     )
     print(stock_szse_sector_summary_df)
 

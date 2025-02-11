@@ -2977,9 +2977,26 @@ amac_manager_cancelled_info # 中国证券投资基金业协会-信息公示-诚
 1.15.65 fix: fix option_czce_daily interface
 1.15.66 fix: fix fund_etf_dividend_sina interface
 1.15.67 fix: fix stock_hold_change_cninfo interface
+1.15.68 fix: fix stock_research_report_em interface
+1.15.69 fix: fix index_zh_a_hist_min_em interface
+1.15.70 fix: fix stock_research_report_em interface
+1.15.71 fix: fix stock_dzjy_sctj interface
+1.15.72 fix: fix stock_us_spot interface
+1.15.73 fix: fix stock_dzjy_hygtj interface
+1.15.74 fix: fix macro_australia_retail_rate_monthly interface
+1.15.75 feat: add futures_hist_em interface
+1.15.76 fix: fix futures_zh_minute_sina interface
+1.15.77 fix: fix option_czce_daily interface
+1.15.78 fix: fix stock_yzxdr_em interface
+1.15.79 fix: fix stock_new_a_spot_em interface
+1.15.80 fix: fix option_gfex_vol_daily interface
+1.15.81 fix: fix bank_fjcf_table_detail interface
+1.15.82 fix: fix stock_individual_spot_xq interface
+1.15.83 fix: fix stock_szse_sector_summary interface
+1.15.84 fix: fix option_dce_daily interface
 """
 
-__version__ = "1.15.67"
+__version__ = "1.15.84"
 __author__ = "AKFamily"
 
 import sys
@@ -3000,6 +3017,11 @@ if sys.version_info < (3, 9):
     )
 
 del sys
+
+"""
+期货行情-内盘-历史行情数据-东财
+"""
+from akshare.futures.futures_hist_em import futures_hist_table_em, futures_hist_em
 
 """
 巨潮资讯-数据中心-专题统计-股东股本-股本变动

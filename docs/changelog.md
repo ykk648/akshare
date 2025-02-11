@@ -80,6 +80,78 @@
 
 ## 更新说明详情
 
+1.15.84 fix: fix option_dce_daily interface
+
+	1. 修复 option_dce_daily 接口
+
+1.15.83 fix: fix stock_szse_sector_summary interface
+
+	1. 修复 stock_szse_sector_summary 接口
+
+1.15.82 fix: fix stock_individual_spot_xq interface
+
+	1. 修复 stock_individual_spot_xq 接口
+	2. 修复 stock_szse_area_summary 接口
+
+1.15.81 fix: fix bank_fjcf_table_detail interface
+
+	1. 修复 bank_fjcf_table_detail 接口
+
+1.15.80 fix: fix option_gfex_vol_daily interface
+
+	1. 修复 option_gfex_vol_daily 接口
+	2. 修复 option_czce_daily 接口
+
+1.15.79 fix: fix stock_new_a_spot_em interface
+
+	1. 修复 stock_new_a_spot_em 接口
+
+1.15.78 fix: fix stock_yzxdr_em interface
+
+	1. 修复 stock_yzxdr_em 接口
+
+1.15.77 fix: fix option_czce_daily interface
+
+	1. 修复 option_czce_daily 接口
+
+1.15.76 fix: fix futures_zh_minute_sina interface
+
+	1. 修复 futures_zh_minute_sina 接口
+
+1.15.75 feat: add futures_hist_em interface
+
+	1. 新增 futures_hist_em 接口
+
+1.15.74 fix: fix macro_australia_retail_rate_monthly interface
+
+	1. 修复 macro_australia_retail_rate_monthly 接口
+	2. 修复 index_option_50etf_qvix 接口
+
+1.15.73 fix: fix stock_dzjy_hygtj interface
+
+	1. 修复 stock_dzjy_hygtj 接口
+
+1.15.72 fix: fix stock_us_spot interface
+
+	1. 修复 stock_us_spot 接口
+
+1.15.71 fix: fix stock_dzjy_sctj interface
+
+	1. 修复 stock_dzjy_sctj 接口
+
+1.15.70 fix: fix stock_research_report_em interface
+
+	1. 修复 stock_research_report_em 接口
+
+1.15.69 fix: fix index_zh_a_hist_min_em interface
+
+	1. 修复 index_zh_a_hist_min_em 接口
+	2. 修复 futures_gfex_position_rank 接口
+
+1.15.68 fix: fix stock_research_report_em interface
+
+	1. 修复 stock_research_report_em 接口
+
 1.15.67 fix: fix stock_hold_change_cninfo interface
 
 	1. 修复 stock_hold_change_cninfo 接口
@@ -4956,6 +5028,40 @@
     3. 修改 air_quality_hist 接口的请求日期格式，从 '2022-01-01' 为 '20220101'
 
 ## 版本更新说明
+
+1.15.84 fix: fix option_dce_daily interface
+
+1.15.83 fix: fix stock_szse_sector_summary interface
+
+1.15.82 fix: fix stock_individual_spot_xq interface
+
+1.15.81 fix: fix bank_fjcf_table_detail interface
+
+1.15.80 fix: fix option_gfex_vol_daily interface
+
+1.15.79 fix: fix stock_new_a_spot_em interface
+
+1.15.78 fix: fix stock_yzxdr_em interface
+
+1.15.77 fix: fix option_czce_daily interface
+
+1.15.76 fix: fix futures_zh_minute_sina interface
+
+1.15.75 feat: add futures_hist_em interface
+
+1.15.74 fix: fix macro_australia_retail_rate_monthly interface
+
+1.15.73 fix: fix stock_dzjy_hygtj interface
+
+1.15.72 fix: fix stock_us_spot interface
+
+1.15.71 fix: fix stock_dzjy_sctj interface
+
+1.15.70 fix: fix stock_research_report_em interface
+
+1.15.69 fix: fix index_zh_a_hist_min_em interface
+
+1.15.68 fix: fix stock_research_report_em interface
 
 1.15.67 fix: fix stock_hold_change_cninfo interface
 
