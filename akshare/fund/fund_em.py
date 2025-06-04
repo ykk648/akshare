@@ -347,12 +347,13 @@ def fund_open_fund_info_em(
     """
     from akshare.utils.cons import headers
 
-    url = f"https://fund.eastmoney.com/pingzhongdata/{symbol}.js"  # 各类数据都在里面
-    r = requests.get(url, headers=headers)
-    data_text = r.text
-
-    js_code = py_mini_racer.MiniRacer()
-    js_code.eval(data_text)
+    if indicator not in ["分红送配详情", "拆分详情", "分红拆分"]:
+        url = f"https://fund.eastmoney.com/pingzhongdata/{symbol}.js"  # 各类数据都在里面
+        r = requests.get(url, headers=headers)
+        data_text = r.text
+    
+        js_code = py_mini_racer.MiniRacer()
+        js_code.eval(data_text)
 
     # 单位净值走势
     if indicator == "单位净值走势":
@@ -499,6 +500,34 @@ def fund_open_fund_info_em(
         )
         return temp_df
 
+    if indicator == "分红拆分":
+
+        url = f"https://fundf10.eastmoney.com/fhsp_{symbol}.html"
+        r = requests.get(url, headers=headers)
+        table_num = len(pd.read_html(StringIO(r.text)))
+
+        fh_result = pd.DataFrame()
+        if table_num == 3:
+            temp_df = pd.read_html(StringIO(r.text))[1]
+        else:
+            temp_df = pd.read_html(StringIO(r.text))[0]
+        if temp_df.iloc[0, 1] == "暂无分红信息!":
+            pass
+        else:
+            fh_result =  temp_df
+
+        cf_result = pd.DataFrame()
+        if table_num == 3:
+            temp_df = pd.read_html(StringIO(r.text))[2]
+        else:
+            temp_df = pd.read_html(StringIO(r.text))[1]
+        if temp_df.iloc[0, 1] == "暂无拆分信息!":
+            pass
+        else:
+            cf_result = temp_df
+
+        return (fh_result, cf_result)
+        
     # 分红送配详情
     if indicator == "分红送配详情":
         url = f"https://fundf10.eastmoney.com/fhsp_{symbol}.html"
