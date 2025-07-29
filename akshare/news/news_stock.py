@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 """
-Date: 2024/05/23 14:00
+Date: 2025/7/11 17:15
 Desc: 个股新闻数据
-https://so.eastmoney.com/news/s?keyword=%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%AF%BF&pageindex=1&searchrange=8192&sortfiled=4
+https://so.eastmoney.com/news/s?keyword=603777
 """
 
 import json
@@ -12,10 +12,10 @@ import pandas as pd
 import requests
 
 
-def stock_news_em(symbol: str = "300059") -> pd.DataFrame:
+def stock_news_em(symbol: str = "603777") -> pd.DataFrame:
     """
     东方财富-个股新闻-最近 100 条新闻
-    https://so.eastmoney.com/news/s?keyword=%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%AF%BF&pageindex=1&searchrange=8192&sortfiled=4
+    https://so.eastmoney.com/news/s?keyword=603777
     :param symbol: 股票代码
     :type symbol: str
     :return: 个股新闻
@@ -26,16 +26,17 @@ def stock_news_em(symbol: str = "300059") -> pd.DataFrame:
         "cb": "jQuery3510875346244069884_1668256937995",
         "param": '{"uid":"",'
         + f'"keyword":"{symbol}"'
-        + ',"type":["cmsArticleWebOld"],"client":"web","clientType":"web","clientVersion":"curr",'
-        '"param":{"cmsArticleWebOld":{"searchScope":"default","sort":"default","pageIndex":1,'
-        '"pageSize":100,"preTag":"<em>","postTag":"</em>"}}}',
+        + ',"type":["cmsArticle"],"client":"web","clientType":"web","clientVersion":"curr",'
+        + '"param":{"cmsArticle":{"searchScope":"default","sort":"default","pageIndex":1,'
+        + '"pageSize":100,"preTag":"<em>","postTag":"</em>"}}}',
     }
     r = requests.get(url, params=params)
     data_text = r.text
     data_json = json.loads(
         data_text.strip("jQuery3510875346244069884_1668256937995(")[:-1]
     )
-    temp_df = pd.DataFrame(data_json["result"]["cmsArticleWebOld"])
+    temp_df = pd.DataFrame(data_json["result"]["cmsArticle"])
+    temp_df["url"] = "http://finance.eastmoney.com/a/" + temp_df["code"] + ".html"
     temp_df.rename(
         columns={
             "date": "发布时间",

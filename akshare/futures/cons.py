@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 """
-Date: 2025/3/5 18:00
+Date: 2025/7/21 15:00
 Desc: 期货配置文件
 """
 
@@ -199,6 +199,7 @@ market_exchange_symbols = {
         "PG",
         "LH",  # 20210108 生猪期货
         "LG",  # 20241118 原木期货
+        "BZ",  # 20250708 纯苯期货
     ],
     "czce": [
         "WH",
@@ -234,8 +235,9 @@ market_exchange_symbols = {
         "SA",  # 纯碱期货
         "PK",  # 20210201 花生期货
         "PF",  # 短纤
-        "PX",  # 纯苯
+        "PX",  # 对二甲苯
         "SH",  # 烧碱
+        "PR",  # 瓶片
     ],
     "shfe": [
         "CU",
@@ -261,8 +263,9 @@ market_exchange_symbols = {
         "AO",
         "BR",
         "EC",  # 集运指数
+        "AD",  # 铸造铝合金期货
     ],
-    "gfex": ["SI", "LC"],
+    "gfex": ["SI", "LC", "PS"],
 }
 
 contract_symbols = []
@@ -305,6 +308,7 @@ SYS_SPOT_PRICE_URL = "http://www.100ppi.com/sf/day-{}.html"
 SYS_SPOT_PRICE_LATEST_URL = "http://www.100ppi.com/sf/"
 
 SHFE_VOL_RANK_URL = "https://tsite.shfe.com.cn/data/dailydata/kx/pm%s.dat"
+SHFE_VOL_RANK_URL_20250701 = "https://www.shfe.com.cn/data/tradedata/future/dailydata/pm%s.dat"
 CFFEX_VOL_RANK_URL = "http://www.cffex.com.cn/sj/ccpm/%s/%s/%s_1.csv"
 DCE_VOL_RANK_URL_1 = (
     "http://www.dce.com.cn/publicweb/quotesdata/exportMemberDealPosiQuotesData.html?"
@@ -326,6 +330,7 @@ DCE_RECEIPT_URL = "http://www.dce.com.cn/publicweb/quotesdata/wbillWeeklyQuotes.
 
 SHFE_RECEIPT_URL_1 = "http://tsite.shfe.com.cn/data/dailydata/%sdailystock.html"
 SHFE_RECEIPT_URL_2 = "http://tsite.shfe.com.cn/data/dailydata/%sdailystock.dat"
+SHFE_RECEIPT_URL_20250701 = "https://www.shfe.com.cn/data/tradedata/future/dailydata/%sdailystock.dat"
 CZCE_RECEIPT_URL_1 = "http://www.czce.com.cn/cn/exchange/jyxx/sheet/sheet%s.html"
 CZCE_RECEIPT_URL_2 = "http://www.czce.com.cn/cn/exchange/%s/datawhsheet/%s.htm"
 CZCE_RECEIPT_URL_3 = (
@@ -334,6 +339,7 @@ CZCE_RECEIPT_URL_3 = (
 
 CFFEX_DAILY_URL = "http://www.cffex.com.cn/fzjy/mrhq/{}/{}/{}_1.csv"
 SHFE_DAILY_URL = "http://tsite.shfe.com.cn/data/dailydata/kx/kx%s.dat"
+SHFE_DAILY_URL_20250630 = "https://www.shfe.com.cn/data/tradedata/future/dailydata/kx%s.dat"
 SHFE_V_WAP_URL = "http://tsite.shfe.com.cn/data/dailydata/ck/%sdailyTimePrice.dat"
 DCE_DAILY_URL = "http://www.dce.com.cn//publicweb/quotesdata/dayQuotesCh.html"
 CZCE_DAILY_URL_1 = "http://www.czce.com.cn/cn/exchange/jyxx/hq/hq%s.html"
@@ -497,6 +503,7 @@ DCE_MAP = {
     "液化石油气": "PG",
     "生猪": "LH",
     "原木": "LG",
+    "纯苯": "BZ",
 }
 
 

@@ -3106,9 +3106,36 @@ amac_manager_cancelled_info # 中国证券投资基金业协会-信息公示-诚
 1.16.96 fix: fix stock_individual_spot_xq interface
 1.16.97 fix: fix fund_open_fund_info_em interface
 1.16.98 fix: fix fund_open_fund_info_em interface
+1.16.99 fix: fix stock_info_sz_delist interface
+1.17.1 fix: fix stock_gdfx_holding_detail_em interface
+1.17.2 fix: fix stock_ggcg_em interface
+1.17.3 fix: fix stock_hot_search_baidu interface
+1.17.4 fix: fix stock_news_em interface
+1.17.5 fix: fix stock_us_pink_spot_em interface
+1.17.6 fix: fix stock_tfp_em interface
+1.17.7 fix: fix futures_spot_price_daily interface
+1.17.8 fix: fix forex_spot_em interface
+1.17.9 fix: fix stock_zh_ab_comparison_em interface
+1.17.10 fix: fix get_shfe_daily interface
+1.17.11 fix: fix stock_individual_spot_xq interface
+1.17.12 fix: fix get_receipt interface
+1.17.13 fix: fix futures_shfe_warehouse_receipt interface
+1.17.14 fix: fix forex_spot_em interface
+1.17.15 fix: fix stock_comment_em interface
+1.17.16 fix: fix bond_zh_cov interface
+1.17.17 fix: fix stock_hk_spot interface
+1.17.18 fix: fix option_dce_daily interface
+1.17.19 fix: fix futures_spot_price_daily interface
+1.17.20 fix: fix stock_news_em interface
+1.17.21 fix: fix stock_sector_fund_flow_hist interface
+1.17.22 fix: fix stock_individual_spot_xq interface
+1.17.23 fix: fix get_roll_yield interface
+1.17.24 fix: fix futures_inventory_99 interface
+1.17.25 fix: fix get_receipt interface
+1.17.26 fix: fix stock_hot_rank_detail_em interface
 """
 
-__version__ = "1.16.98"
+__version__ = "1.17.26"
 __author__ = "AKFamily"
 
 import sys
@@ -3129,6 +3156,11 @@ if sys.version_info < (3, 9):
     )
 
 del sys
+
+"""
+期权保证金 
+"""
+from akshare.option.option_margin import option_margin, option_margin_symbol
 
 """
 东方财富-港股-证券资料
@@ -4239,6 +4271,7 @@ from akshare.stock_feature.stock_hist_em import (
     stock_sh_a_spot_em,
     stock_sz_a_spot_em,
     stock_zh_b_spot_em,
+    stock_zh_ab_comparison_em,
     stock_zh_a_hist,
     stock_hk_spot_em,
     stock_hk_main_board_spot_em,
@@ -4921,7 +4954,6 @@ from akshare.stock_feature.stock_comment_em import (
     stock_comment_detail_scrd_focus_em,
     stock_comment_detail_zhpj_lspf_em,
     stock_comment_detail_scrd_desire_em,
-    stock_comment_detail_scrd_cost_em,
     stock_comment_detail_scrd_desire_daily_em,
 )
 
