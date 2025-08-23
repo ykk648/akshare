@@ -1338,6 +1338,10 @@
  "option_margin"  # 期权保证金
  # 全部AB股比价
  "stock_zh_ab_comparison_em"  # 全部AB股比价
+ # 中证指数网站-指数列表
+ "index_csindex_all"  # 中证指数网站-指数列表
+ # 东方财富-A股-财务分析-主要指标
+ "stock_financial_analysis_indicator_em"  # 东方财富-A股-财务分析-主要指标
 ```
 
 ## 案例演示

@@ -245,11 +245,11 @@ print(stock_zh_index_daily_tx_df)
 
 输入参数
 
-| 名称         | 类型  | 描述                                                             |
-|------------|-----|----------------------------------------------------------------|
-| symbol     | str | symbol="sz399552"; 支持 sz: 深交所, sh: 上交所, csi: 中证指数 + id(000905) |
-| start_date | str | start_date="19900101"                                          |
-| end_date   | str | end_date="20500101"                                            |
+| 名称         | 类型  | 描述                                                                      |
+|------------|-----|-------------------------------------------------------------------------|
+| symbol     | str | symbol="sz399552"; 支持 sz: 深交所, sh: 上交所, bj: 北交所, csi: 中证指数 + id(000905) |
+| start_date | str | start_date="19900101"                                                   |
+| end_date   | str | end_date="20500101"                                                     |
 
 输出参数
 
@@ -1749,7 +1749,7 @@ print(index_stock_cons_df)
 
 目标地址: http://www.csindex.com.cn/zh-CN/indices/index-detail/000300
 
-描述: 中证指数网站-成份股目录
+描述: 中证指数网站-成份股目录，可以通过 ak.index_csindex_all() 获取所有指数
 
 输入参数
 

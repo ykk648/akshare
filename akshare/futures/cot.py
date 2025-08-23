@@ -69,7 +69,8 @@ def get_rank_sum_daily(
     :type end_day: str
     :param vars_list: 合约品种如 ['RB'、'AL'] 等列表为空时为所有商品
     :type vars_list: list
-    :return: pd.DataFrame
+    :return:  会员持仓排名数据
+    :rtype: pandas.DataFrame
     symbol                           标的合约                     string
     var                              商品品种                     string
     vol_top5                         成交量前5会员成交量总和         int
@@ -116,7 +117,8 @@ def get_rank_sum(date: str = "20210525", vars_list: list = cons.contract_symbols
     :type date: date
     :param vars_list: 合约品种如 ['RB', 'AL'] 等列表为空时为所有商品
     :type vars_list: list
-    :return: pd.DataFrame
+    :return: 持仓排名数据
+    :rtype: pandas.DataFrame
     symbol                           标的合约                     string
     var                              商品品种                     string
     vol_top5                         成交量前5会员成交量总和         int
@@ -408,7 +410,9 @@ def get_czce_rank_table(date: str = "20210428") -> dict:
     郑州商品交易所前 20 会员持仓排名数据明细
     注：该交易所既公布了品种排名, 也公布了标的排名
     :param date: 日期 format：YYYY-MM-DD 或 YYYYMMDD 或 datetime.date对象 为空时为当天
-    :return: pd.DataFrame
+    :return: 持仓排名数据明细
+    :rtype: pandas.DataFrame
+    返回值格式
     rank                        排名                        int
     vol_party_name              成交量排序的当前名次会员        string(中文)
     vol                         该会员成交量                  int
@@ -509,7 +513,7 @@ def _get_dce_contract_list(date, var):
     :param var: 合约品种
     :return: list 公布了持仓排名的合约列表
     """
-    url = "http://www.dce.com.cn/publicweb/quotesdata/memberDealPosiQuotes.html"
+    url = "http://portal.dce.com.cn/publicweb/quotesdata/memberDealPosiQuotes.html"
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;"
         "q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -518,7 +522,7 @@ def _get_dce_contract_list(date, var):
         "Cache-Control": "no-cache",
         "Connection": "close",
         "Host": "www.dce.com.cn",
-        "Origin": "http://www.dce.com.cn",
+        "Origin": "http://portal.dce.com.cn",
         "Pragma": "no-cache",
         "Upgrade-Insecure-Requests": "1",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -559,7 +563,10 @@ def get_dce_rank_table(date: str = "20230706", vars_list=cons.contract_symbols) 
     注: 该交易所只公布标的合约排名
     :param date: 日期 format：YYYY-MM-DD 或 YYYYMMDD 或 datetime.date 对象, 为空时为当天
     :param vars_list: 合约品种如 RB、AL 等列表为空时为所有商品, 数据从 20060104 开始，每交易日 16:30 左右更新数据
-    :return: pandas.DataFrame
+    :return: 持仓排名
+    :rtype: pandas.DataFrame
+
+    返回值格式
     rank                        排名                        int
     vol_party_name              成交量排序的当前名次会员      string(中文)
     vol                         该会员成交量                 int
@@ -642,7 +649,7 @@ def get_dce_rank_table(date: str = "20230706", vars_list=cons.contract_symbols) 
                 ].astype(float)
                 big_dict[symbol] = temp_df
             except:  # noqa: E722
-                temp_url = "http://www.dce.com.cn/publicweb/quotesdata/memberDealPosiQuotes.html"
+                temp_url = "http://portal.dce.com.cn/publicweb/quotesdata/memberDealPosiQuotes.html"
                 payload = {
                     "memberDealPosiQuotes.variety": var.lower(),
                     "memberDealPosiQuotes.trade_type": "0",
@@ -707,7 +714,9 @@ def get_cffex_rank_table(date: str = "20190805", vars_list=cons.contract_symbols
     注：该交易所既公布品种排名，也公布标的排名
     :param date: 日期 format：YYYY-MM-DD 或 YYYYMMDD 或 datetime.date对象 为空时为当天
     :param vars_list: 合约品种如RB、AL等列表 为空时为所有商品, 数据从20100416开始，每交易日16:30左右更新数据
-    :return: pd.DataFrame
+    :return: 持仓排名
+    :rtype: pandas.DataFrame
+    :rfield:
     rank                        排名                        int
     vol_party_name              成交量排序的当前名次会员        string(中文)
     vol                         该会员成交量                  int
@@ -721,6 +730,7 @@ def get_cffex_rank_table(date: str = "20190805", vars_list=cons.contract_symbols
     symbol                      标的合约                     string
     var                         品种                        string
     date                        日期                        string YYYYMMDD
+
     """
     vars_list = [i for i in vars_list if i in cons.market_exchange_symbols["cffex"]]
     date = cons.convert_date(date) if date is not None else datetime.date.today()
@@ -816,7 +826,7 @@ def futures_dce_position_rank(
     if date.strftime("%Y%m%d") not in calendar:
         warnings.warn("%s非交易日" % date.strftime("%Y%m%d"))
         return {}
-    url = "http://www.dce.com.cn/publicweb/quotesdata/exportMemberDealPosiQuotesBatchData.html"
+    url = "http://portal.dce.com.cn/publicweb/quotesdata/exportMemberDealPosiQuotesBatchData.html"
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;"
         "q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -827,9 +837,9 @@ def futures_dce_position_rank(
         "Content-Length": "160",
         "Content-Type": "application/x-www-form-urlencoded",
         "Host": "www.dce.com.cn",
-        "Origin": "http://www.dce.com.cn",
+        "Origin": "http://portal.dce.com.cn",
         "Pragma": "no-cache",
-        "Referer": "http://www.dce.com.cn/publicweb/quotesdata/memberDealPosiQuotes.html",
+        "Referer": "http://portal.dce.com.cn/publicweb/quotesdata/memberDealPosiQuotes.html",
         "Upgrade-Insecure-Requests": "1",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/81.0.4044.138 Safari/537.36",
