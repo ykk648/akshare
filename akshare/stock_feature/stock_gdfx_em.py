@@ -274,6 +274,7 @@ def stock_gdfx_free_holding_change_em(date: str = "20210930") -> pd.DataFrame:
         "持有个股",
         "-",
         "-",
+        "-",
     ]
     big_df = big_df[
         [
@@ -362,6 +363,8 @@ def stock_gdfx_holding_change_em(date: str = "20210930") -> pd.DataFrame:
         "-",
         "持有个股",
         "流通市值统计",
+        "-",
+        "-",
     ]
     big_df = big_df[
         [
