@@ -29,7 +29,6 @@
 | 1.10.36    | stock_em_sy_yq_list                         | stock_sy_yq_em                              | 20230624 |
 | 1.10.36    | stock_em_sy_profile                         | stock_sy_profile_em                         | 20230624 |
 | 1.10.8     | futures_nh_volatility_index                 | futures_volatility_index_nh                 | 20230606 |
-| 1.9.41     | stock_a_lg_indicator                        | stock_a_indicator_lg                        | 20230406 |
 | 1.9.37     | stock_hk_eniu_indicator                     | stock_hk_indicator_eniu                     | 20230404 |
 | 1.9.27     | fund_em_hk_rank                             | fund_hk_rank_em                             | 20230330 |
 | 1.9.27     | fund_em_lcx_rank                            | fund_lcx_rank_em                            | 20230330 |
@@ -80,6 +79,22 @@
 | 1.4.86     | fund_em_aum                                 | fund_aum_em                                 | 20220322 |
 
 ## 更新说明详情
+
+1.17.48 fix: fix stock_hk_dividend_payout_em interface
+
+	1. 修复 stock_hk_dividend_payout_em 接口
+
+1.17.47 fix: fix get_receipt interface
+
+	1. 修复 get_receipt 接口
+
+1.17.46 fix: fix stock_financial_us_analysis_indicator_em interface
+
+	1. 修复 stock_financial_us_analysis_indicator_em 接口
+
+1.17.45 fix: fix stock_dxsyl_em interface
+
+	1. 修复 stock_dxsyl_em 接口
 
 1.17.44 fix: fix stock_individual_spot_xq interface
 
@@ -5770,6 +5785,14 @@
     3. 修改 air_quality_hist 接口的请求日期格式，从 '2022-01-01' 为 '20220101'
 
 ## 版本更新说明
+
+1.17.48 fix: fix stock_hk_dividend_payout_em interface
+
+1.17.47 fix: fix get_receipt interface
+
+1.17.46 fix: fix stock_financial_us_analysis_indicator_em interface
+
+1.17.45 fix: fix stock_dxsyl_em interface
 
 1.17.44 fix: fix stock_individual_spot_xq interface
 
