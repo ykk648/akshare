@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 """
-Date: 2025/9/10 17:00
+Date: 2025/10/29 21:00
 Desc: AKShare's PYPI info file
 """
 
@@ -44,6 +44,7 @@ setuptools.setup(
         "lxml>=4.2.1",
         "pandas>=0.25",
         "requests>=2.22.0",
+        "curl_cffi>=0.13.0",
         "html5lib>=1.0.1",
         "xlrd>=1.2.0",
         "urllib3>=1.25.8",
@@ -92,6 +93,7 @@ setuptools.setup(
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],

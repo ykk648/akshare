@@ -138,7 +138,20 @@ print(stock_szse_summary_df)
 | 基金交易额 | float64 | 注意单位: 元 |
 | 债券交易额 | float64 | 注意单位: 元 |
 
-接口示例
+2025年添加优先股交易额与期权交易额
+
+| 名称     | 类型      | 描述      |
+|--------|---------|---------|
+| 序号     | int64   | -       |
+| 地区     | object  | -       |
+| 总交易额   | float64 | 注意单位: 元 |
+| 占市场    | float64 | 注意单位: % |
+| 股票交易额  | float64 | 注意单位: 元 |
+| 基金交易额  | float64 | 注意单位: 元 |
+| 债券交易额  | float64 | 注意单位: 元 |
+| 优先股交易额 | float64 | 注意单位: 元 |
+| 期权交易额  | float64 | 注意单位: 元 |
+| 接口示例   |         |         |
 
 ```python
 import akshare as ak
@@ -186,6 +199,53 @@ print(stock_szse_area_summary_df)
 32  33    宁夏  1.117968e+11   0.193  9.845570e+10  2.297211e+09  1.104391e+10
 33  34    青海  3.967756e+10   0.068  2.884644e+10  4.814743e+08  1.034965e+10
 ```
+
+```python
+import akshare as ak
+
+stock_szse_area_summary_df = ak.stock_szse_area_summary(date="202508")
+print(stock_szse_area_summary_df)
+```
+
+```
+    序号    地区  总交易额  ...       债券交易额       优先股交易额    期权交易额
+0    1    上海  6.371903e+12  ...  2.220920e+12  876893300.0  1.243253e+10
+1    2    深圳  5.121851e+12  ...  1.769490e+12          0.0  4.254038e+09
+2    3    北京  3.649473e+12  ...  1.204900e+12  876893300.0  2.817363e+09
+3    4    浙江  3.339664e+12  ...  6.396964e+11          0.0  1.360305e+09
+4    5    江苏  2.872589e+12  ...  7.602330e+11          0.0  1.447631e+09
+5    6  境外地区  1.634432e+12  ...  0.000000e+00          0.0  0.000000e+00
+6    7    广州  1.500926e+12  ...  4.780673e+11    8067200.0  1.804676e+09
+7    8    福建  1.493353e+12  ...  4.740214e+11          0.0  7.236936e+08
+8    9    西藏  1.370016e+12  ...  1.646981e+11          0.0  1.294816e+08
+9   10    广东  1.353391e+12  ...  2.476401e+11          0.0  4.377234e+08
+10  11    四川  1.200289e+12  ...  3.341463e+11          0.0  2.535704e+08
+11  12    湖北  1.185315e+12  ...  4.680616e+11          0.0  1.431620e+08
+12  13    山东  1.076383e+12  ...  2.650255e+11          0.0  1.963902e+09
+13  14    湖南  7.683324e+11  ...  1.377730e+11          0.0  1.828164e+08
+14  15    江西  6.164555e+11  ...  2.175697e+11          0.0  7.712560e+07
+15  16    河南  5.856996e+11  ...  1.258403e+11          0.0  1.469152e+08
+16  17    安徽  5.759514e+11  ...  1.272217e+11          0.0  1.640928e+08
+17  18    陕西  5.025968e+11  ...  1.510291e+11          0.0  1.016968e+08
+18  19    重庆  4.503018e+11  ...  1.099315e+11          0.0  1.190079e+08
+19  20    辽宁  4.321530e+11  ...  1.090213e+11          0.0  1.779504e+08
+20  21    河北  3.498134e+11  ...  8.627298e+10          0.0  1.030772e+08
+21  22    广西  3.058458e+11  ...  9.918531e+10          0.0  1.234911e+08
+22  23    天津  2.745559e+11  ...  7.141631e+10          0.0  1.061408e+08
+23  24    山西  2.727539e+11  ...  6.757100e+10          0.0  3.207566e+07
+24  25    贵州  2.045149e+11  ...  9.961597e+10          0.0  3.725579e+07
+25  26    吉林  1.972995e+11  ...  7.551653e+10          0.0  6.118616e+07
+26  27   黑龙江  1.903182e+11  ...  4.610176e+10          0.0  5.380192e+07
+27  28    云南  1.724363e+11  ...  3.210926e+10          0.0  1.397156e+08
+28  29    新疆  1.201365e+11  ...  2.366439e+10          0.0  2.407912e+07
+29  30   内蒙古  1.122930e+11  ...  3.212444e+10          0.0  4.740066e+07
+30  31    海南  1.072153e+11  ...  1.562485e+10          0.0  9.121949e+06
+31  32    甘肃  1.034123e+11  ...  1.490509e+10          0.0  3.174230e+07
+32  33    宁夏  6.513347e+10  ...  8.624815e+09          0.0  1.210827e+07
+33  34    青海  2.453409e+10  ...  6.640867e+09          0.0  2.349068e+06
+```
+
+######
 
 ###### 股票行业成交
 
@@ -1949,7 +2009,7 @@ print(stock_intraday_em_df)
 
 描述: 新浪财经-日内分时数据
 
-限量: 单次返回指定交易日的分时数据；只能获取近期的数据
+限量: 单次返回指定交易日的分时数据；只能获取近期的数据，此处仅返回大单数据（成交量大于等于: 400手）
 
 输入参数
 
@@ -2108,6 +2168,253 @@ print(stock_zh_a_tick_tx_js_df)
 1407  14:59:50  3.52  0.01      69   24288   买盘
 1408  14:59:59  3.51 -0.01     100   35100   卖盘
 1409  15:00:02  3.52  0.01      10    3520   买盘
+```
+
+
+#### 同行比较
+
+##### 成长性比较
+
+接口: stock_zh_growth_comparison_em
+
+目标地址: https://emweb.securities.eastmoney.com/pc_hsf10/pages/index.html?type=web&code=000895&color=b#/thbj/czxbj
+
+描述: 东方财富-行情中心-同行比较-成长性比较
+
+限量: 单次返回全部数据
+
+输入参数
+
+| 名称         | 类型  | 描述                    |
+|------------|-----|-----------------------|
+| symbol     | str | symbol="SZ000895"     |
+
+输出参数
+
+| 名称               | 类型      | 描述 |
+|------------------|---------|----|
+| 代码               | object  | -  |
+| 简称               | object  | -  |
+| 基本每股收益增长率-3年复合   | float64 | -  |
+| 基本每股收益增长率-24A    | float64 | -  |
+| 基本每股收益增长率-TTM    | float64 | -  |
+| 基本每股收益增长率-25E    | float64 | -  |
+| 基本每股收益增长率-26E    | float64 | -  |
+| 基本每股收益增长率-27E    | float64 | -  |
+| 营业收入增长率-3年复合     | float64 | -  |
+| 营业收入增长率-24A      | float64 | -  |
+| 营业收入增长率-TTM      | float64 | -  |
+| 营业收入增长率-25E      | float64 | -  |
+| 营业收入增长率-26E      | float64 | -  |
+| 营业收入增长率-27E      | float64 | -  |
+| 净利润增长率-3年复合      | float64 | -  |
+| 净利润增长率-24A       | float64 | -  |
+| 净利润增长率-TTM       | float64 | -  |
+| 净利润增长率-25E       | float64 | -  |
+| 净利润增长率-26E       | float64 | -  |
+| 净利润增长率-27E       | float64 | -  |
+| 基本每股收益增长率-3年复合排名 | float64 | -  |
+
+接口示例
+
+```python
+import akshare as ak
+
+stock_zh_growth_comparison_em_df = ak.stock_zh_growth_comparison_em(symbol="SZ000895")
+print(stock_zh_growth_comparison_em_df)
+```
+
+数据示例
+
+```
+       代码    简称  基本每股收益增长率-3年复合  ...  净利润增长率-26E  净利润增长率-27E  基本每股收益增长率-3年复合排名
+0    行业中值  行业中值       -8.790000  ...   21.290000   16.135000               NaN
+1    行业平均  行业平均      -31.127395  ...   57.622875   18.847125               NaN
+2  600530  交大昂立       81.710000  ...         NaN         NaN               1.0
+3  600186  莲花控股       58.740000  ...   28.700000   22.480000               2.0
+4  600962  国投中鲁       51.860000  ...         NaN         NaN               3.0
+5  600737  中粮糖业       48.850000  ...   39.030000   22.690000               4.0
+6  003000  劲仔食品       46.100000  ...   22.070000   17.520000               5.0
+7  000895  双汇发展        0.840000  ...    4.320000    3.980000              38.0
+[8 rows x 21 columns]
+```
+
+##### 估值比较
+
+接口: stock_zh_valuation_comparison_em
+
+目标地址: https://emweb.securities.eastmoney.com/pc_hsf10/pages/index.html?type=web&code=000895&color=b#/thbj/gzbj
+
+描述: 东方财富-行情中心-同行比较-估值比较
+
+限量: 单次返回全部数据
+
+输入参数
+
+| 名称         | 类型  | 描述                    |
+|------------|-----|-----------------------|
+| symbol     | str | symbol="SZ000895"     |
+
+输出参数
+
+| 名称            | 类型      | 描述 |
+|---------------|---------|----|
+| 代码            | object  | -  |
+| 简称            | object  | -  |
+| PEG           | float64 | -  |
+| 市盈率-24A       | float64 | -  |
+| 市盈率-TTM       | float64 | -  |
+| 市盈率-25E       | float64 | -  |
+| 市盈率-26E       | float64 | -  |
+| 市盈率-27E       | float64 | -  |
+| 市销率-24A       | float64 | -  |
+| 市销率-TTM       | float64 | -  |
+| 市销率-25E       | float64 | -  |
+| 市销率-26E       | float64 | -  |
+| 市销率-27E       | float64 | -  |
+| 市净率-24A       | float64 | -  |
+| 市净率-MRQ       | float64 | -  |
+| 市现率PCE-24A    | float64 | -  |
+| 市现率PCE-TTM    | float64 | -  |
+| 市现率PCF-24A    | float64 | -  |
+| 市现率PCF-TTM    | float64 | -  |
+| EV/EBITDA-24A | float64 | -  |
+| PEG排名         | float64 | -  |
+
+接口示例
+
+```python
+import akshare as ak
+
+stock_zh_valuation_comparison_em_df = ak.stock_zh_valuation_comparison_em(symbol="SZ000895")
+print(stock_zh_valuation_comparison_em_df)
+```
+
+数据示例
+
+```
+       代码    简称       PEG  ...  市现率PCF-TTM  EV/EBITDA-24A  PEG排名
+0    行业平均  行业平均  2.481418  ...   94.251683      12.792460    NaN
+1    行业中值  行业中值  0.716858  ...  -10.069886      18.565517    NaN
+2  002840  华统股份  0.074928  ...   20.345530      19.671557    1.0
+3  002597  金禾实业  0.154887  ...  -16.269930      14.470896    2.0
+4  002852   道道全  0.177293  ...  -18.053383      10.933433    3.0
+5  600419  天润乳业  0.242839  ...   85.026739      20.480766    4.0
+6  000529  广弘控股  0.246618  ...   -7.832618      31.953205    5.0
+7  000895  双汇发展  2.146946  ...   63.911018      12.503574   58.0
+[8 rows x 21 columns]
+```
+
+##### 杜邦分析比较
+
+接口: stock_zh_dupont_comparison_em
+
+目标地址: https://emweb.securities.eastmoney.com/pc_hsf10/pages/index.html?type=web&code=000895&color=b#/thbj/dbfxbj
+
+描述: 东方财富-行情中心-同行比较-杜邦分析比较
+
+限量: 单次返回全部数据
+
+输入参数
+
+| 名称         | 类型  | 描述                    |
+|------------|-----|-----------------------|
+| symbol     | str | symbol="SZ000895"     |
+
+输出参数
+
+| 名称          | 类型      | 描述 |
+|-------------|---------|----|
+| 代码          | object  | -  |
+| 简称          | object  | -  |
+| ROE-3年平均    | float64 | -  |
+| ROE-22A     | float64 | -  |
+| ROE-23A     | float64 | -  |
+| ROE-24A     | float64 | -  |
+| 净利率-3年平均    | float64 | -  |
+| 净利率-22A     | float64 | -  |
+| 净利率-23A     | float64 | -  |
+| 净利率-24A     | float64 | -  |
+| 总资产周转率-3年平均 | float64 | -  |
+| 总资产周转率-22A  | float64 | -  |
+| 总资产周转率-23A  | float64 | -  |
+| 总资产周转率-24A  | float64 | -  |
+| 权益乘数-3年平均   | float64 | -  |
+| 权益乘数-22A    | float64 | -  |
+| 权益乘数-23A    | float64 | -  |
+| 权益乘数-24A    | float64 | -  |
+| ROE-3年平均排名  | float64 | -  |
+
+
+接口示例
+
+```python
+import akshare as ak
+
+stock_zh_dupont_comparison_em_df = ak.stock_zh_dupont_comparison_em(symbol="SZ000895")
+print(stock_zh_dupont_comparison_em_df)
+```
+
+数据示例
+
+```
+    代码    简称  ROE-3年平均  ROE-22A  ...  权益乘数-22A  权益乘数-23A  权益乘数-24A  ROE-3年平均排名
+0    行业平均  行业平均      5.70     5.51  ...    191.76    189.10   185.080         NaN
+1    行业中值  行业中值      7.71     7.89  ...    149.35    142.50   143.105         NaN
+2  605499  东鹏饮料     38.09    30.97  ...    234.37    232.62   294.820         1.0
+3  002847  盐津铺子     36.48    30.03  ...    213.82    196.34   203.650         2.0
+4  000895  双汇发展     24.21    25.17  ...    164.15    173.44   174.840         3.0
+5  603262  技源集团     24.02    28.06  ...    152.21    132.11   125.360         4.0
+6  603288  海天味业     22.24    24.89  ...    126.69    132.34   130.110         5.0
+7  000848  承德露露     21.92    23.53  ...    136.51    133.85   133.510         6.0
+[8 rows x 19 columns]
+```
+
+##### 公司规模
+
+接口: stock_zh_scale_comparison_em
+
+目标地址: https://emweb.securities.eastmoney.com/pc_hsf10/pages/index.html?type=web&code=000895&color=b#/thbj/gsgm
+
+描述: 东方财富-行情中心-同行比较-公司规模
+
+限量: 单次返回全部数据
+
+输入参数
+
+| 名称         | 类型  | 描述                    |
+|------------|-----|-----------------------|
+| symbol     | str | symbol="SZ000895"     |
+
+输出参数
+
+| 名称     | 类型      | 描述 |
+|--------|---------|----|
+| 代码     | object  | -  |
+| 简称     | object  | -  |
+| 总市值    | float64 | -  |
+| 总市值排名  | int64   | -  |
+| 流通市值   | float64 | -  |
+| 流通市值排名 | int64   | -  |
+| 营业收入   | float64 | -  |
+| 营业收入排名 | int64   | -  |
+| 净利润    | float64 | -  |
+| 净利润排名  | int64   | -  |
+
+接口示例
+
+```python
+import akshare as ak
+
+stock_zh_scale_comparison_em_df = ak.stock_zh_scale_comparison_em(symbol="SZ000895")
+print(stock_zh_scale_comparison_em_df)
+```
+
+数据示例
+
+```
+       代码    简称           总市值  总市值排名    流通市值  流通市值排名          营业收入  营业收入排名           净利润  净利润排名
+0  000895  双汇发展  8.685906e+10      5  868.48       4  2.850309e+10       3  2.351218e+09      4
 ```
 
 ### A股-CDR
@@ -4927,6 +5234,161 @@ print(stock_hk_dividend_payout_em_df)
 [19 rows x 7 columns]
 ```
 
+
+#### 行业对比
+
+##### 成长性对比
+
+接口: stock_hk_growth_comparison_em
+
+目标地址: https://emweb.securities.eastmoney.com/PC_HKF10/pages/home/index.html?code=03900&type=web&color=w#/IndustryComparison
+
+描述: 东方财富-港股-行业对比-成长性对比
+
+限量: 单次返回全部数据
+
+输入参数
+
+| 名称     | 类型  | 描述             |
+|--------|-----|----------------|
+| symbol | str | symbol="03900" |
+
+输出参数
+
+| 名称                  | 类型      | 描述 |
+|---------------------|---------|----|
+| 代码                  | object  | -  |
+| 简称                  | object  | -  |
+| 基本每股收益同比增长率         | float64 | -  |
+| 基本每股收益同比增长率排名       | int64   | -  |
+| 营业收入同比增长率           | float64 | -  |
+| 营业收入同比增长率排名         | int64   | -  |
+| 营业利润率同比增长率          | float64 | -  |
+| 营业利润率同比增长率排名        | int64   | -  |
+| 基本每股收总资产同比增长率益同比增长率 | float64 | -  |
+| 总资产同比增长率排名          | int64   | -  |
+
+接口示例
+
+```python
+import akshare as ak
+
+stock_hk_growth_comparison_em_df = ak.stock_hk_growth_comparison_em(symbol="03900")
+print(stock_hk_growth_comparison_em_df)
+```
+
+数据示例
+
+```
+      代码    简称  基本每股收益同比增长率  基本每股收益同比增长率排名 ...  总资产同比增长率排名
+0  03900  绿城中国   -90.123457            171          ...          91
+```
+
+##### 估值对比
+
+接口: stock_hk_valuation_comparison_em
+
+目标地址: https://emweb.securities.eastmoney.com/PC_HKF10/pages/home/index.html?code=03900&type=web&color=w#/IndustryComparison
+
+描述: 东方财富-港股-行业对比-估值对比
+
+限量: 单次返回全部数据
+
+输入参数
+
+| 名称     | 类型  | 描述             |
+|--------|-----|----------------|
+| symbol | str | symbol="03900" |
+
+输出参数
+
+| 名称        | 类型      | 描述 |
+|-----------|---------|----|
+| 代码        | object  | -  |
+| 简称        | object  | -  |
+| 市盈率-TTM   | float64 | -  |
+| 市盈率-TTM排名 | int64   | -  |
+| 市盈率-LYR   | float64 | -  |
+| 市盈率-LYR排名 | int64   | -  |
+| 市净率-MRQ   | float64 | -  |
+| 市净率-MRQ排名 | int64   | -  |
+| 市净率-LYR   | float64 | -  |
+| 市净率-LYR排名 | int64   | -  |
+| 市销率-TTM   | float64 | -  |
+| 市销率-TTM排名 | int64   | -  |
+| 市销率-LYR   | float64 | -  |
+| 市销率-LYR排名 | int64   | -  |
+| 市现率-TTM   | float64 | -  |
+| 市现率-TTM排名 | int64   | -  |
+| 市现率-LYR   | float64 | -  |
+| 市现率-LYR排名 | int64   | -  |
+
+接口示例
+
+```python
+import akshare as ak
+
+stock_hk_valuation_comparison_em_df = ak.stock_hk_valuation_comparison_em(symbol="03900")
+print(stock_hk_valuation_comparison_em_df)
+```
+
+数据示例
+
+```
+      代码    简称   市盈率-TTM  市盈率-TTM排名    ...   市现率-LYR  市现率-LYR排名
+0  03900  绿城中国 -86.44272         97  14.363182      -30.427808      121
+[1 rows x 18 columns]
+```
+
+
+##### 规模对比
+
+接口: stock_hk_scale_comparison_em
+
+目标地址: https://emweb.securities.eastmoney.com/PC_HKF10/pages/home/index.html?code=03900&type=web&color=w#/IndustryComparison
+
+描述: 东方财富-港股-行业对比-规模对比
+
+限量: 单次返回全部数据
+
+输入参数
+
+| 名称     | 类型  | 描述             |
+|--------|-----|----------------|
+| symbol | str | symbol="03900" |
+
+输出参数
+
+| 名称      | 类型      | 描述 |
+|---------|---------|----|
+| 代码      | object  | -  |
+| 简称      | object  | -  |
+| 总市值     | float64 | -  |
+| 总市值排名   | int64   | -  |
+| 流通市值    | float64 | -  |
+| 流通市值排名  | int64   | -  |
+| 营业总收入   | int64   | -  |
+| 营业总收入排名 | int64   | -  |
+| 净利润     | int64   | -  |
+| 净利润排名   | int64   | -  |
+
+接口示例
+
+```python
+import akshare as ak
+
+stock_hk_scale_comparison_em_df = ak.stock_hk_scale_comparison_em(symbol="03900")
+print(stock_hk_scale_comparison_em_df)
+```
+
+数据示例
+
+```
+    代码   简称       总市值  总市值排名  ...    营业总收入  营业总收入排名  净利润  净利润排名
+0  03900  绿城中国  2.201719e+10     20  ...  53368264000        6  209907000     37
+[1 rows x 10 columns]
+```
+
 ### 机构调研
 
 #### 机构调研-统计
@@ -7625,9 +8087,10 @@ print(news_trade_notify_suspend_baidu_df)
 
 输入参数
 
-| 名称   | 类型  | 描述              |
-|------|-----|-----------------|
-| date | str | date="20241107" |
+| 名称     | 类型  | 描述              |
+|--------|-----|-----------------|
+| date   | str | date="20241107" |
+| cookie | str | 可以指定 cookie     |
 
 输出参数
 
@@ -7648,24 +8111,29 @@ print(news_trade_notify_suspend_baidu_df)
 ```python
 import akshare as ak
 
-news_trade_notify_dividend_baidu_df = ak.news_trade_notify_dividend_baidu(date="20241107")
+news_trade_notify_dividend_baidu_df = ak.news_trade_notify_dividend_baidu(date="20251126")
 print(news_trade_notify_dividend_baidu_df)
 ```
 
 数据示例
 
 ```
-    股票代码   除权日     分红 送股 转增  实物 交易所    股票简称   报告期
-0  600737  2024-11-07   2.00元        NaN  SH   XD中粮糖  2024-11-07
-1  300760  2024-11-07  16.50元        NaN  SZ    迈瑞医疗  2024-11-07
-2  002352  2024-11-07   4.00元        NaN  SZ    顺丰控股  2024-11-07
-3  002352  2024-11-07  10.00元        NaN  SZ    顺丰控股  2024-11-07
-4  002091  2024-11-07   1.00元        NaN  SZ    江苏国泰  2024-11-07
-5  002338  2024-11-07   0.10元        NaN  SZ    奥普光电  2024-11-07
-6  688195  2024-11-07   1.00元        NaN  SH   XD腾景科  2024-11-07
-7   01319  2024-11-07  0.01港元             HK  霭华押业信贷  2024-11-07
-8   06066  2024-11-07  0.09港元             HK  中信建投证券  2024-11-07
-9   00005  2024-11-07  0.10港元             HK    汇丰控股  2024-11-07
+      股票代码   除权日     分红 送股 转增 实物 交易所    股票简称 报告期
+0   601788  2025-11-26   1.10元  -  -  -  SH    光大证券  2025-11-26
+1   600482  2025-11-26   0.82元  -  -  -  SH    中国动力  2025-11-26
+2   603298  2025-11-26   2.00元  -  -  -  SH    杭叉集团  2025-11-26
+3   000088  2025-11-26   0.88元  -  -  -  SZ     盐田港  2025-11-26
+4    06808  2025-11-26  0.08港元  -  -  -  HK    高鑫零售  2025-11-26
+5   603040  2025-11-26   2.50元  -  -  -  SH     新坐标  2025-11-26
+6   603008  2025-11-26   2.80元  -  -  -  SH     喜临门  2025-11-26
+7   603676  2025-11-26   1.47元  -  -  -  SH     卫信康  2025-11-26
+8   920112  2025-11-26   5.00元  -  -  -  BJ     巴兰仕  2025-11-26
+9   301023  2025-11-26   4.00元  -  -  -  SZ    江南奕帆  2025-11-26
+10  001228  2025-11-26   3.00元  -  -  -  SZ     永泰运  2025-11-26
+11   00331  2025-11-26  0.18港元  -  -  -  HK  丰盛生活服务  2025-11-26
+12  300246  2025-11-26   0.50元  -  -  -  SZ     宝莱特  2025-11-26
+13  688193  2025-11-26   1.50元  -  -  -  SH    仁度生物  2025-11-26
+14   06668  2025-11-26  0.05港元  -  -  -  HK    星盛商业  2025-11-26
 ```
 
 ### 个股新闻
@@ -11297,170 +11765,179 @@ print(stock_cash_flow_sheet_by_quarterly_em_df)
 
 ##### 资产负债表
 
-接口: stock_financial_debt_ths
+接口: stock_financial_debt_new_ths
 
-目标地址: https://basic.10jqka.com.cn/new/000063/finance.html
+目标地址: https://basic.10jqka.com.cn/astockpc/astockmain/index.html#/financen?code=000063
 
-描述: 同花顺-财务指标-资产负债表
+描述: 同花顺-财务指标-资产负债表；替换 stock_financial_debt_ths 接口
 
 限量: 单次获取资产负债表所有历史数据
 
 输入参数
 
-| 名称        | 类型  | 描述                                                  |
-|-----------|-----|-----------------------------------------------------|
-| symbol    | str | symbol="000063"; 股票代码                               |
-| indicator | str | indicator="按报告期"; choice of {"按报告期", "按年度", "按单季度"} |
+| 名称        | 类型  | 描述                                          |
+|-----------|-----|---------------------------------------------|
+| symbol    | str | symbol="000063"; 股票代码                       |
+| indicator | str | indicator="按报告期"; choice of {"按报告期", "按年度"} |
 
 输出参数
 
-| 名称 | 类型 | 描述         |
-|----|----|------------|
-| -  | -  | 80 项，不逐一列出 |
+| 名称            | 类型      | 描述 |
+|---------------|---------|----|
+| report_date   | object  | -  |
+| report_name   | object  | -  |
+| report_period | object  | -  |
+| quarter_name  | object  | -  |
+| metric_name   | object  | -  |
+| value         | float64 | -  |
+| single        | object  | -  |
+| yoy           | float64 | -  |
+| mom           | object  | -  |
+| single_yoy    | object  | -  |
 
 接口示例
 
 ```python
 import akshare as ak
 
-stock_financial_debt_ths_df = ak.stock_financial_debt_ths(symbol="000063", indicator="按年度")
-print(stock_financial_debt_ths_df)
+stock_financial_debt_new_ths_df = ak.stock_financial_debt_new_ths(symbol="000063", indicator="按年度")
+print(stock_financial_debt_new_ths_df)
 ```
 
 数据示例
 
 ```
-     报告期 报表核心指标 *所有者权益（或股东权益）合计  ...    少数股东权益 所有者权益（或股东权益）合计 负债和所有者权益（或股东权益）合计
-0   2022                595.43亿  ...     9.02亿        595.43亿          1809.54亿
-1   2021                532.88亿  ...    18.06亿        532.88亿          1687.63亿
-2   2020                461.23亿  ...    28.26亿        461.23亿          1506.35亿
-3   2019                379.54亿  ...    28.75亿        379.54亿          1412.02亿
-4   2018                329.61亿  ...    38.11亿        329.61亿          1293.51亿
-5   2017                453.80亿  ...    44.12亿        453.80亿          1439.62亿
-6   2016                408.85亿  ...    51.63亿        408.85亿          1416.41亿
-7   2015                433.49亿  ...    43.67亿        433.49亿          1248.32亿
-8   2014                262.93亿  ...    14.14亿        262.93亿          1062.14亿
-9   2013                236.26亿  ...    10.93亿        236.26亿          1000.79亿
-10  2012                225.93亿  ...    11.36亿        225.93亿          1074.46亿
-11  2011                262.89亿  ...    20.57亿        262.89亿          1053.68亿
-12  2010                249.62亿  ...    18.68亿        249.62亿           841.52亿
-13  2009                179.49亿  ...    11.24亿        179.49亿           683.42亿
-14  2008                151.84亿  ...     9.34亿        151.84亿           508.66亿
-15  2007                128.88亿  ...     7.51亿        128.88亿           391.73亿
-16  2006                113.26亿  ...     5.62亿        113.26亿           257.61亿
-17  2005                105.96亿  ...     4.71亿        105.96亿           217.79亿
-18  2004                 96.39亿  ...     4.65亿         96.39亿           208.30亿
-19  2003                 52.77亿  ...     2.33亿         52.77亿           157.67亿
-20  2002                 46.04亿  ...     2.17亿         46.04亿           122.17亿
-21  2001                 39.18亿  ...  9910.63万         39.18亿            90.55亿
-22  2000                 19.50亿  ...  6403.16万         19.50亿            63.21亿
-23  1999                 15.79亿  ...  4952.78万         15.79亿            33.85亿
-24  1998                  9.60亿  ...  2223.74万          9.60亿            21.94亿
-25  1997                  7.01亿  ...   589.60万          7.01亿            13.57亿
-26  1996                  1.30亿  ...    10.00万          1.30亿             3.83亿
-27  1995               7839.06万  ...     False       7839.06万             2.36亿
-28  1994               4254.78万  ...     False       4254.78万             1.45亿
-[29 rows x 80 columns]
+     report_date report_name report_period  ...          yoy   mom single_yoy
+0     2024-12-31      2024年报        2024-4  ...         <NA>  <NA>       <NA>
+1     2024-12-31      2024年报        2024-4  ...         <NA>  <NA>       <NA>
+2     2024-12-31      2024年报        2024-4  ...   0.16420728  <NA>       <NA>
+3     2024-12-31      2024年报        2024-4  ...  -0.15807123  <NA>       <NA>
+4     2024-12-31      2024年报        2024-4  ...   0.00005916  <NA>       <NA>
+...          ...         ...           ...  ...          ...   ...        ...
+3684  1994-12-31      1994年报        1994-4  ...         <NA>  <NA>       <NA>
+3685  1994-12-31      1994年报        1994-4  ...         <NA>  <NA>       <NA>
+3686  1994-12-31      1994年报        1994-4  ...         <NA>  <NA>       <NA>
+3687  1994-12-31      1994年报        1994-4  ...         <NA>  <NA>       <NA>
+3688  1994-12-31      1994年报        1994-4  ...         <NA>  <NA>       <NA>
+[3689 rows x 10 columns]
 ```
 
 ##### 利润表
 
-接口: stock_financial_benefit_ths
+接口: stock_financial_benefit_new_ths
 
-目标地址: https://basic.10jqka.com.cn/new/000063/finance.html
+目标地址: https://basic.10jqka.com.cn/astockpc/astockmain/index.html#/financen?code=000063
 
-描述: 同花顺-财务指标-利润表
+描述: 同花顺-财务指标-利润表；替换 stock_financial_benefit_ths 接口
 
 限量: 单次获取利润表所有历史数据
 
 输入参数
 
-| 名称        | 类型  | 描述                                                  |
-|-----------|-----|-----------------------------------------------------|
-| symbol    | str | symbol="000063"; 股票代码                               |
-| indicator | str | indicator="按报告期"; choice of {"按报告期", "按年度", "按单季度"} |
+| 名称        | 类型  | 描述                                                                      |
+|-----------|-----|-------------------------------------------------------------------------|
+| symbol    | str | symbol="000063"; 股票代码                                                   |
+| indicator | str | indicator="按报告期"; choice of {"按报告期", "一季度", "二季度", "三季度", "四季度", "按年度"} |
 
 输出参数
 
-| 名称 | 类型 | 描述         |
-|----|----|------------|
-| -  | -  | 45 项，不逐一列出 |
+| 名称            | 类型      | 描述 |
+|---------------|---------|----|
+| report_date   | object  | -  |
+| report_name   | object  | -  |
+| report_period | object  | -  |
+| quarter_name  | object  | -  |
+| metric_name   | object  | -  |
+| value         | float64 | -  |
+| single        | object  | -  |
+| yoy           | float64 | -  |
+| mom           | object  | -  |
+| single_yoy    | object  | -  |
 
 接口示例
 
 ```python
 import akshare as ak
 
-stock_financial_benefit_ths_df = ak.stock_financial_benefit_ths(symbol="000063", indicator="按报告期")
-print(stock_financial_benefit_ths_df)
+stock_financial_benefit_new_ths_df = ak.stock_financial_benefit_new_ths(symbol="000063", indicator="按报告期")
+print(stock_financial_benefit_new_ths_df)
 ```
 
 数据示例
 
 ```
-           报告期 报表核心指标      *净利润  ... 八、综合收益总额 归属于母公司股东的综合收益总额 归属于少数股东的综合收益总额
-0   2023-09-30           77.57亿  ...   77.05亿          77.94亿      -8842.60万
-1   2023-06-30           53.92亿  ...   53.41亿          54.24亿      -8317.50万
-2   2023-03-31           26.14亿  ...   24.85亿          25.17亿      -3237.00万
-3   2022-12-31           77.92亿  ...   77.24亿          80.15亿         -2.90亿
-4   2022-09-30           66.90亿  ...   66.52亿          67.88亿         -1.36亿
-..         ...    ...       ...  ...      ...             ...            ...
-95  1997-12-31            1.21亿  ...    False           False          False
-96  1997-06-30         4124.14万  ...    False           False          False
-97  1996-12-31         9905.67万  ...    False           False          False
-98  1995-12-31         7314.86万  ...    False           False          False
-99  1994-12-31         8071.26万  ...    False           False          False
-[100 rows x 45 columns]
+     report_date report_name report_period  ...        yoy       mom  single_yoy
+0     2025-09-30     2025三季报        2025-3  ...  -0.307496 -0.912701   -0.893714
+1     2025-09-30     2025三季报        2025-3  ...        NaN       NaN         NaN
+2     2025-09-30     2025三季报        2025-3  ...   0.116943 -0.221946   -0.139571
+3     2025-09-30     2025三季报        2025-3  ...        NaN       NaN         NaN
+4     2025-09-30     2025三季报        2025-3  ...        NaN       NaN         NaN
+...          ...         ...           ...  ...        ...       ...         ...
+2545  2013-06-30      2013中报        2013-2  ...   0.285714 -0.500000    0.000000
+2546  2013-06-30      2013中报        2013-2  ...        NaN       NaN         NaN
+2547  2013-06-30      2013中报        2013-2  ...        NaN       NaN         NaN
+2548  2013-06-30      2013中报        2013-2  ...        NaN       NaN         NaN
+2549  2013-06-30      2013中报        2013-2  ... -11.669821  0.777595    0.078450
+[2550 rows x 10 columns]
 ```
 
 ##### 现金流量表
 
-接口: stock_financial_cash_ths
+接口: stock_financial_cash_new_ths
 
-目标地址: https://basic.10jqka.com.cn/new/000063/finance.html
+目标地址: https://basic.10jqka.com.cn/astockpc/astockmain/index.html#/financen?code=000063
 
-描述: 同花顺-财务指标-现金流量表
+描述: 同花顺-财务指标-现金流量表；替换 stock_financial_cash_ths 接口
 
 限量: 单次获取现金流量表所有历史数据
 
 输入参数
 
-| 名称        | 类型  | 描述                                                  |
-|-----------|-----|-----------------------------------------------------|
-| symbol    | str | symbol="000063"; 股票代码                               |
-| indicator | str | indicator="按报告期"; choice of {"按报告期", "按年度", "按单季度"} |
+| 名称        | 类型  | 描述                                                                      |
+|-----------|-----|-------------------------------------------------------------------------|
+| symbol    | str | symbol="000063"; 股票代码                                                   |
+| indicator | str | indicator="按报告期"; choice of {"按报告期", "一季度", "二季度", "三季度", "四季度", "按年度"} |
 
 输出参数
 
-| 名称 | 类型 | 描述         |
-|----|----|------------|
-| -  | -  | 75 项，不逐一列出 |
+| 名称            | 类型      | 描述 |
+|---------------|---------|----|
+| report_date   | object  | -  |
+| report_name   | object  | -  |
+| report_period | object  | -  |
+| quarter_name  | object  | -  |
+| metric_name   | object  | -  |
+| value         | float64 | -  |
+| single        | object  | -  |
+| yoy           | float64 | -  |
+| mom           | object  | -  |
+| single_yoy    | object  | -  |
 
 接口示例
 
 ```python
 import akshare as ak
 
-stock_financial_cash_ths_df = ak.stock_financial_cash_ths(symbol="000063", indicator="按单季度")
-print(stock_financial_cash_ths_df)
+stock_financial_cash_new_ths_df = ak.stock_financial_cash_new_ths(symbol="000063", indicator="按年度")
+print(stock_financial_cash_new_ths_df)
 ```
 
 数据示例
 
 ```
-    报告期 报表核心指标 *现金及现金等价物净增加额  ... 加：现金等价物的期末余额 减：现金等价物的期初余额 间接法-现金及现金等价物净增加额
-0   2023-09-30               15.54亿  ...
-1   2023-06-30               52.02亿  ...
-2   2023-03-31               26.73亿  ...        False        False            False
-3   2022-12-31              107.72亿  ...
-4   2022-09-30              -77.82亿  ...
-..         ...    ...           ...  ...          ...          ...              ...
-78  2004-03-31              -16.81亿  ...        False        False          -16.81亿
-79  2003-12-31               19.40亿  ...                                     19.40亿
-80  2003-09-30              -10.76亿  ...                                    -10.76亿
-81  2003-06-30               13.89亿  ...                                     13.89亿
-82  2003-03-31              -14.06亿  ...        False        False          -14.06亿
-[83 rows x 75 columns]
+     report_date report_name  ...          mom   single_yoy
+0     2024-12-31      2024年报  ...         <NA>         <NA>
+1     2024-12-31      2024年报  ...  -0.23161757   0.57803131
+2     2024-12-31      2024年报  ...   0.36015447  -0.45630237
+3     2024-12-31      2024年报  ...   0.17900055  -0.47569575
+4     2024-12-31      2024年报  ...   0.05788915  -0.47553164
+...          ...         ...  ...          ...          ...
+2425  1998-12-31      1998年报  ...         <NA>         <NA>
+2426  1998-12-31      1998年报  ...         <NA>         <NA>
+2427  1998-12-31      1998年报  ...         <NA>         <NA>
+2428  1998-12-31      1998年报  ...         <NA>         <NA>
+2429  1998-12-31      1998年报  ...         <NA>         <NA>
+[2430 rows x 10 columns]
 ```
 
 #### 财务报表-东财-已退市股票
@@ -11750,7 +12227,7 @@ print(stock_financial_hk_report_em_df)
 
 | 名称        | 类型  | 描述                                                    |
 |-----------|-----|-------------------------------------------------------|
-| stock     | str | stock="TSLA"; 股票代码                                    |
+| stock     | str | stock="TSLA"; 股票代码, 比如 BRK.A 需修改为 BRK_A 再获取           |
 | symbol    | str | symbol="资产负债表"; choice of {"资产负债表", "综合损益表", "现金流量表"} |
 | indicator | str | indicator="年报"; choice of {"年报", "单季报", "累计季报"}       |
 
@@ -11846,83 +12323,68 @@ print(stock_financial_abstract_df)
 
 #### 关键指标-同花顺
 
-接口: stock_financial_abstract_ths
+接口: stock_financial_abstract_new_ths
 
 目标地址: https://basic.10jqka.com.cn/new/000063/finance.html
 
-描述: 同花顺-财务指标-主要指标
+描述: 同花顺-财务指标-重要指标；替换 stock_financial_abstract_ths 接口
 
 限量: 单次获取指定 symbol 的所有数据
 
 输入参数
 
-| 名称        | 类型  | 描述                                                  |
-|-----------|-----|-----------------------------------------------------|
-| symbol    | str | symbol="000063"; 股票代码                               |
-| indicator | str | indicator="按报告期"; choice of {"按报告期", "按年度", "按单季度"} |
+| 名称        | 类型  | 描述                                                                      |
+|-----------|-----|-------------------------------------------------------------------------|
+| symbol    | str | symbol="000063"; 股票代码                                                   |
+| indicator | str | indicator="按报告期"; choice of {"按报告期", "一季度", "二季度", "三季度", "四季度", "按年度"} |
 
 输出参数
 
-| 名称         | 类型     | 描述 |
-|------------|--------|----|
-| 报告期        | object | -  |
-| 净利润        | object | -  |
-| 净利润同比增长率   | object | -  |
-| 扣非净利润      | object | -  |
-| 扣非净利润同比增长率 | object | -  |
-| 营业总收入      | object | -  |
-| 营业总收入同比增长率 | object | -  |
-| 基本每股收益     | object | -  |
-| 每股净资产      | object | -  |
-| 每股资本公积金    | object | -  |
-| 每股未分配利润    | object | -  |
-| 每股经营现金流    | object | -  |
-| 销售净利率      | object | -  |
-| 销售毛利率      | object | -  |
-| 净资产收益率     | object | -  |
-| 净资产收益率-摊薄  | object | -  |
-| 营业周期       | object | -  |
-| 存货周转率      | object | -  |
-| 存货周转天数     | object | -  |
-| 应收账款周转天数   | object | -  |
-| 流动比率       | object | -  |
-| 速动比率       | object | -  |
-| 保守速动比率     | object | -  |
-| 产权比率       | object | -  |
-| 资产负债率      | object | -  |
+| 名称            | 类型      | 描述 |
+|---------------|---------|----|
+| report_date   | object  | -  |
+| report_name   | object  | -  |
+| report_period | object  | -  |
+| quarter_name  | object  | -  |
+| metric_name   | object  | -  |
+| value         | float64 | -  |
+| single        | object  | -  |
+| yoy           | float64 | -  |
+| mom           | object  | -  |
+| single_yoy    | object  | -  |
 
 接口示例
 
 ```python
 import akshare as ak
 
-stock_financial_abstract_ths_df = ak.stock_financial_abstract_ths(symbol="000063", indicator="按报告期")
-print(stock_financial_abstract_ths_df)
+stock_financial_abstract_new_ths_df = ak.stock_financial_abstract_new_ths(symbol="000063", indicator="按报告期")
+print(stock_financial_abstract_new_ths_df)
 ```
 
 数据示例
 
 ```
-     报告期     净利润 净利润同比增长率  扣非净利润  ... 速动比率 保守速动比率 产权比率 资产负债率
-0    1994-12-31  8071.26万    False   False  ...   0.74   0.68   2.42  70.75%
-1    1995-12-31  7314.86万   -9.37%   False  ...   0.67   0.61   2.02  66.84%
-2    1996-12-31  9905.67万   35.42%   False  ...   0.72   0.66   1.95  66.06%
-3    1997-06-30  4101.36万    False   False  ...  False  False  False   False
-4    1997-12-31     1.17亿   18.17%   False  ...   1.31   1.21   0.94  48.33%
-..          ...       ...      ...     ...  ...    ...    ...    ...     ...
-100  2023-12-31    93.26亿   15.41%  74.00亿  ...   1.32   1.21   1.95  66.00%
-101  2024-03-31    27.41亿    3.74%  26.49亿  ...   1.37   1.27   1.94  65.82%
-102  2024-06-30    57.32亿    4.76%  49.64亿  ...   1.28   1.21   1.91  65.57%
-103  2024-09-30    79.06亿    0.83%  68.98亿  ...   1.22   1.13   1.76  63.63%
-104  2024-12-31    84.25亿   -9.66%  61.79亿  ...   1.10   0.99   1.84  64.74%
-[105 rows x 25 columns]
+     report_date report_name  ...           mom   single_yoy
+0     2025-09-30     2025三季报  ...    1.86837607  -0.54398564
+1     2025-09-30     2025三季报  ...  -14.45035019  -8.51550645
+2     2025-09-30     2025三季报  ...   -0.89847408  -0.87837202
+3     2025-09-30     2025三季报  ...          <NA>         <NA>
+4     2025-09-30     2025三季报  ...          <NA>         <NA>
+...          ...         ...  ...           ...          ...
+1195  2013-06-30      2013中报  ...   -0.49016497   0.25253313
+1196  2013-06-30      2013中报  ...   -0.67334254   1.13728066
+1197  2013-06-30      2013中报  ...          <NA>         <NA>
+1198  2013-06-30      2013中报  ...    0.77759490   0.07845025
+1199  2013-06-30      2013中报  ...   -0.49473684   0.26315789
+[1200 rows x 10 columns]
 ```
 
 #### 主要指标-东方财富
 
 接口: stock_financial_analysis_indicator_em
 
-目标地址: https://emweb.securities.eastmoney.com/PC_HKF10/pages/home/index.html?code=00700&type=web&color=w#/newfinancialanalysis
+目标地址: https://emweb.securities.eastmoney.com/pc_hsf10/pages/index.html?type=web&code=SZ301389&color=b#/cwfx
 
 描述: 东方财富-A股-财务分析-主要指标
 
@@ -11937,9 +12399,53 @@ print(stock_financial_abstract_ths_df)
 
 输出参数
 
-| 名称 | 类型     | 描述 |
-|----|--------|----|
-| -  | 不逐一列出  | -  |
+| 名称                 | 类型      | 描述               |
+|--------------------|---------|------------------|
+| SECUCODE           | object  | 股票代码(带后缀)        |
+| SECURITY_CODE      | object  | 股票代码             |
+| SECURITY_NAME_ABBR | object  | 股票名称             |
+| REPORT_DATE        | object  | 报告日期             |
+| REPORT_TYPE        | object  | 报告类型             |
+| REPORT_DATE_NAME   | object  | 报告日期名称           |
+| EPSJB              | float64 | 基本每股收益(元)        |
+| EPSKCJB            | float64 | 扣非每股收益(元)        |
+| EPSXS              | float64 | 稀释每股收益(元)        |
+| BPS                | float64 | 每股净资产(元)         |
+| MGZBGJ             | float64 | 每股公积金(元)         |
+| MGWFPLR            | float64 | 每股未分配利润(元)       |
+| MGJYXJJE           | float64 | 每股经营现金流(元)       |
+| TOTALOPERATEREVE   | float64 | 营业总收入(元)         |
+| MLR                | float64 | 毛利润(元)           |
+| PARENTNETPROFIT    | float64 | 归属净利润(元)         |
+| KCFJCXSYJLR        | float64 | 扣非净利润(元)         |
+| TOTALOPERATEREVETZ | float64 | 营业总收入同比增长(%)     |
+| PARENTNETPROFITTZ  | float64 | 归属净利润同比增长(%)     |
+| KCFJCXSYJLRTZ      | float64 | 扣非净利润同比增长(%)     |
+| YYZSRGDHBZC        | float64 | 营业总收入滚动环比增长(%)   |
+| NETPROFITRPHBZC    | float64 | 归属净利润滚动环比增长(%)   |
+| KFJLRGDHBZC        | float64 | 扣非净利润滚动环比增长(%)   |
+| ROEJQ              | float64 | 净资产收益率(加权)(%)    |
+| ROEKCJQ            | float64 | 净资产收益率(扣非/加权)(%) |
+| ZZCJLL             | float64 | 总资产收益率(加权)(%)    |
+| XSJLL              | float64 | 净利率(%)           |
+| XSMLL              | float64 | 毛利率(%)           |
+| YSZKYYSR           | float64 | 预收账款/营业收入        |
+| XSJXLYYSR          | float64 | 销售净现金流/营业收入      |
+| JYXJLYYSR          | float64 | 经营净现金流/营业收入      |
+| TAXRATE            | float64 | 实际税率(%)          |
+| LD                 | float64 | 流动比率             |
+| SD                 | float64 | 速动比率             |
+| XJLLB              | float64 | 现金流量比率           |
+| ZCFZL              | float64 | 资产负债率(%)         |
+| QYCS               | float64 | 权益系数             |
+| CQBL               | float64 | 产权比率             |
+| ZZCZZTS            | float64 | 总资产周转天数(天)       |
+| CHZZTS             | float64 | 存货周转天数(天)        |
+| YSZKZZTS           | float64 | 应收账款周转天数(天)      |
+| TOAZZL             | float64 | 总资产周转率(次)        |
+| CHZZL              | float64 | 存货周转率(次)         |
+| YSZKZZL            | float64 | 应收账款周转率(次)       |
+| ...                | ...     | ...              |
 
 接口示例
 
@@ -12137,44 +12643,44 @@ print(stock_financial_analysis_indicator_df)
 
 输出参数
 
-| 名称                  | 类型      | 描述 |
-|---------------------|---------|----|
-| SECUCODE            | object  | -  |
-| SECURITY_CODE       | object  | -  |
-| SECURITY_NAME_ABBR  | object  | -  |
-| ORG_CODE            | object  | -  |
-| REPORT_DATE         | object  | -  |
-| DATE_TYPE_CODE      | object  | -  |
-| PER_NETCASH_OPERATE | float64 | -  |
-| PER_OI              | float64 | -  |
-| BPS                 | float64 | -  |
-| BASIC_EPS           | float64 | -  |
-| DILUTED_EPS         | float64 | -  |
-| OPERATE_INCOME      | int64   | -  |
-| OPERATE_INCOME_YOY  | float64 | -  |
-| GROSS_PROFIT        | int64   | -  |
-| GROSS_PROFIT_YOY    | float64 | -  |
-| HOLDER_PROFIT       | int64   | -  |
-| HOLDER_PROFIT_YOY   | float64 | -  |
-| GROSS_PROFIT_RATIO  | float64 | -  |
-| EPS_TTM             | float64 | -  |
-| OPERATE_INCOME_QOQ  | float64 | -  |
-| NET_PROFIT_RATIO    | float64 | -  |
-| ROE_AVG             | float64 | -  |
-| GROSS_PROFIT_QOQ    | float64 | -  |
-| ROA                 | float64 | -  |
-| HOLDER_PROFIT_QOQ   | float64 | -  |
-| ROE_YEARLY          | float64 | -  |
-| ROIC_YEARLY         | float64 | -  |
-| TAX_EBT             | float64 | -  |
-| OCF_SALES           | float64 | -  |
-| DEBT_ASSET_RATIO    | float64 | -  |
-| CURRENT_RATIO       | float64 | -  |
-| CURRENTDEBT_DEBT    | float64 | -  |
-| START_DATE          | object  | -  |
-| FISCAL_YEAR         | object  | -  |
-| CURRENCY            | object  | -  |
-| IS_CNY_CODE         | int64   | -  |
+| 名称                  | 类型      | 描述             |
+|---------------------|---------|----------------|
+| SECUCODE            | object  | 股票代码(带HK后缀)    |
+| SECURITY_CODE       | object  | 股票代码(不带HK后缀)   |
+| SECURITY_NAME_ABBR  | object  | 股票名称           |
+| ORG_CODE            | object  | ORG_CODE       |
+| REPORT_DATE         | object  | 报告日期           |
+| DATE_TYPE_CODE      | object  | 报告日期类型         |
+| PER_NETCASH_OPERATE | float64 | 每股经营现金流(元)     |
+| PER_OI              | float64 | 每股营业收入(元)      |
+| BPS                 | float64 | 每股净资产(元)       |
+| BASIC_EPS           | float64 | 基本每股收益(元)      |
+| DILUTED_EPS         | float64 | 稀释每股收益(元)      |
+| OPERATE_INCOME      | int64   | 营业总收入(元)       |
+| OPERATE_INCOME_YOY  | float64 | 营业总收入同比增长(%)   |
+| GROSS_PROFIT        | int64   | 毛利润(元)         |
+| GROSS_PROFIT_YOY    | float64 | 毛利润同比增长(%)     |
+| HOLDER_PROFIT       | int64   | 归母净利润(元)       |
+| HOLDER_PROFIT_YOY   | float64 | 归母净利润同比增长(%)   |
+| GROSS_PROFIT_RATIO  | float64 | 毛利率(%)         |
+| EPS_TTM             | float64 | TTM每股收益(元)     |
+| OPERATE_INCOME_QOQ  | float64 | 营业总收入滚动环比增长(%) |
+| NET_PROFIT_RATIO    | float64 | 净利率(%)         |
+| ROE_AVG             | float64 | 平均净资产收益率(%)    |
+| GROSS_PROFIT_QOQ    | float64 | 毛利润滚动环比增长(%)   |
+| ROA                 | float64 | 总资产净利率(%)      |
+| HOLDER_PROFIT_QOQ   | float64 | 归母净利润滚动环比增长(%) |
+| ROE_YEARLY          | float64 | 年化净资产收益率(%)    |
+| ROIC_YEARLY         | float64 | 年化投资回报率(%)     |
+| TAX_EBT             | float64 | 所得税/利润总额(%)    |
+| OCF_SALES           | float64 | 经营现金流/营业收入(%)  |
+| DEBT_ASSET_RATIO    | float64 | 资产负债率(%)       |
+| CURRENT_RATIO       | float64 | 流动比率(倍)        |
+| CURRENTDEBT_DEBT    | float64 | 流动负债/总负债(%)    |
+| START_DATE          | object  | START_DATE     |
+| FISCAL_YEAR         | object  | 年结日            |
+| CURRENCY            | object  | CURRENCY       |
+| IS_CNY_CODE         | int64   | IS_CNY_CODE    |
 
 接口示例
 
@@ -13585,12 +14091,12 @@ print(stock_dividend_cninfo_df)
 数据示例
 
 ```
-      实施方案公告日期  分红类型  送股比例  转增比例  ...  派息日 股份到账日 实施方案分红说明 报告时间
-0   1998-11-28  中期分红   5.0   0.0  ...         NaT  None          10转增5股  1998半年报
+    实施方案公告日期  分红类型  送股比例  转增比例  ...派息日 股份到账日   实施方案分红说明  报告时间
+0   1998-11-28  中期分红   0.0   5.0  ...         NaT  None          10转增5股  1998半年报
 1   2001-06-23  年度分红   NaN   NaN  ...  2001-07-06  None    10派2.93元(含税)   2000年报
 2   2002-07-18  年度分红   NaN   NaN  ...  2002-08-01  None     10派1.5元(含税)   2001年报
 3   2003-08-05  年度分红   NaN   NaN  ...  2003-08-14  None   10股派1.99元（含税）   2002年报
-4   2003-12-22  中期分红   NaN   3.0  ...         NaT  None           10送3股  2003半年报
+4   2003-12-22  中期分红   3.0   NaN  ...         NaT  None           10送3股  2003半年报
 5   2004-07-16  年度分红   NaN   NaN  ...  2004-07-28  None    10派0.96元（含税）   2003年报
 6   2005-05-17  年度分红   NaN   NaN  ...  2005-05-27  None       10派1元(含税)   2004年报
 7   2006-08-15  年度分红   NaN   NaN  ...  2006-08-25  None     10派1.5元(含税)   2005年报
@@ -13611,7 +14117,9 @@ print(stock_dividend_cninfo_df)
 22  2020-08-14  年度分红   NaN   NaN  ...  2020-08-20  None     10派7.9元(含税)   2019年报
 23  2024-07-15  年度分红   NaN   NaN  ...  2024-07-19  None     10派1.2元(含税)   2023年报
 24  2024-09-03  中期分红   NaN   NaN  ...  2024-09-09  None  10派1.0034元(含税)  2024半年报
-[25 rows x 11 columns]
+25  2025-08-04  年度分红   NaN   NaN  ...  2025-08-08  None       10派3元(含税)   2024年报
+26  2025-10-10  中期分红   NaN   NaN  ...  2025-10-16  None     10派2.1元(含税)  2025半年报
+[27 rows x 11 columns]
 ```
 
 #### 新股发行
@@ -17100,6 +17608,58 @@ print(stock_hk_valuation_baidu_df)
 [367 rows x 2 columns]
 ```
 
+#### 美股估值指标
+
+接口: stock_us_valuation_baidu
+
+目标地址: https://gushitong.baidu.com/stock/us-NVDA
+
+描述: 百度股市通-美股-财务报表-估值数据
+
+限量: 单次获取指定 symbol 的指定 indicator 的特定 period 的历史数据
+
+输入参数
+
+| 名称        | 类型  | 描述                                                                     |
+|-----------|-----|------------------------------------------------------------------------|
+| symbol    | str | symbol="NVDA"; 美股代码                                                    |
+| indicator | str | indicator="总市值"; choice of {"总市值", "市盈率(TTM)", "市盈率(静)", "市净率", "市现率"} |
+| period    | str | period="近一年"; choice of {"近一年", "近三年", "全部"}                           |
+
+输出参数
+
+| 名称    | 类型      | 描述  |
+|-------|---------|-----|
+| date  | object  | -   |
+| value | float64 | -   |
+
+接口示例
+
+```python
+import akshare as ak
+
+stock_us_valuation_baidu_df = ak.stock_us_valuation_baidu(symbol="NVDA", indicator="总市值", period="近一年")
+print(stock_us_valuation_baidu_df)
+```
+
+数据示例
+
+```
+           date     value
+0    2024-12-24  34339.88
+1    2024-12-26  34268.86
+2    2024-12-27  33553.75
+3    2024-12-30  33671.30
+4    2024-12-31  32887.62
+..          ...       ...
+245  2025-12-17  41538.42
+246  2025-12-18  42316.02
+247  2025-12-19  43980.57
+248  2025-12-22  44636.67
+249  2025-12-23  45978.03
+[250 rows x 2 columns]
+```
+
 #### 创新高和新低的股票数量
 
 接口: stock_a_high_low_statistics
@@ -18406,7 +18966,7 @@ print(stock_lhb_jgmx_sina_df)
 
 #### 首发申报信息
 
-接口: stock_ipo_declare
+接口: stock_ipo_declare_em
 
 目标地址: https://data.eastmoney.com/xg/xg/sbqy.html
 
@@ -18422,23 +18982,26 @@ print(stock_lhb_jgmx_sina_df)
 
 输出参数
 
-| 名称     | 类型     | 描述  |
-|--------|--------|-----|
-| 序号     | int64  | -   |
-| 申报企业   | object | -   |
-| 拟上市地   | object | -   |
-| 保荐机构   | object | -   |
-| 会计师事务所 | object | -   |
-| 律师事务所  | object | -   |
-| 备注     | object | -   |
+| 名称     | 类型     | 描述 |
+|--------|--------|----|
+| 序号     | int64  | -  |
+| 企业名称   | object | -  |
+| 最新状态   | object | -  |
+| 注册地    | object | -  |
+| 保荐机构   | object | -  |
+| 律师事务所  | object | -  |
+| 会计师事务所 | object | -  |
+| 拟上市地点  | object | -  |
+| 更新日期   | object | -  |
+| 招股说明书  | object | -  |
 
 接口示例
 
 ```python
 import akshare as ak
 
-stock_ipo_declare_df = ak.stock_ipo_declare()
-print(stock_ipo_declare_df)
+stock_ipo_declare_em_df = ak.stock_ipo_declare_em()
+print(stock_ipo_declare_em_df)
 ```
 
 数据示例

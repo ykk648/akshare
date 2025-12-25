@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 """
-Date: 2025/1/5 19:00
+Date: 2025/11/10 15:30
 Desc: 新浪财经-基金行情
 https://vip.stock.finance.sina.com.cn/fund_center/index.html#jjhqetf
 """
@@ -42,7 +42,7 @@ def fund_etf_category_sina(symbol: str = "LOF基金") -> pd.DataFrame:
     }
     r = requests.get(url, params=params)
     data_text = r.text
-    data_json = demjson.decode(data_text[data_text.find("([") + 1 : -2])
+    data_json = demjson.decode(data_text[data_text.find("([") + 1: -2])
     temp_df = pd.DataFrame(data_json)
     if symbol == "封闭式基金":
         temp_df.columns = [
@@ -122,7 +122,7 @@ def fund_etf_hist_sina(symbol: str = "sh510050") -> pd.DataFrame:
     :return: 日行情数据
     :rtype: pandas.DataFrame
     """
-    url = f"https://finance.sina.com.cn/realstock/company/{symbol}/hisdata/klc_kl.js"
+    url = f"https://finance.sina.com.cn/realstock/company/{symbol}/hisdata_klc2/klc_kl.js"
     r = requests.get(url)
     js_code = py_mini_racer.MiniRacer()
     js_code.eval(hk_js_decode)
@@ -175,11 +175,15 @@ def fund_etf_dividend_sina(symbol: str = "sh510050") -> pd.DataFrame:
             # 转换数值类型
             df[["f", "s", "u"]] = df[["f", "s", "u"]].astype(float)
             # 按日期排序
-            df = df.sort_values("date", ascending=True, ignore_index=True)
+            df = df.sort_values(by="date", ascending=True, ignore_index=True)
             temp_df = df[["date", "u"]].copy()
             temp_df.columns = ["日期", "累计分红"]
             temp_df["日期"] = pd.to_datetime(temp_df["日期"], errors="coerce").dt.date
             return temp_df
+        else:
+            return pd.DataFrame()
+    else:
+        return pd.DataFrame()
 
 
 if __name__ == "__main__":
@@ -193,9 +197,6 @@ if __name__ == "__main__":
     print(fund_etf_category_sina_df)
 
     fund_etf_hist_sina_df = fund_etf_hist_sina(symbol="sh510050")
-    print(fund_etf_hist_sina_df)
-
-    fund_etf_hist_sina_df = fund_etf_hist_sina(symbol="sh510300")
     print(fund_etf_hist_sina_df)
 
     fund_etf_dividend_sina_df = fund_etf_dividend_sina(symbol="sh510050")
