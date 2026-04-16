@@ -107,13 +107,17 @@ def futures_spot_price(
         warnings.warn(f"{date.strftime('%Y%m%d')}非交易日")
         return pd.DataFrame()
     u1 = "https://www.100ppi.com/sf/"
-    u2 = f'https://www.100ppi.com/sf/day-{date.strftime("%Y-%m-%d")}.html'
+    u2 = f"https://www.100ppi.com/sf/day-{date.strftime('%Y-%m-%d')}.html"
     i = 1
     while True:
         for url in [u2, u1]:
             try:
                 # url = u2
-                r = pandas_read_html_link(url)
+                headers = {
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,"
+                    "image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+                }
+                r = pandas_read_html_link(url, headers=headers)
                 string = r[0].loc[1, 1]
                 news = "".join(re.findall(r"[0-9]", string))
                 if news[3:11] == date.strftime("%Y%m%d"):
@@ -194,7 +198,7 @@ def _check_information(df_data, date):
             symbol = chinese_to_english(news)
             record = pd.DataFrame(df_data[df_data["symbol"] == string])
             record.loc[:, "symbol"] = symbol
-            record.loc[:, "spot_price"] = record.loc[:, "spot_price"].astype(float)
+            record["spot_price"] = record["spot_price"].astype(float)
             if (
                 symbol == "JD"
             ):  # 鸡蛋现货为元/公斤, 鸡蛋期货为元/500千克, 其余元/吨(http://www.100ppi.com/sf/)
@@ -219,49 +223,54 @@ def _check_information(df_data, date):
         records["date"] = pd.Series(dtype="object")
         return records
 
-    records.loc[:, ["near_contract_price", "dominant_contract_price", "spot_price"]] = (
-        records.loc[
-            :, ["near_contract_price", "dominant_contract_price", "spot_price"]
+    records[["near_contract_price", "dominant_contract_price", "spot_price"]] = (
+        records[["near_contract_price", "dominant_contract_price", "spot_price"]
         ].astype("float")
     )
 
-    records.loc[:, "near_contract"] = records["near_contract"].replace(
+    records["near_contract"] = records["near_contract"].replace(
         r"[^0-9]*(\d*)$", r"\g<1>", regex=True
     )
-    records.loc[:, "dominant_contract"] = records["dominant_contract"].replace(
+    records["dominant_contract"] = records["dominant_contract"].replace(
         r"[^0-9]*(\d*)$", r"\g<1>", regex=True
     )
 
-    records.loc[:, "near_month"] = records.loc[:, "near_contract"]
-    records.loc[:, "near_contract"] = records["symbol"] + records.loc[
+    records["near_month"] = records.loc[:, "near_contract"]
+    records["near_contract"] = records["symbol"] + records.loc[
         :, "near_contract"
     ].astype("int").astype("str")
-    records.loc[:, "dominant_month"] = records.loc[:, "dominant_contract"]
-    records.loc[:, "dominant_contract"] = records["symbol"] + records.loc[
+    records["dominant_month"] = records.loc[:, "dominant_contract"]
+    records["dominant_contract"] = records["symbol"] + records.loc[
         :, "dominant_contract"
     ].astype("int").astype("str")
 
     records["near_contract"] = records["near_contract"].apply(
-        lambda x: x.lower()
-        if x[:-4]
-        in cons.market_exchange_symbols["shfe"] + cons.market_exchange_symbols["dce"]
-        else x
+        lambda x: (
+            x.lower()
+            if x[:-4]
+            in cons.market_exchange_symbols["shfe"]
+            + cons.market_exchange_symbols["dce"]
+            else x
+        )
     )
-    records.loc[:, "dominant_contract"] = records.loc[:, "dominant_contract"].apply(
-        lambda x: x.lower()
-        if x[:-4]
-        in cons.market_exchange_symbols["shfe"] + cons.market_exchange_symbols["dce"]
-        else x
+    records["dominant_contract"] = records["dominant_contract"].apply(
+        lambda x: (
+            x.lower()
+            if x[:-4]
+            in cons.market_exchange_symbols["shfe"]
+            + cons.market_exchange_symbols["dce"]
+            else x
+        )
     )
-    records.loc[:, "near_contract"] = records.loc[:, "near_contract"].apply(
-        lambda x: x[:-4] + x[-3:]
-        if x[:-4] in cons.market_exchange_symbols["czce"]
-        else x
+    records["near_contract"] = records["near_contract"].apply(
+        lambda x: (
+            x[:-4] + x[-3:] if x[:-4] in cons.market_exchange_symbols["czce"] else x
+        )
     )
-    records.loc[:, "dominant_contract"] = records.loc[:, "dominant_contract"].apply(
-        lambda x: x[:-4] + x[-3:]
-        if x[:-4] in cons.market_exchange_symbols["czce"]
-        else x
+    records["dominant_contract"] = records["dominant_contract"].apply(
+        lambda x: (
+            x[:-4] + x[-3:] if x[:-4] in cons.market_exchange_symbols["czce"] else x
+        )
     )
 
     records["near_basis"] = records["near_contract_price"] - records["spot_price"]
@@ -274,6 +283,7 @@ def _check_information(df_data, date):
     )
     # records.loc[:, "date"] = date.strftime("%Y%m%d")
     records.insert(0, "date", date.strftime("%Y%m%d"))
+    records.reset_index(inplace=True, drop=True)
     return records
 
 
@@ -306,7 +316,11 @@ def futures_spot_price_previous(date: str = "20240430") -> pd.DataFrame:
         warnings.warn(f"{date.strftime('%Y%m%d')}非交易日")
         return pd.DataFrame()
     url = date.strftime("https://www.100ppi.com/sf2/day-%Y-%m-%d.html")
-    content = pandas_read_html_link(url)
+    headers = {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,"
+        "image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+    }
+    content = pandas_read_html_link(url, headers=headers)
     main = content[1]
     # Header
     header = _join_head(main)
@@ -321,7 +335,8 @@ def futures_spot_price_previous(date: str = "20240430") -> pd.DataFrame:
         basis = pd.DataFrame(columns=["主力合约基差", "主力合约基差(%)"])
 
     basis.columns = ["主力合约基差", "主力合约基差(%)"]
-    # 20241125(jasonudu)：因为部分日期，存在多个品种的现货价格，比如20151125的白糖、豆粕、豆油等，如果用商品名来merge，会出现重复列名，所以改用index来merge
+    # 20241125(jasonudu)：因为部分日期，存在多个品种的现货价格，比如20151125的白糖、豆粕、豆油等，
+    # 如果用商品名来merge，会出现重复列名，所以改用index来merge
     # basis["商品"] = values["商品"].tolist()
     basis.index = values.index
     basis = pd.merge(
@@ -354,16 +369,17 @@ def futures_spot_price_previous(date: str = "20240430") -> pd.DataFrame:
         "180日内主力基差平均",
     ]
     basis["主力合约变动百分比"] = basis["主力合约变动百分比"].str.strip("%")
+    basis.reset_index(inplace=True, drop=True)
     return basis
 
 
 if __name__ == "__main__":
     futures_spot_price_daily_df = futures_spot_price_daily(
-        start_day="20250708", end_day="20250709", vars_list=["BZ", "RB"]
+        start_day="20260303", end_day="20260303", vars_list=['PL']
     )
     print(futures_spot_price_daily_df)
 
-    futures_spot_price_df = futures_spot_price(date="20250620")
+    futures_spot_price_df = futures_spot_price(date="20260303")
     print(futures_spot_price_df)
 
     futures_spot_price_previous_df = futures_spot_price_previous(date="20240430")

@@ -4095,7 +4095,7 @@ class JSON(object):
             c = buf.peek()
             if c and c in "-+0123456789.":  # First chars for a number-like value
                 buf.save_position()
-                nbr = buf.pop_while_in("-+0123456789abcdefABCDEF" "NaN" "Infinity.")
+                nbr = buf.pop_while_in("-+0123456789abcdefABCDEFNaNInfinity.")
                 if "." in nbr and self.has_hook("decode_float"):
                     hook_name = "decode_float"
                 elif self.has_hook("decode_number"):
@@ -4445,7 +4445,7 @@ class JSON(object):
                 state.append(s)
             return
 
-        global nan, inf, neginf  # noqa: F824
+        global nan, inf, neginf  # noqa
         if n is nan:
             state.append("NaN")
         elif n is inf:
@@ -6574,7 +6574,7 @@ MORE INFORMATION:
         pfx="",
         jsonopts=None,
     ):
-        global decode, encode  # noqa: F824
+        global decode, encode  # noqa
         success = self.SUCCESS_FAIL
         reformatted = None
         if show_stats:
@@ -6882,10 +6882,10 @@ the options --allow, --warn, or --forbid ; for example:
             elif opt in ("-e", "--encoding"):
                 input_encoding = val
                 output_encoding = val
-                escape_unicode = False  # noqa: F841
+                escape_unicode = False  # noqa
             elif opt in ("--output-encoding"):
                 output_encoding = val
-                escape_unicode = False  # noqa: F841
+                escape_unicode = False  # noqa
             elif opt in ("--input-encoding"):
                 input_encoding = val
             elif opt in ("--html-safe", "--xml-safe"):

@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 """
-Date: 2025/2/18 16:00
+Date: 2026/3/15 23:00
 Desc: 新浪财经-港股-实时行情数据和历史行情数据(包含前复权和后复权因子)
 https://stock.finance.sina.com.cn/hkstock/quotes/00700.html
 """
 
 import pandas as pd
-import py_mini_racer
+from py_mini_racer import MiniRacer
 import requests
 
 from akshare.stock.cons import (
@@ -16,6 +16,7 @@ from akshare.stock.cons import (
     hk_sina_stock_hist_hfq_url,
     hk_sina_stock_hist_qfq_url,
 )
+from akshare.utils.tqdm import get_tqdm
 
 
 def stock_hk_spot() -> pd.DataFrame:
@@ -35,7 +36,6 @@ def stock_hk_spot() -> pd.DataFrame:
         "_s_r_a": "init",
     }
     big_df = pd.DataFrame()
-    from akshare.utils.tqdm import get_tqdm
     tqdm = get_tqdm()
     for page in tqdm(range(1, 100), leave=False):
         params["page"] = str(page)
@@ -45,7 +45,6 @@ def stock_hk_spot() -> pd.DataFrame:
             break
         temp_df = pd.DataFrame(data_json)
         big_df = pd.concat(objs=[big_df, temp_df], ignore_index=True)
-
 
     big_df.columns = [
         "代码",
@@ -73,24 +72,26 @@ def stock_hk_spot() -> pd.DataFrame:
         "-",
         "-",
     ]
-    big_df = big_df[[
-        "日期时间",
-        "代码",
-        "中文名称",
-        "英文名称",
-        "交易类型",
-        "最新价",
-        "涨跌额",
-        "涨跌幅",
-        "昨收",
-        "今开",
-        "最高",
-        "最低",
-        "成交量",
-        "成交额",
-        "买一",
-        "卖一",
-    ]]
+    big_df = big_df[
+        [
+            "日期时间",
+            "代码",
+            "中文名称",
+            "英文名称",
+            "交易类型",
+            "最新价",
+            "涨跌额",
+            "涨跌幅",
+            "昨收",
+            "今开",
+            "最高",
+            "最低",
+            "成交量",
+            "成交额",
+            "买一",
+            "卖一",
+        ]
+    ]
     big_df["最新价"] = pd.to_numeric(big_df["最新价"], errors="coerce")
     big_df["涨跌额"] = pd.to_numeric(big_df["涨跌额"], errors="coerce")
     big_df["涨跌幅"] = pd.to_numeric(big_df["涨跌幅"], errors="coerce")
@@ -117,7 +118,7 @@ def stock_hk_daily(symbol: str = "00981", adjust: str = "") -> pd.DataFrame:
     :rtype: pandas.DataFrame
     """
     r = requests.get(hk_sina_stock_hist_url.format(symbol))
-    js_code = py_mini_racer.MiniRacer()
+    js_code = MiniRacer()
     js_code.eval(hk_js_decode)
     dict_list = js_code.call(
         "d", r.text.split("=")[1].split(";")[0].replace('"', "")
@@ -158,28 +159,12 @@ def stock_hk_daily(symbol: str = "00981", adjust: str = "") -> pd.DataFrame:
         new_range = pd.merge(
             temp_df, hfq_factor_df, left_index=True, right_index=True, how="outer"
         )
-        try:
-            # try for pandas >= 2.1.0
-            new_range.ffill(inplace=True)
-        except Exception:
-            try:
-                new_range.fillna(method="ffill", inplace=True)
-            except Exception as e:
-                print("Error:", e)
+        new_range.ffill(inplace=True)
         new_range = new_range.iloc[:, [1, 2]]
-
         temp_df = pd.merge(
             data_df, new_range, left_index=True, right_index=True, how="outer"
         )
-        try:
-            # try for pandas >= 2.1.0
-            temp_df.ffill(inplace=True)
-        except Exception:
-            try:
-                # try for pandas < 2.1.0
-                temp_df.fillna(method="ffill", inplace=True)
-            except Exception as e:
-                print("Error:", e)
+        temp_df.ffill(inplace=True)
         temp_df.drop_duplicates(
             subset=["open", "high", "low", "close", "volume"], inplace=True
         )
@@ -222,29 +207,12 @@ def stock_hk_daily(symbol: str = "00981", adjust: str = "") -> pd.DataFrame:
         new_range = pd.merge(
             temp_df, qfq_factor_df, left_index=True, right_index=True, how="outer"
         )
-        try:
-            # try for pandas >= 2.1.0
-            new_range.ffill(inplace=True)
-        except Exception:
-            try:
-                # try for pandas < 2.1.0
-                new_range.fillna(method="ffill", inplace=True)
-            except Exception as e:
-                print("Error:", e)
+        new_range.ffill(inplace=True)
         new_range = new_range.iloc[:, [1]]
-
         temp_df = pd.merge(
             data_df, new_range, left_index=True, right_index=True, how="outer"
         )
-        try:
-            # try for pandas >= 2.1.0
-            temp_df.ffill(inplace=True)
-        except Exception:
-            try:
-                # try for pandas < 2.1.0
-                temp_df.fillna(method="ffill", inplace=True)
-            except Exception as e:
-                print("Error:", e)
+        temp_df.ffill(inplace=True)
         temp_df.drop_duplicates(
             subset=["open", "high", "low", "close", "volume"], inplace=True
         )

@@ -23,8 +23,10 @@ def __get_99_symbol_map() -> pd.DataFrame:
     :return: 品种代码对照表
     :rtype: pandas.DataFrame
     """
+    import warnings
+    warnings.filterwarnings("ignore")
     url = "https://www.99qh.com/data/stockIn"
-    r = requests.get(url)
+    r = requests.get(url, verify=False)
     soup = BeautifulSoup(r.text, features="lxml")
     raw_data = soup.find(attrs={"id": "__NEXT_DATA__"}).text
     data_json = json.loads(raw_data)
@@ -50,6 +52,8 @@ def futures_inventory_99(symbol: str = "豆一") -> pd.DataFrame:
     :return: 大宗商品库存数据
     :rtype: pandas.DataFrame
     """
+    import warnings
+    warnings.filterwarnings("ignore")
     temp_df = __get_99_symbol_map()
     symbol_name_map = dict(zip(temp_df["name"], temp_df["productId"]))
     symbol_code_map = dict(zip(temp_df["code"], temp_df["productId"]))
@@ -63,8 +67,8 @@ def futures_inventory_99(symbol: str = "豆一") -> pd.DataFrame:
     url = "https://centerapi.fx168api.com/app/qh/api/stock/trend"
     headers = {
         "Content-Type": "application/json;charset=UTF-8",
-        "_pcc": "Km+8HvRZpwuTQevs9gsuZsqDqExHrbSybJ2owcl8Mlz8vRgIuzoVIGUDD+WkESBlOWbSC3sKLxA4M4sG57vC0V"
-                "KPdI+MX+IpDC4NViRU6TSftUi9Jeqer88KW8BvEmYMOTdUgyYuo27yjgAT28wWSYDiHBCBHiWX97lJydFI8ec=",
+        "_pcc": "EsaNkne9QG4I9UVJ7SWrJg2qdijCOn5B9HYFtyP0ybvBJxY4rhONnGQLU4QwEICzum+cJJR2/iQXf"
+                "DOrqvK3JYgLxJ5bchYkyUU8qRQ3mwcpA/kyYUSioAs4gd+9s1xPhWF7YOp8bAlEGumxbGCziTq2A8up6sdOYV+hnU/b1iM=",
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
                       "Chrome/58.0.3029.110 Safari/537.3",
         "referer": "https://www.99qh.com",
@@ -79,7 +83,7 @@ def futures_inventory_99(symbol: str = "豆一") -> pd.DataFrame:
         "endDate": f"{datetime.now().date().isoformat()}",
         "appCategory": "web",
     }
-    r = requests.get(url, params, headers=headers)
+    r = requests.get(url, params, headers=headers, verify=False)
     data_json = r.json()
     temp_df = pd.DataFrame(data_json["data"]["list"])
     temp_df.columns = ["日期", "收盘价", "库存"]

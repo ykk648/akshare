@@ -1,7 +1,7 @@
 # !/usr/bin/env python
 # -*- coding:utf-8 -*-
 """
-Date: 2025/8/30 15:00
+Date: 2026/1/13 15:00
 Desc: 雪球-行情中心-个股
 https://xueqiu.com/S/SH513520
 """
@@ -44,6 +44,7 @@ def stock_individual_spot_xq(
     :rtype: pandas.DataFrame
     """
     from akshare.stock.cons import xq_a_token
+
     session = requests.Session()
     xq_a_token = token or xq_a_token
     headers = {

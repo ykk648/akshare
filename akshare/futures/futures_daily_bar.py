@@ -549,23 +549,26 @@ def get_dce_daily(date: str = "20251027") -> pd.DataFrame:
     }
     r = requests.post(url, json=payload)
     data_json = r.json()
-    temp_df = pd.DataFrame(data_json['data'])
-    temp_df.rename(columns={
-        "variety": "品种名称",
-        "contractId": "合约",
-        "open": "开盘价",
-        "high": "最高价",
-        "low": "最低价",
-        "close": "收盘价",
-        "lastClear": "前结算价",
-        "clearPrice": "结算价",
-        "diff": "涨跌",
-        "diff1": "涨跌1",
-        "volumn": "成交量",
-        "openInterest": "持仓量",
-        "diffI": "持仓量变化",
-        "turnover": "成交额",
-    }, inplace=True)
+    temp_df = pd.DataFrame(data_json["data"])
+    temp_df.rename(
+        columns={
+            "variety": "品种名称",
+            "contractId": "合约",
+            "open": "开盘价",
+            "high": "最高价",
+            "low": "最低价",
+            "close": "收盘价",
+            "lastClear": "前结算价",
+            "clearPrice": "结算价",
+            "diff": "涨跌",
+            "diff1": "涨跌1",
+            "volumn": "成交量",
+            "openInterest": "持仓量",
+            "diffI": "持仓量变化",
+            "turnover": "成交额",
+        },
+        inplace=True,
+    )
     temp_df = temp_df[~temp_df["品种名称"].str.contains("小计")]
     temp_df = temp_df[~temp_df["品种名称"].str.contains("总计")]
     temp_df["variety"] = temp_df["品种名称"].map(lambda x: cons.DCE_MAP[x])
@@ -691,6 +694,63 @@ def get_futures_daily(
         return pd.DataFrame()
 
 
+def futures_hist_daily_cffex(date: str = "20260403") -> pd.DataFrame:
+    """
+    中国金融期货交易所-交易所日交易数据
+    http://www.cffex.com.cn/cn/rtj.html
+    :param date: 交易日
+    :type date: str
+    :return: 交易所日交易数据
+    :rtype: pandas.DataFrame
+    """
+    url = f"http://www.cffex.com.cn/sj/hqsj/rtj/{date[:6]}/{date[6:]}/{date}_1.csv"
+    data_df = pd.read_csv(url, encoding="gbk")
+    data_df = data_df[data_df["合约代码"] != "小计"]
+    data_df = data_df[data_df["合约代码"] != "合计"]
+    data_df = data_df[~data_df["合约代码"].str.contains("IO")]
+    data_df = data_df[~data_df["合约代码"].str.contains("MO")]
+    data_df = data_df[~data_df["合约代码"].str.contains("HO")]
+    data_df.reset_index(inplace=True, drop=True)
+    data_df["合约代码"] = data_df["合约代码"].str.strip()
+    symbol_list = data_df["合约代码"].to_list()
+    variety_list = [re.compile(r"[a-zA-Z_]+").findall(item)[0] for item in symbol_list]
+    data_df.columns = [
+        "symbol",
+        "open",
+        "high",
+        "low",
+        "volume",
+        "turnover",
+        "open_interest",
+        "_",
+        "close",
+        "settle",
+        "pre_settle",
+        "_",
+        "_",
+        "_",
+    ]
+    data_df["date"] = date
+    data_df["variety"] = variety_list
+    data_df = data_df[
+        [
+            "symbol",
+            "date",
+            "open",
+            "high",
+            "low",
+            "close",
+            "volume",
+            "open_interest",
+            "turnover",
+            "settle",
+            "pre_settle",
+            "variety",
+        ]
+    ]
+    return data_df
+
+
 if __name__ == "__main__":
     get_futures_daily_df = get_futures_daily(
         start_date="20250708", end_date="20250708", market="DCE"
@@ -700,7 +760,7 @@ if __name__ == "__main__":
     get_dce_daily_df = get_dce_daily(date="20251029")
     print(get_dce_daily_df)
 
-    get_cffex_daily_df = get_cffex_daily(date="20230810")
+    get_cffex_daily_df = get_cffex_daily(date="20260401")
     print(get_cffex_daily_df)
 
     get_ine_daily_df = get_ine_daily(date="20230818")
@@ -714,3 +774,6 @@ if __name__ == "__main__":
 
     get_gfex_daily_df = get_gfex_daily(date="20221228")
     print(get_gfex_daily_df)
+
+    futures_hist_daily_cffex_df = futures_hist_daily_cffex(date="20260302")
+    print(futures_hist_daily_cffex_df)
