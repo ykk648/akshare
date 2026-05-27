@@ -89,6 +89,46 @@
 
 ## 更新说明详情
 
+1.18.63 fix: fix stock_a_high_low_statistics interface
+
+	1. 修复 stock_a_high_low_statistics 接口
+
+1.18.62 fix: fix stock_market_activity_legu interface
+
+	1. 修复 stock_market_activity_legu 接口
+
+1.18.61 fix: fix stock_individual_spot_xq interface
+
+	1. 修复 stock_individual_spot_xq 接口
+
+1.18.60 fix: fix stock_zh_index_daily_tx interface
+
+	1. 修复 stock_zh_index_daily_tx 接口
+	2. 修复 fund_info_ths 接口
+	3. 修复 game_hot_rank_taptap 接口
+
+1.18.59 fix: fix stock_board_concept_hist_min_em interface
+
+	1. 修复 stock_board_concept_hist_min_em 接口
+	2. 修复 futures_index_ccidx 接口
+	3. 修复 stock_rank_cxg_ths 接口
+	4. 修复 futures_inventory_99 接口
+
+1.18.58 fix: fix stock_individual_spot_xq interface
+
+	1. 修复 stock_individual_spot_xq 接口
+	2. 修复 fund_etf_spot_em 接口
+	3. 修复 fund_graded_fund_daily_em 接口
+	4. 修复 fund_hk_fund_hist_em 接口
+
+1.18.57 fix: fix bond_info_detail_cm interface
+
+	1. 修复 bond_info_detail_cm 接口
+
+1.18.56 fix: fix stock_zh_a_spot_tx interface
+
+	1. 修复 stock_zh_a_spot_tx 接口
+
 1.18.55 fix: fix bond_index_general_cbond interface
 
 	1. 修复 bond_index_general_cbond 接口
@@ -6255,6 +6295,22 @@
     3. 修改 air_quality_hist 接口的请求日期格式，从 '2022-01-01' 为 '20220101'
 
 ## 版本更新说明
+
+1.18.63 fix: fix stock_a_high_low_statistics interface
+
+1.18.62 fix: fix stock_market_activity_legu interface
+
+1.18.61 fix: fix stock_individual_spot_xq interface
+
+1.18.60 fix: fix stock_zh_index_daily_tx interface
+
+1.18.59 fix: fix stock_board_concept_hist_min_em interface
+
+1.18.58 fix: fix stock_individual_spot_xq interface
+
+1.18.57 fix: fix bond_info_detail_cm interface
+
+1.18.56 fix: fix stock_zh_a_spot_tx interface
 
 1.18.55 fix: fix bond_index_general_cbond interface
 
