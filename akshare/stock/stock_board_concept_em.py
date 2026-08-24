@@ -12,18 +12,22 @@ from functools import lru_cache
 import pandas as pd
 import requests
 
+from akshare.exceptions import APIError, InvalidParameterError
 from akshare.utils.func import fetch_paginated_data
 
 
-@lru_cache()
-def __stock_board_concept_name_em() -> pd.DataFrame:
+def _fetch_stock_board_concept_name_em() -> pd.DataFrame:
     """
-    东方财富网-行情中心-沪深京板块-概念板块-名称
-    https://quote.eastmoney.com/center/boardlist.html#concept_board
-    :return: 概念板块-名称
+    获取东方财富概念板块名称列表。
+
+    :return: 概念板块名称列表
     :rtype: pandas.DataFrame
     """
-    url = "https://79.push2.eastmoney.com/api/qt/clist/get"
+    url_list = [
+        "https://79.push2.eastmoney.com/api/qt/clist/get",
+        "https://17.push2.eastmoney.com/api/qt/clist/get",
+        "https://push2.eastmoney.com/api/qt/clist/get",
+    ]
     params = {
         "pn": "1",
         "pz": "100",
@@ -34,9 +38,29 @@ def __stock_board_concept_name_em() -> pd.DataFrame:
         "invt": "2",
         "fid": "f12",
         "fs": "m:90 t:3 f:!50",
-        "fields": "f2,f3,f4,f8,f12,f14,f15,f16,f17,f18,f20,f21,f24,f25,f22,f33,f11,f62,f128,f124,f107,f104,f105,f136",
+        "fields": "f2,f3,f4,f8,f12,f14,f15,f16,f17,f18,f20,f21,f24,f25,"
+        "f22,f33,f11,f62,f128,f124,f107,f104,f105,f136",
     }
-    temp_df = fetch_paginated_data(url, params)
+    last_exception = None
+    for url in url_list:
+        try:
+            return fetch_paginated_data(url, params)
+        except requests.RequestException as err:
+            last_exception = err
+    if last_exception is not None:
+        raise last_exception
+    return pd.DataFrame()
+
+
+@lru_cache()
+def __stock_board_concept_name_em() -> pd.DataFrame:
+    """
+    东方财富网-行情中心-沪深京板块-概念板块-名称
+    https://quote.eastmoney.com/center/boardlist.html#concept_board
+    :return: 概念板块-名称
+    :rtype: pandas.DataFrame
+    """
+    temp_df = _fetch_stock_board_concept_name_em()
     temp_df.columns = [
         "排名",
         "最新价",
@@ -102,76 +126,7 @@ def stock_board_concept_name_em() -> pd.DataFrame:
     :return: 概念板块-名称
     :rtype: pandas.DataFrame
     """
-    url = "https://79.push2.eastmoney.com/api/qt/clist/get"
-    params = {
-        "pn": "1",
-        "pz": "100",
-        "po": "1",
-        "np": "1",
-        "ut": "bd1d9ddb04089700cf9c27f6f7426281",
-        "fltt": "2",
-        "invt": "2",
-        "fid": "f12",
-        "fs": "m:90 t:3 f:!50",
-        "fields": "f2,f3,f4,f8,f12,f14,f15,f16,f17,f18,f20,f21,f24,f25,f22,f33,f11,f62,f128,f124,f107,f104,f105,f136",
-    }
-    temp_df = fetch_paginated_data(url, params)
-    temp_df.columns = [
-        "排名",
-        "最新价",
-        "涨跌幅",
-        "涨跌额",
-        "换手率",
-        "_",
-        "板块代码",
-        "板块名称",
-        "_",
-        "_",
-        "_",
-        "_",
-        "总市值",
-        "_",
-        "_",
-        "_",
-        "_",
-        "_",
-        "_",
-        "上涨家数",
-        "下跌家数",
-        "_",
-        "_",
-        "领涨股票",
-        "_",
-        "_",
-        "领涨股票-涨跌幅",
-    ]
-    temp_df = temp_df[
-        [
-            "排名",
-            "板块名称",
-            "板块代码",
-            "最新价",
-            "涨跌额",
-            "涨跌幅",
-            "总市值",
-            "换手率",
-            "上涨家数",
-            "下跌家数",
-            "领涨股票",
-            "领涨股票-涨跌幅",
-        ]
-    ]
-    temp_df["最新价"] = pd.to_numeric(temp_df["最新价"], errors="coerce")
-    temp_df["涨跌额"] = pd.to_numeric(temp_df["涨跌额"], errors="coerce")
-    temp_df["涨跌幅"] = pd.to_numeric(temp_df["涨跌幅"], errors="coerce")
-    temp_df["总市值"] = pd.to_numeric(temp_df["总市值"], errors="coerce")
-    temp_df["换手率"] = pd.to_numeric(temp_df["换手率"], errors="coerce")
-    temp_df["上涨家数"] = pd.to_numeric(temp_df["上涨家数"], errors="coerce")
-    temp_df["下跌家数"] = pd.to_numeric(temp_df["下跌家数"], errors="coerce")
-    temp_df["领涨股票-涨跌幅"] = pd.to_numeric(
-        temp_df["领涨股票-涨跌幅"], errors="coerce"
-    )
-    return temp_df
+    return __stock_board_concept_name_em().copy()
 
 
 def stock_board_concept_spot_em(symbol: str = "可燃冰") -> pd.DataFrame:
@@ -217,7 +172,7 @@ def stock_board_concept_spot_em(symbol: str = "可燃冰") -> pd.DataFrame:
     result.columns = ["item", "value"]
     result["value"] = pd.to_numeric(result["value"], errors="coerce")
 
-    # 各项转换成正常单位. 除了成交量与成交额, 原始数据中已是正常单位(元)
+    # 各项转换成正常单位。除了成交量与成交额，原始数据中已是正常单位（元）
     result["value"] = result["value"] * 1e-2
     result.iloc[4, 1] = result.iloc[4, 1] * 1e2
     result.iloc[5, 1] = result.iloc[5, 1] * 1e2
@@ -236,17 +191,30 @@ def stock_board_concept_hist_em(
     https://quote.eastmoney.com/bk/90.BK0715.html
     :param symbol: 板块名称
     :type symbol: str
-    :type period: 周期; choice of {"daily", "weekly", "monthly"}
+    :type period: 周期；choice of {"daily", "weekly", "monthly"}
     :param period: 板块名称
     :param start_date: 开始时间
     :type start_date: str
     :param end_date: 结束时间
     :type end_date: str
-    :param adjust: choice of {'': 不复权, "qfq": 前复权, "hfq": 后复权}
+    :param adjust: choice of {'': 不复权，"qfq": 前复权，"hfq": 后复权}
     :type adjust: str
     :return: 历史行情
     :rtype: pandas.DataFrame
     """
+    columns = [
+        "日期",
+        "开盘",
+        "收盘",
+        "最高",
+        "最低",
+        "涨跌幅",
+        "涨跌额",
+        "成交量",
+        "成交额",
+        "振幅",
+        "换手率",
+    ]
     period_map = {
         "daily": "101",
         "weekly": "102",
@@ -256,9 +224,12 @@ def stock_board_concept_hist_em(
         stock_board_code = symbol
     else:
         stock_board_concept_em_map = __stock_board_concept_name_em()
-        stock_board_code = stock_board_concept_em_map[
+        stock_board_code_df = stock_board_concept_em_map[
             stock_board_concept_em_map["板块名称"] == symbol
-            ]["板块代码"].values[0]
+        ]
+        if stock_board_code_df.empty:
+            raise InvalidParameterError(f"未找到概念板块: {symbol}")
+        stock_board_code = stock_board_code_df["板块代码"].values[0]
     adjust_map = {"": "0", "qfq": "1", "hfq": "2"}
     url = "https://91.push2his.eastmoney.com/api/qt/stock/kline/get"
     params = {
@@ -273,8 +244,33 @@ def stock_board_concept_hist_em(
         "lmt": "1000000",
     }
     r = requests.get(url, params=params)
-    data_json = r.json()
-    temp_df = pd.DataFrame([item.split(",") for item in data_json["data"]["klines"]])
+    try:
+        data_json = r.json()
+    except ValueError as err:
+        raise APIError("东方财富概念板块历史行情接口返回了无效的 JSON 数据") from err
+    if not isinstance(data_json, dict):
+        raise APIError("东方财富概念板块历史行情接口返回了异常响应")
+
+    data = data_json.get("data")
+    if data is None:
+        error_detail = (
+            data_json.get("dsc") or data_json.get("msg") or "未返回有效的行情数据"
+        )
+        if re.match(pattern=r"^BK\d+", string=symbol):
+            raise InvalidParameterError(
+                f"无效的概念板块代码: {stock_board_code}; 东方财富返回: {error_detail}"
+            )
+        raise APIError(f"东方财富概念板块历史行情接口未返回有效数据: {error_detail}")
+    if not isinstance(data, dict):
+        raise APIError("东方财富概念板块历史行情接口返回体结构异常")
+
+    klines = data.get("klines")
+    if not klines:
+        return pd.DataFrame(columns=columns)
+    if not isinstance(klines, list):
+        raise APIError("东方财富概念板块历史行情接口返回的 klines 字段格式异常")
+
+    temp_df = pd.DataFrame([item.split(",") for item in klines])
     temp_df.columns = [
         "日期",
         "开盘",
@@ -288,21 +284,7 @@ def stock_board_concept_hist_em(
         "涨跌额",
         "换手率",
     ]
-    temp_df = temp_df[
-        [
-            "日期",
-            "开盘",
-            "收盘",
-            "最高",
-            "最低",
-            "涨跌幅",
-            "涨跌额",
-            "成交量",
-            "成交额",
-            "振幅",
-            "换手率",
-        ]
-    ]
+    temp_df = temp_df[columns]
     temp_df["开盘"] = pd.to_numeric(temp_df["开盘"], errors="coerce")
     temp_df["收盘"] = pd.to_numeric(temp_df["收盘"], errors="coerce")
     temp_df["最高"] = pd.to_numeric(temp_df["最高"], errors="coerce")
@@ -335,7 +317,7 @@ def stock_board_concept_hist_min_em(
         stock_board_concept_em_map = __stock_board_concept_name_em()
         stock_board_code = stock_board_concept_em_map[
             stock_board_concept_em_map["板块名称"] == symbol
-            ]["板块代码"].values[0]
+        ]["板块代码"].values[0]
     if period == "1":
         url = "https://push2his.eastmoney.com/api/qt/stock/trends2/get"
         params = {

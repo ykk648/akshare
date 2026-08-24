@@ -1,25 +1,27 @@
-## [AKShare](https://github.com/akfamily/akshare) 债券数据
+# [AKShare](https://github.com/akfamily/akshare) 债券数据
 
-#### 债券查询
+## 债券基础信息
 
-接口: bond_info_cm
+### 债券查询
 
-目标地址: https://www.chinamoney.com.cn/chinese/scsjzqxx/
+接口：bond_info_cm
 
-描述: 中国外汇交易中心暨全国银行间同业拆借中心-数据-债券信息-信息查询
+目标地址：https://www.chinamoney.com.cn/chinese/scsjzqxx/
+
+描述：中国外汇交易中心暨全国银行间同业拆借中心-数据-债券信息-信息查询
 
 输入参数
 
 | 名称          | 类型  | 描述                                                      |
 |-------------|-----|---------------------------------------------------------|
-| bond_name   | str | bond_name=""; 默认为空                                      |
-| bond_code   | str | bond_code=""; 默认为空                                      |
-| bond_issue  | str | bond_issue=""; 默认为空, 通过 ak.bond_info_cm_query() 查询相关参数  |
-| bond_type   | str | bond_type=""; 默认为空, 通过 ak.bond_info_cm_query() 查询相关参数   |
-| coupon_type | str | coupon_type=""; 默认为空, 通过 ak.bond_info_cm_query() 查询相关参数 |
-| issue_year  | str | issue_year=""; 默认为空                                     |
-| underwriter | str | underwriter=""; 默认为空, 通过 ak.bond_info_cm_query() 查询相关参数 |
-| grade       | str | grade=""; 默认为空                                          |
+| bond_name   | str | bond_name=""；默认为空                                      |
+| bond_code   | str | bond_code=""；默认为空                                      |
+| bond_issue  | str | bond_issue=""；默认为空，通过 ak.bond_info_cm_query() 查询相关参数  |
+| bond_type   | str | bond_type=""；默认为空，通过 ak.bond_info_cm_query() 查询相关参数   |
+| coupon_type | str | coupon_type=""；默认为空，通过 ak.bond_info_cm_query() 查询相关参数 |
+| issue_year  | str | issue_year=""；默认为空                                     |
+| underwriter | str | underwriter=""；默认为空，通过 ak.bond_info_cm_query() 查询相关参数 |
+| grade       | str | grade=""；默认为空                                          |
 
 输出参数
 
@@ -51,19 +53,19 @@ print(bond_info_cm_df)
 2  19万林投资CP001  041900126  重庆万林投资发展有限公司  短期融资券  2019-03-25    A-1  695327xh9n
 ```
 
-#### 债券基础信息
+### 债券基础信息
 
-接口: bond_info_detail_cm
+接口：bond_info_detail_cm
 
-目标地址: https://www.chinamoney.com.cn/chinese/zqjc/?bondDefinedCode=egfjh08154
+目标地址：https://www.chinamoney.com.cn/chinese/zqjc/?bondDefinedCode=egfjh08154
 
-描述: 中国外汇交易中心暨全国银行间同业拆借中心-数据-债券信息-信息查询-债券详情
+描述：中国外汇交易中心暨全国银行间同业拆借中心-数据-债券信息-信息查询-债券详情
 
 输入参数
 
 | 名称     | 类型  | 描述                                                 |
 |--------|-----|----------------------------------------------------|
-| symbol | str | symbol="19万林投资CP001"; 通过 ak.bond_info_cm() 查询 债券简称 |
+| symbol | str | symbol="19万林投资CP001"；通过 ak.bond_info_cm() 查询 债券简称 |
 
 输出参数
 
@@ -99,27 +101,27 @@ print(bond_info_detail_cm_df)
 [64 rows x 2 columns]
 ```
 
-### 债券基础名词
+## 债券基础名词
 
-#### 固定收益证券
+### 固定收益证券
 
-是指持券人可以在特定的时间内取得固定的收益并预先知道取得收益的数量和时间, 如固定利率债券、优先股股票等.
+是指持券人可以在特定的时间内取得固定的收益并预先知道取得收益的数量和时间，如固定利率债券、优先股股票等。
 
-#### 国债
+### 国债
 
-国债又称国家公债, 是国家以其信用为基础, 按照债券的一般原则, 通过向社会发行债券筹集资金所形成的债权债务关系. 国债是中央政府为筹集财政资金而发行的一种政府债券, 由中央政府向投资者出具的、承诺在一定时期支付利息和到期偿还本金的债权债务凭证, 由于国债的发行主体是国家, 所以它具有最高的信用度, 被公认为是最安全的投资工具.
+国债又称国家公债，是国家以其信用为基础，按照债券的一般原则，通过向社会发行债券筹集资金所形成的债权债务关系。国债是中央政府为筹集财政资金而发行的一种政府债券，由中央政府向投资者出具的、承诺在一定时期支付利息和到期偿还本金的债权债务凭证，由于国债的发行主体是国家，所以它具有最高的信用度，被公认为是最安全的投资工具。
 
-### 上交所债券
+## 上交所债券
 
-#### 债券现券市场概览
+### 债券现券市场概览
 
-接口: bond_cash_summary_sse
+接口：bond_cash_summary_sse
 
-目标地址: https://bond.sse.com.cn/data/statistics/overview/bondow/
+目标地址：https://bond.sse.com.cn/data/statistics/overview/bondow/
 
-描述: 上登债券信息网-市场数据-市场统计-市场概览-债券现券市场概览
+描述：上登债券信息网-市场数据-市场统计-市场概览-债券现券市场概览
 
-限量: 单次返回指定交易日的债券现券市场概览数据
+限量：单次返回指定交易日的债券现券市场概览数据
 
 输入参数
 
@@ -133,8 +135,8 @@ print(bond_info_detail_cm_df)
 |------|---------|----------|
 | 债券现货 | object  | -        |
 | 托管只数 | int64   | -        |
-| 托管市值 | float64 | 注意单位: 亿元 |
-| 托管面值 | float64 | 注意单位: 亿元 |
+| 托管市值 | float64 | 注意单位：亿元 |
+| 托管面值 | float64 | 注意单位：亿元 |
 | 数据日期 | object  | -        |
 
 接口示例
@@ -162,15 +164,15 @@ print(bond_cash_summary_sse_df)
 9         合计  20469  132102.75  131997.40  2021-01-11
 ```
 
-#### 债券成交概览
+### 债券成交概览
 
-接口: bond_deal_summary_sse
+接口：bond_deal_summary_sse
 
-目标地址: http://bond.sse.com.cn/data/statistics/overview/turnover/
+目标地址：http://bond.sse.com.cn/data/statistics/overview/turnover/
 
-描述: 上登债券信息网-市场数据-市场统计-市场概览-债券成交概览
+描述：上登债券信息网-市场数据-市场统计-市场概览-债券成交概览
 
-限量: 单次返回指定交易日的债券成交概览数据
+限量：单次返回指定交易日的债券成交概览数据
 
 输入参数
 
@@ -184,9 +186,9 @@ print(bond_cash_summary_sse_df)
 |--------|---------|----------|
 | 债券类型   | object  | -        |
 | 当日成交笔数 | int64   | -        |
-| 当日成交金额 | float64 | 注意单位: 万元 |
+| 当日成交金额 | float64 | 注意单位：万元 |
 | 当年成交笔数 | int64   | -        |
-| 当年成交金额 | float64 | 注意单位: 万元 |
+| 当年成交金额 | float64 | 注意单位：万元 |
 | 数据日期   | object  | -        |
 
 接口示例
@@ -218,23 +220,23 @@ print(bond_summary_sse_df)
 13        合计  934261  4700623.60  934261  4700623.60  2021-01-04
 ```
 
-### 债券基础数据
+## 债券基础数据
 
-#### 银行间市场债券发行基础数据
+### 银行间市场债券发行基础数据
 
-接口: bond_debt_nafmii
+接口：bond_debt_nafmii
 
-目标地址: http://zhuce.nafmii.org.cn/fans/publicQuery/manager
+目标地址：http://zhuce.nafmii.org.cn/fans/publicQuery/manager
 
-描述: 中国银行间市场交易商协会-非金融企业债务融资工具注册信息系统
+描述：中国银行间市场交易商协会-非金融企业债务融资工具注册信息系统
 
-限量: 单次获取指定 page 页面数据的 50 条数据
+限量：单次获取指定 page 页面数据的 50 条数据
 
 输入参数
 
 | 名称   | 类型  | 描述                     |
 |------|-----|------------------------|
-| page | str | page="1", 需要获取第 page 页 |
+| page | str | page="1"，需要获取第 page 页 |
 
 输出参数
 
@@ -314,17 +316,17 @@ print(bond_debt_nafmii_df)
 [50 rows x 7 columns]
 ```
 
-### 中国债券市场行情数据
+## 中国债券市场行情数据
 
-#### 现券市场做市报价
+### 现券市场做市报价
 
-接口: bond_spot_quote
+接口：bond_spot_quote
 
-目标地址: https://www.chinamoney.com.cn/chinese/mkdatabond/
+目标地址：https://www.chinamoney.com.cn/chinese/mkdatabond/
 
-描述: 中国外汇交易中心暨全国银行间同业拆借中心-市场数据-市场行情-债券市场行情-现券市场做市报价
+描述：中国外汇交易中心暨全国银行间同业拆借中心-市场数据-市场行情-债券市场行情-现券市场做市报价
 
-限量: 单次返回所有数据
+限量：单次返回所有数据
 
 输入参数
 
@@ -338,10 +340,10 @@ print(bond_debt_nafmii_df)
 |-------|---------|---------|
 | 报价机构  | object  |         |
 | 债券简称  | object  |         |
-| 买入净价  | float64 | 注意单位: 元 |
-| 卖出净价  | float64 | 注意单位: 元 |
-| 买入收益率 | float64 | 注意单位: % |
-| 卖出收益率 | float64 | 注意单位: % |
+| 买入净价  | float64 | 注意单位：元 |
+| 卖出净价  | float64 | 注意单位：元 |
+| 买入收益率 | float64 | 注意单位：% |
+| 卖出收益率 | float64 | 注意单位：% |
 
 接口示例
 
@@ -373,15 +375,15 @@ print(bond_spot_quote_df)
 14      平安证券  18进出03  102.35  102.52  2.295  2.1000
 ```
 
-#### 现券市场成交行情
+### 现券市场成交行情
 
-接口: bond_spot_deal
+接口：bond_spot_deal
 
-目标地址: https://www.chinamoney.com.cn/chinese/mkdatabond/
+目标地址：https://www.chinamoney.com.cn/chinese/mkdatabond/
 
-描述: 中国外汇交易中心暨全国银行间同业拆借中心-市场数据-市场行情-债券市场行情-现券市场成交行情
+描述：中国外汇交易中心暨全国银行间同业拆借中心-市场数据-市场行情-债券市场行情-现券市场成交行情
 
-限量: 单次返回所有即期数据
+限量：单次返回所有即期数据
 
 输入参数
 
@@ -394,11 +396,11 @@ print(bond_spot_quote_df)
 | 名称    | 类型      | 描述       |
 |-------|---------|----------|
 | 债券简称  | object  | -        |
-| 成交净价  | float64 | 注意单位: 元  |
-| 最新收益率 | float64 | 注意单位: %  |
-| 涨跌    | float64 | 注意单位: BP |
-| 加权收益率 | float64 | 注意单位: %  |
-| 交易量   | float64 | 注意单位: 亿  |
+| 成交净价  | float64 | 注意单位：元  |
+| 最新收益率 | float64 | 注意单位：%  |
+| 涨跌    | float64 | 注意单位：BP |
+| 加权收益率 | float64 | 注意单位：%  |
+| 交易量   | float64 | 注意单位：亿  |
 
 接口示例
 
@@ -427,22 +429,22 @@ print(bond_spot_deal_df)
 [1780 rows x 6 columns]
 ```
 
-#### 国债及其他债券收益率曲线
+### 国债及其他债券收益率曲线
 
-接口: bond_china_yield
+接口：bond_china_yield
 
-目标地址: https://yield.chinabond.com.cn/cbweb-pbc-web/pbc/historyQuery?startDate=2019-02-07&endDate=2020-02-04&gjqx=0&qxId=ycqx&locale=cn_ZH
+目标地址：https://yield.chinabond.com.cn/cbweb-pbc-web/pbc/historyQuery?startDate=2019-02-07&endDate=2020-02-04&gjqx=0&qxId=ycqx&locale=cn_ZH
 
-描述: 中国债券信息网-国债及其他债券收益率曲线
+描述：中国债券信息网-国债及其他债券收益率曲线
 
-限量: 单次返回所有指定日期间 start_date 到 end_date 需要小于一年的所有数据
+限量：单次返回所有指定日期间 start_date 到 end_date 需要小于一年的所有数据
 
 输入参数
 
 | 名称         | 类型  | 描述                                                          |
 |------------|-----|-------------------------------------------------------------|
-| start_date | str | start_date="20190204", 指定开始日期; start_date 到 end_date 需要小于一年 |
-| end_date   | str | end_date="20200204", 指定结束日期; start_date 到 end_date 需要小于一年   |
+| start_date | str | start_date="20190204"，指定开始日期；start_date 到 end_date 需要小于一年 |
+| end_date   | str | end_date="20200204"，指定结束日期；start_date 到 end_date 需要小于一年   |
 
 输出参数
 
@@ -486,24 +488,24 @@ print(bond_china_yield_df)
 [753 rows x 10 columns]
 ```
 
-### 沪深债券
+## 沪深债券
 
-#### 实时行情数据
+### 实时行情数据
 
-接口: bond_zh_hs_spot
+接口：bond_zh_hs_spot
 
-目标地址: https://vip.stock.finance.sina.com.cn/mkt/#hs_z
+目标地址：https://vip.stock.finance.sina.com.cn/mkt/#hs_z
 
-描述: 新浪财经-债券-沪深债券-实时行情数据
+描述：新浪财经-债券-沪深债券-实时行情数据
 
-限量: 单次返回所有沪深债券的实时行情数据
+限量：单次返回所有沪深债券的实时行情数据
 
 输入参数
 
 | 名称         | 类型  | 描述                                |
 |------------|-----|-----------------------------------|
-| start_page | str | start_page="1"; 开始获取的页面，每页 80 条数据 |
-| end_page   | str | end_page="10"; 结束获取的页面，每页 80 条数据  |
+| start_page | str | start_page="1"；开始获取的页面，每页 80 条数据 |
+| end_page   | str | end_page="10"；结束获取的页面，每页 80 条数据  |
 
 输出参数
 
@@ -520,8 +522,8 @@ print(bond_china_yield_df)
 | 今开  | float64 | -       |
 | 最高  | float64 | -       |
 | 最低  | float64 | -       |
-| 成交量 | int64   | 注意单位: 手 |
-| 成交额 | int64   | 注意单位: 万 |
+| 成交量 | int64   | 注意单位：手 |
+| 成交额 | int64   | 注意单位：万 |
 
 接口示例
 
@@ -550,15 +552,15 @@ print(bond_zh_hs_spot_df)
 [400 rows x 13 columns]
 ```
 
-#### 历史行情数据
+### 历史行情数据
 
-接口: bond_zh_hs_daily
+接口：bond_zh_hs_daily
 
-目标地址: https://money.finance.sina.com.cn/bond/quotes/sh019315.html
+目标地址：https://money.finance.sina.com.cn/bond/quotes/sh019315.html
 
-描述: 新浪财经-债券-沪深债券-历史行情数据, 历史数据按日频率更新
+描述：新浪财经-债券-沪深债券-历史行情数据，历史数据按日频率更新
 
-限量: 单次返回具体某个沪深转债的所有历史行情数据
+限量：单次返回具体某个沪深转债的所有历史行情数据
 
 输入参数
 
@@ -604,23 +606,23 @@ print(bond_zh_hs_daily_df)
 [4806 rows x 6 columns]
 ```
 
-### 沪深可转债
+## 沪深可转债
 
-#### 可转债-详情资料
+### 可转债-详情资料
 
-接口: bond_cb_profile_sina
+接口：bond_cb_profile_sina
 
-目标地址: https://money.finance.sina.com.cn/bond/info/sz128039.html
+目标地址：https://money.finance.sina.com.cn/bond/info/sz128039.html
 
-描述: 新浪财经-债券-可转债-详情资料
+描述：新浪财经-债券-可转债-详情资料
 
-限量: 单次返回指定 symbol 的可转债-详情资料数据
+限量：单次返回指定 symbol 的可转债-详情资料数据
 
 输入参数
 
 | 名称     | 类型  | 描述                            |
 |--------|-----|-------------------------------|
-| symbol | str | symbol="sz128039"; 带市场标识的转债代码 |
+| symbol | str | symbol="sz128039"；带市场标识的转债代码 |
 
 输出参数
 
@@ -669,21 +671,21 @@ print(bond_cb_profile_sina_df)
 24  外部信用增级方式                                                 --
 ```
 
-#### 可转债-债券概况
+### 可转债-债券概况
 
-接口: bond_cb_summary_sina
+接口：bond_cb_summary_sina
 
-目标地址: https://money.finance.sina.com.cn/bond/quotes/sh155255.html
+目标地址：https://money.finance.sina.com.cn/bond/quotes/sh155255.html
 
-描述: 新浪财经-债券-可转债-债券概况
+描述：新浪财经-债券-可转债-债券概况
 
-限量: 单次返回指定 symbol 的可转债-债券概况数据
+限量：单次返回指定 symbol 的可转债-债券概况数据
 
 输入参数
 
 | 名称     | 类型  | 描述                            |
 |--------|-----|-------------------------------|
-| symbol | str | symbol="sh155255"; 带市场标识的转债代码 |
+| symbol | str | symbol="sh155255"；带市场标识的转债代码 |
 
 输出参数
 
@@ -722,15 +724,15 @@ print(bond_cb_summary_sina_df)
 14        凸性          --
 ```
 
-#### 实时行情数据
+### 实时行情数据
 
-接口: bond_zh_hs_cov_spot
+接口：bond_zh_hs_cov_spot
 
-目标地址: https://vip.stock.finance.sina.com.cn/mkt/#hskzz_z
+目标地址：https://vip.stock.finance.sina.com.cn/mkt/#hskzz_z
 
-描述: 新浪财经-沪深可转债数据
+描述：新浪财经-沪深可转债数据
 
-限量: 单次返回所有沪深可转债的实时行情数据
+限量：单次返回所有沪深可转债的实时行情数据
 
 输入参数
 
@@ -771,15 +773,15 @@ print(bond_zh_hs_cov_spot_df)
 [560 rows x 15 columns]
 ```
 
-#### 历史行情数据-日频
+### 历史行情数据-日频
 
-接口: bond_zh_hs_cov_daily
+接口：bond_zh_hs_cov_daily
 
-目标地址: https://biz.finance.sina.com.cn/suggest/lookup_n.php?q=sh110048
+目标地址：https://biz.finance.sina.com.cn/suggest/lookup_n.php?q=sh110048
 
-描述: 新浪财经-历史行情数据，日频率更新, 新上的标的需要次日更新数据
+描述：新浪财经-历史行情数据，日频率更新，新上的标的需要次日更新数据
 
-限量: 单次返回具体某个沪深可转债的所有历史行情数据
+限量：单次返回具体某个沪深可转债的所有历史行情数据
 
 输入参数
 
@@ -825,25 +827,25 @@ print(bond_zh_hs_cov_daily_df)
 [1375 rows x 6 columns]
 ```
 
-#### 历史行情数据-分时
+### 历史行情数据-分时
 
-接口: bond_zh_hs_cov_min
+接口：bond_zh_hs_cov_min
 
-目标地址: https://quote.eastmoney.com/concept/sz128039.html
+目标地址：https://quote.eastmoney.com/concept/sz128039.html
 
-描述: 东方财富网-可转债-分时行情
+描述：东方财富网-可转债-分时行情
 
-限量: 单次返回指定可转债、指定频率、复权调整和时间区间的分时数据, 其中 1 分钟数据只返回近 1 个交易日数据且不复权; 其余 period 只能获取近期的数据
+限量：单次返回指定可转债、指定频率、复权调整和时间区间的分时数据，其中 1 分钟数据只返回近 1 个交易日数据且不复权；其余 period 只能获取近期的数据
 
 输入参数
 
 | 名称         | 类型  | 描述                                                                                                  |
 |------------|-----|-----------------------------------------------------------------------------------------------------|
-| symbol     | str | symbol='sz123106'; 转债代码                                                                             |
-| period     | str | period='5'; choice of {'1', '5', '15', '30', '60'}; 其中 1 分钟数据返回近 1 个交易日数据且不复权                       |
-| adjust     | str | adjust=''; choice of {'', 'qfq', 'hfq'}; '': 不复权, 'qfq': 前复权, 'hfq': 后复权, 其中 1 分钟数据返回近 1 个交易日数据且不复权 |
-| start_date | str | start_date="1979-09-01 09:32:00"; 日期时间; 默认返回所有数据                                                    |
-| end_date   | str | end_date="2222-01-01 09:32:00"; 日期时间; 默认返回所有数据                                                      |
+| symbol     | str | symbol='sz123106'；转债代码                                                                             |
+| period     | str | period='5'; choice of {'1', '5', '15', '30', '60'}；其中 1 分钟数据返回近 1 个交易日数据且不复权                       |
+| adjust     | str | adjust=''; choice of {'', 'qfq', 'hfq'}; '': 不复权，'qfq': 前复权，'hfq': 后复权，其中 1 分钟数据返回近 1 个交易日数据且不复权 |
+| start_date | str | start_date="1979-09-01 09:32:00"；日期时间；默认返回所有数据                                                    |
+| end_date   | str | end_date="2222-01-01 09:32:00"；日期时间；默认返回所有数据                                                      |
 
 输出参数-1分钟数据
 
@@ -854,7 +856,7 @@ print(bond_zh_hs_cov_daily_df)
 | 收盘  | float64 | -       |
 | 最高  | float64 | -       |
 | 最低  | float64 | -       |
-| 成交量 | float64 | 注意单位: 手 |
+| 成交量 | float64 | 注意单位：手 |
 | 成交额 | float64 | -       |
 | 最新价 | float64 | -       |
 
@@ -893,12 +895,12 @@ print(bond_zh_hs_cov_min_df)
 | 收盘  | float64 | -       |
 | 最高  | float64 | -       |
 | 最低  | float64 | -       |
-| 涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅 | float64 | 注意单位：% |
 | 涨跌额 | float64 | -       |
-| 成交量 | float64 | 注意单位: 手 |
+| 成交量 | float64 | 注意单位：手 |
 | 成交额 | float64 | -       |
-| 振幅  | float64 | 注意单位: % |
-| 换手率 | float64 | 注意单位: % |
+| 振幅  | float64 | 注意单位：% |
+| 换手率 | float64 | 注意单位：% |
 
 接口示例-其他
 
@@ -926,15 +928,15 @@ print(bond_zh_hs_cov_min_df)
 1487  2021-11-02 15:00:00  120.018  120.099  ...    764406.0  0.10  0.12
 ```
 
-#### 历史行情数据-盘前分时
+### 历史行情数据-盘前分时
 
-接口: bond_zh_hs_cov_pre_min
+接口：bond_zh_hs_cov_pre_min
 
-目标地址: https://quote.eastmoney.com/concept/sz128039.html
+目标地址：https://quote.eastmoney.com/concept/sz128039.html
 
-描述: 东方财富网-可转债-分时行情-盘前分时
+描述：东方财富网-可转债-分时行情-盘前分时
 
-限量: 单次返回指定可转债在最近一个交易日的盘前分时数据
+限量：单次返回指定可转债在最近一个交易日的盘前分时数据
 
 输入参数
 
@@ -951,7 +953,7 @@ print(bond_zh_hs_cov_min_df)
 | 收盘  | float64 | -       |
 | 最高  | float64 | -       |
 | 最低  | float64 | -       |
-| 成交量 | float64 | 注意单位: 手 |
+| 成交量 | float64 | 注意单位：手 |
 | 成交额 | float64 | -       |
 | 最新价 | float64 | -       |
 
@@ -981,15 +983,15 @@ print(bond_zh_hs_cov_pre_min_df)
 135  2022-07-27 11:30:00  128.81  128.78  ...    7    9016.0  128.4235
 ```
 
-#### 可转债数据一览表
+### 可转债数据一览表
 
-接口: bond_zh_cov
+接口：bond_zh_cov
 
-目标地址: https://data.eastmoney.com/kzz/default.html
+目标地址：https://data.eastmoney.com/kzz/default.html
 
-描述: 东方财富网-数据中心-新股数据-可转债数据一览表
+描述：东方财富网-数据中心-新股数据-可转债数据一览表
 
-限量: 单次返回当前交易时刻的所有可转债数据
+限量：单次返回当前交易时刻的所有可转债数据
 
 输入参数
 
@@ -1005,19 +1007,19 @@ print(bond_zh_hs_cov_pre_min_df)
 | 债券简称        | object  | -        |
 | 申购日期        | object  | -        |
 | 申购代码        | object  | -        |
-| 申购上限        | float64 | 注意单位: 万元 |
+| 申购上限        | float64 | 注意单位：万元 |
 | 正股代码        | object  | -        |
 | 正股简称        | object  | -        |
 | 正股价         | float64 | -        |
 | 转股价         | float64 | -        |
 | 转股价值        | float64 | -        |
 | 债现价         | float64 | -        |
-| 转股溢价率       | float64 | 注意单位: %  |
+| 转股溢价率       | float64 | 注意单位：%  |
 | 原股东配售-股权登记日 | float64 | -        |
 | 原股东配售-每股配售额 | object  | -        |
-| 发行规模        | float64 | 注意单位: 亿元 |
+| 发行规模        | float64 | 注意单位：亿元 |
 | 中签号发布日      | object  | -        |
-| 中签率         | float64 | 注意单位: %  |
+| 中签率         | float64 | 注意单位：%  |
 | 上市时间        | object  | -        |
 | 信用评级        | object  | -        |
 
@@ -1048,22 +1050,22 @@ print(bond_zh_cov_df)
 [920 rows x 19 columns]
 ```
 
-#### 可转债详情
+### 可转债详情
 
-接口: bond_zh_cov_info
+接口：bond_zh_cov_info
 
-目标地址: https://data.eastmoney.com/kzz/detail/123121.html
+目标地址：https://data.eastmoney.com/kzz/detail/123121.html
 
-描述: 东方财富网-数据中心-新股数据-可转债详情
+描述：东方财富网-数据中心-新股数据-可转债详情
 
-限量: 单次返回指定 symbol 的可转债详情数据
+限量：单次返回指定 symbol 的可转债详情数据
 
 输入参数
 
 | 名称        | 类型  | 描述                                                                                  |
 |-----------|-----|-------------------------------------------------------------------------------------|
-| symbol    | str | symbol="123121"; 可转债代码                                                              |
-| indicator | str | indicator="基本信息"; choice of {"基本信息", "中签号", "筹资用途", "重要日期"}, 其中 "可转债重要条款" 在 "基本信息中" |
+| symbol    | str | symbol="123121"；可转债代码                                                              |
+| indicator | str | indicator="基本信息"; choice of {"基本信息", "中签号", "筹资用途", "重要日期"}，其中 "可转债重要条款" 在 "基本信息中" |
 
 输出参数
 
@@ -1087,15 +1089,15 @@ print(bond_zh_cov_info_df)
 0        123121  123121.SZ       CNSESZ  ...                是         是           是
 ```
 
-#### 可转债详情-同花顺
+### 可转债详情-同花顺
 
-接口: bond_zh_cov_info_ths
+接口：bond_zh_cov_info_ths
 
-目标地址: https://data.10jqka.com.cn/ipo/bond/
+目标地址：https://data.10jqka.com.cn/ipo/bond/
 
-描述: 同花顺-数据中心-可转债
+描述：同花顺-数据中心-可转债
 
-限量: 单次返回所有数据
+限量：单次返回所有数据
 
 输入参数
 
@@ -1122,7 +1124,7 @@ print(bond_zh_cov_info_df)
 | 正股简称   | object  | -       |
 | 转股价格   | float64 | -       |
 | 到期时间   | object  | -       |
-| 中签率    | object  | 注意单位: % |
+| 中签率    | object  | 注意单位：% |
 
 接口示例
 
@@ -1151,15 +1153,15 @@ print(bond_zh_cov_info_ths_df)
 [849 rows x 16 columns]
 ```
 
-#### 可转债比价表
+### 可转债比价表
 
-接口: bond_cov_comparison
+接口：bond_cov_comparison
 
-目标地址: https://quote.eastmoney.com/center/fullscreenlist.html#convertible_comparison
+目标地址：https://quote.eastmoney.com/center/fullscreenlist.html#convertible_comparison
 
-描述: 东方财富网-行情中心-债券市场-可转债比价表
+描述：东方财富网-行情中心-债券市场-可转债比价表
 
-限量: 单次返回当前交易时刻的所有可转债比价数据
+限量：单次返回当前交易时刻的所有可转债比价数据
 
 输入参数
 
@@ -1175,15 +1177,15 @@ print(bond_zh_cov_info_ths_df)
 | 转债代码  | object  | -       |
 | 转债名称  | object  | -       |
 | 转债最新价 | object  | -       |
-| 转债涨跌幅 | object  | 注意单位: % |
+| 转债涨跌幅 | object  | 注意单位：% |
 | 正股代码  | object  | -       |
 | 正股名称  | object  | -       |
 | 正股最新价 | object  | -       |
-| 正股涨跌幅 | object  | 注意单位: % |
+| 正股涨跌幅 | object  | 注意单位：% |
 | 转股价   | object  | -       |
 | 转股价值  | object  | -       |
-| 转股溢价率 | object  | 注意单位: % |
-| 纯债溢价率 | object  | 注意单位: % |
+| 转股溢价率 | object  | 注意单位：% |
+| 纯债溢价率 | object  | 注意单位：% |
 | 回售触发价 | object  | -       |
 | 强赎触发价 | object  | -       |
 | 到期赎回价 | object  | -       |
@@ -1219,32 +1221,32 @@ print(bond_cov_comparison_df)
 [550 rows x 20 columns]
 ```
 
-#### 可转债价值分析
+### 可转债价值分析
 
-接口: bond_zh_cov_value_analysis
+接口：bond_zh_cov_value_analysis
 
-目标地址: https://data.eastmoney.com/kzz/detail/113527.html
+目标地址：https://data.eastmoney.com/kzz/detail/113527.html
 
-描述: 东方财富网-行情中心-新股数据-可转债数据-可转债价值分析
+描述：东方财富网-行情中心-新股数据-可转债数据-可转债价值分析
 
-限量: 单次返回所有可转债价值分析数据
+限量：单次返回所有可转债价值分析数据
 
 输入参数
 
 | 名称     | 类型  | 描述                     |
 |--------|-----|------------------------|
-| symbol | str | symbol="113527"; 可转债代码 |
+| symbol | str | symbol="113527"；可转债代码 |
 
 输出参数
 
 | 名称    | 类型      | 描述      |
 |-------|---------|---------|
 | 日期    | object  | -       |
-| 收盘价   | float64 | 注意单位: 元 |
-| 纯债价值  | float64 | 注意单位: 元 |
-| 转股价值  | float64 | 注意单位: 元 |
-| 纯债溢价率 | float64 | 注意单位: % |
-| 转股溢价率 | float64 | 注意单位: % |
+| 收盘价   | float64 | 注意单位：元 |
+| 纯债价值  | float64 | 注意单位：元 |
+| 转股价值  | float64 | 注意单位：元 |
+| 纯债溢价率 | float64 | 注意单位：% |
+| 转股溢价率 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1273,32 +1275,32 @@ print(bond_zh_cov_value_analysis_df)
 [1234 rows x 6 columns]
 ```
 
-#### 可转债溢价率分析
+### 可转债溢价率分析
 
-接口: bond_zh_cov_value_analysis
+接口：bond_zh_cov_value_analysis
 
-目标地址: https://data.eastmoney.com/kzz/detail/113527.html
+目标地址：https://data.eastmoney.com/kzz/detail/113527.html
 
-描述: 东方财富网-行情中心-新股数据-可转债数据-可转债溢价率分析
+描述：东方财富网-行情中心-新股数据-可转债数据-可转债溢价率分析
 
-限量: 单次返回所有可转债溢价率分析数据；此接口同 bond_zh_cov_value_analysis
+限量：单次返回所有可转债溢价率分析数据；此接口同 bond_zh_cov_value_analysis
 
 输入参数
 
 | 名称     | 类型  | 描述                     |
 |--------|-----|------------------------|
-| symbol | str | symbol="113527"; 可转债代码 |
+| symbol | str | symbol="113527"；可转债代码 |
 
 输出参数
 
 | 名称    | 类型      | 描述      |
 |-------|---------|---------|
 | 日期    | object  | -       |
-| 收盘价   | float64 | 注意单位: 元 |
-| 纯债价值  | float64 | 注意单位: 元 |
-| 转股价值  | float64 | 注意单位: 元 |
-| 纯债溢价率 | float64 | 注意单位: % |
-| 转股溢价率 | float64 | 注意单位: % |
+| 收盘价   | float64 | 注意单位：元 |
+| 纯债价值  | float64 | 注意单位：元 |
+| 转股价值  | float64 | 注意单位：元 |
+| 纯债溢价率 | float64 | 注意单位：% |
+| 转股溢价率 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1326,17 +1328,17 @@ print(bond_zh_cov_value_analysis_df)
 770  2022-03-30  122.75  107.335419  102.358974  14.361132  19.921092
 ```
 
-### 质押式回购
+## 质押式回购
 
-#### 上证质押式回购
+### 上证质押式回购
 
-接口: bond_sh_buy_back_em
+接口：bond_sh_buy_back_em
 
-目标地址: https://quote.eastmoney.com/center/gridlist.html#bond_sh_buyback
+目标地址：https://quote.eastmoney.com/center/gridlist.html#bond_sh_buyback
 
-描述: 东方财富网-行情中心-债券市场-上证质押式回购
+描述：东方财富网-行情中心-债券市场-上证质押式回购
 
-限量: 单次返回所有行情数据
+限量：单次返回所有行情数据
 
 输入参数
 
@@ -1386,15 +1388,15 @@ print(bond_sh_buy_back_em_df)
 [9 rows x 12 columns]
 ```
 
-#### 深证质押式回购
+### 深证质押式回购
 
-接口: bond_sz_buy_back_em
+接口：bond_sz_buy_back_em
 
-目标地址: https://quote.eastmoney.com/center/gridlist.html#bond_sz_buyback
+目标地址：https://quote.eastmoney.com/center/gridlist.html#bond_sz_buyback
 
-描述: 东方财富网-行情中心-债券市场-深证质押式回购
+描述：东方财富网-行情中心-债券市场-深证质押式回购
 
-限量: 单次返回所有行情数据
+限量：单次返回所有行情数据
 
 输入参数
 
@@ -1444,21 +1446,21 @@ print(bond_sz_buy_back_em_df)
 [9 rows x 12 columns]
 ```
 
-#### 质押式回购历史数据
+### 质押式回购历史数据
 
-接口: bond_buy_back_hist_em
+接口：bond_buy_back_hist_em
 
-目标地址: https://quote.eastmoney.com/center/gridlist.html#bond_sh_buyback
+目标地址：https://quote.eastmoney.com/center/gridlist.html#bond_sh_buyback
 
-描述: 东方财富网-行情中心-债券市场-质押式回购-历史数据
+描述：东方财富网-行情中心-债券市场-质押式回购-历史数据
 
-限量: 单次返回所有历史行情数据
+限量：单次返回所有历史行情数据
 
 输入参数
 
 | 名称     | 类型  | 描述                       |
 |--------|-----|--------------------------|
-| symbol | str | symbol="204001"; 质押式回购代码 |
+| symbol | str | symbol="204001"；质押式回购代码 |
 
 输出参数
 
@@ -1499,21 +1501,21 @@ print(bond_buy_back_hist_em_df)
 [4570 rows x 7 columns]
 ```
 
-### 可转债实时数据-集思录
+## 可转债实时数据-集思录
 
-接口: bond_cb_jsl
+接口：bond_cb_jsl
 
-目标地址: https://www.jisilu.cn/data/cbnew/#cb
+目标地址：https://www.jisilu.cn/data/cbnew/#cb
 
-描述: 集思录可转债实时数据，包含行情数据（涨跌幅，成交量和换手率等）及可转债基本信息（转股价，溢价率和到期收益率等）
+描述：集思录可转债实时数据，包含行情数据（涨跌幅，成交量和换手率等）及可转债基本信息（转股价，溢价率和到期收益率等）
 
-限量: 单次返回当前交易时刻的所有数据
+限量：单次返回当前交易时刻的所有数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                 |
 |--------|-----|----------------------------------------------------|
-| cookie | str | cookie=''; 此处输入您的集思录 cookie 就可以获取完整数据，否则只能返回前 30 条 |
+| cookie | str | cookie=''；此处输入您的集思录 cookie 就可以获取完整数据，否则只能返回前 30 条 |
 
 1. 需要查看的链接为：https://app.jisilu.cn/data/cbnew/
 2. 需要复制的 Cookie 为：![](https://pic2.zhimg.com/80/v2-c66f56a334e2c5642a9c8e2975b2f871_1440w.webp)
@@ -1526,25 +1528,25 @@ print(bond_buy_back_hist_em_df)
 | 代码     | object  | -        |
 | 转债名称   | object  | -        |
 | 现价     | float64 | -        |
-| 涨跌幅    | float64 | 注意单位: %  |
+| 涨跌幅    | float64 | 注意单位：%  |
 | 正股代码   | object  | -        |
 | 正股名称   | object  | -        |
 | 正股价    | float64 | -        |
-| 正股涨跌   | float64 | 注意单位: %  |
+| 正股涨跌   | float64 | 注意单位：%  |
 | 正股PB   | float64 | -        |
 | 转股价    | float64 | -        |
 | 转股价值   | float64 | -        |
-| 转股溢价率  | float64 | 注意单位: %  |
+| 转股溢价率  | float64 | 注意单位：%  |
 | 债券评级   | object  | -        |
 | 回售触发价  | float64 | -        |
 | 强赎触发价  | float64 | -        |
-| 转债占比   | float64 | 注意单位: %  |
+| 转债占比   | float64 | 注意单位：%  |
 | 到期时间   | object  | -        |
 | 剩余年限   | float64 | -        |
-| 剩余规模   | float64 | 注意单位: 亿元 |
-| 成交额    | float64 | 注意单位: 万元 |
-| 换手率    | float64 | 注意单位: %  |
-| 到期税前收益 | float64 | 注意单位: %  |
+| 剩余规模   | float64 | 注意单位：亿元 |
+| 成交额    | float64 | 注意单位：万元 |
+| 换手率    | float64 | 注意单位：%  |
+| 到期税前收益 | float64 | 注意单位：%  |
 | 双低     | float64 | -        |
 
 接口示例
@@ -1593,15 +1595,15 @@ print(bond_cb_jsl_df)
 [30 rows x 23 columns]
 ```
 
-### 可转债强赎
+## 可转债强赎
 
-接口: bond_cb_redeem_jsl
+接口：bond_cb_redeem_jsl
 
-目标地址: https://www.jisilu.cn/data/cbnew/#redeem
+目标地址：https://www.jisilu.cn/data/cbnew/#redeem
 
-描述: 集思录可转债-强赎
+描述：集思录可转债-强赎
 
-限量: 单次返回所有数据
+限量：单次返回所有数据
 
 输入参数
 
@@ -1618,13 +1620,13 @@ print(bond_cb_jsl_df)
 | 现价    | float64 | -       |
 | 正股代码  | object  | -       |
 | 正股名称  | object  | -       |
-| 规模    | float64 | 注意单位: 亿 |
+| 规模    | float64 | 注意单位：亿 |
 | 剩余规模  | float64 | -       |
 | 转股起始日 | object  | -       |
 | 最后交易日 | object  | -       |
 | 到期日   | object  | -       |
 | 转股价   | float64 | -       |
-| 强赎触发比 | int64   | 注意单位: % |
+| 强赎触发比 | int64   | 注意单位：% |
 | 强赎触发价 | float64 | -       |
 | 正股价   | float64 | -       |
 | 强赎价   | float64 | -       |
@@ -1658,15 +1660,15 @@ print(bond_cb_redeem_jsl_df)
 443  113646  永吉转债  253.950  ...   0/15 | 30  公司股票在任何连续三十个交易日中至少有十五个交易日的...
 ```
 
-### 集思录可转债等权指数
+## 集思录可转债等权指数
 
-接口: bond_cb_index_jsl
+接口：bond_cb_index_jsl
 
-目标地址: https://www.jisilu.cn/web/data/cb/index
+目标地址：https://www.jisilu.cn/web/data/cb/index
 
-描述: 可转债-集思录可转债等权指数
+描述：可转债-集思录可转债等权指数
 
-限量: 单次返回所有历史数据数据
+限量：单次返回所有历史数据数据
 
 输入参数
 
@@ -1680,13 +1682,13 @@ print(bond_cb_redeem_jsl_df)
 |---------------------|---------|-----------|
 | price_dt            | object  | 日期        |
 | price               | float64 | 指数        |
-| amount              | float64 | 剩余规模(亿元)  |
-| volume              | float64 | 成交额(亿元)   |
+| amount              | float64 | 剩余规模（亿元）  |
+| volume              | float64 | 成交额（亿元）   |
 | count               | int64   | 数量        |
 | increase_val        | float64 | 涨跌        |
 | increase_rt         | float64 | 涨幅        |
-| avg_price           | float64 | 平均价格(元)   |
-| mid_price           | float64 | 中位数价格(元)  |
+| avg_price           | float64 | 平均价格（元）   |
+| mid_price           | float64 | 中位数价格（元）  |
 | mid_convert_value   | float64 | 中位数转股价值   |
 | avg_dblow           | float64 | 平均双底      |
 | avg_premium_rt      | float64 | 平均溢价率     |
@@ -1734,21 +1736,21 @@ print(bond_cb_index_jsl_df)
 1150  2022-09-23  1998.653  ...   3856.021            -0.34
 ```
 
-### 可转债转股价格调整记录-集思录
+## 可转债转股价格调整记录-集思录
 
-接口: bond_cb_adj_logs_jsl
+接口：bond_cb_adj_logs_jsl
 
-目标地址: https://app.jisilu.cn/data/cbnew/#cb; 点击带红色星号的转股价会弹出转股价调整记录
+目标地址：https://app.jisilu.cn/data/cbnew/#cb; 点击带红色星号的转股价会弹出转股价调整记录
 
-描述: 集思录-单个可转债的转股价格-调整记录
+描述：集思录-单个可转债的转股价格-调整记录
 
-限量: 返回当前时刻该可转债的所有转股价格调整记录
+限量：返回当前时刻该可转债的所有转股价格调整记录
 
 输入参数
 
 | 名称     | 类型  | 描述                     |
 |--------|-----|------------------------|
-| symbol | str | symbol="128013"; 可转债代码 |
+| symbol | str | symbol="128013"；可转债代码 |
 
 输出参数
 
@@ -1779,22 +1781,22 @@ print(bond_convert_adj_logs_jsl_df)
 2  洪涛转债  2019-11-20    9.97    8.00  2019-11-21  3.10
 ```
 
-### 收盘收益率曲线历史数据
+## 收盘收益率曲线历史数据
 
-接口: bond_china_close_return
+接口：bond_china_close_return
 
-目标地址: https://www.chinamoney.com.cn/chinese/bkcurvclosedyhis/?bondType=CYCC000&reference=1
+目标地址：https://www.chinamoney.com.cn/chinese/bkcurvclosedyhis/?bondType=CYCC000&reference=1
 
-描述: 收盘收益率曲线历史数据, 该接口只能获取近 3 个月的数据，且每次获取的数据不超过 1 个月
+描述：收盘收益率曲线历史数据，该接口只能获取近 3 个月的数据，且每次获取的数据不超过 1 个月
 
 输入参数
 
 | 名称         | 类型  | 描述                                                                       |
 |------------|-----|--------------------------------------------------------------------------|
-| symbol     | str | symbol="政策性金融债(进出口行)"; 通过网页查询或调用 **ak.bond_china_close_return_map()** 获取 |
-| period     | str | period: str = "1"; 期限间隔, choice of {'0.1', '0.5', '1'}                   |
-| start_date | str | start_date="20231101"; 结束日期, 结束日期和开始日期不要超过 1 个月                          |
-| end_date   | str | end_date="20231101"; 结束日期, 结束日期和开始日期不要超过 1 个月                            |
+| symbol     | str | symbol="政策性金融债(进出口行)"；通过网页查询或调用 **ak.bond_china_close_return_map()** 获取 |
+| period     | str | period: str = "1"；期限间隔，choice of {'0.1', '0.5', '1'}                   |
+| start_date | str | start_date="20231101"；结束日期，结束日期和开始日期不要超过 1 个月                          |
+| end_date   | str | end_date="20231101"；结束日期，结束日期和开始日期不要超过 1 个月                            |
 
 输出参数
 
@@ -1836,15 +1838,15 @@ print(bond_china_close_return_df)
 14  2023-11-01  11.000  2.7115  2.7252  3.0458
 ```
 
-### 中美国债收益率
+## 中美国债收益率
 
-接口: bond_zh_us_rate
+接口：bond_zh_us_rate
 
-目标地址: https://data.eastmoney.com/cjsj/zmgzsyl.html
+目标地址：https://data.eastmoney.com/cjsj/zmgzsyl.html
 
-描述: 东方财富网-数据中心-经济数据-中美国债收益率历史数据
+描述：东方财富网-数据中心-经济数据-中美国债收益率历史数据
 
-限量: 返回 start_date 开始后的所有交易日的数据; 数据从 19901219 开始
+限量：返回 start_date 开始后的所有交易日的数据；数据从 19901219 开始
 
 输入参数
 
@@ -1897,15 +1899,15 @@ print(bond_zh_us_rate_df)
 [8600 rows x 13 columns]
 ```
 
-### 中国国债收益率行情
+## 中国国债收益率行情
 
-接口: bond_gb_zh_sina
+接口：bond_gb_zh_sina
 
-目标地址: https://stock.finance.sina.com.cn/forex/globalbd/cn10yt.html
+目标地址：https://stock.finance.sina.com.cn/forex/globalbd/cn10yt.html
 
-描述: 新浪财经-债券-中国国债收益率行情数据
+描述：新浪财经-债券-中国国债收益率行情数据
 
-限量: 返回最近 1000 个交易日的数据
+限量：返回最近 1000 个交易日的数据
 
 输入参数
 
@@ -1951,15 +1953,15 @@ print(bond_gb_zh_sina_df)
 [1000 rows x 6 columns]
 ```
 
-### 美国国债收益率行情
+## 美国国债收益率行情
 
-接口: bond_gb_us_sina
+接口：bond_gb_us_sina
 
-目标地址: https://stock.finance.sina.com.cn/forex/globalbd/cn10yt.html
+目标地址：https://stock.finance.sina.com.cn/forex/globalbd/cn10yt.html
 
-描述: 新浪财经-债券-美国国债收益率行情数据
+描述：新浪财经-债券-美国国债收益率行情数据
 
-限量: 返回最近 1000 个交易日的数据
+限量：返回最近 1000 个交易日的数据
 
 输入参数
 
@@ -2005,15 +2007,15 @@ print(bond_gb_us_sina_df)
 [1000 rows x 6 columns]
 ```
 
-### 债券发行
+## 债券发行
 
-#### 国债发行
+### 国债发行
 
-接口: bond_treasure_issue_cninfo
+接口：bond_treasure_issue_cninfo
 
-目标地址: https://webapi.cninfo.com.cn/#/thematicStatistics
+目标地址：https://webapi.cninfo.com.cn/#/thematicStatistics
 
-描述: 巨潮资讯-数据中心-专题统计-债券报表-债券发行-国债发行
+描述：巨潮资讯-数据中心-专题统计-债券报表-债券发行-国债发行
 
 输入参数
 
@@ -2030,10 +2032,10 @@ print(bond_gb_us_sina_df)
 | 债券简称   | object  | -        |
 | 发行起始日  | object  | -        |
 | 发行终止日  | object  | -        |
-| 计划发行总量 | float64 | 注意单位: 亿元 |
-| 实际发行总量 | float64 | 注意单位: 亿元 |
-| 发行价格   | float64 | 注意单位: 元  |
-| 单位面值   | int64   | 注意单位: 元  |
+| 计划发行总量 | float64 | 注意单位：亿元 |
+| 实际发行总量 | float64 | 注意单位：亿元 |
+| 发行价格   | float64 | 注意单位：元  |
+| 单位面值   | int64   | 注意单位：元  |
 | 缴款日    | object  | -        |
 | 增发次数   | int64   | -        |
 | 交易市场   | object  | -        |
@@ -2069,13 +2071,13 @@ print(bond_treasure_issue_cninfo_df)
 [104 rows x 15 columns]
 ```
 
-#### 地方债发行
+### 地方债发行
 
-接口: bond_local_government_issue_cninfo
+接口：bond_local_government_issue_cninfo
 
-目标地址: https://webapi.cninfo.com.cn/#/thematicStatistics
+目标地址：https://webapi.cninfo.com.cn/#/thematicStatistics
 
-描述: 巨潮资讯-数据中心-专题统计-债券报表-债券发行-地方债发行
+描述：巨潮资讯-数据中心-专题统计-债券报表-债券发行-地方债发行
 
 输入参数
 
@@ -2092,10 +2094,10 @@ print(bond_treasure_issue_cninfo_df)
 | 债券简称   | object  | -        |
 | 发行起始日  | object  | -        |
 | 发行终止日  | object  | -        |
-| 计划发行总量 | float64 | 注意单位: 亿元 |
-| 实际发行总量 | float64 | 注意单位: 亿元 |
-| 发行价格   | float64 | 注意单位: 元  |
-| 单位面值   | int64   | 注意单位: 元  |
+| 计划发行总量 | float64 | 注意单位：亿元 |
+| 实际发行总量 | float64 | 注意单位：亿元 |
+| 发行价格   | float64 | 注意单位：元  |
+| 单位面值   | int64   | 注意单位：元  |
 | 缴款日    | object  | -        |
 | 增发次数   | int64   | -        |
 | 交易市场   | object  | -        |
@@ -2131,13 +2133,13 @@ print(bond_local_government_issue_cninfo_df)
 [1449 rows x 15 columns]
 ```
 
-#### 企业债发行
+### 企业债发行
 
-接口: bond_corporate_issue_cninfo
+接口：bond_corporate_issue_cninfo
 
-目标地址: https://webapi.cninfo.com.cn/#/thematicStatistics
+目标地址：https://webapi.cninfo.com.cn/#/thematicStatistics
 
-描述: 巨潮资讯-数据中心-专题统计-债券报表-债券发行-企业债发行
+描述：巨潮资讯-数据中心-专题统计-债券报表-债券发行-企业债发行
 
 输入参数
 
@@ -2155,17 +2157,17 @@ print(bond_local_government_issue_cninfo_df)
 | 公告日期       | object  | -        |
 | 交易所网上发行起始日 | object  | -        |
 | 交易所网上发行终止日 | object  | -        |
-| 计划发行总量     | float64 | 注意单位: 万元 |
-| 实际发行总量     | float64 | 注意单位: 万元 |
+| 计划发行总量     | float64 | 注意单位：万元 |
+| 实际发行总量     | float64 | 注意单位：万元 |
 | 发行面值       | float64 | -        |
-| 发行价格       | int64   | 注意单位: 元  |
+| 发行价格       | int64   | 注意单位：元  |
 | 发行方式       | object  | -        |
 | 发行对象       | object  | -        |
 | 发行范围       | object  | -        |
 | 承销方式       | object  | -        |
-| 最小认购单位     | float64 | 注意单位: 万元 |
+| 最小认购单位     | float64 | 注意单位：万元 |
 | 募资用途说明     | object  | -        |
-| 最低认购额      | float64 | 注意单位: 万元 |
+| 最低认购额      | float64 | 注意单位：万元 |
 | 债券名称       | object  | -        |
 
 接口示例
@@ -2195,13 +2197,13 @@ print(bond_corporate_issue_cninfo_df)
 [434 rows x 17 columns]
 ```
 
-#### 可转债发行
+### 可转债发行
 
-接口: bond_cov_issue_cninfo
+接口：bond_cov_issue_cninfo
 
-目标地址: https://webapi.cninfo.com.cn/#/thematicStatistics
+目标地址：https://webapi.cninfo.com.cn/#/thematicStatistics
 
-描述: 巨潮资讯-数据中心-专题统计-债券报表-债券发行-可转债发行
+描述：巨潮资讯-数据中心-专题统计-债券报表-债券发行-可转债发行
 
 输入参数
 
@@ -2219,27 +2221,27 @@ print(bond_corporate_issue_cninfo_df)
 | 公告日期            | object  | -        |
 | 发行起始日           | object  | -        |
 | 发行终止日           | object  | -        |
-| 计划发行总量          | float64 | 注意单位: 万元 |
-| 实际发行总量          | float64 | 注意单位: 万元 |
-| 发行面值            | int64   | 注意单位: 元  |
-| 发行价格            | float64 | 注意单位: 元  |
+| 计划发行总量          | float64 | 注意单位：万元 |
+| 实际发行总量          | float64 | 注意单位：万元 |
+| 发行面值            | int64   | 注意单位：元  |
+| 发行价格            | float64 | 注意单位：元  |
 | 发行方式            | object  | -        |
 | 发行对象            | object  | -        |
 | 发行范围            | object  | -        |
 | 承销方式            | object  | -        |
 | 募资用途说明          | object  | -        |
-| 初始转股价格          | float64 | 注意单位: 元  |
+| 初始转股价格          | float64 | 注意单位：元  |
 | 转股开始日期          | object  | -        |
 | 转股终止日期          | object  | -        |
 | 网上申购日期          | object  | -        |
 | 网上申购代码          | object  | -        |
 | 网上申购简称          | object  | -        |
-| 网上申购数量上限        | float64 | 注意单位: 万元 |
-| 网上申购数量下限        | float64 | 注意单位: 万元 |
+| 网上申购数量上限        | float64 | 注意单位：万元 |
+| 网上申购数量下限        | float64 | 注意单位：万元 |
 | 网上申购单位          | float64 | -        |
 | 网上申购中签结果公告日及退款日 | object  | -        |
 | 优先申购日           | object  | -        |
-| 配售价格            | float64 | 注意单位: 元  |
+| 配售价格            | float64 | 注意单位：元  |
 | 债权登记日           | object  | -        |
 | 优先申购缴款日         | object  | -        |
 | 转股代码            | object  | -        |
@@ -2277,13 +2279,13 @@ print(bond_cov_issue_cninfo_df)
 [15 rows x 31 columns]
 ```
 
-#### 可转债转股
+### 可转债转股
 
-接口: bond_cov_stock_issue_cninfo
+接口：bond_cov_stock_issue_cninfo
 
-目标地址: https://webapi.cninfo.com.cn/#/thematicStatistics
+目标地址：https://webapi.cninfo.com.cn/#/thematicStatistics
 
-描述: 巨潮资讯-数据中心-专题统计-债券报表-债券发行-可转债转股
+描述：巨潮资讯-数据中心-专题统计-债券报表-债券发行-可转债转股
 
 输入参数
 
@@ -2300,7 +2302,7 @@ print(bond_cov_issue_cninfo_df)
 | 公告日期     | object  | -       |
 | 转股代码     | object  | -       |
 | 转股简称     | object  | -       |
-| 转股价格     | float64 | 注意单位: 元 |
+| 转股价格     | float64 | 注意单位：元 |
 | 自愿转换期起始日 | object  | -       |
 | 自愿转换期终止日 | object  | -       |
 | 标的股票     | object  | -       |
@@ -2333,19 +2335,19 @@ print(bond_cov_stock_issue_cninfo_df)
 [286 rows x 10 columns]
 ```
 
-### 中债指数
+## 中债指数
 
-#### 总指数
+### 总指数
 
-##### 综合类指数
+#### 综合类指数
 
-###### 新综合指数
+##### 新综合指数
 
-接口: bond_new_composite_index_cbond
+接口：bond_new_composite_index_cbond
 
-目标地址: https://yield.chinabond.com.cn/cbweb-mn/indices/single_index_query
+目标地址：https://yield.chinabond.com.cn/cbweb-mn/indices/single_index_query
 
-描述: 中国债券信息网-中债指数-中债指数族系-总指数-综合类指数-中债-新综合指数
+描述：中国债券信息网-中债指数-中债指数族系-总指数-综合类指数-中债-新综合指数
 
 输入参数
 
@@ -2388,13 +2390,13 @@ print(bond_new_composite_index_cbond_df)
 [5445 rows x 2 columns]
 ```
 
-###### 综合指数
+##### 综合指数
 
-接口: bond_composite_index_cbond
+接口：bond_composite_index_cbond
 
-目标地址: https://yield.chinabond.com.cn/cbweb-mn/indices/single_index_query
+目标地址：https://yield.chinabond.com.cn/cbweb-mn/indices/single_index_query
 
-描述: 中国债券信息网-中债指数-中债指数族系-分类指数-按待偿期限
+描述：中国债券信息网-中债指数-中债指数族系-分类指数-按待偿期限
 
 输入参数
 
@@ -2437,13 +2439,13 @@ print(bond_composite_index_cbond_df)
 [5434 rows x 2 columns]
 ```
 
-###### 国债指数
+##### 国债指数
 
-接口: bond_treasury_index_cbond
+接口：bond_treasury_index_cbond
 
-目标地址: https://yield.chinabond.com.cn/cbweb-mn/indices/single_index_query
+目标地址：https://yield.chinabond.com.cn/cbweb-mn/indices/single_index_query
 
-描述: 中国债券信息网-中债指数-中债指数族系-总指数-综合类指数-中债-国债指数
+描述：中国债券信息网-中债指数-中债指数族系-总指数-综合类指数-中债-国债指数
 
 输入参数
 
@@ -2486,15 +2488,15 @@ print(bond_treasury_index_cbond_df)
 [4567 rows x 2 columns]
 ```
 
-#### 中债指数族系
+### 中债指数族系
 
-##### 可选指数
+#### 可选指数
 
-接口: bond_available_index_cbond
+接口：bond_available_index_cbond
 
-目标地址: https://yield.chinabond.com.cn/cbweb-mn/indices/singleIndexQueryResult
+目标地址：https://yield.chinabond.com.cn/cbweb-mn/indices/singleIndexQueryResult
 
-描述: 中国债券信息网-中债指数-中债指数族系当中, 非指定期限部分的可选指数
+描述：中国债券信息网-中债指数-中债指数族系当中，非指定期限部分的可选指数
 
 输入参数
 
@@ -2536,13 +2538,13 @@ print(bond_available_index_cbond_df)
 [313 rows x 2 columns]
 ```
 
-##### 指数族系查询
+#### 指数族系查询
 
-接口: bond_index_general_cbond
+接口：bond_index_general_cbond
 
-目标地址: https://yield.chinabond.com.cn/cbweb-mn/indices/singleIndexQueryResult
+目标地址：https://yield.chinabond.com.cn/cbweb-mn/indices/singleIndexQueryResult
 
-描述: 中国债券信息网-中债指数-中债指数族系
+描述：中国债券信息网-中债指数-中债指数族系
 
 输入参数
 

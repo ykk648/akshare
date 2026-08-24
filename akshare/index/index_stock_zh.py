@@ -58,7 +58,7 @@ def get_zh_index_page_count() -> int:
 def stock_zh_index_spot_sina() -> pd.DataFrame:
     """
     新浪财经-行情中心首页-A股-分类-所有指数
-    大量采集会被目标网站服务器封禁 IP, 如果被封禁 IP, 请 10 分钟后再试
+    大量采集会被目标网站服务器封禁 IP，如果被封禁 IP，请 10 分钟后再试
     https://vip.stock.finance.sina.com.cn/mkt/#hs_s
     :return: 所有指数的实时行情数据
     :rtype: pandas.DataFrame
@@ -147,7 +147,7 @@ def __stock_zh_main_spot_em() -> pd.DataFrame:
         "fid": "",
         "fs": "b:MK0010",
         "fields": "f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f12,f13,f14,f15,f16,f17,f18,f20,f21,"
-                  "f23,f24,f25,f26,f22,f11,f62,f128,f136,f115,f152",
+        "f23,f24,f25,f26,f22,f11,f62,f128,f136,f115,f152",
     }
     r = requests.get(url, params=params)
     data_json = r.json()
@@ -236,7 +236,7 @@ def stock_zh_index_spot_em(symbol: str = "上证系列指数") -> pd.DataFrame:
         "fid": "f12",
         "fs": symbol_map[symbol],
         "fields": "f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f12,f13,f14,f15,f16,f17,f18,f20,f21,f23,f24,f25,"
-                  "f26,f22,f33,f11,f62,f128,f136,f115,f152",
+        "f26,f22,f33,f11,f62,f128,f136,f115,f152",
     }
     temp_df = fetch_paginated_data(url, params)
     temp_df.rename(
@@ -292,9 +292,9 @@ def stock_zh_index_spot_em(symbol: str = "上证系列指数") -> pd.DataFrame:
 
 def stock_zh_index_daily(symbol: str = "sh000922") -> pd.DataFrame:
     """
-    新浪财经-指数-历史行情数据, 大量抓取容易封 IP
+    新浪财经-指数-历史行情数据，大量抓取容易封 IP
     https://finance.sina.com.cn/realstock/company/sh000909/nc.shtml
-    :param symbol: sz399998, 指定指数代码
+    :param symbol: sz399998，指定指数代码
     :type symbol: str
     :return: 历史行情数据
     :rtype: pandas.DataFrame
@@ -318,7 +318,7 @@ def stock_zh_index_daily(symbol: str = "sh000922") -> pd.DataFrame:
 
 def get_tx_start_year(symbol: str = "sh000919") -> str:
     """
-    腾讯证券-获取所有股票数据的第一天, 注意这个数据是腾讯证券的历史数据第一天
+    腾讯证券-获取所有股票数据的第一天，注意这个数据是腾讯证券的历史数据第一天
     https://gu.qq.com/sh000919/zs
     :param symbol: 带市场标识的股票代码
     :type symbol: str
@@ -334,7 +334,7 @@ def get_tx_start_year(symbol: str = "sh000919") -> str:
     }
     r = requests.get(url, params=params)
     data_text = r.text
-    if not demjson.decode(data_text[data_text.find("={") + 1:])["data"]:
+    if not demjson.decode(data_text[data_text.find("={") + 1 :])["data"]:
         url = "https://proxy.finance.qq.com/ifzqgtimg/appstock/app/newfqkline/get"
         params = {
             "_var": "kline_dayqfq",
@@ -343,11 +343,11 @@ def get_tx_start_year(symbol: str = "sh000919") -> str:
         }
         r = requests.get(url, params=params)
         data_text = r.text
-        start_date = demjson.decode(data_text[data_text.find("={") + 1:])["data"][
+        start_date = demjson.decode(data_text[data_text.find("={") + 1 :])["data"][
             symbol
         ]["day"][0][0]
         return start_date
-    start_date = demjson.decode(data_text[data_text.find("={") + 1:])["data"][0][0]
+    start_date = demjson.decode(data_text[data_text.find("={") + 1 :])["data"][0][0]
     return start_date
 
 
@@ -357,15 +357,15 @@ def stock_zh_index_daily_tx(
     end_date: str = "",
 ) -> pd.DataFrame:
     """
-    腾讯证券-日频-股票或者指数历史数据(支持自定义时间范围)
-    作为 ak.stock_zh_index_daily() 的补充, 因为在新浪中有部分指数数据缺失
-    注意都是: 前复权, 不同网站复权方式不同, 不可混用数据
+    腾讯证券-日频-股票或者指数历史数据（支持自定义时间范围）
+    作为 ak.stock_zh_index_daily() 的补充，因为在新浪中有部分指数数据缺失
+    注意都是：前复权，不同网站复权方式不同，不可混用数据
     https://gu.qq.com/sh000919/zs
     :param symbol: 带市场标识的股票或者指数代码
     :type symbol: str
-    :param start_date: 开始日期, 格式 "YYYYMMDD", 为空则从最早日期开始
+    :param start_date: 开始日期，格式 "YYYYMMDD"，为空则从最早日期开始
     :type start_date: str
-    :param end_date: 结束日期, 格式 "YYYYMMDD", 为空则到当前日期
+    :param end_date: 结束日期，格式 "YYYYMMDD"，为空则到当前日期
     :type end_date: str
     :return: 前复权的股票和指数数据
     :rtype: pandas.DataFrame
@@ -400,11 +400,11 @@ def stock_zh_index_daily_tx(
         text = res.text
         try:
             inner_temp_df = pd.DataFrame(
-                demjson.decode(text[text.find("={") + 1:])["data"][symbol]["day"]
+                demjson.decode(text[text.find("={") + 1 :])["data"][symbol]["day"]
             )
         except:  # noqa: E722
             inner_temp_df = pd.DataFrame(
-                demjson.decode(text[text.find("={") + 1:])["data"][symbol]["qfqday"]
+                demjson.decode(text[text.find("={") + 1 :])["data"][symbol]["qfqday"]
             )
         temp_df = pd.concat(objs=[temp_df, inner_temp_df], ignore_index=True)
     if temp_df.shape[1] == 6:
@@ -433,7 +433,7 @@ def stock_zh_index_daily_em(
     """
     东方财富网-股票指数数据
     https://quote.eastmoney.com/center/hszs.html
-    :param symbol: 带市场标识的指数代码; sz: 深交所, sh: 上交所, csi: 中信指数 + id(000905)
+    :param symbol: 带市场标识的指数代码；sz: 深交所，sh: 上交所，csi: 中信指数 + id(000905)
     :type symbol: str
     :param start_date: 开始时间
     :type start_date: str
@@ -501,7 +501,9 @@ if __name__ == "__main__":
     stock_zh_index_spot_em_df = stock_zh_index_spot_em(symbol="中证系列指数")
     print(stock_zh_index_spot_em_df)
 
-    stock_zh_index_daily_tx_df = stock_zh_index_daily_tx(symbol="sh000919", start_date="20260101", end_date="20260429")
+    stock_zh_index_daily_tx_df = stock_zh_index_daily_tx(
+        symbol="sh000919", start_date="20260101", end_date="20260429"
+    )
     print(stock_zh_index_daily_tx_df)
 
     stock_zh_index_daily_em_df = stock_zh_index_daily_em(symbol="bj899050")

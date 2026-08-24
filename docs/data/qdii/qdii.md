@@ -1,16 +1,16 @@
-## [AKShare](https://github.com/akfamily/akshare) QDII 数据
+# [AKShare](https://github.com/akfamily/akshare) QDII 数据
 
-### T+0 QDII 欧美市场
+## T+0 QDII 欧美市场
 
-#### 欧美指数
+### 欧美指数
 
-接口: qdii_e_index_jsl
+接口：qdii_e_index_jsl
 
-目标地址: https://www.jisilu.cn/data/qdii/#qdiia
+目标地址：https://www.jisilu.cn/data/qdii/#qdiia
 
-描述: 集思录-T+0 QDII-欧美市场-欧美指数
+描述：集思录-T+0 QDII-欧美市场-欧美指数
 
-限量: 单次返回所有数据
+限量：单次返回所有数据
 
 输入参数
 
@@ -26,9 +26,9 @@
 | 名称      | object  |          |
 | 现价      | float64 |          |
 | 涨幅      | object  |          |
-| 成交      | float64 | 注意单位: 万元 |
-| 场内份额    | int64   | 注意单位: 万份 |
-| 场内新增    | int64   | 注意单位: 万份 |
+| 成交      | float64 | 注意单位：万元 |
+| 场内份额    | int64   | 注意单位：万份 |
+| 场内新增    | int64   | 注意单位：万份 |
 | T-2净值   | float64 |          |
 | 净值日期    | object  |          |
 | T-1估值   | float64 |          |
@@ -108,15 +108,15 @@ print(qdii_e_index_jsl_df)
 [51 rows x 18 columns]
 ```
 
-#### 欧美商品
+### 欧美商品
 
-接口: qdii_e_comm_jsl
+接口：qdii_e_comm_jsl
 
-目标地址: https://www.jisilu.cn/data/qdii/#qdiia
+目标地址：https://www.jisilu.cn/data/qdii/#qdiia
 
-描述: 集思录-T+0 QDII-欧美市场-欧美商品
+描述：集思录-T+0 QDII-欧美市场-欧美商品
 
-限量: 单次返回所有数据
+限量：单次返回所有数据
 
 输入参数
 
@@ -132,9 +132,9 @@ print(qdii_e_index_jsl_df)
 | 名称      | object  |          |
 | 现价      | float64 |          |
 | 涨幅      | object  |          |
-| 成交      | float64 | 注意单位: 万元 |
-| 场内份额    | int64   | 注意单位: 万份 |
-| 场内新增    | int64   | 注意单位: 万份 |
+| 成交      | float64 | 注意单位：万元 |
+| 场内份额    | int64   | 注意单位：万份 |
+| 场内新增    | int64   | 注意单位：万份 |
 | T-2净值   | float64 |          |
 | 净值日期    | object  |          |
 | T-1估值   | float64 |          |
@@ -176,17 +176,17 @@ print(qdii_e_comm_jsl_df)
 [13 rows x 18 columns]
 ```
 
-### T+0 QDII 亚洲市场
+## T+0 QDII 亚洲市场
 
-#### 亚洲指数
+### 亚洲指数
 
-接口: qdii_a_index_jsl
+接口：qdii_a_index_jsl
 
-目标地址: https://www.jisilu.cn/data/qdii/#qdiia
+目标地址：https://www.jisilu.cn/data/qdii/#qdiia
 
-描述: 集思录-T+0 QDII-亚洲市场-亚洲指数
+描述：集思录-T+0 QDII-亚洲市场-亚洲指数
 
-限量: 单次返回所有数据
+限量：单次返回所有数据
 
 输入参数
 
@@ -202,9 +202,9 @@ print(qdii_e_comm_jsl_df)
 | 名称   | object  |          |
 | 现价   | float64 |          |
 | 涨幅   | object  |          |
-| 成交   | float64 | 注意单位: 万元 |
-| 场内份额 | int64   | 注意单位: 万份 |
-| 场内新增 | int64   | 注意单位: 万份 |
+| 成交   | float64 | 注意单位：万元 |
+| 场内份额 | int64   | 注意单位：万份 |
+| 场内新增 | int64   | 注意单位：万份 |
 | 净值   | float64 |          |
 | 净值日期 | object  |          |
 | 估值   | float64 |          |

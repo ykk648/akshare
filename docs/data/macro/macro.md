@@ -1,16 +1,16 @@
-## [AKShare](https://github.com/akfamily/akshare) 宏观数据
+# [AKShare](https://github.com/akfamily/akshare) 宏观数据
 
-### 中国宏观
+## 中国宏观
 
-#### 中国宏观杠杆率
+### 中国宏观杠杆率
 
-接口: macro_cnbs
+接口：macro_cnbs
 
-目标地址: http://114.115.232.154:8080/
+目标地址：http://114.115.232.154:8080/
 
-描述: 中国国家金融与发展实验室-中国宏观杠杆率数据
+描述：中国国家金融与发展实验室-中国宏观杠杆率数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -22,7 +22,7 @@
 
 | 名称      | 类型      | 描述      |
 |---------|---------|---------|
-| 年份      | object  | 日期, 年-月 |
+| 年份      | object  | 日期，年-月 |
 | 居民部门    | float64 | -       |
 | 非金融企业部门 | float64 | -       |
 | 政府部门    | float64 | -       |
@@ -59,19 +59,19 @@ print(macro_cnbs_df)
 [126 rows x 9 columns]
 ```
 
-#### 国民经济运行状况
+### 国民经济运行状况
 
-##### 经济状况
+#### 经济状况
 
-###### 企业商品价格指数
+##### 企业商品价格指数
 
-接口: macro_china_qyspjg
+接口：macro_china_qyspjg
 
-目标地址: http://data.eastmoney.com/cjsj/qyspjg.html
+目标地址：http://data.eastmoney.com/cjsj/qyspjg.html
 
-描述: 东方财富-经济数据一览-中国-企业商品价格指数, 数据区间从 20050101-至今
+描述：东方财富-经济数据一览-中国-企业商品价格指数，数据区间从 20050101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -85,17 +85,17 @@ print(macro_cnbs_df)
 |----------|---------|---------|
 | 月份       | object  | -       |
 | 总指数-指数值  | float64 | -       |
-| 总指数-同比增长 | float64 | 注意单位: % |
-| 总指数-环比增长 | float64 | 注意单位: % |
+| 总指数-同比增长 | float64 | 注意单位：% |
+| 总指数-环比增长 | float64 | 注意单位：% |
 | 农产品-指数值  | float64 | -       |
-| 农产品-同比增长 | float64 | 注意单位: % |
-| 农产品-环比增长 | float64 | 注意单位: % |
+| 农产品-同比增长 | float64 | 注意单位：% |
+| 农产品-环比增长 | float64 | 注意单位：% |
 | 矿产品-指数值  | float64 | -       |
-| 矿产品-同比增长 | float64 | 注意单位: % |
-| 矿产品-环比增长 | float64 | 注意单位: % |
+| 矿产品-同比增长 | float64 | 注意单位：% |
+| 矿产品-环比增长 | float64 | 注意单位：% |
 | 煤油电-指数值  | float64 | -       |
-| 煤油电-同比增长 | float64 | 注意单位: % |
-| 煤油电-环比增长 | float64 | 注意单位: % |
+| 煤油电-同比增长 | float64 | 注意单位：% |
+| 煤油电-环比增长 | float64 | 注意单位：% |
 
 接口示例
 
@@ -123,15 +123,15 @@ print(macro_china_qyspjg_df)
 212  2005年01月份   104.67 -1.957662  ...   115.83   8.903723 -1.814021
 ```
 
-###### 外商直接投资数据
+##### 外商直接投资数据
 
-接口: macro_china_fdi
+接口：macro_china_fdi
 
-目标地址: https://data.eastmoney.com/cjsj/fdi.html
+目标地址：https://data.eastmoney.com/cjsj/fdi.html
 
-描述: 东方财富-经济数据一览-中国-外商直接投资数据, 数据区间从 200801-202307
+描述：东方财富-经济数据一览-中国-外商直接投资数据，数据区间从 200801-202307
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -145,10 +145,10 @@ print(macro_china_qyspjg_df)
 |---------|---------|----------|
 | 月份      | object  | -        |
 | 当月      | int64   | -        |
-| 当月-同比增长 | float64 | 注意单位: 美元 |
-| 当月-环比增长 | float64 | 注意单位: %  |
-| 累计      | float64 | 注意单位: 美元 |
-| 累计-同比增长 | float64 | 注意单位: %  |
+| 当月-同比增长 | float64 | 注意单位：美元 |
+| 当月-环比增长 | float64 | 注意单位：%  |
+| 累计      | float64 | 注意单位：美元 |
+| 累计-同比增长 | float64 | 注意单位：%  |
 
 接口示例
 
@@ -177,15 +177,15 @@ print(macro_china_fdi_df)
 [185 rows x 6 columns]
 ```
 
-###### LPR品种数据
+##### LPR品种数据
 
-接口: macro_china_lpr
+接口：macro_china_lpr
 
-目标地址: https://data.eastmoney.com/cjsj/globalRateLPR.html
+目标地址：https://data.eastmoney.com/cjsj/globalRateLPR.html
 
-描述: 中国 LPR 品种数据, 数据区间从 19910421-至今
+描述：中国 LPR 品种数据，数据区间从 19910421-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -200,8 +200,8 @@ print(macro_china_fdi_df)
 | TRADE_DATE | object  | 日期                  |
 | LPR1Y      | float64 | LPR_1Y利率(%)         |
 | LPR5Y      | float64 | LPR_5Y利率(%)         |
-| RATE_1     | float64 | 短期贷款利率:6个月至1年(含)(%) |
-| RATE_2     | float64 | 中长期贷款利率:5年以上(%)     |
+| RATE_1     | float64 | 短期贷款利率：6个月至1年（含）(%) |
+| RATE_2     | float64 | 中长期贷款利率：5年以上(%)     |
 
 接口示例
 
@@ -230,15 +230,15 @@ print(macro_china_lpr_df)
 [1538 rows x 5 columns]
 ```
 
-###### 城镇调查失业率
+##### 城镇调查失业率
 
-接口: macro_china_urban_unemployment
+接口：macro_china_urban_unemployment
 
-目标地址: https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData
+目标地址：https://data.stats.gov.cn/dg/website/page.html#/pc/national/monthData
 
-描述: 国家统计局-月度数据-城镇调查失业率
+描述：国家统计局-月度数据-城镇调查失业率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -281,15 +281,15 @@ print(macro_china_urban_unemployment_df)
 [288 rows x 3 columns]
 ```
 
-###### 社会融资规模增量统计
+##### 社会融资规模增量统计
 
-接口: macro_china_shrzgm
+接口：macro_china_shrzgm
 
-目标地址: http://data.mofcom.gov.cn/gnmy/shrzgm.shtml
+目标地址：http://data.mofcom.gov.cn/gnmy/shrzgm.shtml
 
-描述: 商务数据中心-国内贸易-社会融资规模增量统计, 数据区间从 201501-至今
+描述：商务数据中心-国内贸易-社会融资规模增量统计，数据区间从 201501-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -302,14 +302,14 @@ print(macro_china_urban_unemployment_df)
 | 名称             | 类型      | 描述              |
 |----------------|---------|-----------------|
 | 月份             | object  | 年月              |
-| 社会融资规模增量       | float64 | 注意单位: 亿元        |
-| 其中-人民币贷款       | float64 | 注意单位: 亿元        |
-| 其中-委托贷款外币贷款    | float64 | 注意单位: 折合人民币, 亿元 |
-| 其中-委托贷款        | float64 | 注意单位: 亿元        |
-| 其中-信托贷款        | float64 | 注意单位: 亿元        |
-| 其中-未贴现银行承兑汇票   | float64 | 注意单位: 亿元        |
-| 其中-企业债券        | float64 | 注意单位: 亿元        |
-| 其中-非金融企业境内股票融资 | float64 | 注意单位: 亿元        |
+| 社会融资规模增量       | float64 | 注意单位：亿元        |
+| 其中-人民币贷款       | float64 | 注意单位：亿元        |
+| 其中-委托贷款外币贷款    | float64 | 注意单位：折合人民币，亿元 |
+| 其中-委托贷款        | float64 | 注意单位：亿元        |
+| 其中-信托贷款        | float64 | 注意单位：亿元        |
+| 其中-未贴现银行承兑汇票   | float64 | 注意单位：亿元        |
+| 其中-企业债券        | float64 | 注意单位：亿元        |
+| 其中-非金融企业境内股票融资 | float64 | 注意单位：亿元        |
 
 接口示例
 
@@ -337,15 +337,15 @@ print(macro_china_shrzgm_df)
 86  202203     46531     32291  ...           287     3573           958.0
 ```
 
-###### 中国 GDP 年率
+##### 中国 GDP 年率
 
-接口: macro_china_gdp_yearly
+接口：macro_china_gdp_yearly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_gdp_yoy
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_gdp_yoy
 
-描述: 金十数据中心-中国 GDP 年率报告, 数据区间从 20110120-至今
+描述：金十数据中心-中国 GDP 年率报告，数据区间从 20110120-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -359,9 +359,9 @@ print(macro_china_shrzgm_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -434,17 +434,17 @@ print(macro_china_gdp_yearly_df)
 55  中国GDP年率报告  2024-04-16   NaN   NaN   5.2
 ```
 
-##### 物价水平
+#### 物价水平
 
-###### 中国 CPI 年率报告
+##### 中国 CPI 年率报告
 
-接口: macro_china_cpi_yearly
+接口：macro_china_cpi_yearly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_cpi_yoy
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_cpi_yoy
 
-描述: 中国年度 CPI 数据, 数据区间从 19860201-至今
+描述：中国年度 CPI 数据，数据区间从 19860201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -458,9 +458,9 @@ print(macro_china_gdp_yearly_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -489,15 +489,15 @@ print(macro_china_cpi_yearly_df)
 [459 rows x 5 columns]
 ```
 
-###### 中国 CPI 月率报告
+##### 中国 CPI 月率报告
 
-接口: macro_china_cpi_monthly
+接口：macro_china_cpi_monthly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_cpi_mom
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_cpi_mom
 
-描述: 中国月度 CPI 数据, 数据区间从 19960201-至今
+描述：中国月度 CPI 数据，数据区间从 19960201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -511,9 +511,9 @@ print(macro_china_cpi_yearly_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -542,15 +542,15 @@ print(macro_china_cpi_monthly_df)
 [339 rows x 5 columns]
 ```
 
-###### 中国 PPI 年率报告
+##### 中国 PPI 年率报告
 
-接口: macro_china_ppi_yearly
+接口：macro_china_ppi_yearly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_ppi_yoy
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_ppi_yoy
 
-描述: 中国年度 PPI 数据, 数据区间从 19950801-至今
+描述：中国年度 PPI 数据，数据区间从 19950801-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -564,9 +564,9 @@ print(macro_china_cpi_monthly_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -595,17 +595,17 @@ print(macro_china_ppi_yearly_df)
 [345 rows x 5 columns]
 ```
 
-#### 贸易状况
+### 贸易状况
 
-##### 以美元计算出口年率
+#### 以美元计算出口年率
 
-接口: macro_china_exports_yoy
+接口：macro_china_exports_yoy
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_exports_yoy
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_exports_yoy
 
-描述: 中国以美元计算出口年率报告, 数据区间从 19820201-至今
+描述：中国以美元计算出口年率报告，数据区间从 19820201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -619,9 +619,9 @@ print(macro_china_ppi_yearly_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -650,15 +650,15 @@ print(macro_china_exports_yoy_df)
 [510 rows x 5 columns]
 ```
 
-##### 以美元计算进口年率
+#### 以美元计算进口年率
 
-接口: macro_china_imports_yoy
+接口：macro_china_imports_yoy
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_imports_yoy
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_imports_yoy
 
-描述: 中国以美元计算进口年率报告, 数据区间从 19960201-至今
+描述：中国以美元计算进口年率报告，数据区间从 19960201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -672,9 +672,9 @@ print(macro_china_exports_yoy_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -703,15 +703,15 @@ print(macro_china_imports_yoy_df)
 [348 rows x 5 columns]
 ```
 
-##### 以美元计算贸易帐(亿美元)
+#### 以美元计算贸易帐（亿美元）
 
-接口: macro_china_trade_balance
+接口：macro_china_trade_balance
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_trade_balance
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_trade_balance
 
-描述: 中国以美元计算贸易帐报告, 数据区间从19810201-至今
+描述：中国以美元计算贸易帐报告，数据区间从19810201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -725,9 +725,9 @@ print(macro_china_imports_yoy_df)
 |-----|---------|-----------|
 | 商品  | object  | -         |
 | 日期  | object  | -         |
-| 今值  | float64 | 注意单位: 亿美元 |
-| 预测值 | float64 | 注意单位: 亿美元 |
-| 前值  | float64 | 注意单位: 亿美元 |
+| 今值  | float64 | 注意单位：亿美元 |
+| 预测值 | float64 | 注意单位：亿美元 |
+| 前值  | float64 | 注意单位：亿美元 |
 
 接口示例
 
@@ -756,17 +756,17 @@ print(macro_china_trade_balance_df)
 [533 rows x 5 columns]
 ```
 
-#### 产业指标
+### 产业指标
 
-##### 工业增加值增长
+#### 工业增加值增长
 
-接口: macro_china_gyzjz
+接口：macro_china_gyzjz
 
-目标地址: https://data.eastmoney.com/cjsj/gyzjz.html
+目标地址：https://data.eastmoney.com/cjsj/gyzjz.html
 
-描述: 东方财富-中国工业增加值增长, 数据区间从 2008 - 至今
+描述：东方财富-中国工业增加值增长，数据区间从 2008 - 至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -779,8 +779,8 @@ print(macro_china_trade_balance_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 月份   | object  | -       |
-| 同比增长 | float64 | 注意单位: % |
-| 累计增长 | float64 | 注意单位: % |
+| 同比增长 | float64 | 注意单位：% |
+| 累计增长 | float64 | 注意单位：% |
 | 发布时间 | object  | -       |
 
 接口示例
@@ -810,15 +810,15 @@ print(macro_china_gyzjz_df)
 [170 rows x 4 columns]
 ```
 
-##### 规模以上工业增加值年率
+#### 规模以上工业增加值年率
 
-接口: macro_china_industrial_production_yoy
+接口：macro_china_industrial_production_yoy
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_industrial_production_yoy
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_industrial_production_yoy
 
-描述: 中国规模以上工业增加值年率报告, 数据区间从 19900301-至今
+描述：中国规模以上工业增加值年率报告，数据区间从 19900301-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -832,9 +832,9 @@ print(macro_china_gyzjz_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -863,15 +863,15 @@ print(macro_china_industrial_production_yoy_df)
 [397 rows x 5 columns]
 ```
 
-##### 官方制造业 PMI
+#### 官方制造业 PMI
 
-接口: macro_china_pmi_yearly
+接口：macro_china_pmi_yearly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_manufacturing_pmi
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_manufacturing_pmi
 
-描述: 中国年度PMI数据, 数据区间从 20050201-至今
+描述：中国年度PMI数据，数据区间从 20050201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -916,15 +916,15 @@ print(macro_china_pmi_yearly_df)
 [233 rows x 5 columns]
 ```
 
-##### 财新制造业PMI终值
+#### 财新制造业PMI终值
 
-接口: macro_china_cx_pmi_yearly
+接口：macro_china_cx_pmi_yearly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_caixin_manufacturing_pmi
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_caixin_manufacturing_pmi
 
-描述: 中国年度财新 PMI 数据, 数据区间从 20120120-至今
+描述：中国年度财新 PMI 数据，数据区间从 20120120-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -969,15 +969,15 @@ print(macro_china_cx_pmi_yearly_df)
 [201 rows x 5 columns]
 ```
 
-##### 财新服务业PMI
+#### 财新服务业PMI
 
-接口: macro_china_cx_services_pmi_yearly
+接口：macro_china_cx_services_pmi_yearly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_caixin_services_pmi
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_caixin_services_pmi
 
-描述: 中国财新服务业 PMI 报告, 数据区间从 20120405-至今
+描述：中国财新服务业 PMI 报告，数据区间从 20120405-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1022,15 +1022,15 @@ print(macro_china_cx_services_pmi_yearly_df)
 [148 rows x 5 columns]
 ```
 
-##### 中国官方非制造业PMI
+#### 中国官方非制造业PMI
 
-接口: macro_china_non_man_pmi
+接口：macro_china_non_man_pmi
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_non_manufacturing_pmi
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_non_manufacturing_pmi
 
-描述: 中国官方非制造业 PMI, 数据区间从 20160101-至今
+描述：中国官方非制造业 PMI，数据区间从 20160101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1044,9 +1044,9 @@ print(macro_china_cx_services_pmi_yearly_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -1075,17 +1075,17 @@ print(macro_china_non_man_pmi_df)
 [209 rows x 5 columns]
 ```
 
-#### 金融指标
+### 金融指标
 
-##### 外汇储备(亿美元)
+#### 外汇储备（亿美元）
 
-接口: macro_china_fx_reserves_yearly
+接口：macro_china_fx_reserves_yearly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_fx_reserves
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_fx_reserves
 
-描述: 中国年度外汇储备数据, 数据区间从 20140115-至今
+描述：中国年度外汇储备数据，数据区间从 20140115-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1099,9 +1099,9 @@ print(macro_china_non_man_pmi_df)
 |-----|---------|-----------|
 | 商品  | object  | -         |
 | 日期  | object  | -         |
-| 今值  | float64 | 注意单位: 亿美元 |
-| 预测值 | float64 | 注意单位: 亿美元 |
-| 前值  | float64 | 注意单位: 亿美元 |
+| 今值  | float64 | 注意单位：亿美元 |
+| 预测值 | float64 | 注意单位：亿美元 |
+| 前值  | float64 | 注意单位：亿美元 |
 
 接口示例
 
@@ -1130,15 +1130,15 @@ print(macro_china_fx_reserves_yearly_df)
 [111 rows x 5 columns]
 ```
 
-##### M2货币供应年率
+#### M2货币供应年率
 
-接口: macro_china_m2_yearly
+接口：macro_china_m2_yearly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_chinese_m2_money_supply_yoy
+目标地址：https://datacenter.jin10.com/reportType/dc_chinese_m2_money_supply_yoy
 
-描述: 中国年度 M2 数据, 数据区间从 19980201-至今
+描述：中国年度 M2 数据，数据区间从 19980201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1152,9 +1152,9 @@ print(macro_china_fx_reserves_yearly_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -1183,22 +1183,22 @@ print(macro_china_m2_yearly_df)
 [354 rows x 5 columns]
 ```
 
-##### 新房价指数
+#### 新房价指数
 
-接口: macro_china_new_house_price
+接口：macro_china_new_house_price
 
-目标地址: http://data.eastmoney.com/cjsj/newhouse.html
+目标地址：http://data.eastmoney.com/cjsj/newhouse.html
 
-描述: 中国新房价指数月度数据, 数据区间从 201101-至今
+描述：中国新房价指数月度数据，数据区间从 201101-至今
 
-限量: 单次返回指定城市的所有历史数据
+限量：单次返回指定城市的所有历史数据
 
 输入参数
 
 | 名称          | 类型  | 描述                          |
 |-------------|-----|-----------------------------|
-| city_first  | str | city_first="北京"; 城市列表见目标网站  |
-| city_second | str | city_second="上海"; 城市列表见目标网站 |
+| city_first  | str | city_first="北京"；城市列表见目标网站  |
+| city_second | str | city_second="上海"；城市列表见目标网站 |
 
 输出参数
 
@@ -1240,15 +1240,15 @@ print(macro_china_new_house_price_df)
 [332 rows x 8 columns]
 ```
 
-##### 企业景气及企业家信心指数
+#### 企业景气及企业家信心指数
 
-接口: macro_china_enterprise_boom_index
+接口：macro_china_enterprise_boom_index
 
-目标地址: http://data.eastmoney.com/cjsj/qyjqzs.html
+目标地址：http://data.eastmoney.com/cjsj/qyjqzs.html
 
-描述: 中国企业景气及企业家信心指数数据, 数据区间从 2005 一季度-至今
+描述：中国企业景气及企业家信心指数数据，数据区间从 2005 一季度-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1262,11 +1262,11 @@ print(macro_china_new_house_price_df)
 |------------|---------|---------|
 | 季度         | object  | 日期      |
 | 企业景气指数-指数  | float64 | -       |
-| 企业景气指数-同比  | float64 | 注意单位: % |
-| 企业景气指数-环比  | float64 | 注意单位: % |
+| 企业景气指数-同比  | float64 | 注意单位：% |
+| 企业景气指数-环比  | float64 | 注意单位：% |
 | 企业家信心指数-指数 | float64 | -       |
-| 企业家信心指数-同比 | float64 | 注意单位: % |
-| 企业家信心指数-环比 | float64 | 注意单位: % |
+| 企业家信心指数-同比 | float64 | 注意单位：% |
+| 企业家信心指数-环比 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1294,15 +1294,15 @@ print(macro_china_enterprise_boom_index_df)
 69  2005年第1季度     132.46      32.46  ...      135.85       35.85        5.04
 ```
 
-##### 全国税收收入
+#### 全国税收收入
 
-接口: macro_china_national_tax_receipts
+接口：macro_china_national_tax_receipts
 
-目标地址: http://data.eastmoney.com/cjsj/nationaltaxreceipts.aspx
+目标地址：http://data.eastmoney.com/cjsj/nationaltaxreceipts.aspx
 
-描述: 中国全国税收收入数据, 数据区间从 2005 一季度-至今
+描述：中国全国税收收入数据，数据区间从 2005 一季度-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1315,8 +1315,8 @@ print(macro_china_enterprise_boom_index_df)
 | 名称     | 类型      | 描述       |
 |--------|---------|----------|
 | 季度     | object  | 日期       |
-| 税收收入合计 | float64 | 注意单位: 亿元 |
-| 较上年同期  | float64 | 注意单位: %  |
+| 税收收入合计 | float64 | 注意单位：亿元 |
+| 较上年同期  | float64 | 注意单位：%  |
 | 季度环比   | float64 | -        |
 
 接口示例
@@ -1345,15 +1345,15 @@ print(macro_china_national_tax_receipts_df)
 68    2005年第1季度    7249.16   10.7       NaN
 ```
 
-##### 银行理财产品发行数量
+#### 银行理财产品发行数量
 
-接口: macro_china_bank_financing
+接口：macro_china_bank_financing
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI01516267.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI01516267.html
 
-描述: 银行理财产品发行数量, 数据区间从 2000 一月-至今
+描述：银行理财产品发行数量，数据区间从 2000 一月-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1367,12 +1367,12 @@ print(macro_china_national_tax_receipts_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1400,15 +1400,15 @@ print(macro_china_bank_financing_df)
 217  2022-02-01  1779  -36.305048  ...  -54.893509  -66.204407  -78.496313
 ```
 
-##### 原保险保费收入
+#### 原保险保费收入
 
-接口: macro_china_insurance_income
+接口：macro_china_insurance_income
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMM00088870.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMM00088870.html
 
-描述: 原保险保费收入, 数据区间从 200407-至今
+描述：原保险保费收入，数据区间从 200407-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1422,12 +1422,12 @@ print(macro_china_bank_financing_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1455,15 +1455,15 @@ print(macro_china_insurance_income_df)
 209  2022-01-01  7.049640e+07 -70.092958  ... -5.768089  5.429366  12.398597
 ```
 
-##### 手机出货量
+#### 手机出货量
 
-接口: macro_china_mobile_number
+接口：macro_china_mobile_number
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00225823.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00225823.html
 
-描述: 手机出货量, 数据区间从 201201-至今
+描述：手机出货量，数据区间从 201201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1477,12 +1477,12 @@ print(macro_china_insurance_income_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1510,15 +1510,15 @@ print(macro_china_mobile_number_df)
 121  2022-02-01  1486.4 -54.987584  ... -31.688037  132.832080   2.432637
 ```
 
-##### 菜篮子产品批发价格指数
+#### 菜篮子产品批发价格指数
 
-接口: macro_china_vegetable_basket
+接口：macro_china_vegetable_basket
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00009275.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00009275.html
 
-描述: 菜篮子产品批发价格指数, 数据区间从 20050927-至今
+描述：菜篮子产品批发价格指数，数据区间从 20050927-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1532,12 +1532,12 @@ print(macro_china_mobile_number_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1565,15 +1565,15 @@ print(macro_china_vegetable_basket_df)
 4104  2022-04-01  139.70  0.229588  ...  8.775208  8.622969  16.484616
 ```
 
-##### 农产品批发价格总指数
+#### 农产品批发价格总指数
 
-接口: macro_china_agricultural_product
+接口：macro_china_agricultural_product
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00009274.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00009274.html
 
-描述: 农产品批发价格总指数, 数据区间从 20050927-至今
+描述：农产品批发价格总指数，数据区间从 20050927-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1587,12 +1587,12 @@ print(macro_china_vegetable_basket_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1620,15 +1620,15 @@ print(macro_china_agricultural_product_df)
 4104  2022-04-01  136.38  0.205731  ...  8.790683  9.156395  16.176846
 ```
 
-##### 农副指数
+#### 农副指数
 
-接口: macro_china_agricultural_index
+接口：macro_china_agricultural_index
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00662543.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00662543.html
 
-描述: 农副指数数据, 数据区间从 20111205-至今
+描述：农副指数数据，数据区间从 20111205-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1642,12 +1642,12 @@ print(macro_china_agricultural_product_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1675,15 +1675,15 @@ print(macro_china_agricultural_index_df)
 2975  2022-04-01  1289 -1.074444  ...  6.090535  21.489161  52.906287
 ```
 
-##### 能源指数
+#### 能源指数
 
-接口: macro_china_energy_index
+接口：macro_china_energy_index
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00662539.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00662539.html
 
-描述: 能源指数数据, 数据区间从 20111205-至今
+描述：能源指数数据，数据区间从 20111205-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1697,12 +1697,12 @@ print(macro_china_agricultural_index_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1730,15 +1730,15 @@ print(macro_china_energy_index_df)
 2976  2022-04-02  1208  0.082850  ...  47.858017  91.442155  47.858017
 ```
 
-##### 大宗商品价格
+#### 大宗商品价格
 
-接口: macro_china_commodity_price_index
+接口：macro_china_commodity_price_index
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00662535.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00662535.html
 
-描述: 大宗商品价格数据, 数据区间从 20111205-至今
+描述：大宗商品价格数据，数据区间从 20111205-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1752,12 +1752,12 @@ print(macro_china_energy_index_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1785,15 +1785,15 @@ print(macro_china_commodity_price_index_df)
 2979  2022-04-04  1212  0.000000  ...  20.837488  70.704225  40.440324
 ```
 
-##### 费城半导体指数
+#### 费城半导体指数
 
-接口: macro_global_sox_index
+接口：macro_global_sox_index
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00055562.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00055562.html
 
-描述: 费城半导体指数数据, 数据区间从 19940504-至今
+描述：费城半导体指数数据，数据区间从 19940504-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1807,12 +1807,12 @@ print(macro_china_commodity_price_index_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1840,15 +1840,15 @@ print(macro_global_sox_index_df)
 6961  2022-03-31  3429.0 -2.268711  ...   9.730107  126.997398  145.716620
 ```
 
-##### 义乌小商品指数-电子元器件
+#### 义乌小商品指数-电子元器件
 
-接口: macro_china_yw_electronic_index
+接口：macro_china_yw_electronic_index
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00055551.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00055551.html
 
-描述: 义乌小商品指数-电子元器件数据, 数据区间从 20060911-至今
+描述：义乌小商品指数-电子元器件数据，数据区间从 20060911-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1862,12 +1862,12 @@ print(macro_global_sox_index_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1895,15 +1895,15 @@ print(macro_china_yw_electronic_index_df)
 759  2022-04-04  101.53 -1.484572  0.118332    1.53    1.53  1.469119    1.53
 ```
 
-##### 建材指数
+#### 建材指数
 
-接口: macro_china_construction_index
+接口：macro_china_construction_index
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00662541.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00662541.html
 
-描述: 建材指数数据, 数据区间从 20111205-至今
+描述：建材指数数据，数据区间从 20111205-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1917,12 +1917,12 @@ print(macro_china_yw_electronic_index_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -1951,15 +1951,15 @@ print(macro_china_construction_index_df)
 [3184 rows x 8 columns]
 ```
 
-##### 建材价格指数
+#### 建材价格指数
 
-接口: macro_china_construction_price_index
+接口：macro_china_construction_price_index
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00237146.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00237146.html
 
-描述: 建材价格指数数据, 数据区间从 20100615-至今
+描述：建材价格指数数据，数据区间从 20100615-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -1973,12 +1973,12 @@ print(macro_china_construction_index_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -2006,15 +2006,15 @@ print(macro_china_construction_price_index_df)
 3845  2022-03-01  1097.41  0.860255  ...  1.419528  0.749139  2.051425
 ```
 
-##### 物流景气指数
+#### 物流景气指数
 
-接口: macro_china_lpi_index
+接口：macro_china_lpi_index
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00352262.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00352262.html
 
-描述: 物流景气指数数据, 数据区间从 20130701-至今
+描述：物流景气指数数据，数据区间从 20130701-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2028,12 +2028,12 @@ print(macro_china_construction_price_index_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -2061,15 +2061,15 @@ print(macro_china_lpi_index_df)
 104  2022-03-01  48.7 -4.882812  ... -6.165703  -5.436893 -7.414449
 ```
 
-##### 原油运输指数
+#### 原油运输指数
 
-接口: macro_china_bdti_index
+接口：macro_china_bdti_index
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00107668.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00107668.html
 
-描述: 原油运输指数数据, 数据区间从 20011227-至今
+描述：原油运输指数数据，数据区间从 20011227-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2083,12 +2083,12 @@ print(macro_china_lpi_index_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -2116,15 +2116,15 @@ print(macro_china_bdti_index_df)
 4925  2022-04-11  1730  3.160405  ...  167.801858  55.296230  172.870662
 ```
 
-##### 超灵便型船运价指数
+#### 超灵便型船运价指数
 
-接口: macro_china_bsi_index
+接口：macro_china_bsi_index
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00107667.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00107667.html
 
-描述: 超灵便型船运价指数数据, 数据区间从 20060103-至今
+描述：超灵便型船运价指数数据，数据区间从 20060103-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2138,12 +2138,12 @@ print(macro_china_bdti_index_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -2171,15 +2171,15 @@ print(macro_china_bsi_index_df)
 3988  2022-04-12  2448 -1.010918  ...  37.993236  455.102041  244.303797
 ```
 
-##### 海岬型运费指数
+#### 海岬型运费指数
 
-接口: macro_shipping_bci
+接口：macro_shipping_bci
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00107666.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00107666.html
 
-描述: 海岬型运费指数, 数据区间从 19990430-至今
+描述：海岬型运费指数，数据区间从 19990430-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2193,12 +2193,12 @@ print(macro_china_bsi_index_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -2226,15 +2226,15 @@ print(macro_shipping_bci_df)
 5992  2023-03-09  1662   7.225806  ... -27.169150 -14.769231  546.774194
 ```
 
-##### 波罗的海干散货指数
+#### 波罗的海干散货指数
 
-接口: macro_shipping_bdi
+接口：macro_shipping_bdi
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00107664.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00107664.html
 
-描述: 波罗的海干散货指数, 数据区间从 19881019-至今
+描述：波罗的海干散货指数，数据区间从 19881019-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2248,12 +2248,12 @@ print(macro_shipping_bci_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -2281,15 +2281,15 @@ print(macro_shipping_bdi_df)
 8581  2023-03-09  1379  3.918613  ... -46.090696 -27.459232  123.863636
 ```
 
-##### 巴拿马型运费指数
+#### 巴拿马型运费指数
 
-接口: macro_shipping_bpi
+接口：macro_shipping_bpi
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00107665.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00107665.html
 
-描述: 巴拿马型运费指数, 数据区间从 19981231-至今
+描述：巴拿马型运费指数，数据区间从 19981231-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2303,12 +2303,12 @@ print(macro_shipping_bdi_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -2336,15 +2336,15 @@ print(macro_shipping_bpi_df)
 5955  2023-03-09  1624  2.010050  ... -49.154665 -27.435210  52.202437
 ```
 
-##### 成品油运输指数
+#### 成品油运输指数
 
-接口: macro_shipping_bcti
+接口：macro_shipping_bcti
 
-目标地址: https://data.eastmoney.com/cjsj/hyzs_list_EMI00107669.html
+目标地址：https://data.eastmoney.com/cjsj/hyzs_list_EMI00107669.html
 
-描述: 成品油运输指数, 数据区间从 20011217-至今
+描述：成品油运输指数，数据区间从 20011217-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2358,12 +2358,12 @@ print(macro_shipping_bpi_df)
 |--------|---------|---------|
 | 日期     | object  | -       |
 | 最新值    | int64   | -       |
-| 涨跌幅    | float64 | 注意单位: % |
-| 近3月涨跌幅 | float64 | 注意单位: % |
-| 近6月涨跌幅 | float64 | 注意单位: % |
-| 近1年涨跌幅 | float64 | 注意单位: % |
-| 近2年涨跌幅 | float64 | 注意单位: % |
-| 近3年涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅    | float64 | 注意单位：% |
+| 近3月涨跌幅 | float64 | 注意单位：% |
+| 近6月涨跌幅 | float64 | 注意单位：% |
+| 近1年涨跌幅 | float64 | 注意单位：% |
+| 近2年涨跌幅 | float64 | 注意单位：% |
+| 近3年涨跌幅 | float64 | 注意单位：% |
 
 接口示例
 
@@ -2391,15 +2391,15 @@ print(macro_shipping_bcti_df)
 5152  2023-03-09  871  5.320435  ... -15.682478  73.161034  21.478382
 ```
 
-##### 新增信贷数据
+#### 新增信贷数据
 
-接口: macro_china_new_financial_credit
+接口：macro_china_new_financial_credit
 
-目标地址: http://data.eastmoney.com/cjsj/xzxd.html
+目标地址：http://data.eastmoney.com/cjsj/xzxd.html
 
-描述: 中国新增信贷数据数据, 数据区间从 200801 至今, 月度数据
+描述：中国新增信贷数据数据，数据区间从 200801 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2412,11 +2412,11 @@ print(macro_shipping_bcti_df)
 | 名称      | 类型      | 描述       |
 |---------|---------|----------|
 | 月份      | object  | -        |
-| 当月      | float64 | 注意单位: 亿元 |
-| 当月-同比增长 | float64 | 注意单位: %  |
-| 当月-环比增长 | float64 | 注意单位: %  |
-| 累计      | float64 | 注意单位: 亿元 |
-| 累计-同比增长 | float64 | 注意单位: %  |
+| 当月      | float64 | 注意单位：亿元 |
+| 当月-同比增长 | float64 | 注意单位：%  |
+| 当月-环比增长 | float64 | 注意单位：%  |
+| 累计      | float64 | 注意单位：亿元 |
+| 累计-同比增长 | float64 | 注意单位：%  |
 
 接口示例
 
@@ -2444,15 +2444,15 @@ print(macro_china_new_financial_credit_df)
 177  2008年01月份   8058.0  42.292071  1561.443299    8058.0  42.292071
 ```
 
-##### 居民消费价格指数
+#### 居民消费价格指数
 
-接口: macro_china_cpi
+接口：macro_china_cpi
 
-目标地址: http://data.eastmoney.com/cjsj/cpi.html
+目标地址：http://data.eastmoney.com/cjsj/cpi.html
 
-描述: 中国居民消费价格指数, 数据区间从 200801 至今, 月度数据
+描述：中国居民消费价格指数，数据区间从 200801 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2466,16 +2466,16 @@ print(macro_china_new_financial_credit_df)
 |---------|---------|---------|
 | 月份      | object  | -       |
 | 全国-当月   | float64 | -       |
-| 全国-同比增长 | float64 | 注意单位: % |
-| 全国-环比增长 | float64 | 注意单位: % |
+| 全国-同比增长 | float64 | 注意单位：% |
+| 全国-环比增长 | float64 | 注意单位：% |
 | 全国-累计   | float64 | -       |
 | 城市-当月   | float64 | -       |
-| 城市-同比增长 | float64 | 注意单位: % |
-| 城市-环比增长 | float64 | 注意单位: % |
+| 城市-同比增长 | float64 | 注意单位：% |
+| 城市-环比增长 | float64 | 注意单位：% |
 | 城市-累计   | float64 | -       |
 | 农村-当月   | float64 | -       |
-| 农村-同比增长 | float64 | 注意单位: % |
-| 农村-环比增长 | float64 | 注意单位: % |
+| 农村-同比增长 | float64 | 注意单位：% |
+| 农村-环比增长 | float64 | 注意单位：% |
 | 农村-累计   | float64 | -       |
 
 接口示例
@@ -2504,15 +2504,15 @@ print(macro_china_cpi_df)
 177  2008年01月份  107.0781   7.0781  ...   7.7209      1.2  107.7209
 ```
 
-##### 国内生产总值
+#### 国内生产总值
 
-接口: macro_china_gdp
+接口：macro_china_gdp
 
-目标地址: http://data.eastmoney.com/cjsj/gdp.html
+目标地址：http://data.eastmoney.com/cjsj/gdp.html
 
-描述: 中国国内生产总值, 数据区间从 200601 至今, 月度数据
+描述：中国国内生产总值，数据区间从 200601 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2525,14 +2525,14 @@ print(macro_china_cpi_df)
 | 名称          | 类型      | 描述       |
 |-------------|---------|----------|
 | 季度          | object  | -        |
-| 国内生产总值-绝对值  | float64 | 注意单位: 亿元 |
-| 国内生产总值-同比增长 | float64 | 注意单位: %  |
-| 第一产业-绝对值    | float64 | 注意单位: 亿元 |
-| 第一产业-同比增长   | float64 | 注意单位: %  |
-| 第二产业-绝对值    | float64 | 注意单位: 亿元 |
-| 第二产业-同比增长   | float64 | 注意单位: %  |
-| 第三产业-绝对值    | float64 | 注意单位: 亿元 |
-| 第三产业-同比增长   | float64 | 注意单位: %  |
+| 国内生产总值-绝对值  | float64 | 注意单位：亿元 |
+| 国内生产总值-同比增长 | float64 | 注意单位：%  |
+| 第一产业-绝对值    | float64 | 注意单位：亿元 |
+| 第一产业-同比增长   | float64 | 注意单位：%  |
+| 第二产业-绝对值    | float64 | 注意单位：亿元 |
+| 第二产业-同比增长   | float64 | 注意单位：%  |
+| 第三产业-绝对值    | float64 | 注意单位：亿元 |
+| 第三产业-同比增长   | float64 | 注意单位：%  |
 
 接口示例
 
@@ -2560,15 +2560,15 @@ print(macro_china_gdp_df)
 60  2006-03-01     47078.9         12.5  ...       13.1   22648.0       13.1
 ```
 
-##### 工业品出厂价格指数
+#### 工业品出厂价格指数
 
-接口: macro_china_ppi
+接口：macro_china_ppi
 
-目标地址: http://data.eastmoney.com/cjsj/ppi.html
+目标地址：http://data.eastmoney.com/cjsj/ppi.html
 
-描述: 工业品出厂价格指数, 数据区间从 200601 至今, 月度数据
+描述：工业品出厂价格指数，数据区间从 200601 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2582,7 +2582,7 @@ print(macro_china_gdp_df)
 |--------|---------|---------|
 | 月份     | object  | -       |
 | 当月     | float64 | -       |
-| 当月同比增长 | float64 | 注意单位: % |
+| 当月同比增长 | float64 | 注意单位：% |
 | 累计     | float64 | -       |
 
 接口示例
@@ -2611,15 +2611,15 @@ print(macro_china_ppi_df)
 201  2006年01月份  103.050    3.05  103.0500
 ```
 
-##### 采购经理人指数
+#### 采购经理人指数
 
-接口: macro_china_pmi
+接口：macro_china_pmi
 
-目标地址: http://data.eastmoney.com/cjsj/pmi.html
+目标地址：http://data.eastmoney.com/cjsj/pmi.html
 
-描述: 采购经理人指数, 数据区间从 200801 至今, 月度数据
+描述：采购经理人指数，数据区间从 200801 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2633,9 +2633,9 @@ print(macro_china_ppi_df)
 |-----------|---------|---------|
 | 月份        | object  | -       |
 | 制造业-指数    | float64 | -       |
-| 制造业-同比增长  | float64 | 注意单位: % |
+| 制造业-同比增长  | float64 | 注意单位：% |
 | 非制造业-指数   | float64 | -       |
-| 非制造业-同比增长 | float64 | 注意单位: % |
+| 非制造业-同比增长 | float64 | 注意单位：% |
 
 接口示例
 
@@ -2663,15 +2663,15 @@ print(macro_china_pmi_df)
 177  2008年01月份    53.0 -3.811252     60.2  -0.331126
 ```
 
-##### 中国城镇固定资产投资
+#### 中国城镇固定资产投资
 
-接口: macro_china_gdzctz
+接口：macro_china_gdzctz
 
-目标地址: http://data.eastmoney.com/cjsj/gdzctz.html
+目标地址：http://data.eastmoney.com/cjsj/gdzctz.html
 
-描述: 中国城镇固定资产投资, 数据区间从 200802 至今, 月度数据
+描述：中国城镇固定资产投资，数据区间从 200802 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2684,10 +2684,10 @@ print(macro_china_pmi_df)
 | 名称    | 类型      | 描述       |
 |-------|---------|----------|
 | 月份    | object  | -        |
-| 当月    | float64 | 注意单位: 亿元 |
-| 同比增长  | float64 | 注意单位: %  |
-| 环比增长  | float64 | 注意单位: %  |
-| 自年初累计 | float64 | 注意单位: 亿元 |
+| 当月    | float64 | 注意单位：亿元 |
+| 同比增长  | float64 | 注意单位：%  |
+| 环比增长  | float64 | 注意单位：%  |
+| 自年初累计 | float64 | 注意单位：亿元 |
 
 接口示例
 
@@ -2715,15 +2715,15 @@ print(macro_china_gdzctz_df)
 162  2008年02月份       NaN    NaN    NaN    8121.29
 ```
 
-##### 海关进出口增减情况
+#### 海关进出口增减情况
 
-接口: macro_china_hgjck
+接口：macro_china_hgjck
 
-目标地址: https://data.eastmoney.com/cjsj/hgjck.html
+目标地址：https://data.eastmoney.com/cjsj/hgjck.html
 
-描述: 中国海关进出口增减情况一览表, 数据区间从 200801 至今, 月度数据
+描述：中国海关进出口增减情况一览表，数据区间从 200801 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2736,16 +2736,16 @@ print(macro_china_gdzctz_df)
 | 名称         | 类型      | 描述        |
 |------------|---------|-----------|
 | 月份         | object  | -         |
-| 当月出口额-金额   | float64 | 注意单位: 亿美元 |
-| 当月出口额-同比增长 | float64 | 注意单位: %   |
-| 当月出口额-环比增长 | float64 | 注意单位: %   |
-| 当月进口额-金额   | float64 | 注意单位: 亿美元 |
-| 当月进口额-同比增长 | float64 | 注意单位: %   |
-| 当月进口额-环比增长 | float64 | 注意单位: %   |
-| 累计出口额-金额   | float64 | 注意单位: 亿美元 |
-| 累计出口额-同比增长 | float64 | 注意单位: %   |
-| 累计进口额-金额   | float64 | 注意单位: 亿美元 |
-| 累计进口额-同比增长 | float64 | 注意单位: %   |
+| 当月出口额-金额   | float64 | 注意单位：亿美元 |
+| 当月出口额-同比增长 | float64 | 注意单位：%   |
+| 当月出口额-环比增长 | float64 | 注意单位：%   |
+| 当月进口额-金额   | float64 | 注意单位：亿美元 |
+| 当月进口额-同比增长 | float64 | 注意单位：%   |
+| 当月进口额-环比增长 | float64 | 注意单位：%   |
+| 累计出口额-金额   | float64 | 注意单位：亿美元 |
+| 累计出口额-同比增长 | float64 | 注意单位：%   |
+| 累计进口额-金额   | float64 | 注意单位：亿美元 |
+| 累计进口额-同比增长 | float64 | 注意单位：%   |
 
 接口示例
 
@@ -2773,15 +2773,15 @@ print(macro_china_hgjck_df)
 177  2008年01月份  1.096400e+08        26.6  ...        26.6  9.017445e+07        27.6
 ```
 
-##### 财政收入
+#### 财政收入
 
-接口: macro_china_czsr
+接口：macro_china_czsr
 
-目标地址: http://data.eastmoney.com/cjsj/czsr.html
+目标地址：http://data.eastmoney.com/cjsj/czsr.html
 
-描述: 中国财政收入, 数据区间从 200801 至今, 月度数据
+描述：中国财政收入，数据区间从 200801 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2794,11 +2794,11 @@ print(macro_china_hgjck_df)
 | 名称      | 类型      | 描述       |
 |---------|---------|----------|
 | 月份      | object  | -        |
-| 当月      | float64 | 注意单位: 亿元 |
-| 当月-同比增长 | float64 | 注意单位: %  |
-| 当月-环比增长 | float64 | 注意单位: %  |
-| 累计      | float64 | 注意单位: 亿元 |
-| 累计-同比增长 | float64 | 注意单位: %  |
+| 当月      | float64 | 注意单位：亿元 |
+| 当月-同比增长 | float64 | 注意单位：%  |
+| 当月-环比增长 | float64 | 注意单位：%  |
+| 累计      | float64 | 注意单位：亿元 |
+| 累计-同比增长 | float64 | 注意单位：%  |
 
 接口示例
 
@@ -2827,15 +2827,15 @@ print(macro_china_czsr_df)
 [206 rows x 6 columns]
 ```
 
-##### 外汇贷款数据
+#### 外汇贷款数据
 
-接口: macro_china_whxd
+接口：macro_china_whxd
 
-目标地址: http://data.eastmoney.com/cjsj/whxd.html
+目标地址：http://data.eastmoney.com/cjsj/whxd.html
 
-描述: 外汇贷款数据, 数据区间从 200802 至今, 月度数据
+描述：外汇贷款数据，数据区间从 200802 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2848,10 +2848,10 @@ print(macro_china_czsr_df)
 | 名称   | 类型      | 描述        |
 |------|---------|-----------|
 | 月份   | object  | -         |
-| 当月   | float64 | 注意单位: 亿美元 |
-| 同比增长 | float64 | 注意单位: %   |
-| 环比增长 | float64 | 注意单位: %   |
-| 累计   | float64 | 注意单位: 亿美元 |
+| 当月   | float64 | 注意单位：亿美元 |
+| 同比增长 | float64 | 注意单位：%   |
+| 环比增长 | float64 | 注意单位：%   |
+| 累计   | float64 | 注意单位：亿美元 |
 
 接口示例
 
@@ -2880,15 +2880,15 @@ print(macro_china_whxd_df)
 [213 rows x 5 columns]
 ```
 
-##### 本外币存款
+#### 本外币存款
 
-接口: macro_china_wbck
+接口：macro_china_wbck
 
-目标地址: http://data.eastmoney.com/cjsj/wbck.html
+目标地址：http://data.eastmoney.com/cjsj/wbck.html
 
-描述: 本外币存款, 数据区间从 200802 至今, 月度数据
+描述：本外币存款，数据区间从 200802 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2901,10 +2901,10 @@ print(macro_china_whxd_df)
 | 名称   | 类型      | 描述       |
 |------|---------|----------|
 | 月份   | object  | -        |
-| 当月   | float64 | 注意单位: 亿元 |
-| 同比增长 | float64 | 注意单位: %  |
-| 环比增长 | float64 | 注意单位: %  |
-| 累计   | float64 | 注意单位: 亿元 |
+| 当月   | float64 | 注意单位：亿元 |
+| 同比增长 | float64 | 注意单位：%  |
+| 环比增长 | float64 | 注意单位：%  |
+| 累计   | float64 | 注意单位：亿元 |
 
 接口示例
 
@@ -2932,15 +2932,15 @@ print(macro_china_wbck_df)
 177  2008年01月份   1437.69  -72.142704  -59.893939   402489.07
 ```
 
-##### 新债发行
+#### 新债发行
 
-接口: macro_china_bond_public
+接口：macro_china_bond_public
 
-目标地址: https://www.chinamoney.com.cn/chinese/xzjfx/
+目标地址：https://www.chinamoney.com.cn/chinese/xzjfx/
 
-描述: 中国外汇交易中心暨全国银行间同业拆借中心-债券信息披露-新债发行; 近期债券发行数据
+描述：中国外汇交易中心暨全国银行间同业拆借中心-债券信息披露-新债发行；近期债券发行数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -2956,9 +2956,9 @@ print(macro_china_wbck_df)
 | 债券类型  | object  | -        |
 | 发行日期  | object  | -        |
 | 计息方式  | object  | -        |
-| 价格    | float64 | 注意单位: 元  |
+| 价格    | float64 | 注意单位：元  |
 | 债券期限  | object  | -        |
-| 计划发行量 | float64 | 注意单位: 亿元 |
+| 计划发行量 | float64 | 注意单位：亿元 |
 | 债券评级  | object  | -        |
 
 接口示例
@@ -2988,15 +2988,15 @@ print(macro_china_bond_public_df)
 [381 rows x 8 columns]
 ```
 
-##### 消费者信心指数
+#### 消费者信心指数
 
-接口: macro_china_xfzxx
+接口：macro_china_xfzxx
 
-目标地址: https://data.eastmoney.com/cjsj/xfzxx.html
+目标地址：https://data.eastmoney.com/cjsj/xfzxx.html
 
-描述: 东方财富网-消费者信心指数
+描述：东方财富网-消费者信心指数
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3010,14 +3010,14 @@ print(macro_china_bond_public_df)
 |--------------|---------|---------|
 | 月份           | object  | -       |
 | 消费者信心指数-指数值  | float64 | -       |
-| 消费者信心指数-同比增长 | float64 | 注意单位: % |
-| 消费者信心指数-环比增长 | float64 | 注意单位: % |
+| 消费者信心指数-同比增长 | float64 | 注意单位：% |
+| 消费者信心指数-环比增长 | float64 | 注意单位：% |
 | 消费者满意指数-指数值  | float64 | -       |
-| 消费者满意指数-同比增长 | float64 | 注意单位: % |
-| 消费者满意指数-环比增长 | float64 | 注意单位: % |
+| 消费者满意指数-同比增长 | float64 | 注意单位：% |
+| 消费者满意指数-环比增长 | float64 | 注意单位：% |
 | 消费者预期指数-指数值  | float64 | -       |
-| 消费者预期指数-同比增长 | float64 | 注意单位: % |
-| 消费者预期指数-环比增长 | float64 | 注意单位: % |
+| 消费者预期指数-同比增长 | float64 | 注意单位：% |
+| 消费者预期指数-环比增长 | float64 | 注意单位：% |
 
 接口示例
 
@@ -3045,15 +3045,15 @@ print(macro_china_xfzxx_df)
 188  2007年01月份        112.4  ...      3.442029     -0.609225
 ```
 
-##### 存款准备金率
+#### 存款准备金率
 
-接口: macro_china_reserve_requirement_ratio
+接口：macro_china_reserve_requirement_ratio
 
-目标地址: https://data.eastmoney.com/cjsj/ckzbj.html
+目标地址：https://data.eastmoney.com/cjsj/ckzbj.html
 
-描述: 国家统计局-存款准备金率
+描述：国家统计局-存款准备金率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3067,14 +3067,14 @@ print(macro_china_xfzxx_df)
 |---------------|---------|---------|
 | 公布时间          | object  | XXXX年X月 |
 | 生效时间          | object  | XXXX年X月 |
-| 大型金融机构-调整前    | float64 | 注意单位: % |
-| 大型金融机构-调整后    | float64 | 注意单位: % |
-| 大型金融机构-调整幅度   | float64 | 注意单位: % |
-| 中小金融机构-调整前    | float64 | 注意单位: % |
-| 中小金融机构-调整后    | float64 | 注意单位: % |
-| 中小金融机构-调整幅度   | float64 | 注意单位: % |
-| 消息公布次日指数涨跌-上证 | float64 | 注意单位: % |
-| 消息公布次日指数涨跌-深证 | float64 | 注意单位: % |
+| 大型金融机构-调整前    | float64 | 注意单位：% |
+| 大型金融机构-调整后    | float64 | 注意单位：% |
+| 大型金融机构-调整幅度   | float64 | 注意单位：% |
+| 中小金融机构-调整前    | float64 | 注意单位：% |
+| 中小金融机构-调整后    | float64 | 注意单位：% |
+| 中小金融机构-调整幅度   | float64 | 注意单位：% |
+| 消息公布次日指数涨跌-上证 | float64 | 注意单位：% |
+| 消息公布次日指数涨跌-深证 | float64 | 注意单位：% |
 | 备注            | object  | -       |
 
 接口示例
@@ -3145,15 +3145,15 @@ print(macro_china_reserve_requirement_ratio_df)
 52  2007年01月05日  ...                                               None
 ```
 
-##### 社会消费品零售总额
+#### 社会消费品零售总额
 
-接口: macro_china_consumer_goods_retail
+接口：macro_china_consumer_goods_retail
 
-目标地址: http://data.eastmoney.com/cjsj/xfp.html
+目标地址：http://data.eastmoney.com/cjsj/xfp.html
 
-描述: 东方财富-经济数据-社会消费品零售总额
+描述：东方财富-经济数据-社会消费品零售总额
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3166,11 +3166,11 @@ print(macro_china_reserve_requirement_ratio_df)
 | 名称      | 类型      | 描述       |
 |---------|---------|----------|
 | 月份      | object  | -        |
-| 当月      | float64 | 注意单位: 亿元 |
-| 同比增长    | float64 | 注意单位: %  |
-| 环比增长    | float64 | 注意单位: %  |
-| 累计      | float64 | 注意单位: 亿元 |
-| 累计-同比增长 | float64 | 注意单位: %  |
+| 当月      | float64 | 注意单位：亿元 |
+| 同比增长    | float64 | 注意单位：%  |
+| 环比增长    | float64 | 注意单位：%  |
+| 累计      | float64 | 注意单位：亿元 |
+| 累计-同比增长 | float64 | 注意单位：%  |
 
 接口示例
 
@@ -3198,15 +3198,15 @@ print(macro_china_consumer_goods_retail_df)
 166  2008年01月份   9077.3  21.2   0.687720    9077.3     21.2
 ```
 
-##### 全社会用电分类情况表
+#### 全社会用电分类情况表
 
-接口: macro_china_society_electricity
+接口：macro_china_society_electricity
 
-目标地址: http://finance.sina.com.cn/mac/#industry-6-0-31-1
+目标地址：http://finance.sina.com.cn/mac/#industry-6-0-31-1
 
-描述: 国家统计局-全社会用电分类情况表
+描述：国家统计局-全社会用电分类情况表
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3219,22 +3219,22 @@ print(macro_china_consumer_goods_retail_df)
 | 名称            | 类型      | 描述         |
 |---------------|---------|------------|
 | 统计时间          | object  | -          |
-| 全社会用电量        | float64 | 注意单位: 万千瓦时 |
-| 全社会用电量同比      | float64 | 注意单位: %    |
-| 各行业用电量合计      | float64 | 注意单位: 万千瓦时 |
-| 各行业用电量合计同比    | float64 | 注意单位: %    |
-| 第一产业用电量       | float64 | 注意单位: 万千瓦时 |
-| 第一产业用电量同比     | float64 | 注意单位: %    |
-| 第二产业用电量       | float64 | 注意单位: 万千瓦时 |
-| 第二产业用电量同比     | float64 | 注意单位: %    |
-| 第三产业用电量       | float64 | 注意单位: 万千瓦时 |
-| 第三产业用电量同比     | float64 | 注意单位: %    |
-| 城乡居民生活用电量合计   | float64 | 注意单位: 万千瓦时 |
-| 城乡居民生活用电量合计同比 | float64 | 注意单位: %    |
-| 城镇居民用电量       | float64 | 注意单位: 万千瓦时 |
-| 城镇居民用电量同比     | float64 | 注意单位: %    |
-| 乡村居民用电量       | float64 | 注意单位: 万千瓦时 |
-| 乡村居民用电量同比     | float64 | 注意单位: %    |
+| 全社会用电量        | float64 | 注意单位：万千瓦时 |
+| 全社会用电量同比      | float64 | 注意单位：%    |
+| 各行业用电量合计      | float64 | 注意单位：万千瓦时 |
+| 各行业用电量合计同比    | float64 | 注意单位：%    |
+| 第一产业用电量       | float64 | 注意单位：万千瓦时 |
+| 第一产业用电量同比     | float64 | 注意单位：%    |
+| 第二产业用电量       | float64 | 注意单位：万千瓦时 |
+| 第二产业用电量同比     | float64 | 注意单位：%    |
+| 第三产业用电量       | float64 | 注意单位：万千瓦时 |
+| 第三产业用电量同比     | float64 | 注意单位：%    |
+| 城乡居民生活用电量合计   | float64 | 注意单位：万千瓦时 |
+| 城乡居民生活用电量合计同比 | float64 | 注意单位：%    |
+| 城镇居民用电量       | float64 | 注意单位：万千瓦时 |
+| 城镇居民用电量同比     | float64 | 注意单位：%    |
+| 乡村居民用电量       | float64 | 注意单位：万千瓦时 |
+| 乡村居民用电量同比     | float64 | 注意单位：%    |
 
 接口示例
 
@@ -3263,15 +3263,15 @@ print(macro_china_society_electricity_df)
 [214 rows x 17 columns]
 ```
 
-##### 全社会客货运输量
+#### 全社会客货运输量
 
-接口: macro_china_society_traffic_volume
+接口：macro_china_society_traffic_volume
 
-目标地址: http://finance.sina.com.cn/mac/#industry-10-0-31-1
+目标地址：http://finance.sina.com.cn/mac/#industry-10-0-31-1
 
-描述: 国家统计局-全社会客货运输量-非累计
+描述：国家统计局-全社会客货运输量-非累计
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3285,20 +3285,20 @@ print(macro_china_society_electricity_df)
 |-----------------|---------|----------|
 | 统计时间            | object  | 年月       |
 | 统计对象            | object  | -        |
-| 货运量             | float64 | 注意单位: 亿吨 |
-| 货运量同比增长         | float64 | 注意单位: %  |
-| 货物周转量           | float64 | 注意单位: 亿  |
-| 公里货物周转量同比增长     | float64 | 注意单位: %  |
-| 客运量             | float64 | 注意单位: 亿人 |
-| 客运量同比增长         | float64 | 注意单位: %  |
-| 旅客周转量           | float64 | 注意单位: 亿  |
-| 公里旅客周转量同比增长     | float64 | 注意单位: %  |
-| 沿海主要港口货物吞吐量     | float64 | 注意单位: 亿吨 |
-| 沿海主要港口货物吞吐量同比增长 | float64 | 注意单位: %  |
-| 其中:外贸货物吞吐量      | float64 | 注意单位: 亿吨 |
-| 其中:外贸货物吞吐量同比增长  | float64 | 注意单位: %  |
-| 民航总周转量          | float64 | 注意单位: 亿  |
-| 公里民航总周转         | float64 | 注意单位: %  |
+| 货运量             | float64 | 注意单位：亿吨 |
+| 货运量同比增长         | float64 | 注意单位：%  |
+| 货物周转量           | float64 | 注意单位：亿  |
+| 公里货物周转量同比增长     | float64 | 注意单位：%  |
+| 客运量             | float64 | 注意单位：亿人 |
+| 客运量同比增长         | float64 | 注意单位：%  |
+| 旅客周转量           | float64 | 注意单位：亿  |
+| 公里旅客周转量同比增长     | float64 | 注意单位：%  |
+| 沿海主要港口货物吞吐量     | float64 | 注意单位：亿吨 |
+| 沿海主要港口货物吞吐量同比增长 | float64 | 注意单位：%  |
+| 其中：外贸货物吞吐量      | float64 | 注意单位：亿吨 |
+| 其中：外贸货物吞吐量同比增长  | float64 | 注意单位：%  |
+| 民航总周转量          | float64 | 注意单位：亿  |
+| 公里民航总周转         | float64 | 注意单位：%  |
 
 接口示例
 
@@ -3327,15 +3327,15 @@ print(macro_china_society_traffic_volume_df)
 [2408 rows x 16 columns]
 ```
 
-##### 邮电业务基本情况
+#### 邮电业务基本情况
 
-接口: macro_china_postal_telecommunicational
+接口：macro_china_postal_telecommunicational
 
-目标地址: http://finance.sina.com.cn/mac/#industry-11-0-31-1
+目标地址：http://finance.sina.com.cn/mac/#industry-11-0-31-1
 
-描述: 国家统计局-邮电业务基本情况-非累计
+描述：国家统计局-邮电业务基本情况-非累计
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3348,46 +3348,46 @@ print(macro_china_society_traffic_volume_df)
 | 名称            | 类型    | 描述       |
 |---------------|-------|----------|
 | 统计时间          | str   | 年月       |
-| 邮电业务总量        | float | 注意单位: 亿元 |
-| 邮电业务总量同比增长    | float | 注意单位: %  |
-| 邮政业务总量        | float | 注意单位: 亿元 |
-| 邮政业务总量同比增长    | float | 注意单位: %  |
-| 电信业务总量        | float | 注意单位: 亿元 |
-| 电信业务总量同比增长    | float | 注意单位: %  |
-| 函件总数          | float | 注意单位: 万件 |
-| 函件总数同比增长      | float | 注意单位: %  |
-| 包件            | float | 注意单位: 万件 |
-| 包件同比增长        | float | 注意单位: %  |
-| 特快专递          | float | 注意单位: 万件 |
-| 特快专递同比增长      | float | 注意单位: %  |
-| 汇票            | float | 注意单位: 万张 |
-| 汇票同比增长        | float | 注意单位: %  |
-| 订销报纸累计数       | float | 注意单位: 万份 |
-| 订销报纸累计数同比增长   | float | 注意单位: %  |
-| 订销杂志累计数       | float | 注意单位: 万份 |
-| 订销杂志累计数同比增长   | float | 注意单位: %  |
-| 集邮业务          | float | 注意单位: 万枚 |
-| 集邮业务同比增长      | float | 注意单位: %  |
-| 邮政储蓄期末余额      | float | 注意单位: 亿元 |
-| 邮政储蓄期末余额同比增长  | float | 注意单位: %  |
-| 长途电话通话时长      | float | 注意单位: 万  |
-| 钟长途电话通话时长同比增长 | float | 注意单位: %  |
-| 本地电话期末用户数     | float | 注意单位: %  |
-| 本地电话期末用户数同比增长 | float | 注意单位: %  |
-| 城市电话用户数       | float | 注意单位: 万户 |
-| 城市电话用户数同比增长   | float | 注意单位: %  |
-| 乡村电话用户数       | float | 注意单位: 万户 |
-| 乡村电话用户数同比增长   | float | 注意单位: %  |
-| 无线寻呼用户数       | float | 注意单位: 万户 |
-| 无线寻呼用户数同比增长   | float | 注意单位: %  |
-| 移动电话用户数       | float | 注意单位: 万户 |
-| 移动电话用户数同比增长   | float | 注意单位: %  |
-| 固定电话用         | float | 注意单位: 万户 |
-| 固定电话用户数同比增长   | float | 注意单位: %  |
-| 城市住宅电话用户      | float | 注意单位: 万户 |
-| 城市住宅电话用户同比增长  | float | 注意单位: %  |
-| 乡村住宅电话用户      | float | 注意单位: 万户 |
-| 乡村住宅电话用户同比增长  | float | 注意单位: %  |
+| 邮电业务总量        | float | 注意单位：亿元 |
+| 邮电业务总量同比增长    | float | 注意单位：%  |
+| 邮政业务总量        | float | 注意单位：亿元 |
+| 邮政业务总量同比增长    | float | 注意单位：%  |
+| 电信业务总量        | float | 注意单位：亿元 |
+| 电信业务总量同比增长    | float | 注意单位：%  |
+| 函件总数          | float | 注意单位：万件 |
+| 函件总数同比增长      | float | 注意单位：%  |
+| 包件            | float | 注意单位：万件 |
+| 包件同比增长        | float | 注意单位：%  |
+| 特快专递          | float | 注意单位：万件 |
+| 特快专递同比增长      | float | 注意单位：%  |
+| 汇票            | float | 注意单位：万张 |
+| 汇票同比增长        | float | 注意单位：%  |
+| 订销报纸累计数       | float | 注意单位：万份 |
+| 订销报纸累计数同比增长   | float | 注意单位：%  |
+| 订销杂志累计数       | float | 注意单位：万份 |
+| 订销杂志累计数同比增长   | float | 注意单位：%  |
+| 集邮业务          | float | 注意单位：万枚 |
+| 集邮业务同比增长      | float | 注意单位：%  |
+| 邮政储蓄期末余额      | float | 注意单位：亿元 |
+| 邮政储蓄期末余额同比增长  | float | 注意单位：%  |
+| 长途电话通话时长      | float | 注意单位：万  |
+| 钟长途电话通话时长同比增长 | float | 注意单位：%  |
+| 本地电话期末用户数     | float | 注意单位：%  |
+| 本地电话期末用户数同比增长 | float | 注意单位：%  |
+| 城市电话用户数       | float | 注意单位：万户 |
+| 城市电话用户数同比增长   | float | 注意单位：%  |
+| 乡村电话用户数       | float | 注意单位：万户 |
+| 乡村电话用户数同比增长   | float | 注意单位：%  |
+| 无线寻呼用户数       | float | 注意单位：万户 |
+| 无线寻呼用户数同比增长   | float | 注意单位：%  |
+| 移动电话用户数       | float | 注意单位：万户 |
+| 移动电话用户数同比增长   | float | 注意单位：%  |
+| 固定电话用         | float | 注意单位：万户 |
+| 固定电话用户数同比增长   | float | 注意单位：%  |
+| 城市住宅电话用户      | float | 注意单位：万户 |
+| 城市住宅电话用户同比增长  | float | 注意单位：%  |
+| 乡村住宅电话用户      | float | 注意单位：万户 |
+| 乡村住宅电话用户同比增长  | float | 注意单位：%  |
 
 接口示例
 
@@ -3416,15 +3416,15 @@ print(macro_china_postal_telecommunicational_df)
 [304 rows x 41 columns]
 ```
 
-##### 国际旅游外汇收入构成
+#### 国际旅游外汇收入构成
 
-接口: macro_china_international_tourism_fx
+接口：macro_china_international_tourism_fx
 
-目标地址: http://finance.sina.com.cn/mac/#industry-15-0-31-3
+目标地址：http://finance.sina.com.cn/mac/#industry-15-0-31-3
 
-描述: 国家统计局-国际旅游外汇收入构成
+描述：国家统计局-国际旅游外汇收入构成
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3438,8 +3438,8 @@ print(macro_china_postal_telecommunicational_df)
 |------|---------|------------|
 | 统计年度 | object  | 年          |
 | 指标   | object  | -          |
-| 数量   | float64 | 注意单位: 百万美元 |
-| 比重   | float64 | 注意单位: %    |
+| 数量   | float64 | 注意单位：百万美元 |
+| 比重   | float64 | 注意单位：%    |
 
 接口示例
 
@@ -3468,15 +3468,15 @@ print(macro_china_international_tourism_fx_df)
 [256 rows x 4 columns]
 ```
 
-##### 民航客座率及载运率
+#### 民航客座率及载运率
 
-接口: macro_china_passenger_load_factor
+接口：macro_china_passenger_load_factor
 
-目标地址: http://finance.sina.com.cn/mac/#industry-20-0-31-1
+目标地址：http://finance.sina.com.cn/mac/#industry-20-0-31-1
 
-描述: 国家统计局-民航客座率及载运率
+描述：国家统计局-民航客座率及载运率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3489,8 +3489,8 @@ print(macro_china_international_tourism_fx_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 统计年度 | object  | 年月      |
-| 客座率  | float64 | 注意单位: % |
-| 载运率  | float64 | 注意单位: % |
+| 客座率  | float64 | 注意单位：% |
+| 载运率  | float64 | 注意单位：% |
 
 接口示例
 
@@ -3519,15 +3519,15 @@ print(macro_china_passenger_load_factor_df)
 [207 rows x 3 columns]
 ```
 
-##### 航贸运价指数
+#### 航贸运价指数
 
-接口: macro_china_freight_index
+接口：macro_china_freight_index
 
-目标地址: http://finance.sina.com.cn/mac/#industry-22-0-31-2
+目标地址：http://finance.sina.com.cn/mac/#industry-22-0-31-2
 
-描述: 新浪财经-中国宏观经济数据-航贸运价指数
+描述：新浪财经-中国宏观经济数据-航贸运价指数
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3574,15 +3574,15 @@ print(macro_china_freight_index_df)
 3849  2005-12-07            3709.0  ...                NaN               NaN
 ```
 
-##### 央行货币当局资产负债
+#### 央行货币当局资产负债
 
-接口: macro_china_central_bank_balance
+接口：macro_china_central_bank_balance
 
-目标地址: http://finance.sina.com.cn/mac/#fininfo-8-0-31-2
+目标地址：http://finance.sina.com.cn/mac/#fininfo-8-0-31-2
 
-描述: 新浪财经-中国宏观经济数据-央行货币当局资产负债
+描述：新浪财经-中国宏观经济数据-央行货币当局资产负债
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3595,33 +3595,33 @@ print(macro_china_freight_index_df)
 | 名称         | 类型      | 描述       |
 |------------|---------|----------|
 | 统计时间       | object  | 年月       |
-| 国外资产       | float64 | 注意单位: 亿元 |
-| 外汇         | float64 | 注意单位: 亿元 |
-| 货币黄金       | float64 | 注意单位: 亿元 |
-| 其他国外资产     | float64 | 注意单位: 亿元 |
-| 对政府债权      | float64 | 注意单位: 亿元 |
-| 其中:中央政府    | float64 | 注意单位: 亿元 |
-| 对其他存款性公司债权 | float64 | 注意单位: 亿元 |
-| 对其他金融性公司债权 | float64 | 注意单位: 亿元 |
-| 对非货币金融机构债权 | float64 | 注意单位: 亿元 |
-| 对非金融性公司债权  | float64 | 注意单位: 亿元 |
-| 其他资产       | float64 | 注意单位: 亿元 |
-| 总资产        | float64 | 注意单位: 亿元 |
-| 储备货币       | float64 | 注意单位: 亿元 |
-| 发行货币       | float64 | 注意单位: 亿元 |
-| 金融性公司存款    | float64 | 注意单位: 亿元 |
-| 其他存款性公司    | float64 | 注意单位: 亿元 |
-| 其他金融性公司    | float64 | 注意单位: 亿元 |
-| 对金融机构负债    | float64 | 注意单位: 亿元 |
-| 准备金存款      | float64 | 注意单位: 亿元 |
-| 非金融性公司存款   | float64 | 注意单位: 亿元 |
-| 活期存款       | float64 | 注意单位: 亿元 |
-| 债券         | float64 | 注意单位: 亿元 |
-| 国外负债       | float64 | 注意单位: 亿元 |
-| 政府存款       | float64 | 注意单位: 亿元 |
-| 自有资金       | float64 | 注意单位: 亿元 |
-| 其他负债       | float64 | 注意单位: 亿元 |
-| 总负债        | float64 | 注意单位: 亿元 |
+| 国外资产       | float64 | 注意单位：亿元 |
+| 外汇         | float64 | 注意单位：亿元 |
+| 货币黄金       | float64 | 注意单位：亿元 |
+| 其他国外资产     | float64 | 注意单位：亿元 |
+| 对政府债权      | float64 | 注意单位：亿元 |
+| 其中：中央政府    | float64 | 注意单位：亿元 |
+| 对其他存款性公司债权 | float64 | 注意单位：亿元 |
+| 对其他金融性公司债权 | float64 | 注意单位：亿元 |
+| 对非货币金融机构债权 | float64 | 注意单位：亿元 |
+| 对非金融性公司债权  | float64 | 注意单位：亿元 |
+| 其他资产       | float64 | 注意单位：亿元 |
+| 总资产        | float64 | 注意单位：亿元 |
+| 储备货币       | float64 | 注意单位：亿元 |
+| 发行货币       | float64 | 注意单位：亿元 |
+| 金融性公司存款    | float64 | 注意单位：亿元 |
+| 其他存款性公司    | float64 | 注意单位：亿元 |
+| 其他金融性公司    | float64 | 注意单位：亿元 |
+| 对金融机构负债    | float64 | 注意单位：亿元 |
+| 准备金存款      | float64 | 注意单位：亿元 |
+| 非金融性公司存款   | float64 | 注意单位：亿元 |
+| 活期存款       | float64 | 注意单位：亿元 |
+| 债券         | float64 | 注意单位：亿元 |
+| 国外负债       | float64 | 注意单位：亿元 |
+| 政府存款       | float64 | 注意单位：亿元 |
+| 自有资金       | float64 | 注意单位：亿元 |
+| 其他负债       | float64 | 注意单位：亿元 |
+| 总负债        | float64 | 注意单位：亿元 |
 
 接口示例
 
@@ -3650,15 +3650,15 @@ print(macro_china_central_bank_balance_df)
 [319 rows x 28 columns]
 ```
 
-##### 保险业经营情况
+#### 保险业经营情况
 
-接口: macro_china_insurance
+接口：macro_china_insurance
 
-目标地址: http://finance.sina.com.cn/mac/#fininfo-19-0-31-3
+目标地址：http://finance.sina.com.cn/mac/#fininfo-19-0-31-3
 
-描述: 新浪财经-中国宏观经济数据-保险业经营情况
+描述：新浪财经-中国宏观经济数据-保险业经营情况
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3672,25 +3672,25 @@ print(macro_china_central_bank_balance_df)
 |------------------|---------|----------|
 | 统计时间             | object  | 年月       |
 | 省市地区             | object  | 地区       |
-| 原保险保费收入          | float64 | 注意单位: 万元 |
-| 财产险保费收入          | float64 | 注意单位: 万元 |
-| 人身险保费收入          | float64 | 注意单位: 万元 |
-| 人身险-寿险保费收入       | float64 | 注意单位: 万元 |
-| 人身险-健康险保费收入      | float64 | 注意单位: 万元 |
-| 人身险-意外险保费收入      | float64 | 注意单位: 万元 |
-| 养老保险公司企业年金缴费     | float64 | 注意单位: 万元 |
-| 原保险赔付支出          | float64 | 注意单位: 万元 |
-| 财产险保费赔付支出        | float64 | 注意单位: 万元 |
-| 人身险保费赔付支出        | float64 | 注意单位: 万元 |
-| 人身险-寿险赔付支出       | float64 | 注意单位: 万元 |
-| 人身险-健康险赔付支出      | float64 | 注意单位: 万元 |
-| 人身险-意外险赔付支出      | float64 | 注意单位: 万元 |
-| 业务及管理费           | float64 | 注意单位: 万元 |
-| 银行存款             | float64 | 注意单位: 万元 |
-| 投资               | float64 | 注意单位: 万元 |
-| 资产总额             | float64 | 注意单位: 万元 |
-| 养老保险公司企业年金受托管理资产 | float64 | 注意单位: 万元 |
-| 养老保险公司企业年金投资管理资产 | float64 | 注意单位: 万元 |
+| 原保险保费收入          | float64 | 注意单位：万元 |
+| 财产险保费收入          | float64 | 注意单位：万元 |
+| 人身险保费收入          | float64 | 注意单位：万元 |
+| 人身险-寿险保费收入       | float64 | 注意单位：万元 |
+| 人身险-健康险保费收入      | float64 | 注意单位：万元 |
+| 人身险-意外险保费收入      | float64 | 注意单位：万元 |
+| 养老保险公司企业年金缴费     | float64 | 注意单位：万元 |
+| 原保险赔付支出          | float64 | 注意单位：万元 |
+| 财产险保费赔付支出        | float64 | 注意单位：万元 |
+| 人身险保费赔付支出        | float64 | 注意单位：万元 |
+| 人身险-寿险赔付支出       | float64 | 注意单位：万元 |
+| 人身险-健康险赔付支出      | float64 | 注意单位：万元 |
+| 人身险-意外险赔付支出      | float64 | 注意单位：万元 |
+| 业务及管理费           | float64 | 注意单位：万元 |
+| 银行存款             | float64 | 注意单位：万元 |
+| 投资               | float64 | 注意单位：万元 |
+| 资产总额             | float64 | 注意单位：万元 |
+| 养老保险公司企业年金受托管理资产 | float64 | 注意单位：万元 |
+| 养老保险公司企业年金投资管理资产 | float64 | 注意单位：万元 |
 
 接口示例
 
@@ -3719,15 +3719,15 @@ print(macro_china_insurance_df)
 [310 rows x 21 columns]
 ```
 
-##### 货币供应量
+#### 货币供应量
 
-接口: macro_china_supply_of_money
+接口：macro_china_supply_of_money
 
-目标地址: http://finance.sina.com.cn/mac/#fininfo-1-0-31-1
+目标地址：http://finance.sina.com.cn/mac/#fininfo-1-0-31-1
 
-描述: 新浪财经-中国宏观经济数据-货币供应量
+描述：新浪财经-中国宏观经济数据-货币供应量
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3740,22 +3740,22 @@ print(macro_china_insurance_df)
 | 名称                 | 类型      | 描述       |
 |--------------------|---------|----------|
 | 统计时间               | object  | 年月       |
-| 货币和准货币（广义货币M2）     | float64 | 注意单位: 亿元 |
-| 货币和准货币（广义货币M2）同比增长 | float64 | 注意单位: %  |
-| 货币(狭义货币M1)         | float64 | 注意单位: 亿元 |
-| 货币(狭义货币M1)同比增长     | float64 | 注意单位: %  |
-| 流通中现金(M0)          | float64 | 注意单位: 亿元 |
-| 流通中现金(M0)同比增长      | float64 | 注意单位: %  |
-| 活期存款               | float64 | 注意单位: 亿元 |
-| 活期存款同比增长           | float64 | 注意单位: %  |
-| 准货币                | float64 | 注意单位: 亿元 |
-| 准货币同比增长            | float64 | 注意单位: %  |
-| 定期存款               | float64 | 注意单位: 亿元 |
-| 定期存款同比增长           | float64 | 注意单位: %  |
-| 储蓄存款出              | float64 | 注意单位: 亿元 |
-| 储蓄存款同比增长           | float64 | 注意单位: %  |
-| 其他存款               | float64 | 注意单位: 亿元 |
-| 其他存款同比增长           | float64 | 注意单位: %  |
+| 货币和准货币（广义货币M2）     | float64 | 注意单位：亿元 |
+| 货币和准货币（广义货币M2）同比增长 | float64 | 注意单位：%  |
+| 货币（狭义货币M1）         | float64 | 注意单位：亿元 |
+| 货币（狭义货币M1）同比增长     | float64 | 注意单位：%  |
+| 流通中现金(M0)          | float64 | 注意单位：亿元 |
+| 流通中现金(M0)同比增长      | float64 | 注意单位：%  |
+| 活期存款               | float64 | 注意单位：亿元 |
+| 活期存款同比增长           | float64 | 注意单位：%  |
+| 准货币                | float64 | 注意单位：亿元 |
+| 准货币同比增长            | float64 | 注意单位：%  |
+| 定期存款               | float64 | 注意单位：亿元 |
+| 定期存款同比增长           | float64 | 注意单位：%  |
+| 储蓄存款出              | float64 | 注意单位：亿元 |
+| 储蓄存款同比增长           | float64 | 注意单位：%  |
+| 其他存款               | float64 | 注意单位：亿元 |
+| 其他存款同比增长           | float64 | 注意单位：%  |
 
 接口示例
 
@@ -3783,15 +3783,15 @@ print(macro_china_supply_of_money_df)
 511  1978.1           None               None  ...     None       None     None
 ```
 
-##### FR007利率互换曲线历史数据
+#### FR007利率互换曲线历史数据
 
-接口: macro_china_swap_rate
+接口：macro_china_swap_rate
 
-目标地址: https://www.chinamoney.com.cn/chinese/bkcurvfxhis/?cfgItemType=72&curveType=FR007
+目标地址：https://www.chinamoney.com.cn/chinese/bkcurvfxhis/?cfgItemType=72&curveType=FR007
 
-描述: 国家统计局-FR007利率互换曲线历史数据
+描述：国家统计局-FR007利率互换曲线历史数据
 
-限量: 单次返回所有历史数据, 该接口只能获取近一年的数据的数据，其中每次只能获取一个月的数据
+限量：单次返回所有历史数据，该接口只能获取近一年的数据的数据，其中每次只能获取一个月的数据
 
 输入参数
 
@@ -3847,15 +3847,15 @@ print(macro_china_swap_rate_df)
 [945 rows x 15 columns]
 ```
 
-##### 央行黄金和外汇储备
+#### 央行黄金和外汇储备
 
-接口: macro_china_foreign_exchange_gold
+接口：macro_china_foreign_exchange_gold
 
-目标地址: http://finance.sina.com.cn/mac/#fininfo-5-0-31-2
+目标地址：http://finance.sina.com.cn/mac/#fininfo-5-0-31-2
 
-描述: 国家统计局-央行黄金和外汇储备, 比东财接口数据时间长
+描述：国家统计局-央行黄金和外汇储备，比东财接口数据时间长
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3868,8 +3868,8 @@ print(macro_china_swap_rate_df)
 | 名称     | 类型      | 描述        |
 |--------|---------|-----------|
 | 统计时间   | object  | 年月        |
-| 黄金储备   | float64 | 注意单位: 万盎司 |
-| 国家外汇储备 | float64 | 注意单位: 亿美元 |
+| 黄金储备   | float64 | 注意单位：万盎司 |
+| 国家外汇储备 | float64 | 注意单位：亿美元 |
 
 接口示例
 
@@ -3898,15 +3898,15 @@ print(macro_china_foreign_exchange_gold_df)
 [389 rows x 3 columns]
 ```
 
-##### 商品零售价格指数
+#### 商品零售价格指数
 
-接口: macro_china_retail_price_index
+接口：macro_china_retail_price_index
 
-目标地址: http://finance.sina.com.cn/mac/#price-12-0-31-1
+目标地址：http://finance.sina.com.cn/mac/#price-12-0-31-1
 
-描述: 国家统计局-商品零售价格指数
+描述：国家统计局-商品零售价格指数
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -3948,15 +3948,15 @@ print(macro_china_retail_price_index_df)
 3781  2002.1   书报杂志及电子出版物   101.00
 ```
 
-##### 国房景气指数
+#### 国房景气指数
 
-接口: macro_china_real_estate
+接口：macro_china_real_estate
 
-目标地址: http://data.eastmoney.com/cjsj/hyzs_list_EMM00121987.html
+目标地址：http://data.eastmoney.com/cjsj/hyzs_list_EMM00121987.html
 
-描述: 国家统计局-国房景气指数
+描述：国家统计局-国房景气指数
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4003,15 +4003,15 @@ print(macro_china_real_estate_df)
 284  2022-07-01   95.26 -0.146751  ... -5.683168 -4.825657 -5.757816
 ```
 
-##### 外汇和黄金储备
+#### 外汇和黄金储备
 
-接口: macro_china_fx_gold
+接口：macro_china_fx_gold
 
-目标地址: http://data.eastmoney.com/cjsj/hjwh.html
+目标地址：http://data.eastmoney.com/cjsj/hjwh.html
 
-描述: 中国外汇和黄金储备, 数据区间从 200801 至今, 月度数据
+描述：中国外汇和黄金储备，数据区间从 200801 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4024,12 +4024,12 @@ print(macro_china_real_estate_df)
 | 名称        | 类型      | 描述        |
 |-----------|---------|-----------|
 | 月份        | object  | 年度和月份     |
-| 黄金储备-数值   | float64 | 注意单位: 万盎司 |
-| 黄金储备-同比   | float64 | 注意单位: 万盎司 |
-| 黄金储备-环比   | float64 | 注意单位: 万盎司 |
-| 国家外汇储备-数值 | float64 | 注意单位: 亿美元 |
-| 国家外汇储备-同比 | float64 | 注意单位: 亿美元 |
-| 国家外汇储备-环比 | float64 | 注意单位: 亿美元 |
+| 黄金储备-数值   | float64 | 注意单位：万盎司 |
+| 黄金储备-同比   | float64 | 注意单位：万盎司 |
+| 黄金储备-环比   | float64 | 注意单位：万盎司 |
+| 国家外汇储备-数值 | float64 | 注意单位：亿美元 |
+| 国家外汇储备-同比 | float64 | 注意单位：亿美元 |
+| 国家外汇储备-环比 | float64 | 注意单位：亿美元 |
 
 接口示例
 
@@ -4057,15 +4057,15 @@ print(macro_china_fx_gold_df)
 174  2022年07月份  1098.39  -3.963383 -3.500171  31040.7100  -4.073655   1.067929
 ```
 
-##### 中国货币供应量
+#### 中国货币供应量
 
-接口: macro_china_money_supply
+接口：macro_china_money_supply
 
-目标地址: http://data.eastmoney.com/cjsj/hbgyl.html
+目标地址：http://data.eastmoney.com/cjsj/hbgyl.html
 
-描述: 东方财富-经济数据-中国宏观-中国货币供应量; 数据区间从 200801 至今, 月度数据
+描述：东方财富-经济数据-中国宏观-中国货币供应量；数据区间从 200801 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4078,13 +4078,13 @@ print(macro_china_fx_gold_df)
 | 名称                | 类型      | 描述    |
 |-------------------|---------|-------|
 | 月份                | object  | 年度和月份 |
-| 货币和准货币(M2)-数量(亿元) | float64 | -     |
+| 货币和准货币(M2)-数量（亿元） | float64 | -     |
 | 货币和准货币(M2)-同比增长   | float64 | -     |
 | 货币和准货币(M2)-环比增长   | float64 | -     |
-| 货币(M1)-数量(亿元)     | float64 | -     |
+| 货币(M1)-数量（亿元）     | float64 | -     |
 | 货币(M1)-同比增长       | float64 | -     |
 | 货币(M1)-环比增长       | float64 | -     |
-| 流通中的现金(M0)-数量(亿元) | float64 | -     |
+| 流通中的现金(M0)-数量（亿元） | float64 | -     |
 | 流通中的现金(M0)-同比增长   | float64 | -     |
 | 流通中的现金(M0)-环比增长   | float64 | -     |
 
@@ -4114,15 +4114,15 @@ print(macro_china_money_supply_df)
 177  2008年01月份          417846.17  ...            31.21        20.896562
 ```
 
-##### 全国股票交易统计表
+#### 全国股票交易统计表
 
-接口: macro_china_stock_market_cap
+接口：macro_china_stock_market_cap
 
-目标地址: http://data.eastmoney.com/cjsj/gpjytj.html
+目标地址：http://data.eastmoney.com/cjsj/gpjytj.html
 
-描述: 全国股票交易统计表, 数据区间从 200801 至今, 月度数据
+描述：全国股票交易统计表，数据区间从 200801 至今，月度数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4135,12 +4135,12 @@ print(macro_china_money_supply_df)
 | 名称            | 类型      | 描述       |
 |---------------|---------|----------|
 | 数据日期          | object  | 年度和月份    |
-| 发行总股本-上海      | float64 | 注意单位: 亿元 |
-| 发行总股本-深圳      | float64 | 注意单位: 亿元 |
-| 市价总值-上海       | float64 | 注意单位: 亿元 |
-| 市价总值-深圳       | float64 | 注意单位: 亿元 |
-| 成交金额-上海       | float64 | 注意单位: 亿元 |
-| 成交金额-深圳       | float64 | 注意单位: 亿元 |
+| 发行总股本-上海      | float64 | 注意单位：亿元 |
+| 发行总股本-深圳      | float64 | 注意单位：亿元 |
+| 市价总值-上海       | float64 | 注意单位：亿元 |
+| 市价总值-深圳       | float64 | 注意单位：亿元 |
+| 成交金额-上海       | float64 | 注意单位：亿元 |
+| 成交金额-深圳       | float64 | 注意单位：亿元 |
 | 成交量-上海        | float64 | -        |
 | 成交量-深圳        | float64 | -        |
 | A股最高综合股价指数-上海 | float64 | -        |
@@ -4174,15 +4174,15 @@ print(macro_china_stock_market_cap_df)
 178  2008年01月份  14198.16  ...      4330.6970      1424.3500
 ```
 
-##### 上海银行业同业拆借报告
+#### 上海银行业同业拆借报告
 
-接口: macro_china_shibor_all
+接口：macro_china_shibor_all
 
-目标地址: https://datacenter.jin10.com/reportType/dc_shibor
+目标地址：https://datacenter.jin10.com/reportType/dc_shibor
 
-描述: 上海银行业同业拆借报告, 数据区间从 20170317-至今
+描述：上海银行业同业拆借报告，数据区间从 20170317-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4196,25 +4196,25 @@ print(macro_china_stock_market_cap_df)
 |---------|---------|-------|
 | 日期      | object  | -     |
 | O/N-定价  | float64 | -     |
-| O/N-涨跌幅 | float64 | 单位: 点 |
+| O/N-涨跌幅 | float64 | 单位：点 |
 | 1W-定价   | float64 | -     |
-| 1W-涨跌幅  | float64 | 单位: 点 |
+| 1W-涨跌幅  | float64 | 单位：点 |
 | 2W-定价   | float64 | -     |
-| 2W-涨跌幅  | float64 | 单位: 点 |
+| 2W-涨跌幅  | float64 | 单位：点 |
 | 1M-定价   | float64 | -     |
-| 1M-涨跌幅  | float64 | 单位: 点 |
+| 1M-涨跌幅  | float64 | 单位：点 |
 | 3M-定价   | float64 | -     |
-| 3M-涨跌幅  | float64 | 单位: 点 |
+| 3M-涨跌幅  | float64 | 单位：点 |
 | 6M-定价   | float64 | -     |
-| 6M-涨跌幅  | float64 | 单位: 点 |
+| 6M-涨跌幅  | float64 | 单位：点 |
 | 9M-定价   | float64 | -     |
-| 9M-涨跌幅  | float64 | 单位: 点 |
+| 9M-涨跌幅  | float64 | 单位：点 |
 | 1Y-定价   | float64 | -     |
-| 1Y-涨跌幅  | float   | 单位: 点 |
+| 1Y-涨跌幅  | float   | 单位：点 |
 | ON-定价   | float64 | -     |
-| ON-涨跌幅  | float64 | 单位: 点 |
+| ON-涨跌幅  | float64 | 单位：点 |
 | 2M-定价   | float64 | -     |
-| 2M-涨跌幅  | float64 | 单位: 点 |
+| 2M-涨跌幅  | float64 | 单位：点 |
 
 接口示例
 
@@ -4243,15 +4243,15 @@ print(macro_china_shibor_all_df)
 [1758 rows x 17 columns]
 ```
 
-##### 人民币香港银行同业拆息
+#### 人民币香港银行同业拆息
 
-接口: macro_china_hk_market_info
+接口：macro_china_hk_market_info
 
-目标地址: https://datacenter.jin10.com/reportType/dc_hk_market_info
+目标地址：https://datacenter.jin10.com/reportType/dc_hk_market_info
 
-描述: 香港同业拆借报告, 数据区间从 20170320-至今
+描述：香港同业拆借报告，数据区间从 20170320-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4265,25 +4265,25 @@ print(macro_china_shibor_all_df)
 |---------|---------|-------|
 | 日期      | object  | 日期    |
 | O/N-定价  | float64 | -     |
-| O/N-涨跌幅 | float64 | 单位: 点 |
+| O/N-涨跌幅 | float64 | 单位：点 |
 | 1W-定价   | float64 | -     |
-| 1W-涨跌幅  | float64 | 单位: 点 |
+| 1W-涨跌幅  | float64 | 单位：点 |
 | 2W-定价   | float64 | -     |
-| 2W-涨跌幅  | float64 | 单位: 点 |
+| 2W-涨跌幅  | float64 | 单位：点 |
 | 1M-定价   | float64 | -     |
-| 1M-涨跌幅  | float64 | 单位: 点 |
+| 1M-涨跌幅  | float64 | 单位：点 |
 | 3M-定价   | float64 | -     |
-| 3M-涨跌幅  | float64 | 单位: 点 |
+| 3M-涨跌幅  | float64 | 单位：点 |
 | 6M-定价   | float64 | -     |
-| 6M-涨跌幅  | float64 | 单位: 点 |
+| 6M-涨跌幅  | float64 | 单位：点 |
 | 9M-定价   | float64 | -     |
-| 9M-涨跌幅  | float64 | 单位: 点 |
+| 9M-涨跌幅  | float64 | 单位：点 |
 | 1Y-定价   | float64 | -     |
-| 1Y-涨跌幅  | float64 | 单位: 点 |
+| 1Y-涨跌幅  | float64 | 单位：点 |
 | ON-定价   | float64 | -     |
-| ON-涨跌幅  | float64 | 单位: 点 |
+| ON-涨跌幅  | float64 | 单位：点 |
 | 2M-定价   | float64 | -     |
-| 2M-涨跌幅  | float64 | 单位: 点 |
+| 2M-涨跌幅  | float64 | 单位：点 |
 
 接口示例
 
@@ -4312,17 +4312,17 @@ print(macro_china_hk_market_info_df)
 [1734 rows x 17 columns]
 ```
 
-#### 其他指标
+### 其他指标
 
-##### 中国日度沿海六大电库存
+#### 中国日度沿海六大电库存
 
-接口: macro_china_daily_energy
+接口：macro_china_daily_energy
 
-目标地址: https://datacenter.jin10.com/reportType/dc_qihuo_energy_report
+目标地址：https://datacenter.jin10.com/reportType/dc_qihuo_energy_report
 
-描述: 中国日度沿海六大电库存数据, 数据区间从20160101-至今, 不再更新, 只能获得历史数据
+描述：中国日度沿海六大电库存数据，数据区间从20160101-至今，不再更新，只能获得历史数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4366,15 +4366,15 @@ print(macro_china_daily_energy_df)
 [1207 rows x 4 columns]
 ```
 
-##### 人民币汇率中间价报告
+#### 人民币汇率中间价报告
 
-接口: macro_china_rmb
+接口：macro_china_rmb
 
-目标地址: https://datacenter.jin10.com/reportType/dc_rmb_data
+目标地址：https://datacenter.jin10.com/reportType/dc_rmb_data
 
-描述: 中国人民币汇率中间价报告, 数据区间从 20170103-20210513
+描述：中国人民币汇率中间价报告，数据区间从 20170103-20210513
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4388,55 +4388,55 @@ print(macro_china_daily_energy_df)
 |-----------------|---------|--------|
 | 日期              | object  | 日期     |
 | 美元/人民币_中间价      | float64 | -      |
-| 美元/人民币_涨跌幅      | float64 | 单位: 点  |
+| 美元/人民币_涨跌幅      | float64 | 单位：点  |
 | 欧元/人民币_中间价      | float64 | -      |
-| 欧元/人民币_涨跌幅      | float64 | 单位: 点  |
+| 欧元/人民币_涨跌幅      | float64 | 单位：点  |
 | 100日元/人民币_中间价   | float64 | -      |
-| 100日元/人民币_涨跌幅   | float64 | 单位: 点对 |
+| 100日元/人民币_涨跌幅   | float64 | 单位：点对 |
 | 港元/人民币_中间价      | float64 | -      |
-| 港元/人民币_涨跌幅      | float64 | 单位: 点  |
+| 港元/人民币_涨跌幅      | float64 | 单位：点  |
 | 英镑/人民币_中间价      | float64 | -      |
-| 英镑/人民币_涨跌幅      | float64 | 单位: 点  |
+| 英镑/人民币_涨跌幅      | float64 | 单位：点  |
 | 澳元/人民币_中间价      | float64 | -      |
-| 澳元/人民币_涨跌幅      | float64 | 单位: 点  |
+| 澳元/人民币_涨跌幅      | float64 | 单位：点  |
 | 新西兰元/人民币_中间价    | float64 | -      |
-| 新西兰元/人民币_涨跌幅    | float64 | 单位: 点  |
+| 新西兰元/人民币_涨跌幅    | float64 | 单位：点  |
 | 新加坡元/人民币_中间价    | float64 | -      |
-| 新加坡元/人民币_涨跌幅    | float64 | 单位: 点  |
+| 新加坡元/人民币_涨跌幅    | float64 | 单位：点  |
 | 瑞郎/人民币_中间价      | float64 | -      |
-| 瑞郎/人民币_涨跌幅      | float64 | 单位: 点  |
+| 瑞郎/人民币_涨跌幅      | float64 | 单位：点  |
 | 加元/人民币_中间价      | float64 | -      |
-| 加元/人民币_涨跌幅      | float64 | 单位: 点  |
+| 加元/人民币_涨跌幅      | float64 | 单位：点  |
 | 人民币/马来西亚林吉特_中间价 | float64 | -      |
-| 人民币/马来西亚林吉特_涨跌幅 | float64 | 单位: 点  |
+| 人民币/马来西亚林吉特_涨跌幅 | float64 | 单位：点  |
 | 人民币/俄罗斯卢布_中间价   | float64 | -      |
-| 人民币/俄罗斯卢布_涨跌幅   | float64 | 单位: 点  |
+| 人民币/俄罗斯卢布_涨跌幅   | float64 | 单位：点  |
 | 人民币/南非兰特_中间价    | float64 | -      |
-| 人民币/南非兰特_涨跌幅    | float64 | 单位: 点  |
+| 人民币/南非兰特_涨跌幅    | float64 | 单位：点  |
 | 人民币/韩元_中间价      | float64 | -      |
-| 人民币/韩元_涨跌幅      | float64 | 单位: 点  |
+| 人民币/韩元_涨跌幅      | float64 | 单位：点  |
 | 人民币/阿联酋迪拉姆_中间价  | float64 | -      |
-| 人民币/阿联酋迪拉姆_涨跌幅  | float64 | 单位: 点  |
+| 人民币/阿联酋迪拉姆_涨跌幅  | float64 | 单位：点  |
 | 人民币/沙特里亚尔_中间价   | float64 | -      |
-| 人民币/沙特里亚尔_涨跌幅   | float64 | 单位: 点  |
+| 人民币/沙特里亚尔_涨跌幅   | float64 | 单位：点  |
 | 人民币/匈牙利福林_中间价   | float64 | -      |
-| 人民币/匈牙利福林_涨跌幅   | float64 | 单位: 点  |
+| 人民币/匈牙利福林_涨跌幅   | float64 | 单位：点  |
 | 人民币/波兰兹罗提_中间价   | float64 | -      |
-| 人民币/波兰兹罗提_涨跌幅   | float64 | 单位: 点  |
+| 人民币/波兰兹罗提_涨跌幅   | float64 | 单位：点  |
 | 人民币/丹麦克朗_中间价    | float64 | -      |
-| 人民币/丹麦克朗_涨跌幅    | float64 | 单位: 点  |
+| 人民币/丹麦克朗_涨跌幅    | float64 | 单位：点  |
 | 人民币/瑞典克朗_中间价    | float64 | -      |
-| 人民币/瑞典克朗_涨跌幅    | float64 | 单位: 点  |
+| 人民币/瑞典克朗_涨跌幅    | float64 | 单位：点  |
 | 人民币/丹麦克朗_中间价    | float64 | -      |
-| 人民币/丹麦克朗_涨跌幅    | float64 | 单位: 点  |
+| 人民币/丹麦克朗_涨跌幅    | float64 | 单位：点  |
 | 人民币/挪威克朗_中间价    | float64 | -      |
-| 人民币/挪威克朗_涨跌幅    | float64 | 单位: 点  |
+| 人民币/挪威克朗_涨跌幅    | float64 | 单位：点  |
 | 人民币/土耳其里拉_中间价   | float64 | -      |
-| 人民币/土耳其里拉_涨跌幅   | float64 | 单位: 点  |
+| 人民币/土耳其里拉_涨跌幅   | float64 | 单位：点  |
 | 人民币/墨西哥比索_中间价   | float64 | -      |
-| 人民币/墨西哥比索_涨跌幅   | float64 | 单位: 点  |
+| 人民币/墨西哥比索_涨跌幅   | float64 | 单位：点  |
 | 人民币/泰铢_中间价      | float64 | -      |
-| 人民币/泰铢_涨跌幅      | float64 | 单位: 点  |
+| 人民币/泰铢_涨跌幅      | float64 | 单位：点  |
 
 接口示例
 
@@ -4464,15 +4464,15 @@ print(macro_china_rmb_df)
 790  2021-05-13      6.4612       354.0  ...          107.0     4.8427       -76.0
 ```
 
-##### 深圳融资融券报告
+#### 深圳融资融券报告
 
-接口: macro_china_market_margin_sz
+接口：macro_china_market_margin_sz
 
-目标地址: https://datacenter.jin10.com/reportType/dc_market_margin_sz
+目标地址：https://datacenter.jin10.com/reportType/dc_market_margin_sz
 
-描述: 深圳融资融券报告, 数据区间从 20100331-至今
+描述：深圳融资融券报告，数据区间从 20100331-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4485,12 +4485,12 @@ print(macro_china_rmb_df)
 | 名称     | 类型      | 描述      |
 |--------|---------|---------|
 | 日期     | object  | -       |
-| 融资买入额  | float64 | 注意单位: 元 |
-| 融资余额   | float64 | 注意单位: 元 |
-| 融券卖出量  | float64 | 注意单位: 股 |
-| 融券余量   | float64 | 注意单位: 股 |
-| 融券余额   | float64 | 注意单位: 元 |
-| 融资融券余额 | float64 | 注意单位: 元 |
+| 融资买入额  | float64 | 注意单位：元 |
+| 融资余额   | float64 | 注意单位：元 |
+| 融券卖出量  | float64 | 注意单位：股 |
+| 融券余量   | float64 | 注意单位：股 |
+| 融券余额   | float64 | 注意单位：元 |
+| 融资融券余额 | float64 | 注意单位：元 |
 
 接口示例
 
@@ -4519,15 +4519,15 @@ print(macro_china_market_margin_sz_df)
 [3379 rows x 7 columns]
 ```
 
-##### 上海融资融券报告
+#### 上海融资融券报告
 
-接口: macro_china_market_margin_sh
+接口：macro_china_market_margin_sh
 
-目标地址: https://datacenter.jin10.com/reportType/dc_market_margin_sse
+目标地址：https://datacenter.jin10.com/reportType/dc_market_margin_sse
 
-描述: 上海融资融券报告, 数据区间从 20100331-至今
+描述：上海融资融券报告，数据区间从 20100331-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4574,15 +4574,15 @@ print(macro_china_market_margin_sh_df)
 [3357 rows x 7 columns]
 ```
 
-##### 上海黄金交易所报告
+#### 上海黄金交易所报告
 
-接口: macro_china_au_report
+接口：macro_china_au_report
 
-目标地址: https://datacenter.jin10.com/reportType/dc_sge_report
+目标地址：https://datacenter.jin10.com/reportType/dc_sge_report
 
-描述: 上海黄金交易所报告, 数据区间从 20140905-至今
+描述：上海黄金交易所报告，数据区间从 20140905-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4635,25 +4635,25 @@ print(macro_china_au_report_df)
 24393  2023-03-23   Ag(T+D)  5108.00  ...  4965526.0  空支付给多  17670.0
 ```
 
-#### 国家统计局通用接口
+### 国家统计局通用接口
 
-##### 国家统计局全国数据
+#### 国家统计局全国数据
 
-接口: macro_china_nbs_nation
+接口：macro_china_nbs_nation
 
-目标地址: https://data.stats.gov.cn/easyquery.htm
+目标地址：https://data.stats.gov.cn/dg/website/page.html#/pc/national/yearData
 
-描述: 国家统计局全国数据通用接口，包括月度数据、季度数据、年度数据，具体指标见数据官网。
+描述：国家统计局全国数据通用接口，包括月度数据、季度数据、年度数据，具体指标见国家统计局新站官网。
 
-限量: 根据参数返回指定数据
+限量：根据参数返回指定数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                                                                                                 |
 |--------|-----|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | kind   | str | 数据类别，包括：月度数据、季度数据、年度数据。                                                                                                                            |
-| path   | str | 数据路径， 需与kind参数匹配，具体见官网，多层级之间使用  > 连接 。<br> 示例：<br>    国民经济核算 > 支出法国内生产总值<br>   人口 > 总人口<br>   金融业 > 保险系统机构、人员数 > 保险系统机构数                           |
-| period | str | 时间区间 <br/>参考格式如下(英文逗号分割，且不能有多余空格)：<br/>    月：201201,201205<br/>    季：2012A,2012B,2012C,2012D<br/>    年：2012,2013 <br>    至今：2013-<br>    最近：last10 |
+| path   | str | 数据路径，需与kind参数匹配，具体见官网，多层级之间使用  > 连接 。<br> 示例：<br>    国民经济核算 > 支出法国内生产总值<br>   人口 > 总人口<br>   金融业 > 保险系统机构、人员数 > 保险系统机构数                           |
+| period | str | 时间区间 <br/>参考格式如下（英文逗号分割，且不能有多余空格）：<br/>    月：201201,201205<br/>    季：2012A,2012B,2012C,2012D<br/>    年：2012,2013 <br>    至今：2013-<br>    最近：last10；接口内部会自动兼容新站时间编码 |
 
 输出参数
 
@@ -4681,25 +4681,25 @@ print(macro_china_nbs_nation_df)
 乡村人口(万人)    49104.0   49835.0   50992.0   52581.8832   54108.285000
 ```
 
-##### 国家统计局地区数据
+#### 国家统计局地区数据
 
-接口: macro_china_nbs_region
+接口：macro_china_nbs_region
 
-目标地址: https://data.stats.gov.cn/easyquery.htm
+目标地址：https://data.stats.gov.cn/dg/website/page.html#/pc/national/fsYearData
 
-描述: 国家统计局地区数据通用接口，包括分省月度数据、分省季度数据、分省年度数据、主要城市月度价格、主要城市年度数据、港澳台月度数据、港澳台年度数据，具体指标见数据官网。
+描述：国家统计局地区数据通用接口，包括分省月度数据、分省季度数据、分省年度数据、主要城市月度价格、主要城市年度数据、港澳台月度数据、港澳台年度数据，具体指标见国家统计局新站官网。
 
-限量: 根据参数返回指定数据
+限量：根据参数返回指定数据
 
 输入参数
 
 | 名称        | 类型               | 描述                                                                                                                                                |
 |-----------|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | kind      | str              | 数据类别，包括：分省月度数据、分省季度数据、分省年度数据、主要城市月度价格、主要城市年度数据、港澳台月度数据、港澳台年度数据。                                                                                   |
-| path      | str              | 数据路径， 需与kind匹配，具体见官网，多层级之间使用  > 连接 。<br> 示例：<br>   国民经济核算 > 地区生产总值<br>   财政 > 地方财政收入                                                              |
+| path      | str              | 数据路径，需与kind匹配，具体见官网，多层级之间使用  > 连接 。<br> 示例：<br>   国民经济核算 > 地区生产总值<br>   财政 > 地方财政收入                                                              |
 | indicator | Union[str, None] | 指定指标，表示在当前path下可选择的指标。在指定region参数的情况下，此参数可以设置为None，此时将获取指定地区下所有可选指标的值。indicator和region参数不能同时为None。                                                |
 | region    | Union[str, None] | 指定地区，为可选指标。指定时表示仅获取当前地区下的数据。                                                                                                                      |
-| period    | str              | 时间区间<br/>参考格式如下(英文逗号分割，且不能有多余空格)：<br/>    月：201201,201205<br/>    季：2012A,2012B,2012C,2012D<br/>    年：2012,2013 <br>    至今：2013-<br>    最近：last10 |
+| period    | str              | 时间区间<br/>参考格式如下（英文逗号分割，且不能有多余空格）：<br/>    月：201201,201205<br/>    季：2012A,2012B,2012C,2012D<br/>    年：2012,2013 <br>    至今：2013-<br>    最近：last10；接口内部会自动兼容新站时间编码 |
 
 输出参数
 
@@ -4736,17 +4736,17 @@ region_income_df
 新疆维吾尔自治区                   27062.738782      16553.955250     10747.883634     5713.0
 ```
 
-#### 金融市场
+### 金融市场
 
-##### 股票筹资
+#### 股票筹资
 
-接口: macro_stock_finance
+接口：macro_stock_finance
 
-目标地址: https://data.10jqka.com.cn/macro/finance/
+目标地址：https://data.10jqka.com.cn/macro/finance/
 
-描述: 同花顺-数据中心-宏观数据-股票筹资
+描述：同花顺-数据中心-宏观数据-股票筹资
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4809,15 +4809,15 @@ print(macro_stock_finance_df)
 29  2025-10   313.78  112.92   200.86     NaN
 ```
 
-##### 新增人民币贷款
+#### 新增人民币贷款
 
-接口: macro_rmb_loan
+接口：macro_rmb_loan
 
-目标地址: https://data.10jqka.com.cn/macro/loan/
+目标地址：https://data.10jqka.com.cn/macro/loan/
 
-描述: 同花顺-数据中心-宏观数据-新增人民币贷款
+描述：同花顺-数据中心-宏观数据-新增人民币贷款
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4881,15 +4881,15 @@ print(macro_rmb_loan_df)
 29  2025-09     12900.0    -18.87%    118.64%  2703902.22      6.62%
 ```
 
-##### 人民币存款余额
+#### 人民币存款余额
 
-接口: macro_rmb_deposit
+接口：macro_rmb_deposit
 
-目标地址: https://data.10jqka.com.cn/macro/rmb/
+目标地址：https://data.10jqka.com.cn/macro/rmb/
 
-描述: 同花顺-数据中心-宏观数据-人民币存款余额
+描述：同花顺-数据中心-宏观数据-人民币存款余额
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -4961,17 +4961,17 @@ print(macro_rmb_deposit_df)
 [30 rows x 13 columns]
 ```
 
-### 中国香港宏观
+## 中国香港宏观
 
-#### 消费者物价指数
+### 消费者物价指数
 
-接口: macro_china_hk_cpi
+接口：macro_china_hk_cpi
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_8_0.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_8_0.html
 
-描述: 东方财富-经济数据一览-中国香港-消费者物价指数
+描述：东方财富-经济数据一览-中国香港-消费者物价指数
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5015,15 +5015,15 @@ print(macro_china_hk_cpi_df)
 [172 rows x 4 columns]
 ```
 
-#### 消费者物价指数年率
+### 消费者物价指数年率
 
-接口: macro_china_hk_cpi_ratio
+接口：macro_china_hk_cpi_ratio
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_8_1.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_8_1.html
 
-描述: 东方财富-经济数据一览-中国香港-消费者物价指数年率
+描述：东方财富-经济数据一览-中国香港-消费者物价指数年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5036,8 +5036,8 @@ print(macro_china_hk_cpi_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -5067,15 +5067,15 @@ print(macro_china_hk_cpi_ratio_df)
 [172 rows x 4 columns]
 ```
 
-#### 失业率
+### 失业率
 
-接口: macro_china_hk_rate_of_unemployment
+接口：macro_china_hk_rate_of_unemployment
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_8_2.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_8_2.html
 
-描述: 东方财富-经济数据一览-中国香港-失业率
+描述：东方财富-经济数据一览-中国香港-失业率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5088,8 +5088,8 @@ print(macro_china_hk_cpi_ratio_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -5119,15 +5119,15 @@ print(macro_china_hk_rate_of_unemployment_df)
 [195 rows x 4 columns]
 ```
 
-#### GDP
+### GDP
 
-接口: macro_china_hk_gbp
+接口：macro_china_hk_gbp
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_8_3.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_8_3.html
 
-描述: 东方财富-经济数据一览-中国香港-香港 GDP
+描述：东方财富-经济数据一览-中国香港-香港 GDP
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5140,8 +5140,8 @@ print(macro_china_hk_rate_of_unemployment_df)
 | 名称   | 类型      | 描述        |
 |------|---------|-----------|
 | 时间   | object  | -         |
-| 前值   | float64 | 注意单位: 亿港元 |
-| 现值   | float64 | 注意单位: 亿港元 |
+| 前值   | float64 | 注意单位：亿港元 |
+| 现值   | float64 | 注意单位：亿港元 |
 | 发布日期 | object  | -         |
 
 接口示例
@@ -5170,15 +5170,15 @@ print(macro_china_hk_gbp_df)
 64  2024第1季度  794640       NaN  2024-05-17
 ```
 
-#### GDP 同比
+### GDP 同比
 
-接口: macro_china_hk_gbp_ratio
+接口：macro_china_hk_gbp_ratio
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_8_4.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_8_4.html
 
-描述: 东方财富-经济数据一览-中国香港-香港 GDP 同比
+描述：东方财富-经济数据一览-中国香港-香港 GDP 同比
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5191,8 +5191,8 @@ print(macro_china_hk_gbp_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -5222,15 +5222,15 @@ print(macro_china_hk_gbp_ratio_df)
 [65 rows x 4 columns]
 ```
 
-#### 香港楼宇买卖合约数量
+### 香港楼宇买卖合约数量
 
-接口: macro_china_hk_building_volume
+接口：macro_china_hk_building_volume
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_8_5.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_8_5.html
 
-描述: 东方财富-经济数据一览-中国香港-香港楼宇买卖合约数量
+描述：东方财富-经济数据一览-中国香港-香港楼宇买卖合约数量
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5274,15 +5274,15 @@ print(macro_china_hk_building_volume_df)
 [195 rows x 4 columns]
 ```
 
-#### 香港楼宇买卖合约成交金额
+### 香港楼宇买卖合约成交金额
 
-接口: macro_china_hk_building_amount
+接口：macro_china_hk_building_amount
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_8_6.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_8_6.html
 
-描述: 东方财富-经济数据一览-中国香港-香港楼宇买卖合约成交金额
+描述：东方财富-经济数据一览-中国香港-香港楼宇买卖合约成交金额
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5295,8 +5295,8 @@ print(macro_china_hk_building_volume_df)
 | 名称   | 类型      | 描述        |
 |------|---------|-----------|
 | 时间   | object  | -         |
-| 前值   | float64 | 注意单位: 亿港元 |
-| 现值   | float64 | 注意单位: 亿港元 |
+| 前值   | float64 | 注意单位：亿港元 |
+| 现值   | float64 | 注意单位：亿港元 |
 | 发布日期 | object  | -         |
 
 接口示例
@@ -5326,15 +5326,15 @@ print(macro_china_hk_building_amount_df)
 [195 rows x 4 columns]
 ```
 
-#### 香港商品贸易差额年率
+### 香港商品贸易差额年率
 
-接口: macro_china_hk_trade_diff_ratio
+接口：macro_china_hk_trade_diff_ratio
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_8_7.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_8_7.html
 
-描述: 东方财富-经济数据一览-中国香港-香港商品贸易差额年率
+描述：东方财富-经济数据一览-中国香港-香港商品贸易差额年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5347,8 +5347,8 @@ print(macro_china_hk_building_amount_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -5378,15 +5378,15 @@ print(macro_china_hk_trade_diff_ratio_df)
 [194 rows x 4 columns]
 ```
 
-#### 香港制造业 PPI 年率
+### 香港制造业 PPI 年率
 
-接口: macro_china_hk_ppi
+接口：macro_china_hk_ppi
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_8_8.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_8_8.html
 
-描述: 东方财富-经济数据一览-中国香港-香港制造业PPI年率
+描述：东方财富-经济数据一览-中国香港-香港制造业PPI年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5399,8 +5399,8 @@ print(macro_china_hk_trade_diff_ratio_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -5430,19 +5430,21 @@ print(macro_china_hk_ppi_df)
 [65 rows x 4 columns]
 ```
 
-### 美国宏观
+## 美国宏观
 
-#### 经济状况
+### 经济状况
 
-##### 美国GDP
+#### 美国GDP
 
-接口: macro_usa_gdp_monthly
+接口：macro_usa_gdp_monthly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_gdp
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_gdp
 
-描述: 美国国内生产总值(GDP)报告, 数据区间从 20080228-至今
+描述：美国国内生产总值(GDP)报告，数据区间从 20080228-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
+
+说明：当前接口使用 Jin10 历史数据接口；经 2026-07 校验，该上游链路未继续提供最新数据，返回结果可能仅更新至 2025 年附近，不代表 AKShare 本地缓存异常
 
 输入参数
 
@@ -5456,9 +5458,9 @@ print(macro_china_hk_ppi_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -5487,17 +5489,17 @@ print(macro_usa_gdp_monthly_df)
 [193 rows x 5 columns]
 ```
 
-#### 物价水平
+### 物价水平
 
-##### 美国CPI月率报告
+#### 美国CPI月率报告
 
-接口: macro_usa_cpi_monthly
+接口：macro_usa_cpi_monthly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_cpi
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_cpi
 
-描述: 美国 CPI 月率报告, 数据区间从 19700101-至今
+描述：美国 CPI 月率报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5511,9 +5513,9 @@ print(macro_usa_gdp_monthly_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -5542,15 +5544,15 @@ print(macro_usa_cpi_monthly_df)
 [652 rows x 5 columns]
 ```
 
-##### 美国CPI年率报告
+#### 美国CPI年率报告
 
-接口: macro_usa_cpi_yoy
+接口：macro_usa_cpi_yoy
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_0_12.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_0_12.html
 
-描述: 东方财富-经济数据一览-美国-CPI年率, 数据区间从2008-至今
+描述：东方财富-经济数据一览-美国-CPI年率，数据区间从2008-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5564,8 +5566,8 @@ print(macro_usa_cpi_monthly_df)
 |------|---------|---------|
 | 时间   | object  | -       |
 | 发布日期 | object  | -       |
-| 现值   | float64 | 注意单位: % |
-| 前值   | float64 | 注意单位: % |
+| 现值   | float64 | 注意单位：% |
+| 前值   | float64 | 注意单位：% |
 
 接口示例
 
@@ -5594,15 +5596,17 @@ print(macro_usa_cpi_yoy_df)
 [186 rows x 4 columns]
 ```
 
-##### 美国核心CPI月率报告
+#### 美国核心CPI月率报告
 
-接口: macro_usa_core_cpi_monthly
+接口：macro_usa_core_cpi_monthly
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_core_cpi
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_core_cpi
 
-描述: 美国核心 CPI 月率报告, 数据区间从 19700101-至今
+描述：美国核心 CPI 月率报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
+
+说明：当前接口使用 Jin10 历史数据接口；经 2026-07 校验，该上游链路未继续提供最新数据，返回结果可能仅更新至 2025 年附近，不代表 AKShare 本地缓存异常
 
 输入参数
 
@@ -5616,9 +5620,9 @@ print(macro_usa_cpi_yoy_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -5647,15 +5651,15 @@ print(macro_usa_core_cpi_monthly_df)
 [652 rows x 5 columns]
 ```
 
-##### 美国个人支出月率报告
+#### 美国个人支出月率报告
 
-接口: macro_usa_personal_spending
+接口：macro_usa_personal_spending
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_personal_spending
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_personal_spending
 
-描述: 美国个人支出月率报告, 数据区间从 19700101-至今
+描述：美国个人支出月率报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5669,9 +5673,9 @@ print(macro_usa_core_cpi_monthly_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -5700,15 +5704,17 @@ print(macro_usa_personal_spending_df)
 [650 rows x 5 columns]
 ```
 
-##### 美国零售销售月率报告
+#### 美国零售销售月率报告
 
-接口: macro_usa_retail_sales
+接口：macro_usa_retail_sales
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_retail_sales
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_retail_sales
 
-描述: 美国零售销售月率报告, 数据区间从 19920301-至今
+描述：美国零售销售月率报告，数据区间从 19920301-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
+
+说明：当前接口使用 Jin10 历史数据接口；经 2026-07 校验，该上游链路未继续提供最新数据，返回结果可能仅更新至 2025 年附近，不代表 AKShare 本地缓存异常
 
 输入参数
 
@@ -5722,9 +5728,9 @@ print(macro_usa_personal_spending_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -5753,15 +5759,15 @@ print(macro_usa_retail_sales_df)
 [386 rows x 5 columns]
 ```
 
-##### 美国进口物价指数报告
+#### 美国进口物价指数报告
 
-接口: macro_usa_import_price
+接口：macro_usa_import_price
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_import_price
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_import_price
 
-描述: 美国进口物价指数报告, 数据区间从 19890201-至今
+描述：美国进口物价指数报告，数据区间从 19890201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5775,9 +5781,9 @@ print(macro_usa_retail_sales_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -5806,15 +5812,15 @@ print(macro_usa_import_price_df)
 [425 rows x 5 columns]
 ```
 
-##### 美国出口价格指数报告
+#### 美国出口价格指数报告
 
-接口: macro_usa_export_price
+接口：macro_usa_export_price
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_export_price
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_export_price
 
-描述: 美国出口价格指数报告, 数据区间从 19890201-至今
+描述：美国出口价格指数报告，数据区间从 19890201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5828,9 +5834,9 @@ print(macro_usa_import_price_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -5859,17 +5865,17 @@ print(macro_usa_export_price_df)
 [425 rows x 5 columns]
 ```
 
-#### 劳动力市场
+### 劳动力市场
 
-##### LMCI
+#### LMCI
 
-接口: macro_usa_lmci
+接口：macro_usa_lmci
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_lmci
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_lmci
 
-描述: 美联储劳动力市场状况指数报告, 数据区间从 20141006-至今
+描述：美联储劳动力市场状况指数报告，数据区间从 20141006-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -5883,9 +5889,9 @@ print(macro_usa_export_price_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -5936,17 +5942,19 @@ print(macro_usa_lmci_df)
 33  美联储劳动力市场状况指数  2017-07-10  1.5  2.5  3.3
 ```
 
-##### 失业率
+#### 失业率
 
-###### 美国失业率报告
+##### 美国失业率报告
 
-接口: macro_usa_unemployment_rate
+接口：macro_usa_unemployment_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_unemployment_rate
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_unemployment_rate
 
-描述: 美国失业率报告, 数据区间从 19700101-至今
+描述：美国失业率报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
+
+说明：当前接口使用 Jin10 历史数据接口；经 2026-07 校验，该上游链路未继续提供最新数据，返回结果可能仅更新至 2025 年附近，不代表 AKShare 本地缓存异常
 
 输入参数
 
@@ -5960,9 +5968,9 @@ print(macro_usa_lmci_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -5991,15 +5999,15 @@ print(macro_usa_unemployment_rate_df)
 [652 rows x 5 columns]
 ```
 
-###### 美国挑战者企业裁员人数报告
+##### 美国挑战者企业裁员人数报告
 
-接口: macro_usa_job_cuts
+接口：macro_usa_job_cuts
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_job_cuts
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_job_cuts
 
-描述: 美国挑战者企业裁员人数报告, 数据区间从 19940201-至今
+描述：美国挑战者企业裁员人数报告，数据区间从 19940201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6013,9 +6021,9 @@ print(macro_usa_unemployment_rate_df)
 |-----|---------|----------|
 | 商品  | object  | -        |
 | 日期  | object  | -        |
-| 今值  | float64 | 注意单位: 万人 |
-| 预测值 | float64 | 注意单位: 万人 |
-| 前值  | float64 | 注意单位: 万人 |
+| 今值  | float64 | 注意单位：万人 |
+| 预测值 | float64 | 注意单位：万人 |
+| 前值  | float64 | 注意单位：万人 |
 
 接口示例
 
@@ -6044,17 +6052,19 @@ print(macro_usa_job_cuts_df)
 [365 rows x 5 columns]
 ```
 
-##### 就业人口
+#### 就业人口
 
-###### 美国非农就业人数报告
+##### 美国非农就业人数报告
 
-接口: macro_usa_non_farm
+接口：macro_usa_non_farm
 
-目标地址: https://datacenter.jin10.com/reportType/dc_nonfarm_payrolls
+目标地址：https://datacenter.jin10.com/reportType/dc_nonfarm_payrolls
 
-描述: 美国非农就业人数报告, 数据区间从 19700102-至今
+描述：美国非农就业人数报告，数据区间从 19700102-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
+
+说明：当前接口使用 Jin10 历史数据接口；经 2026-07 校验，该上游链路未继续提供最新数据，返回结果可能仅更新至 2025 年附近，不代表 AKShare 本地缓存异常
 
 输入参数
 
@@ -6068,9 +6078,9 @@ print(macro_usa_job_cuts_df)
 |-----|---------|----------|
 | 商品  | object  | -        |
 | 日期  | object  | -        |
-| 今值  | float64 | 注意单位: 万人 |
-| 预测值 | float64 | 注意单位: 万人 |
-| 前值  | float64 | 注意单位: 万人 |
+| 今值  | float64 | 注意单位：万人 |
+| 预测值 | float64 | 注意单位：万人 |
+| 前值  | float64 | 注意单位：万人 |
 
 接口示例
 
@@ -6099,15 +6109,15 @@ print(macro_usa_non_farm_df)
 [652 rows x 5 columns]
 ```
 
-###### 美国ADP就业人数报告
+##### 美国ADP就业人数报告
 
-接口: macro_usa_adp_employment
+接口：macro_usa_adp_employment
 
-目标地址: https://datacenter.jin10.com/reportType/dc_adp_nonfarm_employment
+目标地址：https://datacenter.jin10.com/reportType/dc_adp_nonfarm_employment
 
-描述: 美国 ADP 就业人数报告, 数据区间从 20010601-至今
+描述：美国 ADP 就业人数报告，数据区间从 20010601-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6121,9 +6131,9 @@ print(macro_usa_non_farm_df)
 |-----|---------|----------|
 | 商品  | object  | -        |
 | 日期  | object  | -        |
-| 今值  | float64 | 注意单位: 万人 |
-| 预测值 | float64 | 注意单位: 万人 |
-| 前值  | float64 | 注意单位: 万人 |
+| 今值  | float64 | 注意单位：万人 |
+| 预测值 | float64 | 注意单位：万人 |
+| 前值  | float64 | 注意单位：万人 |
 
 接口示例
 
@@ -6152,17 +6162,19 @@ print(macro_usa_adp_employment_df)
 [276 rows x 5 columns]
 ```
 
-##### 消费者收入与支出
+#### 消费者收入与支出
 
-###### 美国核心PCE物价指数年率报告
+##### 美国核心PCE物价指数年率报告
 
-接口: macro_usa_core_pce_price
+接口：macro_usa_core_pce_price
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_core_pce_price
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_core_pce_price
 
-描述: 美国核心 PCE 物价指数年率报告, 数据区间从 19700101-至今
+描述：美国核心 PCE 物价指数年率报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
+
+说明：当前接口使用 Jin10 历史数据接口；经 2026-07 校验，该上游链路未继续提供最新数据，返回结果可能仅更新至 2025 年附近，不代表 AKShare 本地缓存异常
 
 输入参数
 
@@ -6176,9 +6188,9 @@ print(macro_usa_adp_employment_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -6207,15 +6219,15 @@ print(macro_usa_core_pce_price_df)
 [654 rows x 5 columns]
 ```
 
-###### 美国实际个人消费支出季率初值报告
+##### 美国实际个人消费支出季率初值报告
 
-接口: macro_usa_real_consumer_spending
+接口：macro_usa_real_consumer_spending
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_real_consumer_spending
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_real_consumer_spending
 
-描述: 美国实际个人消费支出季率初值报告, 数据区间从 20131107-至今
+描述：美国实际个人消费支出季率初值报告，数据区间从 20131107-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6229,9 +6241,9 @@ print(macro_usa_core_pce_price_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -6260,17 +6272,17 @@ print(macro_usa_real_consumer_spending_df)
 [129 rows x 5 columns]
 ```
 
-#### 贸易状况
+### 贸易状况
 
-##### 美国贸易帐报告
+#### 美国贸易帐报告
 
-接口: macro_usa_trade_balance
+接口：macro_usa_trade_balance
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_trade_balance
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_trade_balance
 
-描述: 美国贸易帐报告, 数据区间从 19700101-至今
+描述：美国贸易帐报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6284,9 +6296,9 @@ print(macro_usa_real_consumer_spending_df)
 |-----|---------|-----------|
 | 商品  | object  | -         |
 | 日期  | object  | -         |
-| 今值  | float64 | 注意单位: 亿美元 |
-| 预测值 | float64 | 注意单位: 亿美元 |
-| 前值  | float64 | 注意单位: 亿美元 |
+| 今值  | float64 | 注意单位：亿美元 |
+| 预测值 | float64 | 注意单位：亿美元 |
+| 前值  | float64 | 注意单位：亿美元 |
 
 接口示例
 
@@ -6315,15 +6327,15 @@ print(macro_usa_trade_balance_df)
 [653 rows x 5 columns]
 ```
 
-##### 美国经常帐报告
+#### 美国经常帐报告
 
-接口: macro_usa_current_account
+接口：macro_usa_current_account
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_current_account
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_current_account
 
-描述: 美国经常帐报告, 数据区间从 20080317-至今
+描述：美国经常帐报告，数据区间从 20080317-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6337,9 +6349,9 @@ print(macro_usa_trade_balance_df)
 |-----|---------|-----------|
 | 商品  | object  | -         |
 | 日期  | object  | -         |
-| 今值  | float64 | 注意单位: 亿美元 |
-| 预测值 | float64 | 注意单位: 亿美元 |
-| 前值  | float64 | 注意单位: 亿美元 |
+| 今值  | float64 | 注意单位：亿美元 |
+| 预测值 | float64 | 注意单位：亿美元 |
+| 前值  | float64 | 注意单位：亿美元 |
 
 接口示例
 
@@ -6368,19 +6380,19 @@ print(macro_usa_current_account_df)
 [65 rows x 5 columns]
 ```
 
-#### 产业指标
+### 产业指标
 
-##### 制造业
+#### 制造业
 
-###### 贝克休斯钻井报告
+##### 贝克休斯钻井报告
 
-接口: macro_usa_rig_count
+接口：macro_usa_rig_count
 
-目标地址: https://datacenter.jin10.com/reportType/dc_rig_count_summary
+目标地址：https://datacenter.jin10.com/reportType/dc_rig_count_summary
 
-描述: 贝克休斯钻井报告, 数据区间从 19870717-至今
+描述：贝克休斯钻井报告，数据区间从 19870717-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6429,15 +6441,15 @@ print(macro_usa_rig_count_df)
 [1896 rows x 9 columns]
 ```
 
-###### 美国生产者物价指数(PPI)报告
+##### 美国生产者物价指数(PPI)报告
 
-接口: macro_usa_ppi
+接口：macro_usa_ppi
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_ppi
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_ppi
 
-描述: 美国生产者物价指数(PPI)报告, 数据区间从 20080226-至今
+描述：美国生产者物价指数(PPI)报告，数据区间从 20080226-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6451,9 +6463,9 @@ print(macro_usa_rig_count_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -6482,15 +6494,15 @@ print(macro_usa_ppi_df)
 [196 rows x 5 columns]
 ```
 
-###### 美国核心生产者物价指数(PPI)报告
+##### 美国核心生产者物价指数(PPI)报告
 
-接口: macro_usa_core_ppi
+接口：macro_usa_core_ppi
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_core_ppi
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_core_ppi
 
-描述: 美国核心生产者物价指数(PPI)报告, 数据区间从 20080318-至今
+描述：美国核心生产者物价指数(PPI)报告，数据区间从 20080318-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6504,9 +6516,9 @@ print(macro_usa_ppi_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -6535,15 +6547,15 @@ print(macro_usa_core_ppi_df)
 [193 rows x 5 columns]
 ```
 
-###### 美国 API 原油库存报告
+##### 美国 API 原油库存报告
 
-接口: macro_usa_api_crude_stock
+接口：macro_usa_api_crude_stock
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_api_crude_stock
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_api_crude_stock
 
-描述: 美国 API 原油库存报告, 数据区间从 20120328-至今
+描述：美国 API 原油库存报告，数据区间从 20120328-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6557,9 +6569,9 @@ print(macro_usa_core_ppi_df)
 |-----|---------|----------|
 | 商品  | object  | -        |
 | 日期  | object  | -        |
-| 今值  | float64 | 注意单位: 万桶 |
-| 预测值 | float64 | 注意单位: 万桶 |
-| 前值  | float64 | 注意单位: 万桶 |
+| 今值  | float64 | 注意单位：万桶 |
+| 预测值 | float64 | 注意单位：万桶 |
+| 前值  | float64 | 注意单位：万桶 |
 
 接口示例
 
@@ -6588,15 +6600,15 @@ print(macro_usa_api_crude_stock_df)
 [629 rows x 5 columns]
 ```
 
-###### 美国Markit制造业PMI初值报告
+##### 美国Markit制造业PMI初值报告
 
-接口: macro_usa_pmi
+接口：macro_usa_pmi
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_pmi
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_pmi
 
-描述: 美国 Markit 制造业 PMI 初值报告, 数据区间从 20120601-至今
+描述：美国 Markit 制造业 PMI 初值报告，数据区间从 20120601-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6641,15 +6653,17 @@ print(macro_usa_pmi_df)
 [285 rows x 5 columns]
 ```
 
-###### 美国ISM制造业PMI报告
+##### 美国ISM制造业PMI报告
 
-接口: macro_usa_ism_pmi
+接口：macro_usa_ism_pmi
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_ism_pmi
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_ism_pmi
 
-描述: 美国 ISM 制造业 PMI 报告, 数据区间从 19700101-至今
+描述：美国 ISM 制造业 PMI 报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
+
+说明：当前接口使用 Jin10 历史数据接口；经 2026-07 校验，该上游链路未继续提供最新数据，返回结果可能仅更新至 2025 年附近，不代表 AKShare 本地缓存异常
 
 输入参数
 
@@ -6694,17 +6708,19 @@ print(macro_usa_ism_pmi_df)
 [653 rows x 5 columns]
 ```
 
-##### 工业
+#### 工业
 
-###### 美国工业产出月率报告
+##### 美国工业产出月率报告
 
-接口: macro_usa_industrial_production
+接口：macro_usa_industrial_production
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_industrial_production
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_industrial_production
 
-描述: 美国工业产出月率报告, 数据区间从 19700101-至今
+描述：美国工业产出月率报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
+
+说明：当前接口使用 Jin10 历史数据接口；经 2026-07 校验，该上游链路未继续提供最新数据，返回结果可能仅更新至 2025 年附近，不代表 AKShare 本地缓存异常
 
 输入参数
 
@@ -6718,9 +6734,9 @@ print(macro_usa_ism_pmi_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -6749,15 +6765,15 @@ print(macro_usa_industrial_production_df)
 [652 rows x 5 columns]
 ```
 
-###### 美国耐用品订单月率报告
+##### 美国耐用品订单月率报告
 
-接口: macro_usa_durable_goods_orders
+接口：macro_usa_durable_goods_orders
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_durable_goods_orders
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_durable_goods_orders
 
-描述: 美国耐用品订单月率报告, 数据区间从 20080227-至今
+描述：美国耐用品订单月率报告，数据区间从 20080227-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6771,9 +6787,9 @@ print(macro_usa_industrial_production_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -6802,15 +6818,15 @@ print(macro_usa_durable_goods_orders_df)
 [203 rows x 5 columns]
 ```
 
-###### 美国工厂订单月率报告
+##### 美国工厂订单月率报告
 
-接口: macro_usa_factory_orders
+接口：macro_usa_factory_orders
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_factory_orders
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_factory_orders
 
-描述: 美国工厂订单月率报告, 数据区间从 19920401-至今
+描述：美国工厂订单月率报告，数据区间从 19920401-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6824,9 +6840,9 @@ print(macro_usa_durable_goods_orders_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -6855,17 +6871,17 @@ print(macro_usa_factory_orders_df)
 [386 rows x 5 columns]
 ```
 
-##### 服务业
+#### 服务业
 
-###### 美国Markit服务业PMI初值报告
+##### 美国Markit服务业PMI初值报告
 
-接口: macro_usa_services_pmi
+接口：macro_usa_services_pmi
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_services_pmi
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_services_pmi
 
-描述: 美国Markit服务业PMI初值报告, 数据区间从 20120701-至今
+描述：美国Markit服务业PMI初值报告，数据区间从 20120701-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6910,15 +6926,15 @@ print(macro_usa_services_pmi_df)
 [267 rows x 5 columns]
 ```
 
-###### 美国商业库存月率报告
+##### 美国商业库存月率报告
 
-接口: macro_usa_business_inventories
+接口：macro_usa_business_inventories
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_business_inventories
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_business_inventories
 
-描述: 美国商业库存月率报告, 数据区间从 19920301-至今
+描述：美国商业库存月率报告，数据区间从 19920301-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -6932,9 +6948,9 @@ print(macro_usa_services_pmi_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -6963,15 +6979,17 @@ print(macro_usa_business_inventories_df)
 [386 rows x 5 columns]
 ```
 
-###### 美国ISM非制造业PMI报告
+##### 美国ISM非制造业PMI报告
 
-接口: macro_usa_ism_non_pmi
+接口：macro_usa_ism_non_pmi
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_ism_non_pmi
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_ism_non_pmi
 
-描述: 美国 ISM 非制造业 PMI 报告, 数据区间从 19970801-至今
+描述：美国 ISM 非制造业 PMI 报告，数据区间从 19970801-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
+
+说明：当前接口使用 Jin10 历史数据接口；经 2026-07 校验，该上游链路未继续提供最新数据，返回结果可能仅更新至 2025 年附近，不代表 AKShare 本地缓存异常
 
 输入参数
 
@@ -7016,17 +7034,17 @@ print(macro_usa_ism_non_pmi_df)
 [324 rows x 5 columns]
 ```
 
-##### 房地产
+#### 房地产
 
-###### 美国NAHB房产市场指数报告
+##### 美国NAHB房产市场指数报告
 
-接口: macro_usa_nahb_house_market_index
+接口：macro_usa_nahb_house_market_index
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_nahb_house_market_index
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_nahb_house_market_index
 
-描述: 美国 NAHB 房产市场指数报告, 数据区间从 19850201-至今
+描述：美国 NAHB 房产市场指数报告，数据区间从 19850201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7071,15 +7089,15 @@ print(macro_usa_nahb_house_market_index_df)
 [472 rows x 5 columns]
 ```
 
-###### 美国新屋开工总数年化报告
+##### 美国新屋开工总数年化报告
 
-接口: macro_usa_house_starts
+接口：macro_usa_house_starts
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_house_starts
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_house_starts
 
-描述: 美国新屋开工总数年化报告, 数据区间从 19700101-至今
+描述：美国新屋开工总数年化报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7093,9 +7111,9 @@ print(macro_usa_nahb_house_market_index_df)
 |-----|---------|----------|
 | 商品  | object  | -        |
 | 日期  | object  | -        |
-| 今值  | float64 | 注意单位: 万户 |
-| 预测值 | float64 | 注意单位: 万户 |
-| 前值  | float64 | 注意单位: 万户 |
+| 今值  | float64 | 注意单位：万户 |
+| 预测值 | float64 | 注意单位：万户 |
+| 前值  | float64 | 注意单位：万户 |
 
 接口示例
 
@@ -7124,15 +7142,15 @@ print(macro_usa_house_starts_df)
 [650 rows x 5 columns]
 ```
 
-###### 美国新屋销售总数年化报告
+##### 美国新屋销售总数年化报告
 
-接口: macro_usa_new_home_sales
+接口：macro_usa_new_home_sales
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_new_home_sales
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_new_home_sales
 
-描述: 美国新屋销售总数年化报告, 数据区间从 19700101-至今
+描述：美国新屋销售总数年化报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7146,9 +7164,9 @@ print(macro_usa_house_starts_df)
 |-----|---------|----------|
 | 商品  | object  | -        |
 | 日期  | object  | -        |
-| 今值  | float64 | 注意单位: 万户 |
-| 预测值 | float64 | 注意单位: 万户 |
-| 前值  | float64 | 注意单位: 万户 |
+| 今值  | float64 | 注意单位：万户 |
+| 预测值 | float64 | 注意单位：万户 |
+| 前值  | float64 | 注意单位：万户 |
 
 接口示例
 
@@ -7177,15 +7195,15 @@ print(macro_usa_new_home_sales_df)
 [651 rows x 5 columns]
 ```
 
-###### 美国营建许可总数报告
+##### 美国营建许可总数报告
 
-接口: macro_usa_building_permits
+接口：macro_usa_building_permits
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_building_permits
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_building_permits
 
-描述: 美国营建许可总数报告, 数据区间从 20080220-至今
+描述：美国营建许可总数报告，数据区间从 20080220-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7199,9 +7217,9 @@ print(macro_usa_new_home_sales_df)
 |-----|---------|----------|
 | 商品  | object  | -        |
 | 日期  | object  | -        |
-| 今值  | float64 | 注意单位: 万户 |
-| 预测值 | float64 | 注意单位: 万户 |
-| 前值  | float64 | 注意单位: 万户 |
+| 今值  | float64 | 注意单位：万户 |
+| 预测值 | float64 | 注意单位：万户 |
+| 前值  | float64 | 注意单位：万户 |
 
 接口示例
 
@@ -7230,15 +7248,15 @@ print(macro_usa_building_permits_df)
 [211 rows x 5 columns]
 ```
 
-###### 美国成屋销售总数年化报告
+##### 美国成屋销售总数年化报告
 
-接口: macro_usa_exist_home_sales
+接口：macro_usa_exist_home_sales
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_exist_home_sales
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_exist_home_sales
 
-描述: 美国成屋销售总数年化报告, 数据区间从 19700101-至今
+描述：美国成屋销售总数年化报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7252,9 +7270,9 @@ print(macro_usa_building_permits_df)
 |-----|---------|----------|
 | 商品  | object  | -        |
 | 日期  | object  | -        |
-| 今值  | float64 | 注意单位: 万户 |
-| 预测值 | float64 | 注意单位: 万户 |
-| 前值  | float64 | 注意单位: 万户 |
+| 今值  | float64 | 注意单位：万户 |
+| 预测值 | float64 | 注意单位：万户 |
+| 前值  | float64 | 注意单位：万户 |
 
 接口示例
 
@@ -7283,15 +7301,15 @@ print(macro_usa_exist_home_sales_df)
 [652 rows x 5 columns]
 ```
 
-###### 美国FHFA房价指数月率报告
+##### 美国FHFA房价指数月率报告
 
-接口: macro_usa_house_price_index
+接口：macro_usa_house_price_index
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_house_price_index
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_house_price_index
 
-描述: 美国 FHFA 房价指数月率报告, 数据区间从 19910301-至今
+描述：美国 FHFA 房价指数月率报告，数据区间从 19910301-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7305,9 +7323,9 @@ print(macro_usa_exist_home_sales_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -7336,15 +7354,15 @@ print(macro_usa_house_price_index_df)
 [397 rows x 5 columns]
 ```
 
-###### 美国S&P/CS20座大城市房价指数年率报告
+##### 美国S&P/CS20座大城市房价指数年率报告
 
-接口: macro_usa_spcs20
+接口：macro_usa_spcs20
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_spcs20
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_spcs20
 
-描述: 美国S&P/CS20座大城市房价指数年率报告, 数据区间从 20010201-至今
+描述：美国S&P/CS20座大城市房价指数年率报告，数据区间从 20010201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7358,9 +7376,9 @@ print(macro_usa_house_price_index_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -7389,15 +7407,15 @@ print(macro_usa_spcs20_df)
 [280 rows x 5 columns]
 ```
 
-###### 美国成屋签约销售指数月率报告
+##### 美国成屋签约销售指数月率报告
 
-接口: macro_usa_pending_home_sales
+接口：macro_usa_pending_home_sales
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_pending_home_sales
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_pending_home_sales
 
-描述: 美国成屋签约销售指数月率报告, 数据区间从 20010301-至今
+描述：美国成屋签约销售指数月率报告，数据区间从 20010301-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7411,9 +7429,9 @@ print(macro_usa_spcs20_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -7442,17 +7460,17 @@ print(macro_usa_pending_home_sales_df)
 [279 rows x 5 columns]
 ```
 
-#### 领先指标
+### 领先指标
 
-##### 未决房屋销售月率
+#### 未决房屋销售月率
 
-接口: macro_usa_phs
+接口：macro_usa_phs
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_0_5.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_0_5.html
 
-描述: 东方财富-经济数据一览-美国-未决房屋销售月率, 数据区间从 20080201-至今
+描述：东方财富-经济数据一览-美国-未决房屋销售月率，数据区间从 20080201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7465,8 +7483,8 @@ print(macro_usa_pending_home_sales_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -7495,15 +7513,15 @@ print(macro_usa_phs_df)
 170  2008年01月 -1.5  0.0  2008-02-28
 ```
 
-##### 美国谘商会消费者信心指数报告
+#### 美国谘商会消费者信心指数报告
 
-接口: macro_usa_cb_consumer_confidence
+接口：macro_usa_cb_consumer_confidence
 
-目标地址: https://cdn.jin10.com/dc/reports/dc_usa_cb_consumer_confidence_all.js?v=1578576859
+目标地址：https://cdn.jin10.com/dc/reports/dc_usa_cb_consumer_confidence_all.js?v=1578576859
 
-描述: 美国谘商会消费者信心指数报告, 数据区间从 19700101-至今
+描述：美国谘商会消费者信心指数报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7548,15 +7566,15 @@ print(macro_usa_cb_consumer_confidence_df)
 [655 rows x 5 columns]
 ```
 
-##### 美国NFIB小型企业信心指数报告
+#### 美国NFIB小型企业信心指数报告
 
-接口: macro_usa_nfib_small_business
+接口：macro_usa_nfib_small_business
 
-目标地址: https://cdn.jin10.com/dc/reports/dc_usa_nfib_small_business_all.js?v=1578576631
+目标地址：https://cdn.jin10.com/dc/reports/dc_usa_nfib_small_business_all.js?v=1578576631
 
-描述: 美国NFIB小型企业信心指数报告, 数据区间从 19750201-至今
+描述：美国NFIB小型企业信心指数报告，数据区间从 19750201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7601,15 +7619,15 @@ print(macro_usa_nfib_small_business_df)
 [506 rows x 5 columns]
 ```
 
-##### 美国密歇根大学消费者信心指数初值报告
+#### 美国密歇根大学消费者信心指数初值报告
 
-接口: macro_usa_michigan_consumer_sentiment
+接口：macro_usa_michigan_consumer_sentiment
 
-目标地址: https://cdn.jin10.com/dc/reports/dc_usa_michigan_consumer_sentiment_all.js?v=1578576228
+目标地址：https://cdn.jin10.com/dc/reports/dc_usa_michigan_consumer_sentiment_all.js?v=1578576228
 
-描述: 美国密歇根大学消费者信心指数初值报告, 数据区间从 19700301-至今
+描述：美国密歇根大学消费者信心指数初值报告，数据区间从 19700301-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7654,17 +7672,17 @@ print(macro_usa_michigan_consumer_sentiment_df)
 [777 rows x 5 columns]
 ```
 
-#### 其他
+### 其他
 
-##### 美国EIA原油库存报告
+#### 美国EIA原油库存报告
 
-接口: macro_usa_eia_crude_rate
+接口：macro_usa_eia_crude_rate
 
-目标地址: https://cdn.jin10.com/dc/reports/dc_usa_michigan_consumer_sentiment_all.js?v=1578576228
+目标地址：https://cdn.jin10.com/dc/reports/dc_usa_michigan_consumer_sentiment_all.js?v=1578576228
 
-描述: 美国EIA原油库存报告, 数据区间从 19950801-至今
+描述：美国EIA原油库存报告，数据区间从 19950801-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7678,9 +7696,9 @@ print(macro_usa_michigan_consumer_sentiment_df)
 |-----|---------|----------|
 | 商品  | object  | -        |
 | 日期  | object  | -        |
-| 今值  | float64 | 注意单位: 万桶 |
-| 预测值 | float64 | 注意单位: 万桶 |
-| 前值  | float64 | 注意单位: 万桶 |
+| 今值  | float64 | 注意单位：万桶 |
+| 预测值 | float64 | 注意单位：万桶 |
+| 前值  | float64 | 注意单位：万桶 |
 
 接口示例
 
@@ -7709,15 +7727,15 @@ print(macro_usa_eia_crude_rate_df)
 [1152 rows x 5 columns]
 ```
 
-##### 美国初请失业金人数报告
+#### 美国初请失业金人数报告
 
-接口: macro_usa_initial_jobless
+接口：macro_usa_initial_jobless
 
-目标地址: https://cdn.jin10.com/dc/reports/dc_usa_michigan_consumer_sentiment_all.js?v=1578576228
+目标地址：https://cdn.jin10.com/dc/reports/dc_usa_michigan_consumer_sentiment_all.js?v=1578576228
 
-描述: 美国初请失业金人数报告, 数据区间从 19700101-至今
+描述：美国初请失业金人数报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7731,9 +7749,9 @@ print(macro_usa_eia_crude_rate_df)
 |-----|---------|----------|
 | 商品  | object  | -        |
 | 日期  | object  | -        |
-| 今值  | float64 | 注意单位: 万人 |
-| 预测值 | float64 | 注意单位: 万人 |
-| 前值  | float64 | 注意单位: 万人 |
+| 今值  | float64 | 注意单位：万人 |
+| 预测值 | float64 | 注意单位：万人 |
+| 前值  | float64 | 注意单位：万人 |
 
 接口示例
 
@@ -7762,20 +7780,20 @@ print(macro_usa_initial_jobless_df)
 [1298 rows x 5 columns]
 ```
 
-##### 美国原油产量报告
+#### 美国原油产量报告
 
-接口: macro_usa_crude_inner
+接口：macro_usa_crude_inner
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eia_crude_oil_produce
+目标地址：https://datacenter.jin10.com/reportType/dc_eia_crude_oil_produce
 
-描述: 美国原油产量报告, 数据区间从 19830107-至今, 每周三公布(美国节假日除外), 美国能源信息署(EIA)
+描述：美国原油产量报告，数据区间从 19830107-至今，每周三公布（美国节假日除外），美国能源信息署(EIA)
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
-1. 报告内容: 美国能源信息署（EIA）在北京时间每周三晚公布EIA报告，除了公布美国原油库存、汽油库存等数据外，报告还包含美国上周国内原油产量的数据。
+1. 报告内容：美国能源信息署（EIA）在北京时间每周三晚公布EIA报告，除了公布美国原油库存、汽油库存等数据外，报告还包含美国上周国内原油产量的数据。
 2. 报告组成：美国国内原油产量、美国本土48州原油产量和美国阿拉斯加州原油产量。
 3. 数据关系：美国国内原油产量=美国本土48州原油产量+美国阿拉斯加州原油产量 单位均为万桶/日。
-4. 数据解读: 该数据反映了美国原油供应侧的情况，理论而言，当美国国内原油产量录得增加，通常导致油价下跌；当产量减少，则通常导致油价上扬。
+4. 数据解读：该数据反映了美国原油供应侧的情况，理论而言，当美国国内原油产量录得增加，通常导致油价下跌；当产量减少，则通常导致油价上扬。
 
 输入参数
 
@@ -7822,21 +7840,21 @@ print(macro_usa_crude_inner_df)
 [2149 rows x 7 columns]
 ```
 
-### 欧元区宏观
+## 欧元区宏观
 
-#### 国民经济运行状况
+### 国民经济运行状况
 
-##### 经济状况
+#### 经济状况
 
-###### 欧元区季度GDP年率报告
+##### 欧元区季度GDP年率报告
 
-接口: macro_euro_gdp_yoy
+接口：macro_euro_gdp_yoy
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_gdp_yoy
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_gdp_yoy
 
-描述: 欧元区季度 GDP 年率报告, 数据区间从 20131114-至今
+描述：欧元区季度 GDP 年率报告，数据区间从 20131114-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7850,9 +7868,9 @@ print(macro_usa_crude_inner_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -7880,17 +7898,17 @@ print(macro_euro_gdp_yoy_df)
 101  欧元区季度GDP年率  2022-11-15  NaN  4.0  2.1
 ```
 
-##### 物价水平
+#### 物价水平
 
-###### 欧元区CPI月率报告
+##### 欧元区CPI月率报告
 
-接口: macro_euro_cpi_mom
+接口：macro_euro_cpi_mom
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_cpi_mom
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_cpi_mom
 
-描述: 欧元区 CPI 月率报告, 数据区间从 19900301-至今
+描述：欧元区 CPI 月率报告，数据区间从 19900301-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7904,9 +7922,9 @@ print(macro_euro_gdp_yoy_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -7934,15 +7952,15 @@ print(macro_euro_cpi_mom_df)
 425  欧元区CPI月率  2022-11-17  NaN  1.2  1.2
 ```
 
-###### 欧元区CPI年率报告
+##### 欧元区CPI年率报告
 
-接口: macro_euro_cpi_yoy
+接口：macro_euro_cpi_yoy
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_cpi_yoy
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_cpi_yoy
 
-描述: 欧元区 CPI 年率报告, 数据区间从 19910201-至今
+描述：欧元区 CPI 年率报告，数据区间从 19910201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -7956,9 +7974,9 @@ print(macro_euro_cpi_mom_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -7986,15 +8004,15 @@ print(macro_euro_cpi_yoy_df)
 560  欧元区CPI年率  2022-11-17   NaN  10.0  10.7
 ```
 
-###### 欧元区PPI月率报告
+##### 欧元区PPI月率报告
 
-接口: macro_euro_ppi_mom
+接口：macro_euro_ppi_mom
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_ppi_mom
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_ppi_mom
 
-描述: 欧元区 PPI 月率报告, 数据区间从 19810301-至今
+描述：欧元区 PPI 月率报告，数据区间从 19810301-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8008,9 +8026,9 @@ print(macro_euro_cpi_yoy_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -8038,15 +8056,15 @@ print(macro_euro_ppi_mom_df)
 503  欧元区PPI月率  2022-11-04  NaN  1.7  5.0
 ```
 
-###### 欧元区零售销售月率报告
+##### 欧元区零售销售月率报告
 
-接口: macro_euro_retail_sales_mom
+接口：macro_euro_retail_sales_mom
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_retail_sales_mom
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_retail_sales_mom
 
-描述: 欧元区零售销售月率报告, 数据区间从 20000301-至今
+描述：欧元区零售销售月率报告，数据区间从 20000301-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8060,9 +8078,9 @@ print(macro_euro_ppi_mom_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -8090,17 +8108,17 @@ print(macro_euro_retail_sales_mom_df)
 275  欧元区零售销售月率  2022-11-08  NaN -0.4 -0.3
 ```
 
-##### 劳动力市场
+#### 劳动力市场
 
-###### 欧元区季调后就业人数季率报告
+##### 欧元区季调后就业人数季率报告
 
-接口: macro_euro_employment_change_qoq
+接口：macro_euro_employment_change_qoq
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_employment_change_qoq
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_employment_change_qoq
 
-描述: 欧元区季调后就业人数季率报告, 数据区间从 20083017-至今
+描述：欧元区季调后就业人数季率报告，数据区间从 20083017-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8114,9 +8132,9 @@ print(macro_euro_retail_sales_mom_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -8144,15 +8162,15 @@ print(macro_euro_employment_change_qoq_df)
 74  欧元区季调后就业人数季率  2022-09-07  0.4  0.3  0.7
 ```
 
-###### 欧元区失业率报告
+##### 欧元区失业率报告
 
-接口: macro_euro_unemployment_rate_mom
+接口：macro_euro_unemployment_rate_mom
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_unemployment_rate_mom
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_unemployment_rate_mom
 
-描述: 欧元区失业率报告, 数据区间从 19980501-至今
+描述：欧元区失业率报告，数据区间从 19980501-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8166,9 +8184,9 @@ print(macro_euro_employment_change_qoq_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -8196,17 +8214,17 @@ print(macro_euro_unemployment_rate_mom_df)
 294  欧元区失业率  2022-11-03   6.6  6.6   6.7
 ```
 
-#### 贸易状况
+### 贸易状况
 
-##### 欧元区未季调贸易帐报告
+#### 欧元区未季调贸易帐报告
 
-接口: macro_euro_trade_balance
+接口：macro_euro_trade_balance
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_trade_balance_mom
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_trade_balance_mom
 
-描述: 欧元区未季调贸易帐报告, 数据区间从 19990201-至今
+描述：欧元区未季调贸易帐报告，数据区间从 19990201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8220,9 +8238,9 @@ print(macro_euro_unemployment_rate_mom_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -8250,15 +8268,15 @@ print(macro_euro_trade_balance_df)
 285  欧元区未季调贸易帐  2022-11-15    NaN    NaN -509.0
 ```
 
-##### 欧元区经常帐报告
+#### 欧元区经常帐报告
 
-接口: macro_euro_current_account_mom
+接口：macro_euro_current_account_mom
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_current_account_mom
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_current_account_mom
 
-描述: 欧元区经常帐报告, 数据区间从 20080221-至今
+描述：欧元区经常帐报告，数据区间从 20080221-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8272,9 +8290,9 @@ print(macro_euro_trade_balance_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -8302,17 +8320,17 @@ print(macro_euro_current_account_mom_df)
 179  欧元区经常帐  2022-11-22    NaN    NaN -263.0
 ```
 
-#### 产业指标
+### 产业指标
 
-##### 欧元区工业产出月率报告
+#### 欧元区工业产出月率报告
 
-接口: macro_euro_industrial_production_mom
+接口：macro_euro_industrial_production_mom
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_industrial_production_mom
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_industrial_production_mom
 
-描述: 欧元区工业产出月率报告, 数据区间从 19910301-至今
+描述：欧元区工业产出月率报告，数据区间从 19910301-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8326,9 +8344,9 @@ print(macro_euro_current_account_mom_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -8356,15 +8374,15 @@ print(macro_euro_industrial_production_mom_df)
 384  欧元区工业产出月率  2022-11-14  NaN  NaN  1.5
 ```
 
-##### 欧元区制造业PMI初值报告
+#### 欧元区制造业PMI初值报告
 
-接口: macro_euro_manufacturing_pmi
+接口：macro_euro_manufacturing_pmi
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_manufacturing_pmi
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_manufacturing_pmi
 
-描述: 欧元区制造业 PMI 初值报告, 数据区间从 20080222-至今
+描述：欧元区制造业 PMI 初值报告，数据区间从 20080222-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8378,9 +8396,9 @@ print(macro_euro_industrial_production_mom_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -8408,15 +8426,15 @@ print(macro_euro_manufacturing_pmi_df)
 357  欧元区制造业PMI初值  2022-11-23   NaN   NaN  46.4
 ```
 
-##### 欧元区服务业PMI终值报告
+#### 欧元区服务业PMI终值报告
 
-接口: macro_euro_services_pmi
+接口：macro_euro_services_pmi
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_services_pmi
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_services_pmi
 
-描述: 欧元区服务业 PMI 终值报告, 数据区间从 20080222-至今
+描述：欧元区服务业 PMI 终值报告，数据区间从 20080222-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8430,9 +8448,9 @@ print(macro_euro_manufacturing_pmi_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -8460,17 +8478,17 @@ print(macro_euro_services_pmi_df)
 355  欧元区服务业PMI终值  2022-11-23   NaN  48.2  48.8
 ```
 
-#### 领先指标
+### 领先指标
 
-##### 欧元区ZEW经济景气指数报告
+#### 欧元区ZEW经济景气指数报告
 
-接口: macro_euro_zew_economic_sentiment
+接口：macro_euro_zew_economic_sentiment
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_zew_economic_sentiment
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_zew_economic_sentiment
 
-描述: 欧元区 ZEW 经济景气指数报告, 数据区间从 20080212-至今
+描述：欧元区 ZEW 经济景气指数报告，数据区间从 20080212-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8484,9 +8502,9 @@ print(macro_euro_services_pmi_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -8514,15 +8532,15 @@ print(macro_euro_zew_economic_sentiment_df)
 178  欧元区ZEW经济景气指数  2022-11-15   NaN   NaN -59.7
 ```
 
-##### 欧元区Sentix投资者信心指数报告
+#### 欧元区Sentix投资者信心指数报告
 
-接口: macro_euro_sentix_investor_confidence
+接口：macro_euro_sentix_investor_confidence
 
-目标地址: https://datacenter.jin10.com/reportType/dc_eurozone_sentix_investor_confidence
+目标地址：https://datacenter.jin10.com/reportType/dc_eurozone_sentix_investor_confidence
 
-描述: 欧元区 Sentix 投资者信心指数报告, 数据区间从 20020801-至今
+描述：欧元区 Sentix 投资者信心指数报告，数据区间从 20020801-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8536,9 +8554,9 @@ print(macro_euro_zew_economic_sentiment_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -8566,17 +8584,17 @@ print(macro_euro_sentix_investor_confidence_df)
 243  欧元区Sentix投资者信心指数  2022-11-07   NaN -34.7 -38.3
 ```
 
-### 德国宏观
+## 德国宏观
 
-#### IFO商业景气指数
+### IFO商业景气指数
 
-接口: macro_germany_ifo
+接口：macro_germany_ifo
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_1_0.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_1_0.html
 
-描述: 东方财富-数据中心-经济数据一览-IFO商业景气指数
+描述：东方财富-数据中心-经济数据一览-IFO商业景气指数
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8619,15 +8637,15 @@ print(macro_germany_ifo_df)
 177  2022年10月  84.4  84.3  2022-10-25
 ```
 
-#### 消费者物价指数月率终值
+### 消费者物价指数月率终值
 
-接口: macro_germany_cpi_monthly
+接口：macro_germany_cpi_monthly
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_1_1.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_1_1.html
 
-描述: 东方财富-数据中心-经济数据一览-德国-消费者物价指数月率终值
+描述：东方财富-数据中心-经济数据一览-德国-消费者物价指数月率终值
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8670,15 +8688,15 @@ print(macro_germany_cpi_monthly_df)
 175  2022年09月  0.4  2.2  2022-10-19
 ```
 
-#### 消费者物价指数年率终值
+### 消费者物价指数年率终值
 
-接口: macro_germany_cpi_yearly
+接口：macro_germany_cpi_yearly
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_1_2.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_1_2.html
 
-描述: 东方财富-数据中心-经济数据一览-德国-消费者物价指数年率终值
+描述：东方财富-数据中心-经济数据一览-德国-消费者物价指数年率终值
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8721,15 +8739,15 @@ print(macro_germany_cpi_yearly_df)
 176  2022年09月  8.8  10.9  2022-10-19
 ```
 
-#### 贸易帐-季调后
+### 贸易帐-季调后
 
-接口: macro_germany_trade_adjusted
+接口：macro_germany_trade_adjusted
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_1_3.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_1_3.html
 
-描述: 东方财富-数据中心-经济数据一览-德国-贸易帐(季调后)
+描述：东方财富-数据中心-经济数据一览-德国-贸易帐（季调后）
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8772,15 +8790,15 @@ print(macro_germany_trade_adjusted_df)
 177  2022年10月   3.7   NaN  2022-12-02
 ```
 
-#### GDP
+### GDP
 
-接口: macro_germany_gdp
+接口：macro_germany_gdp
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_1_4.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_1_4.html
 
-描述: 东方财富-数据中心-经济数据一览-德国-GDP
+描述：东方财富-数据中心-经济数据一览-德国-GDP
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8870,15 +8888,15 @@ print(macro_germany_gdp_df)
 57  2022第2季度   8.602949   7.763706  2022-08-25
 ```
 
-#### 实际零售销售月率
+### 实际零售销售月率
 
-接口: macro_germany_retail_sale_monthly
+接口：macro_germany_retail_sale_monthly
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_1_5.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_1_5.html
 
-描述: 东方财富-数据中心-经济数据一览-德国-实际零售销售月率
+描述：东方财富-数据中心-经济数据一览-德国-实际零售销售月率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8921,15 +8939,15 @@ print(macro_germany_retail_sale_monthly_df)
 177  2022年10月  14.1   NaN  2022-11-11
 ```
 
-#### 实际零售销售年率
+### 实际零售销售年率
 
-接口: macro_germany_retail_sale_yearly
+接口：macro_germany_retail_sale_yearly
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_1_6.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_1_6.html
 
-描述: 东方财富-数据中心-经济数据一览-德国-实际零售销售年率
+描述：东方财富-数据中心-经济数据一览-德国-实际零售销售年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -8976,15 +8994,15 @@ print(macro_germany_retail_sale_yearly_df)
 14  2022年12月  5.3  NaN  2023-01-17
 ```
 
-#### ZEW 经济景气指数
+### ZEW 经济景气指数
 
-接口: macro_germany_zew
+接口：macro_germany_zew
 
-目标地址: https://data.eastmoney.com/cjsj/foreign_1_7.html
+目标地址：https://data.eastmoney.com/cjsj/foreign_1_7.html
 
-描述: 东方财富-数据中心-经济数据一览-德国-ZEW 经济景气指数
+描述：东方财富-数据中心-经济数据一览-德国-ZEW 经济景气指数
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9027,17 +9045,17 @@ print(macro_germany_zew_df)
 178  2022年11月 -59.2   NaN  2022-11-15
 ```
 
-### 瑞士宏观
+## 瑞士宏观
 
-#### SVME 采购经理人指数
+### SVME 采购经理人指数
 
-接口: macro_swiss_svme
+接口：macro_swiss_svme
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_2_0.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_2_0.html
 
-描述: 东方财富-经济数据-瑞士-SVME采购经理人指数
+描述：东方财富-经济数据-瑞士-SVME采购经理人指数
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9080,15 +9098,15 @@ print(macro_swiss_svme_df)
 178  2022年10月  57.1  54.9  2022-11-01
 ```
 
-#### 贸易帐
+### 贸易帐
 
-接口: macro_swiss_trade
+接口：macro_swiss_trade
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_2_1.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_2_1.html
 
-描述: 东方财富-经济数据-瑞士-贸易帐
+描述：东方财富-经济数据-瑞士-贸易帐
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9180,15 +9198,15 @@ print(macro_swiss_trade_df)
 59  2022第3季度  38.030  40.030  2022-10-20
 ```
 
-#### 消费者物价指数年率
+### 消费者物价指数年率
 
-接口: macro_swiss_cpi_yearly
+接口：macro_swiss_cpi_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_2_2.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_2_2.html
 
-描述: 东方财富-经济数据-瑞士-消费者物价指数年率
+描述：东方财富-经济数据-瑞士-消费者物价指数年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9235,15 +9253,15 @@ print(macro_swiss_cpi_yearly_df)
 14  2021第4季度 -0.8  1.5  2022-01-04
 ```
 
-#### GDP 季率
+### GDP 季率
 
-接口: macro_swiss_gdp_quarterly
+接口：macro_swiss_gdp_quarterly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_2_3.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_2_3.html
 
-描述: 东方财富-经济数据-瑞士-GDP 季率
+描述：东方财富-经济数据-瑞士-GDP 季率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9334,15 +9352,15 @@ print(macro_swiss_gdp_quarterly_df)
 58  2022年06月  0.5  0.3  2022-09-05
 ```
 
-#### GDP 年率
+### GDP 年率
 
-接口: macro_swiss_gbd_yearly
+接口：macro_swiss_gbd_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_2_4.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_2_4.html
 
-描述: 东方财富-经济数据-瑞士-GDP 年率
+描述：东方财富-经济数据-瑞士-GDP 年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9389,15 +9407,15 @@ print(macro_swiss_gbd_yearly_df)
 14  2021年12月 -1.6  3.7  2022-02-28
 ```
 
-#### 央行公布利率决议
+### 央行公布利率决议
 
-接口: macro_swiss_gbd_bank_rate
+接口：macro_swiss_gbd_bank_rate
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_2_5.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_2_5.html
 
-描述: 东方财富-经济数据-瑞士-央行公布利率决议
+描述：东方财富-经济数据-瑞士-央行公布利率决议
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9489,17 +9507,17 @@ print(macro_swiss_gbd_bank_rate_df)
 59  2022年12月  0.50   NaN  2022-12-15
 ```
 
-### 日本宏观
+## 日本宏观
 
-#### 央行公布利率决议
+### 央行公布利率决议
 
-接口: macro_japan_bank_rate
+接口：macro_japan_bank_rate
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_3_0.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_3_0.html
 
-描述: 东方财富-经济数据-日本-央行公布利率决议
+描述：东方财富-经济数据-日本-央行公布利率决议
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9542,15 +9560,15 @@ print(macro_japan_bank_rate_df)
 152  2022年10月 -0.1 -0.1  2022-10-28
 ```
 
-#### 全国消费者物价指数年率
+### 全国消费者物价指数年率
 
-接口: macro_japan_cpi_yearly
+接口：macro_japan_cpi_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_3_1.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_3_1.html
 
-描述: 东方财富-经济数据-日本-全国消费者物价指数年率
+描述：东方财富-经济数据-日本-全国消费者物价指数年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9593,15 +9611,15 @@ print(macro_japan_cpi_yearly_df)
 177  2022年10月  3.0  NaN  2022-11-18
 ```
 
-#### 全国核心消费者物价指数年率
+### 全国核心消费者物价指数年率
 
-接口: macro_japan_core_cpi_yearly
+接口：macro_japan_core_cpi_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_2_2.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_2_2.html
 
-描述: 东方财富-经济数据-日本-全国核心消费者物价指数年率
+描述：东方财富-经济数据-日本-全国核心消费者物价指数年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9644,15 +9662,15 @@ print(macro_japan_core_cpi_yearly_df)
 177  2022年10月  0.9  NaN  2022-11-18
 ```
 
-#### 失业率
+### 失业率
 
-接口: macro_japan_unemployment_rate
+接口：macro_japan_unemployment_rate
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_2_3.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_2_3.html
 
-描述: 东方财富-经济数据-日本-失业率
+描述：东方财富-经济数据-日本-失业率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9695,15 +9713,15 @@ print(macro_japan_unemployment_rate_df)
 177  2022年10月  2.7  NaN  2022-11-29
 ```
 
-#### 领先指标终值
+### 领先指标终值
 
-接口: macro_japan_head_indicator
+接口：macro_japan_head_indicator
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_3_4.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_3_4.html
 
-描述: 东方财富-经济数据-日本-领先指标终值
+描述：东方财富-经济数据-日本-领先指标终值
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9746,17 +9764,17 @@ print(macro_japan_head_indicator_df)
 175  2022年08月   98.9  101.3  2022-10-26
 ```
 
-### 英国宏观
+## 英国宏观
 
-#### Halifax 房价指数月率
+### Halifax 房价指数月率
 
-接口: macro_uk_halifax_monthly
+接口：macro_uk_halifax_monthly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_0.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_0.html
 
-描述: 东方财富-经济数据-英国-Halifax 房价指数月率
+描述：东方财富-经济数据-英国-Halifax 房价指数月率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9799,15 +9817,15 @@ print(macro_uk_halifax_monthly_df)
 178  2022年11月 -0.4  NaN  2022-12-07
 ```
 
-#### Halifax 房价指数年率
+### Halifax 房价指数年率
 
-接口: macro_uk_halifax_yearly
+接口：macro_uk_halifax_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_1.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_1.html
 
-描述: 东方财富-经济数据-英国-Halifax 房价指数年率
+描述：东方财富-经济数据-英国-Halifax 房价指数年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9850,15 +9868,15 @@ print(macro_uk_halifax_yearly_df)
 178  2022年11月   8.3   NaN  2022-12-07
 ```
 
-#### 贸易帐
+### 贸易帐
 
-接口: macro_uk_trade
+接口：macro_uk_trade
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_2.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_2.html
 
-描述: 东方财富-经济数据-英国-贸易帐
+描述：东方财富-经济数据-英国-贸易帐
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9901,15 +9919,15 @@ print(macro_uk_trade_df)
 175  2022年08月  -7793  -7080  2022-10-12
 ```
 
-#### 央行公布利率决议
+### 央行公布利率决议
 
-接口: macro_uk_bank_rate
+接口：macro_uk_bank_rate
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_3.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_3.html
 
-描述: 东方财富-经济数据-英国-央行公布利率决议
+描述：东方财富-经济数据-英国-央行公布利率决议
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -9952,15 +9970,15 @@ print(macro_uk_bank_rate_df)
 154  2022年11月  2.25  3.00  2022-11-03
 ```
 
-#### 核心消费者物价指数年率
+### 核心消费者物价指数年率
 
-接口: macro_uk_core_cpi_yearly
+接口：macro_uk_core_cpi_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_4.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_4.html
 
-描述: 东方财富-经济数据-英国-核心消费者物价指数年率
+描述：东方财富-经济数据-英国-核心消费者物价指数年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10003,15 +10021,15 @@ print(macro_uk_core_cpi_yearly_df)
 176  2022年09月  6.3  6.5  2022-10-19
 ```
 
-#### 核心消费者物价指数月率
+### 核心消费者物价指数月率
 
-接口: macro_uk_core_cpi_monthly
+接口：macro_uk_core_cpi_monthly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_7.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_7.html
 
-描述: 东方财富-经济数据-英国-核心消费者物价指数月率
+描述：东方财富-经济数据-英国-核心消费者物价指数月率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10054,15 +10072,15 @@ print(macro_uk_cpi_monthly_df)
 174  2022年09月  0.8  0.6  2022-10-19
 ```
 
-#### 消费者物价指数年率
+### 消费者物价指数年率
 
-接口: macro_uk_cpi_yearly
+接口：macro_uk_cpi_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_6.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_6.html
 
-描述: 东方财富-经济数据-英国-消费者物价指数年率
+描述：东方财富-经济数据-英国-消费者物价指数年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10105,15 +10123,15 @@ print(macro_uk_cpi_yearly_df)
 176  2022年09月   9.900000  10.100000  2022-10-19
 ```
 
-#### 消费者物价指数月率
+### 消费者物价指数月率
 
-接口: macro_uk_cpi_monthly
+接口：macro_uk_cpi_monthly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_7.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_7.html
 
-描述: 东方财富-经济数据-英国-消费者物价指数月率
+描述：东方财富-经济数据-英国-消费者物价指数月率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10156,15 +10174,15 @@ print(macro_uk_cpi_monthly_df)
 174  2022年09月  0.8  0.6  2022-10-19
 ```
 
-#### 零售销售月率
+### 零售销售月率
 
-接口: macro_uk_retail_monthly
+接口：macro_uk_retail_monthly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_8.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_8.html
 
-描述: 东方财富-经济数据-英国-零售销售月率
+描述：东方财富-经济数据-英国-零售销售月率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10207,15 +10225,15 @@ print(macro_uk_retail_monthly_df)
 176  2022年10月 -1.5  NaN  2022-11-18
 ```
 
-#### 零售销售年率
+### 零售销售年率
 
-接口: macro_uk_retail_yearly
+接口：macro_uk_retail_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_9.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_9.html
 
-描述: 东方财富-经济数据-英国-零售销售年率
+描述：东方财富-经济数据-英国-零售销售年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10258,15 +10276,15 @@ print(macro_uk_retail_yearly_df)
 174  2022年10月 -0.4  NaN  2022-11-18
 ```
 
-#### Rightmove 房价指数年率
+### Rightmove 房价指数年率
 
-接口: macro_uk_rightmove_yearly
+接口：macro_uk_rightmove_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_10.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_10.html
 
-描述: 东方财富-经济数据-英国-Rightmove 房价指数年率
+描述：东方财富-经济数据-英国-Rightmove 房价指数年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10309,15 +10327,15 @@ print(macro_uk_rightmove_yearly_df)
 152  2022年09月   8.2   8.7  2022-09-26
 ```
 
-#### Rightmove 房价指数月率
+### Rightmove 房价指数月率
 
-接口: macro_uk_rightmove_monthly
+接口：macro_uk_rightmove_monthly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_11.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_11.html
 
-描述: 东方财富-经济数据-英国-Rightmove 房价指数月率
+描述：东方财富-经济数据-英国-Rightmove 房价指数月率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10360,15 +10378,15 @@ print(macro_uk_rightmove_monthly_df)
 152  2022年09月 -1.3  0.7  2022-09-26
 ```
 
-#### GDP 季率初值
+### GDP 季率初值
 
-接口: macro_uk_gdp_quarterly
+接口：macro_uk_gdp_quarterly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_12.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_12.html
 
-描述: 东方财富-经济数据-英国-GDP 季率初值
+描述：东方财富-经济数据-英国-GDP 季率初值
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10458,15 +10476,15 @@ print(macro_uk_gdp_quarterly_df)
 57  2022第3季度   0.2   NaN  2022-12-22
 ```
 
-#### GDP 年率初值
+### GDP 年率初值
 
-接口: macro_uk_gdp_yearly
+接口：macro_uk_gdp_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_13.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_13.html
 
-描述: 东方财富-经济数据-英国-GDP 年率初值
+描述：东方财富-经济数据-英国-GDP 年率初值
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10511,15 +10529,15 @@ print(macro_uk_gdp_yearly_df)
 12  2021第4季度 -6.3  6.6  2022-03-31
 ```
 
-#### 失业率
+### 失业率
 
-接口: macro_uk_unemployment_rate
+接口：macro_uk_unemployment_rate
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_4_14.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_4_14.html
 
-描述: 东方财富-经济数据-英国-失业率
+描述：东方财富-经济数据-英国-失业率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10562,17 +10580,17 @@ print(macro_uk_unemployment_rate_df)
 176  2022年09月  3.50   NaN  2022-11-15
 ```
 
-### 澳大利亚宏观
+## 澳大利亚宏观
 
-#### 零售销售月率
+### 零售销售月率
 
-接口: macro_australia_retail_rate_monthly
+接口：macro_australia_retail_rate_monthly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_5_0.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_5_0.html
 
-描述: 东方财富-经济数据-澳大利亚-零售销售月率
+描述：东方财富-经济数据-澳大利亚-零售销售月率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10585,8 +10603,8 @@ print(macro_uk_unemployment_rate_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -10616,15 +10634,15 @@ print(macro_australia_retail_rate_monthly_df)
 [204 rows x 4 columns]
 ```
 
-#### 贸易帐
+### 贸易帐
 
-接口: macro_australia_trade
+接口：macro_australia_trade
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_5_1.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_5_1.html
 
-描述: 东方财富-经济数据-澳大利亚-贸易帐
+描述：东方财富-经济数据-澳大利亚-贸易帐
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10637,8 +10655,8 @@ print(macro_australia_retail_rate_monthly_df)
 | 名称   | 类型      | 描述        |
 |------|---------|-----------|
 | 时间   | object  | -         |
-| 前值   | float64 | 注意单位: 亿澳元 |
-| 现值   | float64 | 注意单位: 亿澳元 |
+| 前值   | float64 | 注意单位：亿澳元 |
+| 现值   | float64 | 注意单位：亿澳元 |
 | 发布日期 | object  | -         |
 
 接口示例
@@ -10668,15 +10686,15 @@ print(macro_australia_trade_df)
 [188 rows x 4 columns]
 ```
 
-#### 失业率
+### 失业率
 
-接口: macro_australia_unemployment_rate
+接口：macro_australia_unemployment_rate
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_5_2.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_5_2.html
 
-描述: 东方财富-经济数据-澳大利亚-失业率
+描述：东方财富-经济数据-澳大利亚-失业率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10689,8 +10707,8 @@ print(macro_australia_trade_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -10720,15 +10738,15 @@ print(macro_australia_unemployment_rate_df)
 [205 rows x 4 columns]
 ```
 
-#### 生产者物价指数季率
+### 生产者物价指数季率
 
-接口: macro_australia_ppi_quarterly
+接口：macro_australia_ppi_quarterly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_5_3.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_5_3.html
 
-描述: 东方财富-经济数据-澳大利亚-生产者物价指数季率
+描述：东方财富-经济数据-澳大利亚-生产者物价指数季率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10741,8 +10759,8 @@ print(macro_australia_unemployment_rate_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -10772,15 +10790,15 @@ print(macro_australia_ppi_quarterly_df)
 [68 rows x 4 columns]
 ```
 
-#### 消费者物价指数季率
+### 消费者物价指数季率
 
-接口: macro_australia_cpi_quarterly
+接口：macro_australia_cpi_quarterly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_5_4.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_5_4.html
 
-描述: 东方财富-经济数据-澳大利亚-消费者物价指数季率
+描述：东方财富-经济数据-澳大利亚-消费者物价指数季率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10793,8 +10811,8 @@ print(macro_australia_ppi_quarterly_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -10824,15 +10842,15 @@ print(macro_australia_cpi_quarterly_df)
 [68 rows x 4 columns]
 ```
 
-#### 消费者物价指数年率
+### 消费者物价指数年率
 
-接口: macro_australia_cpi_yearly
+接口：macro_australia_cpi_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_5_5.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_5_5.html
 
-描述: 东方财富-经济数据-澳大利亚-消费者物价指数年率
+描述：东方财富-经济数据-澳大利亚-消费者物价指数年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10845,8 +10863,8 @@ print(macro_australia_cpi_quarterly_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -10876,15 +10894,15 @@ print(macro_australia_cpi_yearly_df)
 [68 rows x 4 columns]
 ```
 
-#### 央行公布利率决议
+### 央行公布利率决议
 
-接口: macro_australia_bank_rate
+接口：macro_australia_bank_rate
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_5_6.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_5_6.html
 
-描述: 东方财富-经济数据-澳大利亚-央行公布利率决议
+描述：东方财富-经济数据-澳大利亚-央行公布利率决议
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10897,8 +10915,8 @@ print(macro_australia_cpi_yearly_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -10928,17 +10946,17 @@ print(macro_australia_bank_rate_df)
 [191 rows x 4 columns]
 ```
 
-### 加拿大宏观
+## 加拿大宏观
 
-#### 新屋开工
+### 新屋开工
 
-接口: macro_canada_new_house_rate
+接口：macro_canada_new_house_rate
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_7_0.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_7_0.html
 
-描述: 东方财富-经济数据-加拿大-新屋开工
+描述：东方财富-经济数据-加拿大-新屋开工
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -10951,8 +10969,8 @@ print(macro_australia_bank_rate_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: 万 |
-| 现值   | float64 | 注意单位: 万 |
+| 前值   | float64 | 注意单位：万 |
+| 现值   | float64 | 注意单位：万 |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -10981,15 +10999,15 @@ print(macro_canada_new_house_rate_df)
 177  2008年01月  18.75  22.27  2008-02-09
 ```
 
-#### 失业率
+### 失业率
 
-接口: macro_canada_unemployment_rate
+接口：macro_canada_unemployment_rate
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_7_1.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_7_1.html
 
-描述: 东方财富-经济数据-加拿大-失业率
+描述：东方财富-经济数据-加拿大-失业率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11002,8 +11020,8 @@ print(macro_canada_new_house_rate_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -11032,15 +11050,15 @@ print(macro_canada_unemployment_rate_df)
 178  2008年01月  5.9  5.8  2008-02-08
 ```
 
-#### 贸易帐
+### 贸易帐
 
-接口: macro_canada_trade
+接口：macro_canada_trade
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_7_2.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_7_2.html
 
-描述: 东方财富-经济数据-加拿大-贸易帐
+描述：东方财富-经济数据-加拿大-贸易帐
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11053,8 +11071,8 @@ print(macro_canada_unemployment_rate_df)
 | 名称   | 类型      | 描述        |
 |------|---------|-----------|
 | 时间   | object  | -         |
-| 前值   | float64 | 注意单位: 亿加元 |
-| 现值   | float64 | 注意单位: 亿加元 |
+| 前值   | float64 | 注意单位：亿加元 |
+| 现值   | float64 | 注意单位：亿加元 |
 | 发布日期 | object  | -         |
 
 接口示例
@@ -11083,15 +11101,15 @@ print(macro_canada_trade_df)
 177  2008年01月  2350  3260.0  2008-03-07
 ```
 
-#### 零售销售月率
+### 零售销售月率
 
-接口: macro_canada_retail_rate_monthly
+接口：macro_canada_retail_rate_monthly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_7_3.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_7_3.html
 
-描述: 东方财富-经济数据-加拿大-零售销售月率
+描述：东方财富-经济数据-加拿大-零售销售月率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11104,8 +11122,8 @@ print(macro_canada_trade_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -11134,15 +11152,15 @@ print(macro_canada_retail_rate_monthly_df)
 171  2008年01月  0.6  1.5  2008-03-23
 ```
 
-#### 央行公布利率决议
+### 央行公布利率决议
 
-接口: macro_canada_bank_rate
+接口：macro_canada_bank_rate
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_7_4.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_7_4.html
 
-描述: 东方财富-经济数据-加拿大-央行公布利率决议
+描述：东方财富-经济数据-加拿大-央行公布利率决议
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11155,8 +11173,8 @@ print(macro_canada_retail_rate_monthly_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -11185,15 +11203,15 @@ print(macro_canada_bank_rate_df)
 149  2008年01月   NaN  4.00  2008-01-15
 ```
 
-#### 核心消费者物价指数年率
+### 核心消费者物价指数年率
 
-接口: macro_canada_core_cpi_yearly
+接口：macro_canada_core_cpi_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_7_5.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_7_5.html
 
-描述: 东方财富-经济数据-加拿大-核心消费者物价指数年率
+描述：东方财富-经济数据-加拿大-核心消费者物价指数年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11206,8 +11224,8 @@ print(macro_canada_bank_rate_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -11236,15 +11254,15 @@ print(macro_canada_core_cpi_yearly_df)
 177  2008年01月  1.476015  1.381215  2008-02-21
 ```
 
-#### 核心消费者物价指数月率
+### 核心消费者物价指数月率
 
-接口: macro_canada_core_cpi_monthly
+接口：macro_canada_core_cpi_monthly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_7_6.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_7_6.html
 
-描述: 东方财富-经济数据-加拿大-核心消费者物价指数月率
+描述：东方财富-经济数据-加拿大-核心消费者物价指数月率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11257,8 +11275,8 @@ print(macro_canada_core_cpi_yearly_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -11287,15 +11305,15 @@ print(macro_canada_core_cpi_monthly_df)
 177  2008年01月 -0.271985  0.090909  2008-02-21
 ```
 
-#### 消费者物价指数年率
+### 消费者物价指数年率
 
-接口: macro_canada_cpi_yearly
+接口：macro_canada_cpi_yearly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_7_7.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_7_7.html
 
-描述: 东方财富-经济数据-加拿大-消费者物价指数年率
+描述：东方财富-经济数据-加拿大-消费者物价指数年率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11308,8 +11326,8 @@ print(macro_canada_core_cpi_monthly_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -11338,15 +11356,15 @@ print(macro_canada_cpi_yearly_df)
 178  2008年01月  2.376600  2.193784  2008-02-20
 ```
 
-#### 消费者物价指数月率
+### 消费者物价指数月率
 
-接口: macro_canada_cpi_monthly
+接口：macro_canada_cpi_monthly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_7_8.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_7_8.html
 
-描述: 东方财富-经济数据-加拿大-消费者物价指数月率
+描述：东方财富-经济数据-加拿大-消费者物价指数月率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11359,8 +11377,8 @@ print(macro_canada_cpi_yearly_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -11389,15 +11407,15 @@ print(macro_canada_cpi_monthly_df)
 176  2008年01月  0.089366 -0.178571  2008-02-20
 ```
 
-#### GDP 月率
+### GDP 月率
 
-接口: macro_canada_gdp_monthly
+接口：macro_canada_gdp_monthly
 
-目标地址: http://data.eastmoney.com/cjsj/foreign_7_9.html
+目标地址：http://data.eastmoney.com/cjsj/foreign_7_9.html
 
-描述: 东方财富-经济数据-加拿大-GDP 月率
+描述：东方财富-经济数据-加拿大-GDP 月率
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11410,8 +11428,8 @@ print(macro_canada_cpi_monthly_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 时间   | object  | -       |
-| 前值   | float64 | 注意单位: % |
-| 现值   | float64 | 注意单位: % |
+| 前值   | float64 | 注意单位：% |
+| 现值   | float64 | 注意单位：% |
 | 发布日期 | object  | -       |
 
 接口示例
@@ -11440,17 +11458,17 @@ print(macro_canada_gdp_monthly_df)
 171  2008年01月 -0.7  0.6  2008-04-01
 ```
 
-### 重要机构
+## 重要机构
 
-#### 全球最大黄金 ETF—SPDR Gold Trust 持仓报告
+### 全球最大黄金 ETF—SPDR Gold Trust 持仓报告
 
-接口: macro_cons_gold
+接口：macro_cons_gold
 
-目标地址: https://datacenter.jin10.com/reportType/dc_etf_gold
+目标地址：https://datacenter.jin10.com/reportType/dc_etf_gold
 
-描述: 全球最大黄金 ETF—SPDR Gold Trust 持仓报告, 数据区间从 20041119-至今
+描述：全球最大黄金 ETF—SPDR Gold Trust 持仓报告，数据区间从 20041119-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11464,9 +11482,9 @@ print(macro_canada_gdp_monthly_df)
 |-------|---------|----------|
 | 商品    | object  | -        |
 | 日期    | object  | -        |
-| 总库存   | float64 | 注意单位: 吨  |
-| 增持/减持 | float64 | 注意单位: 吨  |
-| 总价值   | float64 | 注意单位: 美元 |
+| 总库存   | float64 | 注意单位：吨  |
+| 增持/减持 | float64 | 注意单位：吨  |
+| 总价值   | float64 | 注意单位：美元 |
 
 接口示例
 
@@ -11495,15 +11513,15 @@ print(macro_cons_gold_df)
 [2406 rows x 5 columns]
 ```
 
-#### 全球最大白银ETF--iShares Silver Trust持仓报告
+### 全球最大白银ETF--iShares Silver Trust持仓报告
 
-接口: macro_cons_silver
+接口：macro_cons_silver
 
-目标地址: https://datacenter.jin10.com/reportType/dc_etf_sliver
+目标地址：https://datacenter.jin10.com/reportType/dc_etf_sliver
 
-描述: 全球最大白银 ETF--iShares Silver Trust 持仓报告, 数据区间从 20041202-至今
+描述：全球最大白银 ETF--iShares Silver Trust 持仓报告，数据区间从 20041202-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11517,9 +11535,9 @@ print(macro_cons_gold_df)
 |-------|---------|----------|
 | 商品    | object  | -        |
 | 日期    | object  | -        |
-| 总库存   | float64 | 注意单位: 吨  |
-| 增持/减持 | float64 | 注意单位: 吨  |
-| 总价值   | float64 | 注意单位: 美元 |
+| 总库存   | float64 | 注意单位：吨  |
+| 增持/减持 | float64 | 注意单位：吨  |
+| 总价值   | float64 | 注意单位：美元 |
 
 接口示例
 
@@ -11548,15 +11566,15 @@ print(macro_cons_silver_df)
 [1188 rows x 5 columns]
 ```
 
-#### 欧佩克报告
+### 欧佩克报告
 
-接口: macro_cons_opec_month
+接口：macro_cons_opec_month
 
-目标地址: https://datacenter.jin10.com/reportType/dc_opec_report
+目标地址：https://datacenter.jin10.com/reportType/dc_opec_report
 
-描述: 欧佩克报告, 数据区间从 20170118-至今
+描述：欧佩克报告，数据区间从 20170118-至今
 
-限量: 单次返回所有历史数据, 以网页数据为准.
+限量：单次返回所有历史数据，以网页数据为准。
 
 输入参数
 
@@ -11610,17 +11628,17 @@ print(macro_cons_opec_month_df)
 [75 rows x 13 columns]
 ```
 
-#### 伦敦金属交易所
+### 伦敦金属交易所
 
-##### 持仓报告
+#### 持仓报告
 
-接口: macro_euro_lme_holding
+接口：macro_euro_lme_holding
 
-目标地址: https://datacenter.jin10.com/reportType/dc_lme_traders_report
+目标地址：https://datacenter.jin10.com/reportType/dc_lme_traders_report
 
-描述: 伦敦金属交易所(LME)-持仓报告, 数据区间从 20151022-至今
+描述：伦敦金属交易所(LME)-持仓报告，数据区间从 20151022-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11664,15 +11682,15 @@ print(macro_euro_lme_holding_df)
 [756 rows x 19 columns]
 ```
 
-##### 库存报告
+#### 库存报告
 
-接口: macro_euro_lme_stock
+接口：macro_euro_lme_stock
 
-目标地址: https://datacenter.jin10.com/reportType/dc_lme_report
+目标地址：https://datacenter.jin10.com/reportType/dc_lme_report
 
-描述: 伦敦金属交易所(LME)-库存报告, 数据区间从 20140702-至今
+描述：伦敦金属交易所(LME)-库存报告，数据区间从 20140702-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11716,17 +11734,17 @@ print(macro_euro_lme_stock_df)
 [2149 rows x 19 columns]
 ```
 
-#### 美国商品期货交易委员会
+### 美国商品期货交易委员会
 
-##### 外汇类非商业持仓报告
+#### 外汇类非商业持仓报告
 
-接口: macro_usa_cftc_nc_holding
+接口：macro_usa_cftc_nc_holding
 
-目标地址: https://datacenter.jin10.com/reportType/dc_cftc_nc_report
+目标地址：https://datacenter.jin10.com/reportType/dc_cftc_nc_report
 
-描述: 美国商品期货交易委员会CFTC外汇类非商业持仓报告, 数据区间从 19830107-至今
+描述：美国商品期货交易委员会CFTC外汇类非商业持仓报告，数据区间从 19830107-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11770,15 +11788,15 @@ print(macro_usa_cftc_nc_holding_df)
 [1807 rows x 28 columns]
 ```
 
-##### 商品类非商业持仓报告
+#### 商品类非商业持仓报告
 
-接口: macro_usa_cftc_c_holding
+接口：macro_usa_cftc_c_holding
 
-目标地址: https://datacenter.jin10.com/reportType/dc_cftc_c_report
+目标地址：https://datacenter.jin10.com/reportType/dc_cftc_c_report
 
-描述: 美国商品期货交易委员会CFTC商品类非商业持仓报告, 数据区间从 19830107-至今
+描述：美国商品期货交易委员会CFTC商品类非商业持仓报告，数据区间从 19830107-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11822,15 +11840,15 @@ print(macro_usa_cftc_c_holding_df)
 [1807 rows x 37 columns]
 ```
 
-##### 外汇类商业持仓报告
+#### 外汇类商业持仓报告
 
-接口: macro_usa_cftc_merchant_currency_holding
+接口：macro_usa_cftc_merchant_currency_holding
 
-目标地址: https://datacenter.jin10.com/reportType/dc_cftc_merchant_currency
+目标地址：https://datacenter.jin10.com/reportType/dc_cftc_merchant_currency
 
-描述: 美国商品期货交易委员会CFTC外汇类商业持仓报告, 数据区间从 19860115-至今
+描述：美国商品期货交易委员会CFTC外汇类商业持仓报告，数据区间从 19860115-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11874,15 +11892,15 @@ print(macro_usa_cftc_merchant_currency_holding_df)
 [1807 rows x 28 columns]
 ```
 
-##### 商品类商业持仓报告
+#### 商品类商业持仓报告
 
-接口: macro_usa_cftc_merchant_goods_holding
+接口：macro_usa_cftc_merchant_goods_holding
 
-目标地址: https://datacenter.jin10.com/reportType/dc_cftc_merchant_goods
+目标地址：https://datacenter.jin10.com/reportType/dc_cftc_merchant_goods
 
-描述: 美国商品期货交易委员会 CFTC 商品类商业持仓报告, 数据区间从 19860115-至今
+描述：美国商品期货交易委员会 CFTC 商品类商业持仓报告，数据区间从 19860115-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11926,17 +11944,17 @@ print(macro_usa_cftc_merchant_goods_holding_df)
 [1807 rows x 37 columns]
 ```
 
-#### 芝加哥交易所
+### 芝加哥交易所
 
-##### 贵金属
+#### 贵金属
 
-接口: macro_usa_cme_merchant_goods_holding
+接口：macro_usa_cme_merchant_goods_holding
 
-目标地址: https://datacenter.jin10.com/org
+目标地址：https://datacenter.jin10.com/org
 
-描述: CME-贵金属, 数据区间从 20180405-至今
+描述：CME-贵金属，数据区间从 20180405-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -11979,17 +11997,17 @@ print(macro_usa_cme_merchant_goods_holding_df)
 [30189 rows x 3 columns]
 ```
 
-### 全球宏观
+## 全球宏观
 
-#### 宏观日历
+### 宏观日历
 
-接口: macro_info_ws
+接口：macro_info_ws
 
-目标地址: https://wallstreetcn.com/calendar
+目标地址：https://wallstreetcn.com/calendar
 
-描述: 华尔街见闻-日历-宏观
+描述：华尔街见闻-日历-宏观
 
-限量: 单次返回指定 date 的数据
+限量：单次返回指定 date 的数据
 
 输入参数
 
@@ -12054,15 +12072,15 @@ print(macro_info_ws_df)
 [28 rows x 8 columns]
 ```
 
-#### 全球宏观事件
+### 全球宏观事件
 
-接口: news_economic_baidu
+接口：news_economic_baidu
 
-目标地址: https://gushitong.baidu.com/calendar
+目标地址：https://gushitong.baidu.com/calendar
 
-描述: 全球宏观指标重大事件
+描述：全球宏观指标重大事件
 
-限量: 单次返回指定 date 的所有历史数据
+限量：单次返回指定 date 的所有历史数据
 
 输入参数
 

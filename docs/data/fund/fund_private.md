@@ -1,18 +1,18 @@
-## [AKShare](https://github.com/akfamily/akshare) 私募基金数据
+# [AKShare](https://github.com/akfamily/akshare) 私募基金数据
 
-### 中国证券投资基金业协会
+## 中国证券投资基金业协会
 
-#### 会员信息
+### 会员信息
 
-##### 会员机构综合查询
+#### 会员机构综合查询
 
-接口: amac_member_info
+接口：amac_member_info
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/pof/member/index.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/pof/member/index.html
 
-描述: 中国证券投资基金业协会-信息公示-会员信息-会员机构综合查询
+描述：中国证券投资基金业协会-信息公示-会员信息-会员机构综合查询
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -59,17 +59,17 @@ print(amac_member_info_df)
 [4863 rows x 7 columns]
 ```
 
-#### 从业人员信息
+### 从业人员信息
 
-##### 基金从业人员资格注册信息
+#### 基金从业人员资格注册信息
 
-接口: amac_person_fund_org_list
+接口：amac_person_fund_org_list
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/pof/person/personOrgList.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/pof/person/personOrgList.html
 
-描述: 中国证券投资基金业协会-信息公示-从业人员信息-基金从业人员资格注册信息
+描述：中国证券投资基金业协会-信息公示-从业人员信息-基金从业人员资格注册信息
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -116,15 +116,15 @@ print(amac_person_fund_org_list_df)
 [146 rows x 8 columns]
 ```
 
-##### 债券投资交易相关人员公示
+#### 债券投资交易相关人员公示
 
-接口: amac_person_bond_org_list
+接口：amac_person_bond_org_list
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/pof/person/personOrgList.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/pof/person/personOrgList.html
 
-描述: 中国证券投资基金业协会-信息公示-从业人员信息-债券投资交易相关人员公示
+描述：中国证券投资基金业协会-信息公示-从业人员信息-债券投资交易相关人员公示
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -168,17 +168,17 @@ print(amac_person_bond_org_list_df)
 [307 rows x 4 columns]
 ```
 
-#### 私募基金管理人公示
+### 私募基金管理人公示
 
-##### 私募基金管理人综合查询
+#### 私募基金管理人综合查询
 
-接口: amac_manager_info
+接口：amac_manager_info
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/pof/manager/index.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/pof/manager/index.html
 
-描述: 中国证券投资基金业协会-信息公示-私募基金管理人公示-私募基金管理人综合查询
+描述：中国证券投资基金业协会-信息公示-私募基金管理人公示-私募基金管理人综合查询
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -191,7 +191,7 @@ print(amac_person_bond_org_list_df)
 | 名称                    | 类型     | 描述 |
 |-----------------------|--------|----|
 | 私募基金管理人名称             | object | -  |
-| 法定代表人/执行事务合伙人(委派代表)姓名 | object | -  |
+| 法定代表人/执行事务合伙人（委派代表）姓名 | object | -  |
 | 机构类型                  | object | -  |
 | 注册地                   | object | -  |
 | 登记编号                  | object | -  |
@@ -225,15 +225,15 @@ print(amac_manager_info_df)
 [21092 rows x 7 columns]
 ```
 
-##### 私募基金管理人分类公示
+#### 私募基金管理人分类公示
 
-接口: amac_manager_classify_info
+接口：amac_manager_classify_info
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/pof/manager/managerList.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/pof/manager/managerList.html
 
-描述: 中国证券投资基金业协会-信息公示-私募基金管理人公示-私募基金管理人分类公示
+描述：中国证券投资基金业协会-信息公示-私募基金管理人公示-私募基金管理人分类公示
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -246,7 +246,7 @@ print(amac_manager_info_df)
 | 名称                    | 类型     | 描述  |
 |-----------------------|--------|-----|
 | 私募基金管理人名称             | object | -   |
-| 法定代表人/执行事务合伙人(委派代表)姓名 | object | -   |
+| 法定代表人/执行事务合伙人（委派代表）姓名 | object | -   |
 | 机构类型                  | object | -   |
 | 登记编号                  | object | -   |
 | 注册地                   | object | -   |
@@ -285,15 +285,15 @@ print(amac_manager_classify_info_df)
 [21092 rows x 12 columns]
 ```
 
-##### 证券公司私募基金子公司管理人信息公示
+#### 证券公司私募基金子公司管理人信息公示
 
-接口: amac_member_sub_info
+接口：amac_member_sub_info
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/pof/member/index.html?primaryInvestType=private
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/pof/member/index.html?primaryInvestType=private
 
-描述: 中国证券投资基金业协会-信息公示-私募基金管理人公示-证券公司私募基金子公司管理人信息公示
+描述：中国证券投资基金业协会-信息公示-私募基金管理人公示-证券公司私募基金子公司管理人信息公示
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -305,12 +305,12 @@ print(amac_manager_classify_info_df)
 
 | 名称       | 类型     | 描述 |
 |----------|--------|----|
-| 机构（会员）名称 | object | -  |
-| 会员代表     | object | -  |
-| 会员类型     | object | -  |
-| 会员编号     | object | -  |
+| 机构（会员）名称 | str    | -  |
+| 会员代表     | str    | -  |
+| 会员类型     | str    | -  |
+| 会员编号     | str    | -  |
 | 入会时间     | object | -  |
-| 公司类型     | object | -  |
+| 公司类型     | str    | -  |
 
 接口示例
 
@@ -339,24 +339,24 @@ print(amac_member_sub_info_df)
 [4863 rows x 6 columns]
 ```
 
-#### 基金产品
+### 基金产品
 
-##### 私募基金管理人基金产品
+#### 私募基金管理人基金产品
 
-接口: amac_fund_info
+接口：amac_fund_info
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/pof/fund/index.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/pof/fund/index.html
 
-描述: 中国证券投资基金业协会-信息公示-基金产品公示-私募基金管理人基金产品
+描述：中国证券投资基金业协会-信息公示-基金产品公示-私募基金管理人基金产品
 
-限量: 单次返回指定页码之间的所有历史数据, 其中与每页 100 条的目标网站对应; 默认返回所有数据
+限量：单次返回指定页码之间的所有历史数据，其中与每页 100 条的目标网站对应；默认返回所有数据
 
 输入参数
 
 | 名称         | 类型  | 描述                    |
 |------------|-----|-----------------------|
-| start_page | str | start_page='1'; 开始页码  |
-| end_page   | str | end_page="2000"; 结束页码 |
+| start_page | str | start_page='1'；开始页码  |
+| end_page   | str | end_page="2000"；结束页码 |
 
 输出参数
 
@@ -397,15 +397,15 @@ print(amac_fund_info_df)
 [10000 rows x 7 columns]
 ```
 
-##### 证券公司集合资管产品公示
+#### 证券公司集合资管产品公示
 
-接口: amac_securities_info
+接口：amac_securities_info
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/pof/securities/index.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/pof/securities/index.html
 
-描述: 中国证券投资基金业协会-信息公示-基金产品公示-证券公司集合资管产品公示
+描述：中国证券投资基金业协会-信息公示-基金产品公示-证券公司集合资管产品公示
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -417,16 +417,16 @@ print(amac_fund_info_df)
 
 | 名称    | 类型     | 描述 |
 |-------|--------|----|
-| 产品名称  | object | -  |
-| 产品编码  | object | -  |
-| 管理人名称 | object | -  |
-| 成立日期  | object | -  |
-| 到期时间  | object | -  |
-| 投资类型  | object | -  |
-| 是否分级  | object | -  |
-| 托管人名称 | object | -  |
-| 备案日期  | object | -  |
-| 运作状态  | object | -  |
+| 产品名称  | str    | -  |
+| 产品编码  | str    | -  |
+| 管理人名称 | str    | -  |
+| 成立日期  | str    | -  |
+| 到期时间  | str    | -  |
+| 投资类型  | str    | -  |
+| 是否分级  | str    | -  |
+| 托管人名称 | str    | -  |
+| 备案日期  | str    | -  |
+| 运作状态  | str    | -  |
 
 接口示例
 
@@ -455,15 +455,15 @@ print(amac_securities_info_df)
 [20291 rows x 10 columns]
 ```
 
-##### 证券公司直投基金
+#### 证券公司直投基金
 
-接口: amac_aoin_info
+接口：amac_aoin_info
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/aoin/product/index.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/aoin/product/index.html
 
-描述: 中国证券投资基金业协会-信息公示-基金产品公示-证券公司直投基金
+描述：中国证券投资基金业协会-信息公示-基金产品公示-证券公司直投基金
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -475,10 +475,10 @@ print(amac_securities_info_df)
 
 | 名称    | 类型     | 描述 |
 |-------|--------|----|
-| 产品编码  | object | -  |
-| 产品名称  | object | -  |
-| 直投子公司 | object | -  |
-| 管理机构  | object | -  |
+| 产品编码  | str    | -  |
+| 产品名称  | str    | -  |
+| 直投子公司 | str    | -  |
+| 管理机构  | str    | -  |
 | 设立日期  | object | -  |
 
 接口示例
@@ -508,15 +508,15 @@ print(amac_aoin_info_df)
 [224 rows x 5 columns]
 ```
 
-##### 证券公司私募投资基金
+#### 证券公司私募投资基金
 
-接口: amac_fund_sub_info
+接口：amac_fund_sub_info
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/pof/subfund/index.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/pof/subfund/index.html
 
-描述: 中国证券投资基金业协会-信息公示-基金产品公示-证券公司私募投资基金
+描述：中国证券投资基金业协会-信息公示-基金产品公示-证券公司私募投资基金
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -528,10 +528,10 @@ print(amac_aoin_info_df)
 
 | 名称        | 类型     | 描述 |
 |-----------|--------|----|
-| 产品编码      | object | -  |
-| 产品名称      | object | -  |
-| 私募基金管理人名称 | object | -  |
-| 托管人名称     | object | -  |
+| 产品编码      | str    | -  |
+| 产品名称      | str    | -  |
+| 私募基金管理人名称 | str    | -  |
+| 托管人名称     | str    | -  |
 | 成立日期      | object | -  |
 | 备案日期      | object | -  |
 
@@ -562,15 +562,15 @@ print(amac_fund_sub_info_df)
 [1692 rows x 6 columns]
 ```
 
-##### 基金公司及子公司集合资管产品公示
+#### 基金公司及子公司集合资管产品公示
 
-接口: amac_fund_account_info
+接口：amac_fund_account_info
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/fund/account/index.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/fund/account/index.html
 
-描述: 中国证券投资基金业协会-信息公示-基金产品公示-基金公司及子公司集合资管产品公示
+描述：中国证券投资基金业协会-信息公示-基金产品公示-基金公司及子公司集合资管产品公示
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -583,9 +583,9 @@ print(amac_fund_sub_info_df)
 | 名称    | 类型     | 描述 |
 |-------|--------|----|
 | 成立日期  | object | -  |
-| 产品编码  | object | -  |
-| 产品名称  | object | -  |
-| 管理人名称 | object | -  |
+| 产品编码  | str    | -  |
+| 产品名称  | str    | -  |
+| 管理人名称 | str    | -  |
 
 接口示例
 
@@ -614,15 +614,15 @@ print(amac_fund_account_info_df)
 [38249 rows x 4 columns]
 ```
 
-##### 资产支持专项计划
+#### 资产支持专项计划
 
-接口: amac_fund_abs
+接口：amac_fund_abs
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/fund/abs/index.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/fund/abs/index.html
 
-描述: 中国证券投资基金业协会-信息公示-产品公示-资产支持专项计划
+描述：中国证券投资基金业协会-信息公示-产品公示-资产支持专项计划
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -670,15 +670,15 @@ print(amac_fund_abs_df)
 [8340 rows x 8 columns]
 ```
 
-##### 期货公司集合资管产品公示
+#### 期货公司集合资管产品公示
 
-接口: amac_futures_info
+接口：amac_futures_info
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/pof/futures/index.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/pof/futures/index.html
 
-描述: 中国证券投资基金业协会-信息公示-基金产品公示-期货公司集合资管产品公示
+描述：中国证券投资基金业协会-信息公示-基金产品公示-期货公司集合资管产品公示
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -690,16 +690,16 @@ print(amac_fund_abs_df)
 
 | 名称    | 类型     | 描述 |
 |-------|--------|----|
-| 产品名称  | object | -  |
-| 产品编码  | object | -  |
-| 管理人名称 | object | -  |
-| 托管人名称 | object | -  |
-| 成立日期  | object | -  |
-| 投资类型  | object | -  |
-| 是否分级  | object | -  |
-| 备案日期  | object | -  |
-| 到期日   | object | -  |
-| 运作状态  | object | -  |
+| 产品名称  | str    | -  |
+| 产品编码  | str    | -  |
+| 管理人名称 | str    | -  |
+| 托管人名称 | str    | -  |
+| 成立日期  | str    | -  |
+| 投资类型  | str    | -  |
+| 是否分级  | str    | -  |
+| 备案日期  | str    | -  |
+| 到期日   | str    | -  |
+| 运作状态  | str    | -  |
 
 接口示例
 
@@ -728,17 +728,17 @@ print(amac_futures_info_df)
 [9648 rows x 10 columns]
 ```
 
-#### 诚信信息
+### 诚信信息
 
-##### 已注销私募基金管理人名单
+#### 已注销私募基金管理人名单
 
-接口: amac_manager_cancelled_info
+接口：amac_manager_cancelled_info
 
-目标地址: https://gs.amac.org.cn/amac-infodisc/res/cancelled/manager/index.html
+目标地址：https://gs.amac.org.cn/amac-infodisc/res/cancelled/manager/index.html
 
-描述: 中国证券投资基金业协会-信息公示-诚信信息-已注销私募基金管理人名单
+描述：中国证券投资基金业协会-信息公示-诚信信息-已注销私募基金管理人名单
 
-限量: 单次返回当前时刻所有历史数据
+限量：单次返回当前时刻所有历史数据
 
 输入参数
 
@@ -750,11 +750,11 @@ print(amac_futures_info_df)
 
 | 名称       | 类型     | 描述 |
 |----------|--------|----|
-| 管理人名称    | object | -  |
-| 统一社会信用代码 | object | -  |
+| 管理人名称    | str    | -  |
+| 统一社会信用代码 | str    | -  |
 | 登记时间     | object | -  |
 | 注销时间     | object | -  |
-| 注销类型     | object | -  |
+| 注销类型     | int64  | -  |
 
 接口示例
 

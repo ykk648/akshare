@@ -18,19 +18,19 @@ def rv_from_stock_zh_a_hist_min_em(
     adjust="hfq",
 ) -> pd.DataFrame:
     """
-    从东方财富网获取股票的分钟级历史行情数据,并进行数据清洗和格式化为计算 yz 已实现波动率所需的数据格式
+    从东方财富网获取股票的分钟级历史行情数据，并进行数据清洗和格式化为计算 yz 已实现波动率所需的数据格式
     https://quote.eastmoney.com/concept/sh603777.html?from=classic
-    :param symbol: 股票代码,如"000001"
+    :param symbol: 股票代码，如"000001"
     :type symbol: str
-    :param start_date: 开始日期时间,格式"YYYY-MM-DD HH:MM:SS"
+    :param start_date: 开始日期时间，格式"YYYY-MM-DD HH:MM:SS"
     :type start_date: str
-    :param end_date: 结束日期时间,格式"YYYY-MM-DD HH:MM:SS"
+    :param end_date: 结束日期时间，格式"YYYY-MM-DD HH:MM:SS"
     :type end_date: str
-    :param period: 时间周期,可选{'1','5','15','30','60'}分钟
+    :param period: 时间周期，可选{'1','5','15','30','60'}分钟
     :type period: str
-    :param adjust: 复权方式,可选{'','qfq'(前复权),'hfq'(后复权)}
+    :param adjust: 复权方式，可选{'','qfq'(前复权),'hfq'(后复权)}
     :type adjust: str
-    :return: 整理后的分钟行情数据,包含Date(索引),Open,High,Low,Close列
+    :return: 整理后的分钟行情数据，包含Date(索引),Open,High,Low,Close列
     :rtype: pandas.DataFrame
     """
     from akshare.stock_feature.stock_hist_em import stock_zh_a_hist_min_em
@@ -62,13 +62,13 @@ def rv_from_futures_zh_minute_sina(
     symbol: str = "IF2008", period: str = "5"
 ) -> pd.DataFrame:
     """
-    从新浪财经获取期货的分钟级历史行情数据,并进行数据清洗和格式化
+    从新浪财经获取期货的分钟级历史行情数据，并进行数据清洗和格式化
     https://vip.stock.finance.sina.com.cn/quotes_service/view/qihuohangqing.html#titlePos_3
-    :param symbol: 期货合约代码,如"IF2008"代表沪深300期货2020年8月合约
+    :param symbol: 期货合约代码，如"IF2008"代表沪深300期货2020年8月合约
     :type symbol: str
-    :param period: 时间周期,可选{'1','5','15','30','60'}分钟
+    :param period: 时间周期，可选{'1','5','15','30','60'}分钟
     :type period: str
-    :return: 整理后的分钟行情数据,包含Date(索引),Open,High,Low,Close列
+    :return: 整理后的分钟行情数据，包含Date(索引),Open,High,Low,Close列
     :rtype: pandas.DataFrame
     """
     from akshare.futures.futures_zh_sina import futures_zh_minute_sina
@@ -95,16 +95,16 @@ def volatility_yz_rv(data: pd.DataFrame) -> pd.DataFrame:
     波动率-已实现波动率-Yang-Zhang 已实现波动率(Yang-Zhang Realized Volatility)
     https://github.com/hugogobato/Yang-Zhang-s-Realized-Volatility-Automated-Estimation-in-Python
     论文地址：https://www.jstor.org/stable/10.1086/209650
-    基于以下公式计算:
+    基于以下公式计算：
     RV^2 = Vo + k*Vc + (1-k)*Vrs
-    其中:
-    - Vo: 隔夜波动率, Vo = 1/(n-1)*sum(Oi-Obar)^2
-        Oi为标准化开盘价, Obar为标准化开盘价均值
-    - Vc: 收盘波动率, Vc = 1/(n-1)*sum(ci-Cbar)^2
-        ci为标准化收盘价, Cbar为标准化收盘价均值
-    - k: 权重系数, k = 0.34/(1.34+(n+1)/(n-1))
+    其中：
+    - Vo: 隔夜波动率，Vo = 1/(n-1)*sum(Oi-Obar)^2
+        Oi为标准化开盘价，Obar为标准化开盘价均值
+    - Vc: 收盘波动率，Vc = 1/(n-1)*sum(ci-Cbar)^2
+        ci为标准化收盘价，Cbar为标准化收盘价均值
+    - k: 权重系数，k = 0.34/(1.34+(n+1)/(n-1))
         n为样本数量
-    - Vrs: Rogers-Satchell波动率代理, Vrs = ui(ui-ci)+di(di-ci)
+    - Vrs: Rogers-Satchell波动率代理，Vrs = ui(ui-ci)+di(di-ci)
         ui = ln(Hi/Oi), ci = ln(Ci/Oi), di = ln(Li/Oi), oi = ln(Oi/Ci-1)
         Hi/Li/Ci/Oi分别为最高价/最低价/收盘价/开盘价
 
@@ -113,7 +113,7 @@ def volatility_yz_rv(data: pd.DataFrame) -> pd.DataFrame:
     :return: 包含 Yang-Zhang 实现波动率的 pandas.DataFrame
     :rtype: pandas.DataFrame
 
-    要求输入数据包含以下列:
+    要求输入数据包含以下列：
     - Open: 开盘价
     - High: 最高价
     - Low: 最低价

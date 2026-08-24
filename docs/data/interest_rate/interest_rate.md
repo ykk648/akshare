@@ -1,16 +1,18 @@
-## [AKShare](https://github.com/akfamily/akshare) 利率数据
+# [AKShare](https://github.com/akfamily/akshare) 利率数据
 
-### 主要央行利率
+## 主要央行利率
 
-#### 美联储利率决议报告
+### 美联储利率决议报告
 
-接口: macro_bank_usa_interest_rate
+接口：macro_bank_usa_interest_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_usa_interest_rate_decision
+目标地址：https://datacenter.jin10.com/reportType/dc_usa_interest_rate_decision
 
-描述: 美联储利率决议报告, 数据区间从 19820927-至今
+描述：美联储利率决议报告，数据区间从 19820927-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
+
+说明：当前接口使用 Jin10 历史数据接口；经 2026-07 校验，该上游链路未继续提供最新数据，返回结果可能仅更新至 2025 年附近，不代表 AKShare 本地缓存异常
 
 输入参数
 
@@ -24,9 +26,9 @@
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -55,15 +57,15 @@ print(macro_bank_usa_interest_rate_df)
 [287 rows x 5 columns]
 ```
 
-#### 欧洲央行决议报告
+### 欧洲央行决议报告
 
-接口: macro_bank_euro_interest_rate
+接口：macro_bank_euro_interest_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_interest_rate_decision
+目标地址：https://datacenter.jin10.com/reportType/dc_interest_rate_decision
 
-描述: 欧洲央行决议报告, 数据区间从 19990101-至今
+描述：欧洲央行决议报告，数据区间从 19990101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -77,9 +79,9 @@ print(macro_bank_usa_interest_rate_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -108,15 +110,15 @@ print(macro_bank_euro_interest_rate_df)
 [273 rows x 5 columns]
 ```
 
-#### 新西兰联储决议报告
+### 新西兰联储决议报告
 
-接口: macro_bank_newzealand_interest_rate
+接口：macro_bank_newzealand_interest_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_newzealand_interest_rate_decision
+目标地址：https://datacenter.jin10.com/reportType/dc_newzealand_interest_rate_decision
 
-描述: 新西兰联储决议报告, 数据区间从 19990401-至今
+描述：新西兰联储决议报告，数据区间从 19990401-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -130,9 +132,9 @@ print(macro_bank_euro_interest_rate_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -161,15 +163,15 @@ print(macro_bank_newzealand_interest_rate_df)
 [235 rows x 5 columns]
 ```
 
-#### 中国央行决议报告
+### 中国央行决议报告
 
-接口: macro_bank_china_interest_rate
+接口：macro_bank_china_interest_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_china_interest_rate_decision
+目标地址：https://datacenter.jin10.com/reportType/dc_china_interest_rate_decision
 
-描述: 中国央行决议报告, 数据区间从 19910105-至今
+描述：中国央行决议报告，数据区间从 19910105-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -183,9 +185,9 @@ print(macro_bank_newzealand_interest_rate_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -214,15 +216,15 @@ print(macro_bank_china_interest_rate_df)
 [218 rows x 5 columns]
 ```
 
-#### 瑞士央行利率决议报告
+### 瑞士央行利率决议报告
 
-接口: macro_bank_switzerland_interest_rate
+接口：macro_bank_switzerland_interest_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_switzerland_interest_rate_decision
+目标地址：https://datacenter.jin10.com/reportType/dc_switzerland_interest_rate_decision
 
-描述: 瑞士央行利率决议报告, 数据区间从 20080313-至今
+描述：瑞士央行利率决议报告，数据区间从 20080313-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -236,9 +238,9 @@ print(macro_bank_china_interest_rate_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -267,15 +269,15 @@ print(macro_bank_switzerland_interest_rate_df)
 [72 rows x 5 columns]
 ```
 
-#### 英国央行决议报告
+### 英国央行决议报告
 
-接口: macro_bank_english_interest_rate
+接口：macro_bank_english_interest_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_english_interest_rate_decision
+目标地址：https://datacenter.jin10.com/reportType/dc_english_interest_rate_decision
 
-描述: 英国央行决议报告, 数据区间从 19700101-至今
+描述：英国央行决议报告，数据区间从 19700101-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -289,9 +291,9 @@ print(macro_bank_switzerland_interest_rate_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -320,15 +322,15 @@ print(macro_bank_english_interest_rate_df)
 [632 rows x 5 columns]
 ```
 
-#### 澳洲联储决议报告
+### 澳洲联储决议报告
 
-接口: macro_bank_australia_interest_rate
+接口：macro_bank_australia_interest_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_australia_interest_rate_decision
+目标地址：https://datacenter.jin10.com/reportType/dc_australia_interest_rate_decision
 
-描述: 澳洲联储决议报告, 数据区间从 19800201-至今
+描述：澳洲联储决议报告，数据区间从 19800201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -342,9 +344,9 @@ print(macro_bank_english_interest_rate_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -373,15 +375,15 @@ print(macro_bank_australia_interest_rate_df)
 [522 rows x 5 columns]
 ```
 
-#### 日本利率决议报告
+### 日本利率决议报告
 
-接口: macro_bank_japan_interest_rate
+接口：macro_bank_japan_interest_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_japan_interest_rate_decision
+目标地址：https://datacenter.jin10.com/reportType/dc_japan_interest_rate_decision
 
-描述: 日本利率决议报告, 数据区间从 20080214-至今
+描述：日本利率决议报告，数据区间从 20080214-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -395,9 +397,9 @@ print(macro_bank_australia_interest_rate_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -426,15 +428,15 @@ print(macro_bank_japan_interest_rate_df)
 [195 rows x 5 columns]
 ```
 
-#### 俄罗斯利率决议报告
+### 俄罗斯利率决议报告
 
-接口: macro_bank_russia_interest_rate
+接口：macro_bank_russia_interest_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_russia_interest_rate_decision
+目标地址：https://datacenter.jin10.com/reportType/dc_russia_interest_rate_decision
 
-描述: 俄罗斯利率决议报告, 数据区间从 20030601-至今
+描述：俄罗斯利率决议报告，数据区间从 20030601-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -448,9 +450,9 @@ print(macro_bank_japan_interest_rate_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -479,15 +481,15 @@ print(macro_bank_russia_interest_rate_df)
 [219 rows x 5 columns]
 ```
 
-#### 印度利率决议报告
+### 印度利率决议报告
 
-接口: macro_bank_india_interest_rate
+接口：macro_bank_india_interest_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_india_interest_rate_decision
+目标地址：https://datacenter.jin10.com/reportType/dc_india_interest_rate_decision
 
-描述: 印度利率决议报告, 数据区间从 20000801-至今
+描述：印度利率决议报告，数据区间从 20000801-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -501,9 +503,9 @@ print(macro_bank_russia_interest_rate_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -532,15 +534,15 @@ print(macro_bank_india_interest_rate_df)
 [227 rows x 5 columns]
 ```
 
-#### 巴西利率决议报告
+### 巴西利率决议报告
 
-接口: macro_bank_brazil_interest_rate
+接口：macro_bank_brazil_interest_rate
 
-目标地址: https://datacenter.jin10.com/reportType/dc_brazil_interest_rate_decision
+目标地址：https://datacenter.jin10.com/reportType/dc_brazil_interest_rate_decision
 
-描述: 巴西利率决议报告, 数据区间从20080201-至今
+描述：巴西利率决议报告，数据区间从20080201-至今
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -554,9 +556,9 @@ print(macro_bank_india_interest_rate_df)
 |-----|---------|---------|
 | 商品  | object  | -       |
 | 日期  | object  | -       |
-| 今值  | float64 | 注意单位: % |
-| 预测值 | float64 | 注意单位: % |
-| 前值  | float64 | 注意单位: % |
+| 今值  | float64 | 注意单位：% |
+| 预测值 | float64 | 注意单位：% |
+| 前值  | float64 | 注意单位：% |
 
 接口示例
 
@@ -585,23 +587,23 @@ print(macro_bank_brazil_interest_rate_df)
 [150 rows x 5 columns]
 ```
 
-### 银行间拆借利率
+## 银行间拆借利率
 
-接口: rate_interbank
+接口：rate_interbank
 
-目标地址: https://data.eastmoney.com/shibor/shibor.aspx?m=sg&t=88&d=99333&cu=sgd&type=009065&p=79
+目标地址：https://data.eastmoney.com/shibor/shibor.aspx?m=sg&t=88&d=99333&cu=sgd&type=009065&p=79
 
-描述: 东方财富-拆借利率一览-具体市场的具体品种的具体指标的拆借利率数据
+描述：东方财富-拆借利率一览-具体市场的具体品种的具体指标的拆借利率数据
 
-限量: 返回所有历史数据
+限量：返回所有历史数据
 
 输入参数
 
 | 名称        | 类型  | 描述                                                                                                                                 |
 |-----------|-----|------------------------------------------------------------------------------------------------------------------------------------|
-| market    | str | market="上海银行同业拆借市场"; 参见 **市场-品种-指标一览表**                                                                                            |
-| symbol    | str | symbol="Shibor人民币"; 参见 **市场-品种-指标一览表**                                                                                             |
-| indicator | str | indicator="隔夜"; 参见 **市场-品种-指标一览表**                                                                                                 |
+| market    | str | market="上海银行同业拆借市场"；参见 **市场-品种-指标一览表**                                                                                            |
+| symbol    | str | symbol="Shibor人民币"；参见 **市场-品种-指标一览表**                                                                                             |
+| indicator | str | indicator="隔夜"；参见 **市场-品种-指标一览表**                                                                                                 |
 
 市场-品种-指标一览表
 
@@ -721,8 +723,8 @@ print(macro_bank_brazil_interest_rate_df)
 | 名称  | 类型      | 描述       |
 |-----|---------|----------|
 | 日期  | object  | -        |
-| 利率  | float64 | 注意单位: %  |
-| 涨跌  | float64 | 注意单位: BP |
+| 利率  | float64 | 注意单位：%  |
+| 涨跌  | float64 | 注意单位：BP |
 
 示例代码
 
@@ -751,34 +753,34 @@ print(rate_interbank_df)
 [4396 rows x 3 columns]
 ```
 
-### 回购定盘利率-历史
+## 回购定盘利率-历史
 
-接口: repo_rate_hist
+接口：repo_rate_hist
 
-目标地址: https://www.chinamoney.com.cn/chinese/bkfrr/
+目标地址：https://www.chinamoney.com.cn/chinese/bkfrr/
 
-描述: 回购定盘利率数据
+描述：回购定盘利率数据
 
-限量: 单次返回指定日期间(一年)的所有历史数据
+限量：单次返回指定日期间（一年）的所有历史数据
 
 输入参数
 
 | 名称         | 类型  | 描述                                     |
 |------------|-----|----------------------------------------|
-| start_date | str | start_date="20200930"; 开始时间与结束时间需要在一年内 |
-| end_date   | str | end_date="20201029"; 开始时间与结束时间需要在一年内   |
+| start_date | str | start_date="20200930"；开始时间与结束时间需要在一年内 |
+| end_date   | str | end_date="20201029"；开始时间与结束时间需要在一年内   |
 
 输出参数
 
 | 名称     | 类型      | 描述      |
 |--------|---------|---------|
 | date   | object  | -       |
-| FR001  | float64 | 注意单位: % |
-| FR007  | float64 | 注意单位: % |
-| FR014  | float64 | 注意单位: % |
-| FDR001 | float64 | 注意单位: % |
-| FDR007 | float64 | 注意单位: % |
-| FDR014 | float64 | 注意单位: % |
+| FR001  | float64 | 注意单位：% |
+| FR007  | float64 | 注意单位：% |
+| FR014  | float64 | 注意单位：% |
+| FDR001 | float64 | 注意单位：% |
+| FDR007 | float64 | 注意单位：% |
+| FDR014 | float64 | 注意单位：% |
 
 接口示例
 
@@ -807,15 +809,15 @@ print(repo_rate_hist_df)
 [62 rows x 7 columns]
 ```
 
-### 回购定盘利率-近期
+## 回购定盘利率-近期
 
-接口: repo_rate_query
+接口：repo_rate_query
 
-目标地址: https://www.chinamoney.com.cn/chinese/bkfrr/
+目标地址：https://www.chinamoney.com.cn/chinese/bkfrr/
 
-描述: 回购定盘利率数据
+描述：回购定盘利率数据
 
-限量: 单次返回指定 symbol 的近期数据
+限量：单次返回指定 symbol 的近期数据
 
 输入参数
 
@@ -828,9 +830,9 @@ print(repo_rate_hist_df)
 | 名称     | 类型      | 描述      |
 |--------|---------|---------|
 | date   | object  | -       |
-| FR001  | float64 | 注意单位: % |
-| FR007  | float64 | 注意单位: % |
-| FR014  | float64 | 注意单位: % |
+| FR001  | float64 | 注意单位：% |
+| FR007  | float64 | 注意单位：% |
+| FR014  | float64 | 注意单位：% |
 
 接口示例
 

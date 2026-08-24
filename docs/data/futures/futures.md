@@ -1,10 +1,10 @@
-## [AKShare](https://github.com/akfamily/akshare) 期货数据
+# [AKShare](https://github.com/akfamily/akshare) 期货数据
 
-### 期货基础信息
+## 期货基础信息
 
 主要提供金融期货和商品期货相关的数据
 
-#### 期货交易所
+### 期货交易所
 
 | 交易所名称                                | 交易所代码 | 合约后缀  | 首页地址                    |
 |--------------------------------------|-------|-------|-------------------------|
@@ -15,7 +15,7 @@
 | [大连商品交易所](http://www.dce.com.cn)     | DCE   | .DCE  | http://www.dce.com.cn   |
 | [广州期货交易所](http://www.gfex.com.cn)    | GFEX  | .GFEX | http://www.gfex.com.cn  |
 
-#### 期货交易时间
+### 期货交易时间
 
 **本表格更新于 20241118**
 
@@ -43,7 +43,7 @@
 | 上海国际能源交易中心 | INE   | 低硫燃料油    | lu   | 20:55-21:00, 08:55-09:00 | 09:00-10:15, 10:30-11:30, 13:30-15:00 | 21:00-23:00 |
 | 上海国际能源交易中心 | INE   | 国际铜      | bc   | 20:55-21:00, 08:55-09:00 | 09:00-10:15, 10:30-11:30, 13:30-15:00 | 21:00-01:00 |
 | 上海国际能源交易中心 | INE   | 原油       | sc   | 20:55-21:00, 08:55-09:00 | 09:00-10:15, 10:30-11:30, 13:30-15:00 | 21:00-02:30 |
-| 上海国际能源交易中心 | INE   | 集运指数(欧线) | ec   | 08:55-09:00              | 09:00-10:15, 10:30-11:30, 13:30-15:00 | -           |
+| 上海国际能源交易中心 | INE   | 集运指数（欧线） | ec   | 08:55-09:00              | 09:00-10:15, 10:30-11:30, 13:30-15:00 | -           |
 | 大连商品交易所    | DCE   | 黄大豆1号    | a    | 20:55-21:00, 08:55-09:00 | 09:00-10:15, 10:30-11:30, 13:30-15:00 | 21:00-23:00 |
 | 大连商品交易所    | DCE   | 黄大豆2号    | b    | 20:55-21:00, 08:55-09:00 | 09:00-10:15, 10:30-11:30, 13:30-15:00 | 21:00-23:00 |
 | 大连商品交易所    | DCE   | 黄玉米      | c    | 20:55-21:00, 08:55-09:00 | 09:00-10:15, 10:30-11:30, 13:30-15:00 | 21:00-23:00 |
@@ -104,9 +104,9 @@
 | 中国金融期货交易所  | CFFEX | 10年期国债   | T    | 09:25-09:30              | 09:30-11:30, 13:00-15:15              | -           |
 | 中国金融期货交易所  | CFFEX | 30年期国债   | TL   | 09:25-09:30              | 09:30-11:30, 13:00-15:15              | -           |
 
-#### 金融期货
+### 金融期货
 
-##### 中国金融期货交易所
+#### 中国金融期货交易所
 
 **本表更新于 20241118**
 
@@ -121,9 +121,9 @@
 | 7 | 中国金融期货交易所 | 中证1000股指期货 | IM   | 2022-07-22 |
 | 8 | 中国金融期货交易所 | 30年期国债期货   | TL   | 2023-04-21 |
 
-#### 商品期货
+### 商品期货
 
-##### 上海国际能源交易中心
+#### 上海国际能源交易中心
 
 **本表更新于 20241118**
 
@@ -133,9 +133,9 @@
 | 2 | 上海国际能源交易中心 | 20号胶     | nr   | 2019-08-12 |
 | 3 | 上海国际能源交易中心 | 低硫燃料油    | lu   | 2020-06-22 |
 | 4 | 上海国际能源交易中心 | 国际铜      | bc   | 2020-11-19 |
-| 5 | 上海国际能源交易中心 | 集运指数(欧线) | ec   | 2023-08-18 |
+| 5 | 上海国际能源交易中心 | 集运指数（欧线） | ec   | 2023-08-18 |
 
-##### 上海期货交易所
+#### 上海期货交易所
 
 **本表更新于 20241118**
 
@@ -160,7 +160,7 @@
 | 17 | 上海期货交易所 | 氧化铝   | AO   | 2023-06-19 |
 | 18 | 上海期货交易所 | 丁二烯橡胶 | BR   | 2023-07-28 |
 
-##### 郑州商品交易所
+#### 郑州商品交易所
 
 **本表更新于 20241118**
 
@@ -193,7 +193,7 @@
 | 25 | 郑州商品交易所 | 对二甲苯 | PX   | 2023-09-15 |
 | 26 | 郑州商品交易所 | 瓶片   | PR   | 2024-08-30 |
 
-##### 大连商品交易所
+#### 大连商品交易所
 
 **本表更新于 20241118**
 
@@ -222,7 +222,7 @@
 | 21 | 大连商品交易所 | 生猪    | LH   | 2021-01-08 |
 | 22 | 大连商品交易所 | 原木    | LG   | 2024-11-18 |
 
-##### 广州期货交易所
+#### 广州期货交易所
 
 **本表更新于 20241118**
 
@@ -232,27 +232,27 @@
 | 2 | 广州期货交易所 | 碳酸锂  | lc   | 2023-07-21 |
 | 3 | 广州期货交易所 | 多晶硅  | ps   | 2024-12-26 |
 
-### 期货基础名词
+## 期货基础名词
 
-#### 连续合约
+### 连续合约
 
-需要注意, 由于期货合约存续的特殊性, 针对每一品种的期货合约, 系统中都增加了主力连续合约以及指数连续合约两个人工合成的合约来满足使用需求.
+需要注意，由于期货合约存续的特殊性，针对每一品种的期货合约，系统中都增加了主力连续合约以及指数连续合约两个人工合成的合约来满足使用需求。
 
-#### 主力连续合约
+### 主力连续合约
 
-主力连续合约: 合约首次上市时, 以当日收盘同品种持仓量最大者作为从第二个交易日开始的主力合约.
-当同品种其他合约持仓量在收盘后超过当前主力合约 1.1 倍时, 从第二个交易日开始进行主力合约的切换.
-日内不会进行主力合约的切换.
-主力连续合约是由该品种期货不同时期主力合约接续而成, 代码以 88 或 888 结尾结尾, 例如 IF88 或 IF888.
-前者为合约量价数据的简单拼接, 未做平滑处理;
-后者对价格进行了”平滑”处理, 处理规则如下:
-以主力合约切换前一天(T-1日)新、旧两个主力合约收盘价做差,
-之后将 T-1 日及以前的主力连续合约的所有价格水平整体加上或减去该价差,
-以”整体抬升”或”整体下降”主力合约的价格水平, 成交量、持仓量均不作调整, 成交额统一设置为 0.
+主力连续合约：合约首次上市时，以当日收盘同品种持仓量最大者作为从第二个交易日开始的主力合约。
+当同品种其他合约持仓量在收盘后超过当前主力合约 1.1 倍时，从第二个交易日开始进行主力合约的切换。
+日内不会进行主力合约的切换。
+主力连续合约是由该品种期货不同时期主力合约接续而成，代码以 88 或 888 结尾结尾，例如 IF88 或 IF888.
+前者为合约量价数据的简单拼接，未做平滑处理；
+后者对价格进行了“平滑”处理，处理规则如下：
+以主力合约切换前一天（T-1日）新、旧两个主力合约收盘价做差，
+之后将 T-1 日及以前的主力连续合约的所有价格水平整体加上或减去该价差，
+以“整体抬升”或“整体下降”主力合约的价格水平，成交量、持仓量均不作调整，成交额统一设置为 0.
 
-#### 指数连续合约
+### 指数连续合约
 
-指数连续合约: 由当前品种全部可交易合约以累计持仓量为权重加权平均得到, 代码以 99 结尾, 例如 IF99.
+指数连续合约：由当前品种全部可交易合约以累计持仓量为权重加权平均得到，代码以 99 结尾，例如 IF99.
 
 在期货市场中，指数连续合约（Continuous Futures Contract）是一种将多个到期月份的期货合约连接起来，形成一个连续的价格数据序列。
 它的主要目的是为了解决期货合约到期换仓的问题，便于投资者进行长期分析和交易。
@@ -268,7 +268,7 @@
 
 总之，指数连续合约是一种在期货市场中广泛应用的分析工具，有助于投资者进行长期市场分析和交易策略制定。
 
-#### 展期收益率
+### 展期收益率
 
 期货市场中的展期收益率（Rolling Yield）是指在期货合约到期时，多头投资者将持有的近月合约换成远月合约时可能产生的收益。展期收益率在期货市场中具有重要意义，因为它反映了期货市场的期限结构，也可以作为投资者制定投资策略的依据。
 
@@ -286,17 +286,17 @@
 
 投资者可以根据不同的期限结构和展期收益率来调整其期货交易策略，以实现收益最大化或风险最小化。
 
-### 期货基础数据
+## 期货基础数据
 
-#### 期货交易费用参照表
+### 期货交易费用参照表
 
-接口: futures_fees_info
+接口：futures_fees_info
 
-目标地址: http://openctp.cn/fees.html
+目标地址：http://openctp.cn/fees.html
 
-描述: openctp 期货交易费用参照表
+描述：openctp 期货交易费用参照表
 
-限量: 单次返回所有数据
+限量：单次返回所有数据
 
 输入参数
 
@@ -372,15 +372,15 @@ print(futures_fees_info_df)
 [769 rows x 36 columns]
 ```
 
-#### 期货手续费与保证金
+### 期货手续费与保证金
 
-接口: futures_comm_info
+接口：futures_comm_info
 
-目标地址: https://www.9qihuo.com/qihuoshouxufei
+目标地址：https://www.9qihuo.com/qihuoshouxufei
 
-描述: 九期网-期货手续费数据
+描述：九期网-期货手续费数据
 
-限量: 单次返回指定 symbol 的所有数据
+限量：单次返回指定 symbol 的所有数据
 
 输入参数
 
@@ -398,18 +398,18 @@ print(futures_fees_info_df)
 | 现价           | float64 | -       |
 | 涨停板          | float64 | -       |
 | 跌停板          | float64 | -       |
-| 保证金-买开       | float64 | 注意单位: % |
-| 保证金-卖开       | float64 | 注意单位: % |
-| 保证金-每手       | float64 | 注意单位: 元 |
+| 保证金-买开       | float64 | 注意单位：% |
+| 保证金-卖开       | float64 | 注意单位：% |
+| 保证金-每手       | float64 | 注意单位：元 |
 | 手续费标准-开仓-万分之 | float64 | -       |
 | 手续费标准-开仓-元   | object  | -       |
 | 手续费标准-平昨-万分之 | float64 | -       |
 | 手续费标准-平昨-元   | object  | -       |
 | 手续费标准-平今-万分之 | float64 | -       |
 | 手续费标准-平今-元   | object  | -       |
-| 每跳毛利         | int64   | 注意单位: 元 |
-| 手续费          | float64 | 注意: 开+平 |
-| 每跳净利         | float64 | 注意单位: 元 |
+| 每跳毛利         | int64   | 注意单位：元 |
+| 手续费          | float64 | 注意：开+平 |
+| 每跳净利         | float64 | 注意单位：元 |
 | 备注           | object  | 是否主力合约  |
 | 手续费更新时间      | object  | -       |
 | 价格更新时间       | object  | -       |
@@ -441,21 +441,21 @@ print(futures_comm_info_df)
 [700 rows x 21 columns]
 ```
 
-##### 金十数据
+#### 金十数据
 
-接口: futures_comm_js
+接口：futures_comm_js
 
-目标地址: https://www.jin10.com/
+目标地址：https://www.jin10.com/
 
-描述: 金十财经-期货手续费数据
+描述：金十财经-期货手续费数据
 
-限量: 单次返回指定日期的期货手续费数据
+限量：单次返回指定日期的期货手续费数据
 
 输入参数
 
 | 名称   | 类型  | 描述                              |
 |------|-----|---------------------------------|
-| date | str | date="20260213"; 日期格式为 YYYYMMDD |
+| date | str | date="20260213"；日期格式为 YYYYMMDD |
 
 输出参数
 
@@ -507,21 +507,21 @@ print(futures_comm_js_df)
 [90 rows x 18 columns]
 ```
 
-#### 期货规则-交易日历表
+### 期货规则-交易日历表
 
-接口: futures_rule
+接口：futures_rule
 
-目标地址: https://www.gtjaqh.com/pc/calendar.html
+目标地址：https://www.gtjaqh.com/pc/calendar.html
 
-描述: 国泰君安期货-交易日历数据表
+描述：国泰君安期货-交易日历数据表
 
-限量: 单次返回指定交易日所有合约的交易日历数据
+限量：单次返回指定交易日所有合约的交易日历数据
 
 输入参数
 
 | 名称   | 类型  | 描述                                 |
 |------|-----|------------------------------------|
-| date | str | date="20231205"; 需要指定为交易日, 且是近期的日期 |
+| date | str | date="20231205"；需要指定为交易日，且是近期的日期 |
 
 输出参数
 
@@ -530,8 +530,8 @@ print(futures_comm_js_df)
 | 交易所         | object  | -       |
 | 品种          | object  | -       |
 | 代码          | object  | -       |
-| 交易保证金比例     | float64 | 注意单位: % |
-| 涨跌停板幅度      | float64 | 注意单位: % |
+| 交易保证金比例     | float64 | 注意单位：% |
+| 涨跌停板幅度      | float64 | 注意单位：% |
 | 合约乘数        | int64   | -       |
 | 最小变动价位      | float64 | -       |
 | 限价单每笔最大下单手数 | int64   | -       |
@@ -565,21 +565,21 @@ print(futures_rule_df)
 [122 rows x 10 columns]
 ```
 
-#### 库存数据-99期货网
+### 库存数据-99期货网
 
-接口: futures_inventory_99
+接口：futures_inventory_99
 
-目标地址: https://www.99qh.com/data/stockIn?productId=61
+目标地址：https://www.99qh.com/data/stockIn?productId=61
 
-描述: 99 期货网-大宗商品库存数据
+描述：99 期货网-大宗商品库存数据
 
-限量: 单次返回指定 symbol 的具体品种的期货库存数据, 仓单日报数据
+限量：单次返回指定 symbol 的具体品种的期货库存数据，仓单日报数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                                                     |
 |--------|-----|--------------------------------------------------------------------------------------------------------|
-| symbol | str | symbol='豆一'; 交易所对应的具体品种中文名称或者英文代码; 如：大连商品交易所的豆一; 具体品种查询：https://www.99qh.com/data/stockIn?productId=61 |
+| symbol | str | symbol='豆一'；交易所对应的具体品种中文名称或者英文代码；如：大连商品交易所的豆一；具体品种查询：https://www.99qh.com/data/stockIn?productId=61 |
 
 输出参数
 
@@ -616,21 +616,21 @@ print(futures_inventory_99_df)
 [4019 rows x 3 columns]
 ```
 
-#### 库存数据-东方财富
+### 库存数据-东方财富
 
-接口: futures_inventory_em
+接口：futures_inventory_em
 
-目标地址: http://data.eastmoney.com/ifdata/kcsj.html
+目标地址：http://data.eastmoney.com/ifdata/kcsj.html
 
-描述: 东方财富网-期货数据-库存数据; 近 60 个交易日的期货库存日频率数据
+描述：东方财富网-期货数据-库存数据；近 60 个交易日的期货库存日频率数据
 
-限量: 返回指定交易所指定品种的期货库存数据, 仓单日报数据
+限量：返回指定交易所指定品种的期货库存数据，仓单日报数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                         |
 |--------|-----|----------------------------------------------------------------------------|
-| symbol | str | symbol="A"; 支持品种代码和中文名称，中文名称参见：https://data.eastmoney.com/ifdata/kcsj.html |
+| symbol | str | symbol="A"；支持品种代码和中文名称，中文名称参见：https://data.eastmoney.com/ifdata/kcsj.html |
 
 输出参数
 
@@ -667,21 +667,21 @@ print(futures_inventory_em_df)
 [66 rows x 3 columns]
 ```
 
-#### 展期收益率
+### 展期收益率
 
-展期收益率是由不同交割月的价差除以相隔月份数计算得来, 它反映了市场对该品种在近期交割和远期交割的价差预期.
+展期收益率是由不同交割月的价差除以相隔月份数计算得来，它反映了市场对该品种在近期交割和远期交割的价差预期。
 
-在 [AKShare](https://github.com/akfamily/akshare) 中可以通过 **get_roll_yield_bar** 接口下载展期收益率数据.
+在 [AKShare](https://github.com/akfamily/akshare) 中可以通过 **get_roll_yield_bar** 接口下载展期收益率数据。
 
-这里展期收益率列表的序列类型分为三种, 分别可以通过:
+这里展期收益率列表的序列类型分为三种，分别可以通过：
 
     1. type_method = "date"  # 某商品品种在不同日期的主力合约和次主力合约的价差组成
-    2. type_method = "symbol"  # 某商品品种在某天的所有交割月合约价格组成, 可以很方便的观察该品种从近期到远期的展期结构
-    3. type_method = "var"  # 某交易日, 所有品种的主力次主力合约展期收益率的组合, 可以方便的找到展期收益率高的品种和低的品种
+    2. type_method = "symbol"  # 某商品品种在某天的所有交割月合约价格组成，可以很方便的观察该品种从近期到远期的展期结构
+    3. type_method = "var"  # 某交易日，所有品种的主力次主力合约展期收益率的组合，可以方便的找到展期收益率高的品种和低的品种
 
-来获取.
+来获取。
 
-其中 "date" 类型, 调用方法例子为:
+其中 "date" 类型，调用方法例子为：
 
 ```python
 import akshare as ak
@@ -689,7 +689,7 @@ import akshare as ak
 ak.get_roll_yield_bar(type_method="date", var="RB", start_day="20191009", end_day="20191030")  # 需要收盘收运行
 ```
 
-其中 "symbol" 类型, 调用方法例子为:
+其中 "symbol" 类型，调用方法例子为：
 
 ```python
 import akshare as ak
@@ -697,7 +697,7 @@ import akshare as ak
 ak.get_roll_yield_bar(type_method="symbol", var="RB", date="20191008")  # 需要收盘收运行
 ```
 
-其中 "var" 类型, 调用方法例子为:
+其中 "var" 类型，调用方法例子为：
 
 ```python
 import akshare as ak
@@ -705,7 +705,7 @@ import akshare as ak
 ak.get_roll_yield_bar(type_method="var", date="20191008")  # 需要收盘收运行
 ```
 
-利用 **get_roll_yield** 接口, 可以找到特定合约特定日期的主力合约次主力合约展期收益率, 或通过 symbol1 和 symbol2 变量自定义某两个合约的展期收益率.
+利用 **get_roll_yield** 接口，可以找到特定合约特定日期的主力合约次主力合约展期收益率，或通过 symbol1 和 symbol2 变量自定义某两个合约的展期收益率。
 
 ```python
 import akshare as ak
@@ -713,11 +713,11 @@ import akshare as ak
 ak.get_roll_yield(date="20180718", var="IF", symbol1="IF1812", symbol2="IF1811")  # 需要收盘收运行
 ```
 
-注意: 1. 主力合约和次主力合约的定义, 是由该日的各交割月合约持仓量由大到小排序得到.
+注意：1. 主力合约和次主力合约的定义，是由该日的各交割月合约持仓量由大到小排序得到。
 
-#### 注册仓单
+### 注册仓单
 
-注册仓单是由各交易所的公布的日级数据, 在一定程度上可以反映市场的库存变化. 调用例子如下:
+注册仓单是由各交易所的公布的日级数据，在一定程度上可以反映市场的库存变化。调用例子如下：
 
 ```python
 import akshare as ak
@@ -725,17 +725,17 @@ import akshare as ak
 ak.get_receipt(start_date="20180712", end_date="20180719", vars_list=["CU", "NI"])
 ```
 
-注意:
+注意：
 
-1. vars_list 变量接上需要爬取的品种列表, 即使是一个品种, 也需要以列表形式输入;
+1. vars_list 变量接上需要爬取的品种列表，即使是一个品种，也需要以列表形式输入；
 
-2. 在研究仓单的方向变化时, 需要考虑一些品种的年度周期性, 如农产品的收割季、工业品的开工季等;
+2. 在研究仓单的方向变化时，需要考虑一些品种的年度周期性，如农产品的收割季、工业品的开工季等；
 
-3. 需考虑到交割日的仓单变化.
+3. 需考虑到交割日的仓单变化。
 
-#### 现货价格和基差
+### 现货价格和基差
 
-基差是商品期货非常重要的基本面因素, AKShare 在这里提供 3 中获取基差的方法:
+基差是商品期货非常重要的基本面因素，AKShare 在这里提供 3 中获取基差的方法：
 
 第一种：获取近期交易日的基差数据
 
@@ -802,7 +802,7 @@ print(futures_spot_price_df)
 [51 rows x 11 columns]
 ```
 
-返回值分别为品种、现货价格、最近交割合约、最近交割合约价格、主力合约、主力合约价格、最近合约基差值、主力合约基差值、最近合约基差率、主力合约基差率.
+返回值分别为品种、现货价格、最近交割合约、最近交割合约价格、主力合约、主力合约价格、最近合约基差值、主力合约基差值、最近合约基差率、主力合约基差率。
 
 第二种：获取历史交易日的基差数据
 
@@ -891,12 +891,12 @@ print(futures_spot_price_daily_df)
 [8 rows x 11 columns]
 ```
 
-注意: 1. 现货价格是从生意社网站采集的, 仅支持从 2011 年至今每个交易日数据.
+注意：1. 现货价格是从生意社网站采集的，仅支持从 2011 年至今每个交易日数据。
 
-#### 会员持仓排名
+### 会员持仓排名
 
-自从**蜘蛛网策略**问世以来, 会员持仓数据日益受到关注. 数据的获取方式如下所示:
-获取某段时间的会员持仓排名前 5、前 10、前 15、前 20 等总和.
+自从**蜘蛛网策略**问世以来，会员持仓数据日益受到关注。数据的获取方式如下所示：
+获取某段时间的会员持仓排名前 5、前 10、前 15、前 20 等总和。
 
 ```python
 import akshare as ak
@@ -916,7 +916,7 @@ ak.get_rank_table_czce()
 ak.get_shfe_rank_table()
 ```
 
-代码示例:
+代码示例：
 
 ```python
 import akshare as ak
@@ -925,30 +925,30 @@ get_rank_table_czce_df = ak.get_rank_table_czce(date='20200213')
 print(get_rank_table_czce_df)
 ```
 
-注意:
+注意：
 
-    1. 因为每个交易所公布的持仓排名不同: 大连商品交易所只公布品种的总持仓排名;
+    1. 因为每个交易所公布的持仓排名不同：大连商品交易所只公布品种的总持仓排名；
 
-    2. 没有按不同交割月划分;上海、中金交易所公布了每个交割月的持仓排名, 没有公布品种所有合约总排名;
+    2. 没有按不同交割月划分；上海、中金交易所公布了每个交割月的持仓排名，没有公布品种所有合约总排名；
 
-    3. 因此这里的品种排名和是各合约加总计算得来;郑州交易所公布了各合约排名和品种排名, 因此这里都是交易所原始数据.
+    3. 因此这里的品种排名和是各合约加总计算得来；郑州交易所公布了各合约排名和品种排名，因此这里都是交易所原始数据。
 
-##### 大连商品交易所
+#### 大连商品交易所
 
-接口: futures_dce_position_rank
+接口：futures_dce_position_rank
 
-目标地址: http://www.dce.com.cn/dalianshangpin/xqsj/tjsj26/rtj/rcjccpm/index.html
+目标地址：http://www.dce.com.cn/dalianshangpin/xqsj/tjsj26/rtj/rcjccpm/index.html
 
-描述: 大连商品交易所指定交易日的具体合约的持仓排名
+描述：大连商品交易所指定交易日的具体合约的持仓排名
 
-限量: 单次返回所有合约的持仓排名数据, 返回以合约名字为键, 具体排名数据为值的字典
+限量：单次返回所有合约的持仓排名数据，返回以合约名字为键，具体排名数据为值的字典
 
 输入参数
 
 | 名称        | 类型   | 描述                                                                                                                    |
 |-----------|------|-----------------------------------------------------------------------------------------------------------------------|
-| date      | str  | date="20200511"; 指定交易日, 该数据接口可以获取从 2000 年开始的数据, 20160104 由于交易所数据问题，返回为空可以调用 **futures_dce_position_rank_other** 来返回数据 |
-| vars_list | list | vars_list=cons.contract_symbols; 指定品种，比如：["C", "CS"]                                                                  |
+| date      | str  | date="20200511"；指定交易日，该数据接口可以获取从 2000 年开始的数据，20160104 由于交易所数据问题，返回为空可以调用 **futures_dce_position_rank_other** 来返回数据 |
+| vars_list | list | vars_list=cons.contract_symbols；指定品种，比如：["C", "CS"]                                                                  |
 
 P.S. **futures_dce_position_rank_other** 函数只返回页面显示的活跃合约，返回格式同 **futures_dce_position_rank**
 
@@ -998,22 +998,22 @@ print(futures_dce_detail_dict)
 }
 ```
 
-##### 广州期货交易所
+#### 广州期货交易所
 
-接口: futures_gfex_position_rank
+接口：futures_gfex_position_rank
 
-目标地址: http://www.gfex.com.cn/gfex/rcjccpm/hqsj_tjsj.shtml
+目标地址：http://www.gfex.com.cn/gfex/rcjccpm/hqsj_tjsj.shtml
 
-描述: 广州期货交易所-日成交持仓排名
+描述：广州期货交易所-日成交持仓排名
 
-限量: 单次返回所有合约的日成交持仓排名数据, 返回以合约名字为键, 具体排名数据为值的字典
+限量：单次返回所有合约的日成交持仓排名数据，返回以合约名字为键，具体排名数据为值的字典
 
 输入参数
 
 | 名称        | 类型   | 描述                                                       |
 |-----------|------|----------------------------------------------------------|
-| date      | str  | date="20231113"; 指定交易日, 该数据接口可以获取从 20231110 开始的日成交持仓排名数据 |
-| vars_list | list | vars_list=None; 指定品种，比如：['SI', 'LC']                     |
+| date      | str  | date="20231113"；指定交易日，该数据接口可以获取从 20231110 开始的日成交持仓排名数据 |
+| vars_list | list | vars_list=None；指定品种，比如：['SI', 'LC']                     |
 
 输出参数-字典
 
@@ -1133,29 +1133,29 @@ print(futures_gfex_position_rank_dict)
 [20 rows x 12 columns]}
 ```
 
-#### 仓单日报
+### 仓单日报
 
-##### 仓单日报-郑州商品交易所
+#### 仓单日报-郑州商品交易所
 
-接口: futures_warehouse_receipt_czce
+接口：futures_warehouse_receipt_czce
 
-目标地址: http://www.czce.com.cn/cn/jysj/cdrb/H770310index_1.htm
+目标地址：http://www.czce.com.cn/cn/jysj/cdrb/H770310index_1.htm
 
-描述: 郑州商品交易所-交易数据-仓单日报
+描述：郑州商品交易所-交易数据-仓单日报
 
-限量: 单次返回当前交易日的所有仓单日报数据
+限量：单次返回当前交易日的所有仓单日报数据
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20200702"; 交易日 |
+| date | str | date="20200702"；交易日 |
 
 输出参数
 
 | 名称    | 类型   | 描述                                     |
 |-------|------|----------------------------------------|
-| 键值对字典 | dict | 键值对, 键为品种代码, 值为 pandas.DataFrame 格式的数据 |
+| 键值对字典 | dict | 键值对，键为品种代码，值为 pandas.DataFrame 格式的数据 |
 
 接口示例
 
@@ -1224,21 +1224,21 @@ print(futures_warehouse_receipt_czce_df)
 372    总计   NaN   NaN   NaN  NaN  20641  -261  2203}
 ```
 
-##### 仓单日报-大连商品交易所
+#### 仓单日报-大连商品交易所
 
-接口: futures_warehouse_receipt_dce
+接口：futures_warehouse_receipt_dce
 
-目标地址: http://www.dce.com.cn/dce/channel/list/187.html
+目标地址：http://www.dce.com.cn/dce/channel/list/187.html
 
-描述: 大连商品交易所-行情数据-统计数据-日统计-仓单日报
+描述：大连商品交易所-行情数据-统计数据-日统计-仓单日报
 
-限量: 单次返回当前交易日的所有仓单日报数据
+限量：单次返回当前交易日的所有仓单日报数据
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20251027"; 交易日 |
+| date | str | date="20251027"；交易日 |
 
 输出参数
 
@@ -1278,27 +1278,27 @@ print(futures_warehouse_receipt_dce_df)
 190  None    总计    None         None    315072    314394   -678
 ```
 
-##### 仓单日报-上海期货交易所
+#### 仓单日报-上海期货交易所
 
-接口: futures_shfe_warehouse_receipt
+接口：futures_shfe_warehouse_receipt
 
-目标地址: https://tsite.shfe.com.cn/statements/dataview.html?paramid=dailystock&paramdate=20200703
+目标地址：https://tsite.shfe.com.cn/statements/dataview.html?paramid=dailystock&paramdate=20200703
 
-描述: 提供上海期货交易所指定交割仓库期货仓单日报
+描述：提供上海期货交易所指定交割仓库期货仓单日报
 
-限量: 单次返回当前交易日的所有仓单日报数据
+限量：单次返回当前交易日的所有仓单日报数据
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20200702"; 交易日 |
+| date | str | date="20200702"；交易日 |
 
 输出参数
 
 | 名称    | 类型   | 描述                                     |
 |-------|------|----------------------------------------|
-| 键值对字典 | dict | 键值对, 键为品种代码, 值为 pandas.DataFrame 格式的数据 |
+| 键值对字典 | dict | 键值对，键为品种代码，值为 pandas.DataFrame 格式的数据 |
 
 接口示例
 
@@ -1381,27 +1381,27 @@ print(futures_shfe_warehouse_receipt_df)
 84       铝      20          999999999  ...    90328       603   200000         2}
 ```
 
-##### 仓单日报-广州期货交易所
+#### 仓单日报-广州期货交易所
 
-接口: futures_gfex_warehouse_receipt
+接口：futures_gfex_warehouse_receipt
 
-目标地址: http://www.gfex.com.cn/gfex/cdrb/hqsj_tjsj.shtml
+目标地址：http://www.gfex.com.cn/gfex/cdrb/hqsj_tjsj.shtml
 
-描述: 广州期货交易所-行情数据-仓单日报
+描述：广州期货交易所-行情数据-仓单日报
 
-限量: 单次返回当前交易日的所有仓单日报数据
+限量：单次返回当前交易日的所有仓单日报数据
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20240122"; 交易日 |
+| date | str | date="20240122"；交易日 |
 
 输出参数
 
 | 名称    | 类型   | 描述                                     |
 |-------|------|----------------------------------------|
-| 键值对字典 | dict | 键值对, 键为品种代码, 值为 pandas.DataFrame 格式的数据 |
+| 键值对字典 | dict | 键值对，键为品种代码，值为 pandas.DataFrame 格式的数据 |
 
 接口示例
 
@@ -1458,21 +1458,21 @@ print(futures_gfex_warehouse_receipt_df)
 12  碳酸锂  九岭锂业（宜春宜丰）   1500   1500    0}
 ```
 
-#### 期转现-大商所
+### 期转现-大商所
 
-接口: futures_to_spot_dce
+接口：futures_to_spot_dce
 
-目标地址: http://www.dce.com.cn/dalianshangpin/xqsj/tjsj26/jgtj/qzxcx/index.html
+目标地址：http://www.dce.com.cn/dalianshangpin/xqsj/tjsj26/jgtj/qzxcx/index.html
 
-描述: 大连商品交易所-期转现统计数据
+描述：大连商品交易所-期转现统计数据
 
-限量: 单次返回指定交易日的期转现统计数据
+限量：单次返回指定交易日的期转现统计数据
 
 输入参数
 
 | 名称   | 类型  | 描述                  |
 |------|-----|---------------------|
-| date | str | date="202312"; 交易年月 |
+| date | str | date="202312"；交易年月 |
 
 输出参数
 
@@ -1480,7 +1480,7 @@ print(futures_gfex_warehouse_receipt_df)
 |---------|--------|---------|
 | 合约代码    | object | -       |
 | 期转现发生日期 | object | -       |
-| 期转现数量   | int64  | 注意单位: 手 |
+| 期转现数量   | int64  | 注意单位：手 |
 
 接口示例
 
@@ -1500,28 +1500,28 @@ print(futures_to_spot_dce_df)
 2  eb2312  2023-12-20    176
 ```
 
-#### 期转现-郑商所
+### 期转现-郑商所
 
-接口: futures_to_spot_czce
+接口：futures_to_spot_czce
 
-目标地址: http://www.czce.com.cn/cn/jysj/qzxtj/H770311index_1.htm
+目标地址：http://www.czce.com.cn/cn/jysj/qzxtj/H770311index_1.htm
 
-描述: 郑州商品交易所-期转现统计数据
+描述：郑州商品交易所-期转现统计数据
 
-限量: 单次返回指定交易日的期转现统计数据
+限量：单次返回指定交易日的期转现统计数据
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20210112"; 交易日 |
+| date | str | date="20210112"；交易日 |
 
 输出参数
 
 | 名称   | 类型     | 描述       |
 |------|--------|----------|
 | 合约代码 | object | -        |
-| 合约数量 | int64  | 注意: 单边计算 |
+| 合约数量 | int64  | 注意：单边计算 |
 
 接口示例
 
@@ -1540,21 +1540,21 @@ print(futures_to_spot_czce_df)
 1  CJ401    10
 ```
 
-#### 期转现-上期所
+### 期转现-上期所
 
-接口: futures_to_spot_shfe
+接口：futures_to_spot_shfe
 
-目标地址: https://tsite.shfe.com.cn/statements/dataview.html?paramid=kx
+目标地址：https://tsite.shfe.com.cn/statements/dataview.html?paramid=kx
 
-描述: 上海期货交易所-期转现数据
+描述：上海期货交易所-期转现数据
 
-限量: 单次返回指定交易月份的期转现数据
+限量：单次返回指定交易月份的期转现数据
 
 输入参数
 
 | 名称   | 类型  | 描述                  |
 |------|-----|---------------------|
-| date | str | date="202312"; 交易月份 |
+| date | str | date="202312"；交易月份 |
 
 输出参数
 
@@ -1565,7 +1565,7 @@ print(futures_to_spot_czce_df)
 | 交割量  | float64 | -  |
 | 期转现量 | float64 | -  |
 
-注意:
+注意：
 
 1 铜、铜(BC)、铝、锌、铅、镍、锡、螺纹钢、线材、热轧卷板、天然橡胶、20号胶、低硫燃料油、燃料油、石油沥青、纸浆、不锈钢的数量单位为：吨；黄金的数量单位为：克；白银的数量单位为：千克；原油的数量单位为：桶。
 2 交割量、期转现量为单向计算。
@@ -1615,21 +1615,21 @@ print(futures_to_spot_shfe_df)
 29  2023-12-15  sp2312   70060.0     0.0
 ```
 
-#### 交割统计-大商所
+### 交割统计-大商所
 
-接口: futures_delivery_dce
+接口：futures_delivery_dce
 
-目标地址: http://www.dce.com.cn/dalianshangpin/xqsj/tjsj26/jgtj/jgsj/index.html
+目标地址：http://www.dce.com.cn/dalianshangpin/xqsj/tjsj26/jgtj/jgsj/index.html
 
-描述: 大连商品交易所-交割统计
+描述：大连商品交易所-交割统计
 
-限量: 单次返回指定交易月份的交割统计数据
+限量：单次返回指定交易月份的交割统计数据
 
 输入参数
 
 | 名称   | 类型  | 描述                  |
 |------|-----|---------------------|
-| date | str | date="202312"; 交易月份 |
+| date | str | date="202312"；交易月份 |
 
 输出参数
 
@@ -1684,21 +1684,21 @@ print(futures_delivery_dce_df)
 27     豆油   y2312  2023-12-19     67    5496680
 ```
 
-#### 交割统计-郑商所
+### 交割统计-郑商所
 
-接口: futures_delivery_czce
+接口：futures_delivery_czce
 
-目标地址: http://www.czce.com.cn/cn/jysj/ydjgcx/H770316index_1.htm
+目标地址：http://www.czce.com.cn/cn/jysj/ydjgcx/H770316index_1.htm
 
-描述: 郑州商品交易所-交割统计
+描述：郑州商品交易所-交割统计
 
-限量: 单次返回指定交易月份的交割统计数据
+限量：单次返回指定交易月份的交割统计数据
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20210112"; 交易日 |
+| date | str | date="20210112"；交易日 |
 
 输出参数
 
@@ -1706,7 +1706,7 @@ print(futures_delivery_dce_df)
 |------|--------|----------------|
 | 品种   | object | -              |
 | 交割数量 | int64  | 按单边统计          |
-| 交割额  | int64  | 注意单位: 元; 按单边统计 |
+| 交割额  | int64  | 注意单位：元；按单边统计 |
 
 接口示例
 
@@ -1730,31 +1730,31 @@ print(futures_delivery_monthly_czce_df)
 6      合计  2050  137920670
 ```
 
-#### 交割统计-上期所
+### 交割统计-上期所
 
-接口: futures_delivery_shfe
+接口：futures_delivery_shfe
 
-目标地址: https://tsite.shfe.com.cn/statements/dataview.html?paramid=kx
+目标地址：https://tsite.shfe.com.cn/statements/dataview.html?paramid=kx
 
-描述: 上海期货交易所-交割统计
+描述：上海期货交易所-交割统计
 
-限量: 单次返回指定交易月份的交割统计数据
+限量：单次返回指定交易月份的交割统计数据
 
 输入参数
 
 | 名称   | 类型  | 描述                  |
 |------|-----|---------------------|
-| date | str | date="202312"; 交易月份 |
+| date | str | date="202312"；交易月份 |
 
 输出参数
 
 | 名称       | 类型      | 描述                                        |
 |----------|---------|-------------------------------------------|
 | 品种       | object  | -                                         |
-| 交割量-本月   | int64   | 注意单位: 手; 交割量单边计算; 交割数据统计期为上月 16 日到本月 15 日 |
-| 交割量-比重   | float64 | 注意单位: %                                   |
-| 交割量-本年累计 | int64   | 注意单位: 手; 交割量单边计算; 交割数据统计期为上月 16 日到本月 15 日 |
-| 交割量-累计同比 | float64 | 注意单位: %                                   |
+| 交割量-本月   | int64   | 注意单位：手；交割量单边计算；交割数据统计期为上月 16 日到本月 15 日 |
+| 交割量-比重   | float64 | 注意单位：%                                   |
+| 交割量-本年累计 | int64   | 注意单位：手；交割量单边计算；交割数据统计期为上月 16 日到本月 15 日 |
+| 交割量-累计同比 | float64 | 注意单位：%                                   |
 
 接口示例
 
@@ -1795,21 +1795,21 @@ print(futures_delivery_shfe_df)
 23       总计   46767  100.000000    939027   14.213102
 ```
 
-#### 交割配对-大商所
+### 交割配对-大商所
 
-接口: futures_delivery_match_dce
+接口：futures_delivery_match_dce
 
-目标地址: http://www.dce.com.cn/dalianshangpin/xqsj/tjsj26/jgtj/jgsj/index.html
+目标地址：http://www.dce.com.cn/dalianshangpin/xqsj/tjsj26/jgtj/jgsj/index.html
 
-描述: 大连商品交易所-交割配对
+描述：大连商品交易所-交割配对
 
-限量: 单次返回指定品种的的交割配对数据
+限量：单次返回指定品种的的交割配对数据
 
 输入参数
 
 | 名称     | 类型  | 描述               |
 |--------|-----|------------------|
-| symbol | str | symbol="a"; 交易品种 |
+| symbol | str | symbol="a"；交易品种 |
 
 输出参数
 
@@ -1822,7 +1822,7 @@ print(futures_delivery_shfe_df)
 | 卖会员号  | object  | -  |
 | 交割结算价 | float64 | -  |
 
-注意:
+注意：
 
 1 价格：自2019年12月02日起，纤维板报价单位由元/张改为元/立方米
 2 配对手数：手
@@ -1856,21 +1856,21 @@ print(futures_delivery_match_dce_df)
 [1420 rows x 6 columns]
 ```
 
-#### 交割配对-郑商所
+### 交割配对-郑商所
 
-接口: futures_delivery_match_czce
+接口：futures_delivery_match_czce
 
-目标地址: http://www.czce.com.cn/cn/jysj/jgpd/H770308index_1.htm
+目标地址：http://www.czce.com.cn/cn/jysj/jgpd/H770308index_1.htm
 
-描述: 郑州商品交易所-交割配对
+描述：郑州商品交易所-交割配对
 
-限量: 单次返回指定品种的的交割配对数据
+限量：单次返回指定品种的的交割配对数据
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20210106"; 交易日 |
+| date | str | date="20210106"；交易日 |
 
 输出参数
 
@@ -1880,7 +1880,7 @@ print(futures_delivery_match_dce_df)
 | 卖方会员-会员简称 | object  | -             |
 | 买方会员      | object  | -             |
 | 买方会员-会员简称 | object  | -             |
-| 交割量       | float64 | 注意单位: 手(单边计算) |
+| 交割量       | float64 | 注意单位：手（单边计算） |
 | 配对日期      | object  | -             |
 | 合约代码      | object  | -             |
 
@@ -1926,23 +1926,23 @@ print(futures_delivery_match_czce_df)
 26  0068      中粮期货  0188      永安期货   1  2021-01-06  CJ101
 ```
 
-#### 库存周报
+### 库存周报
 
-##### 上海期货交易所
+#### 上海期货交易所
 
-接口: futures_stock_shfe_js
+接口：futures_stock_shfe_js
 
-目标地址: https://datacenter.jin10.com/reportType/dc_shfe_weekly_stock
+目标地址：https://datacenter.jin10.com/reportType/dc_shfe_weekly_stock
 
-描述: 金十财经-上海期货交易所指定交割仓库库存周报
+描述：金十财经-上海期货交易所指定交割仓库库存周报
 
-限量: 单次返回指定 date 的库存周报数据
+限量：单次返回指定 date 的库存周报数据
 
 输入参数
 
 | 名称   | 类型  | 描述                                    |
 |------|-----|---------------------------------------|
-| date | str | date="20240419"; 库存周报只在每周的最后一个交易日公布数据 |
+| date | str | date="20240419"；库存周报只在每周的最后一个交易日公布数据 |
 
 输出参数
 
@@ -1987,22 +1987,22 @@ print(futures_stock_shfe_js_df)
 17       20号胶          141624          140737     887   0.63
 ```
 
-#### 成交持仓
+### 成交持仓
 
-接口: futures_hold_pos_sina
+接口：futures_hold_pos_sina
 
-目标地址: https://vip.stock.finance.sina.com.cn/q/view/vFutures_Positions_cjcc.php
+目标地址：https://vip.stock.finance.sina.com.cn/q/view/vFutures_Positions_cjcc.php
 
-描述: 新浪财经-期货-成交持仓
+描述：新浪财经-期货-成交持仓
 
-限量: 单次返回指定合约的成交持仓数据
+限量：单次返回指定合约的成交持仓数据
 
 输入参数
 
 | 名称       | 类型  | 描述                                              |
 |----------|-----|-------------------------------------------------|
 | symbol   | str | symbol="成交量"; choice of {"成交量", "多单持仓", "空单持仓"} |
-| contract | str | contract="OI2501"; 只限于商品期货                      |
+| contract | str | contract="OI2501"；只限于商品期货                      |
 | date     | str | date="20240223"                                 |
 
 输出参数
@@ -2049,21 +2049,21 @@ print(futures_hold_pos_sina_df)
 19  20    东方财富（代客）   7220  -1248.0
 ```
 
-#### 现期图
+### 现期图
 
-接口: futures_spot_sys
+接口：futures_spot_sys
 
-目标地址: https://www.100ppi.com/sf/792.html
+目标地址：https://www.100ppi.com/sf/792.html
 
-描述: 生意社-商品与期货-现期图
+描述：生意社-商品与期货-现期图
 
-限量: 单次返回指定品种的现期图数据
+限量：单次返回指定品种的现期图数据
 
 输入参数
 
 | 名称       | 类型  | 描述                                                  |
 |----------|-----|-----------------------------------------------------|
-| symbol   | str | symbol="铜"; 期货品种                                    |
+| symbol   | str | symbol="铜"；期货品种                                    |
 | contract | str | indicator="市场价格"; choice of {"市场价格", "基差率", "主力基差"} |
 
 输出参数-市场价格
@@ -2167,23 +2167,23 @@ print(futures_spot_sys_df)
 10  02-24     NaN
 ```
 
-#### 合约信息
+### 合约信息
 
-##### 上海期货交易所
+#### 上海期货交易所
 
-接口: futures_contract_info_shfe
+接口：futures_contract_info_shfe
 
-目标地址: https://tsite.shfe.com.cn/bourseService/businessdata/summaryinquiry/
+目标地址：https://tsite.shfe.com.cn/bourseService/businessdata/summaryinquiry/
 
-描述: 上海期货交易所-交易所服务-业务数据-交易参数汇总查询
+描述：上海期货交易所-交易所服务-业务数据-交易参数汇总查询
 
-限量: 单次返回指定 date 的期货合约信息数据
+限量：单次返回指定 date 的期货合约信息数据
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20240513"; 交易日 |
+| date | str | date="20240513"；交易日 |
 
 输出参数
 
@@ -2225,21 +2225,21 @@ print(futures_contract_info_shfe_df)
 [276 rows x 8 columns]
 ```
 
-##### 上海国际能源交易中心
+#### 上海国际能源交易中心
 
-接口: futures_contract_info_ine
+接口：futures_contract_info_ine
 
-目标地址: https://www.ine.cn/bourseService/summary/?name=currinstrumentprop
+目标地址：https://www.ine.cn/bourseService/summary/?name=currinstrumentprop
 
-描述: 上海国际能源交易中心-业务指南-交易参数汇总(期货)
+描述：上海国际能源交易中心-业务指南-交易参数汇总（期货）
 
-限量: 单次返回指定 date 的期货合约信息数据
+限量：单次返回指定 date 的期货合约信息数据
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20241129"; 交易日 |
+| date | str | date="20241129"；交易日 |
 
 输出参数
 
@@ -2280,15 +2280,15 @@ print(futures_contract_info_ine_df)
 [62 rows x 7 columns]
 ```
 
-##### 大连商品交易所
+#### 大连商品交易所
 
-接口: futures_contract_info_dce
+接口：futures_contract_info_dce
 
-目标地址: http://www.dce.com.cn/dce/channel/list/180.html
+目标地址：http://www.dce.com.cn/dce/channel/list/180.html
 
-描述: 大连商品交易所-数据中心-业务数据-交易参数-合约信息
+描述：大连商品交易所-数据中心-业务数据-交易参数-合约信息
 
-限量: 单次返回最近交易日的期货合约信息数据
+限量：单次返回最近交易日的期货合约信息数据
 
 输入参数
 
@@ -2335,21 +2335,21 @@ print(futures_contract_info_dce_df)
 [237 rows x 7 columns]
 ```
 
-##### 郑州商品交易所
+#### 郑州商品交易所
 
-接口: futures_contract_info_czce
+接口：futures_contract_info_czce
 
-目标地址: http://www.czce.com.cn/cn/jysj/cksj/H770322index_1.htm
+目标地址：http://www.czce.com.cn/cn/jysj/cksj/H770322index_1.htm
 
-描述: 郑州商品交易所-交易数据-参考数据
+描述：郑州商品交易所-交易数据-参考数据
 
-限量: 单次返回指定 date 的期货合约信息数据
+限量：单次返回指定 date 的期货合约信息数据
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20240228"; 交易日 |
+| date | str | date="20240228"；交易日 |
 
 输出参数
 
@@ -2423,15 +2423,15 @@ print(futures_contract_info_czce_df)
 [218 rows x 40 columns]
 ```
 
-##### 广州期货交易所
+#### 广州期货交易所
 
-接口: futures_contract_info_gfex
+接口：futures_contract_info_gfex
 
-目标地址: http://www.gfex.com.cn/gfex/hyxx/ywcs.shtml
+目标地址：http://www.gfex.com.cn/gfex/hyxx/ywcs.shtml
 
-描述: 广州期货交易所-业务/服务-合约信息
+描述：广州期货交易所-业务/服务-合约信息
 
-限量: 单次返回最近交易日的期货合约信息数据
+限量：单次返回最近交易日的期货合约信息数据
 
 输入参数
 
@@ -2486,21 +2486,21 @@ print(futures_contract_info_gfex_df)
 19  工业硅  si2410     5       5  2024-02-23  2024-10-21  2024-10-24
 ```
 
-##### 中国金融期货交易所
+#### 中国金融期货交易所
 
-接口: futures_contract_info_cffex
+接口：futures_contract_info_cffex
 
-目标地址: http://www.gfex.com.cn/gfex/hyxx/ywcs.shtml
+目标地址：http://www.gfex.com.cn/gfex/hyxx/ywcs.shtml
 
-描述: 中国金融期货交易所-数据-交易参数
+描述：中国金融期货交易所-数据-交易参数
 
-限量: 单次返回指定 date 的期货合约信息数据
+限量：单次返回指定 date 的期货合约信息数据
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20240228"; 交易日 |
+| date | str | date="20240228"；交易日 |
 
 输出参数
 
@@ -2546,36 +2546,36 @@ print(futures_contract_info_cffex_df)
 [836 rows x 12 columns]
 ```
 
-### 期货行情数据
+## 期货行情数据
 
-#### 内盘-实时行情数据
+### 内盘-实时行情数据
 
-接口: futures_zh_spot
+接口：futures_zh_spot
 
-目标地址: https://finance.sina.com.cn/futuremarket/
+目标地址：https://finance.sina.com.cn/futuremarket/
 
-描述: 新浪财经-期货页面的实时行情数据
+描述：新浪财经-期货页面的实时行情数据
 
-限量: 单次返回当日可以订阅的所有期货品种数据；只能获取近期合约的数据
+限量：单次返回当日可以订阅的所有期货品种数据；只能获取近期合约的数据
 
 输入参数
 
 | 名称             | 类型  | 描述                                                    |
 |----------------|-----|-------------------------------------------------------|
-| subscribe_list | str | 需要订阅的合约代码; e.g., 按照示例获取                               |
-| market         | str | market="CF"; market="CF": 商品期货, market="FF": 金融期货     |
-| adjust         | str | adjust='0'; adjust='1': 返回合约、交易所和最小变动单位的实时数据, 返回数据会变慢 |
+| subscribe_list | str | 需要订阅的合约代码；e.g.，按照示例获取                               |
+| market         | str | market="CF"; market="CF": 商品期货，market="FF": 金融期货     |
+| adjust         | str | adjust='0'; adjust='1': 返回合约、交易所和最小变动单位的实时数据，返回数据会变慢 |
 
 输出参数
 
 | 名称                | 类型      | 描述                            |
 |-------------------|---------|-------------------------------|
 | symbol            | object  | 品种                            |
-| time              | object  | 时间, e.g., 144050表示下午14点40分50秒 |
+| time              | object  | 时间，e.g., 144050表示下午14点40分50秒 |
 | open              | float64 | 开盘                            |
 | high              | float64 | 高                             |
 | low               | float64 | 低                             |
-| current_price     | float64 | 当前价格(买价)                      |
+| current_price     | float64 | 当前价格（买价）                      |
 | bid_price         | float64 | 买                             |
 | ask_price         | float64 | 卖价                            |
 | buy_vol           | int64   | 买量                            |
@@ -2622,7 +2622,7 @@ print(futures_zh_spot_df)
 3   豆粕2205  151039  3151.0  ...     3164.0      3153.0             3159.0
 ```
 
-接口示例-订阅所有商品期货(大商所, 上期所, 郑商所主力合约)
+接口示例-订阅所有商品期货（大商所，上期所，郑商所主力合约）
 
 ```python
 import time
@@ -2705,7 +2705,7 @@ while True:
 59    工业硅2308  150015   15170.00  ...   15165.00    15190.00           15290.00
 ```
 
-接口示例-订阅所有金融期货(中金所主力合约)
+接口示例-订阅所有金融期货（中金所主力合约）
 
 ```python
 import time
@@ -2734,21 +2734,21 @@ while True:
 3  113365.000  73086  353463074.600
 ```
 
-#### 内盘-实时行情数据(品种)
+### 内盘-实时行情数据（品种）
 
-接口: futures_zh_realtime
+接口：futures_zh_realtime
 
-目标地址: https://vip.stock.finance.sina.com.cn/quotes_service/view/qihuohangqing.html#titlePos_1
+目标地址：https://vip.stock.finance.sina.com.cn/quotes_service/view/qihuohangqing.html#titlePos_1
 
-描述: 新浪财经-期货实时行情数据
+描述：新浪财经-期货实时行情数据
 
-限量: 单次返回指定 symbol 的数据
+限量：单次返回指定 symbol 的数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                        |
 |--------|-----|-----------------------------------------------------------|
-| symbol | str | symbol="白糖", 品种名称；可以通过 ak.futures_symbol_mark() 获取所有品种命名表 |
+| symbol | str | symbol="白糖"，品种名称；可以通过 ak.futures_symbol_mark() 获取所有品种命名表 |
 
 输出参数
 
@@ -2834,21 +2834,21 @@ print(big_df)
 569  TS2212    cffex    2年期国债期货2212  ...  0.0  0.0          100.92
 ```
 
-#### 内盘-分时行情数据
+### 内盘-分时行情数据
 
-接口: futures_zh_minute_sina
+接口：futures_zh_minute_sina
 
-目标地址: http://vip.stock.finance.sina.com.cn/quotes_service/view/qihuohangqing.html#titlePos_3
+目标地址：http://vip.stock.finance.sina.com.cn/quotes_service/view/qihuohangqing.html#titlePos_3
 
-描述: 新浪财经-期货-分时数据
+描述：新浪财经-期货-分时数据
 
-限量: 单次返回指定 symbol 和 period 的分时数据
+限量：单次返回指定 symbol 和 period 的分时数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                                              |
 |--------|-----|-------------------------------------------------------------------------------------------------|
-| symbol | str | symbol="IF2008"; 具体合约(期货品种符号需要大写), 可以通过调用 ak.match_main_contract(symbol="cffex") 接口获取, 或者访问网页获取 |
+| symbol | str | symbol="IF2008"；具体合约（期货品种符号需要大写），可以通过调用 ak.match_main_contract(symbol="cffex") 接口获取，或者访问网页获取 |
 | period | str | period="1"; choice of {"1": "1分钟", "5": "5分钟", "15": "15分钟", "30": "30分钟", "60": "60分钟"}        |
 
 输出参数
@@ -2890,21 +2890,21 @@ print(futures_zh_minute_sina_df)
 [1023 rows x 7 columns]
 ```
 
-#### 内盘-历史行情数据-东财
+### 内盘-历史行情数据-东财
 
-接口: futures_hist_em
+接口：futures_hist_em
 
-目标地址: https://qhweb.eastmoney.com/quote
+目标地址：https://qhweb.eastmoney.com/quote
 
-描述: 东方财富网-期货行情-行情数据；其中 weekly, monthly 获取的成交额和持仓量未经验证
+描述：东方财富网-期货行情-行情数据；其中 weekly, monthly 获取的成交额和持仓量未经验证
 
-限量: 单次返回指定 symbol 的所有数据; 只能获取当期合约;
+限量：单次返回指定 symbol 的所有数据；只能获取当期合约；
 
 输入参数
 
 | 名称         | 类型  | 描述                                                                 |
 |------------|-----|--------------------------------------------------------------------|
-| symbol     | str | symbol="热卷主连"; 具体合约可以通过 ak.futures_hist_table_em() 获取所有当期能获取数据的合约表 |
+| symbol     | str | symbol="热卷主连"；具体合约可以通过 ak.futures_hist_table_em() 获取所有当期能获取数据的合约表 |
 | period     | str | period="daily"; choice of {"daily", "weekly", "monthly"}           |
 | start_date | str | start_date="19900101";                                             |
 | end_date   | str | end_date="20500101";                                               |
@@ -2919,7 +2919,7 @@ print(futures_zh_minute_sina_df)
 | 最低  | int64   | -       |
 | 收盘  | int64   | -       |
 | 涨跌  | int64   | -       |
-| 涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅 | float64 | 注意单位：% |
 | 成交量 | int64   | -       |
 | 成交额 | int64   | -       |
 | 持仓量 | int64   | -       |
@@ -2951,21 +2951,21 @@ print(futures_hist_em_df)
 [2641 rows x 10 columns]
 ```
 
-#### 内盘-历史行情数据-新浪
+### 内盘-历史行情数据-新浪
 
-接口: futures_zh_daily_sina
+接口：futures_zh_daily_sina
 
-目标地址: https://finance.sina.com.cn/futures/quotes/V2105.shtml
+目标地址：https://finance.sina.com.cn/futures/quotes/V2105.shtml
 
-描述: 新浪财经-期货-日频数据
+描述：新浪财经-期货-日频数据
 
-限量: 单次返回指定 symbol 的所有日频数据; 期货连续合约为 品种代码+0，比如螺纹钢连续合约为 RB0;
+限量：单次返回指定 symbol 的所有日频数据；期货连续合约为 品种代码+0，比如螺纹钢连续合约为 RB0;
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                    |
 |--------|-----|-----------------------------------------------------------------------|
-| symbol | str | symbol="RB0"; 具体合约可以通过 ak.match_main_contract(symbol="shfe") 获取或者访问网页 |
+| symbol | str | symbol="RB0"；具体合约可以通过 ak.match_main_contract(symbol="shfe") 获取或者访问网页 |
 
 输出参数
 
@@ -3034,15 +3034,15 @@ print(futures_zh_daily_sina_df)
 [115 rows x 8 columns]
 ```
 
-#### 内盘-历史行情数据-交易所
+### 内盘-历史行情数据-交易所
 
-接口: get_futures_daily
+接口：get_futures_daily
 
-目标地址: 各交易所网站
+目标地址：各交易所网站
 
-描述: 提供各交易所各品种的网站的历史行情数据, 其中 20040625, 20070604, 20081226, 20090119 原网页数据缺失
+描述：提供各交易所各品种的网站的历史行情数据，其中 20040625, 20070604, 20081226, 20090119 原网页数据缺失
 
-限量: 单次返回指定时间段指定交易所的所有期货品种历史数据
+限量：单次返回指定时间段指定交易所的所有期货品种历史数据
 
 输入参数
 
@@ -3095,21 +3095,21 @@ print(get_futures_daily_df)
 2753   JM99  20200716  1193.58  ...  1195.49    1197.92      JM
 ```
 
-#### 内盘-结算参数数据
+### 内盘-结算参数数据
 
-接口: futures_settle
+接口：futures_settle
 
-目标地址: 各交易所网站
+目标地址：各交易所网站
 
-描述: 提供各交易所的结算参数数据，包括保证金、手续费、涨跌停板等参数
+描述：提供各交易所的结算参数数据，包括保证金、手续费、涨跌停板等参数
 
-限量: 单次返回指定日期指定交易所的结算参数数据；暂不支持 DCE
+限量：单次返回指定日期指定交易所的结算参数数据；暂不支持 DCE
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                 |
 |--------|-----|--------------------------------------------------------------------|
-| date   | str | date="20250117"; 结算参数日期，默认为当前交易日                                   |
+| date   | str | date="20250117"；结算参数日期，默认为当前交易日                                   |
 | market | str | market="CFFEX"; choice of {"CFFEX", "INE", "CZCE", "SHFE", "GFEX"} |
 
 输出参数
@@ -3164,15 +3164,15 @@ print(futures_settle_df)
 [62 rows x 20 columns]
 ```
 
-#### 外盘-品种代码表
+### 外盘-品种代码表
 
-接口: futures_hq_subscribe_exchange_symbol
+接口：futures_hq_subscribe_exchange_symbol
 
-目标地址: https://finance.sina.com.cn/money/future/hf.html
+目标地址：https://finance.sina.com.cn/money/future/hf.html
 
-描述: 新浪财经-外盘商品期货品种代码表数据
+描述：新浪财经-外盘商品期货品种代码表数据
 
-限量: 单次返回当前交易日的订阅的所有期货品种的品种代码表数据
+限量：单次返回当前交易日的订阅的所有期货品种的品种代码表数据
 
 输入参数
 
@@ -3228,21 +3228,21 @@ print(futures_hq_subscribe_exchange_symbol_df)
 25     欧洲碳排放   EUA
 ```
 
-#### 外盘-实时行情数据
+### 外盘-实时行情数据
 
-接口: futures_foreign_commodity_realtime
+接口：futures_foreign_commodity_realtime
 
-目标地址: https://finance.sina.com.cn/money/future/hf.html
+目标地址：https://finance.sina.com.cn/money/future/hf.html
 
-描述: 新浪财经-外盘商品期货数据
+描述：新浪财经-外盘商品期货数据
 
-限量: 单次返回当前交易日的订阅的所有期货品种的数据
+限量：单次返回当前交易日的订阅的所有期货品种的数据
 
 输入参数
 
 | 名称     | 类型          | 描述                                                                     |
 |--------|-------------|------------------------------------------------------------------------|
-| symbol | list or str | 需要订阅的合约代码; 调用 **ak.futures_hq_subscribe_exchange_symbol()** 获取字段及代码对应表 |
+| symbol | list or str | 需要订阅的合约代码；调用 **ak.futures_hq_subscribe_exchange_symbol()** 获取字段及代码对应表 |
 
 输出参数
 
@@ -3331,15 +3331,15 @@ while True:
 [29 rows x 14 columns]
 ```
 
-#### 外盘-实时行情数据-东财
+### 外盘-实时行情数据-东财
 
-接口: futures_global_spot_em
+接口：futures_global_spot_em
 
-目标地址: https://quote.eastmoney.com/center/gridlist.html#futures_global
+目标地址：https://quote.eastmoney.com/center/gridlist.html#futures_global
 
-描述: 东方财富网-行情中心-期货市场-国际期货-实时行情数据
+描述：东方财富网-行情中心-期货市场-国际期货-实时行情数据
 
-限量: 单次返回所有期货品种的实时行情数据
+限量：单次返回所有期货品种的实时行情数据
 
 输入参数
 
@@ -3356,7 +3356,7 @@ while True:
 | 名称  | object  | -       |
 | 最新价 | float64 | -       |
 | 涨跌额 | float64 | -       |
-| 涨跌幅 | float64 | 注意单位: % |
+| 涨跌幅 | float64 | 注意单位：% |
 | 今开  | float64 | -       |
 | 最高  | float64 | -       |
 | 最低  | float64 | -       |
@@ -3393,21 +3393,21 @@ print(futures_global_spot_em_df)
 [620 rows x 14 columns]
 ```
 
-#### 外盘-历史行情数据-东财
+### 外盘-历史行情数据-东财
 
-接口: futures_global_hist_em
+接口：futures_global_hist_em
 
-目标地址: https://quote.eastmoney.com/globalfuture/HG25J.html
+目标地址：https://quote.eastmoney.com/globalfuture/HG25J.html
 
-描述: 东方财富网-行情中心-期货市场-国际期货-历史行情数据
+描述：东方财富网-行情中心-期货市场-国际期货-历史行情数据
 
-限量: 单次返回指定品种的历史数据
+限量：单次返回指定品种的历史数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                        |
 |--------|-----|---------------------------------------------------------------------------|
-| symbol | str | symbol="HG00Y"; 品种代码；可以通过 ak.futures_global_spot_em() 来获取所有可获取历史行情数据的品种代码 |
+| symbol | str | symbol="HG00Y"；品种代码；可以通过 ak.futures_global_spot_em() 来获取所有可获取历史行情数据的品种代码 |
 
 输出参数
 
@@ -3421,7 +3421,7 @@ print(futures_global_spot_em_df)
 | 最高  | float64 | -       |
 | 最低  | float64 | -       |
 | 总量  | int64   | -       |
-| 涨幅  | float64 | 注意单位: % |
+| 涨幅  | float64 | 注意单位：% |
 | 持仓  | object  | -       |
 | 日增  | int64   | -       |
 
@@ -3452,21 +3452,21 @@ print(futures_global_hist_em_df)
 [3485 rows x 11 columns]
 ```
 
-#### 外盘-历史行情数据-新浪
+### 外盘-历史行情数据-新浪
 
-接口: futures_foreign_hist
+接口：futures_foreign_hist
 
-目标地址: https://finance.sina.com.cn/futuremarket/
+目标地址：https://finance.sina.com.cn/futuremarket/
 
-描述: 新浪财经-期货外盘历史行情数据
+描述：新浪财经-期货外盘历史行情数据
 
-限量: 单次返回指定品种的历史数据
+限量：单次返回指定品种的历史数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                           |
 |--------|-----|------------------------------------------------------------------------------|
-| symbol | str | symbol="ZSD"; 外盘期货的 **symbol** 可以通过 **ak.hf_subscribe_exchange_symbol()** 获取 |
+| symbol | str | symbol="ZSD"；外盘期货的 **symbol** 可以通过 **ak.futures_hq_subscribe_exchange_symbol()** 获取 |
 
 输出参数
 
@@ -3506,21 +3506,21 @@ print(futures_foreign_hist_df)
 [2546 rows x 8 columns]
 ```
 
-#### 外盘-合约详情
+### 外盘-合约详情
 
-接口: futures_foreign_detail
+接口：futures_foreign_detail
 
-目标地址: https://finance.sina.com.cn/futuremarket/
+目标地址：https://finance.sina.com.cn/futuremarket/
 
-描述: 新浪财经-期货外盘期货合约详情
+描述：新浪财经-期货外盘期货合约详情
 
-限量: 单次返回指定品种的合约详情数据
+限量：单次返回指定品种的合约详情数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                      |
 |--------|-----|-------------------------------------------------------------------------|
-| symbol | str | symbol="ZSD"; 外盘期货的 **symbol** 可以通过 **hf_subscribe_exchange_symbol** 获取 |
+| symbol | str | symbol="ZSD"；外盘期货的 **symbol** 可以通过 **ak.futures_hq_subscribe_exchange_symbol()** 获取 |
 
 输出参数
 
@@ -3557,21 +3557,21 @@ print(futures_foreign_detail_df)
 3    交易代码                             ZSD  ...    附加信息                     NaN
 ```
 
-#### 新加坡交易所期货
+### 新加坡交易所期货
 
-接口: futures_settlement_price_sgx
+接口：futures_settlement_price_sgx
 
-目标地址: https://www.sgx.com/zh-hans/research-education/derivatives
+目标地址：https://www.sgx.com/zh-hans/research-education/derivatives
 
-描述: 新加坡交易所-衍生品-历史数据-历史结算价格; 数据于下个工作日新加坡时间下午 2 点起提供
+描述：新加坡交易所-衍生品-历史数据-历史结算价格；数据于下个工作日新加坡时间下午 2 点起提供
 
-限量: 单次获取指定交易日前一日的所有期货品种的结算价数据; 只能获取过去 60 个交易日内的数据; 由于国内网络限制, 请使用代理访问
+限量：单次获取指定交易日前一日的所有期货品种的结算价数据；只能获取过去 60 个交易日内的数据；由于国内网络限制，请使用代理访问
 
 输入参数
 
 | 名称   | 类型  | 描述                   |
 |------|-----|----------------------|
-| date | str | date="20231107"; 交易日 |
+| date | str | date="20231107"；交易日 |
 
 输出参数
 
@@ -3617,21 +3617,21 @@ print(futures_settlement_price_sgx_df)
 [3170 rows x 12 columns]
 ```
 
-### 期货连续合约
+## 期货连续合约
 
-接口: futures_main_sina
+接口：futures_main_sina
 
-目标地址: https://vip.stock.finance.sina.com.cn/quotes_service/view/qihuohangqing.html#titlePos_0
+目标地址：https://vip.stock.finance.sina.com.cn/quotes_service/view/qihuohangqing.html#titlePos_0
 
-描述: 新浪财经-期货-主力连续合约历史数据
+描述：新浪财经-期货-主力连续合约历史数据
 
-限量: 单次返回单个期货品种的主力连续合约的日频历史数据
+限量：单次返回单个期货品种的主力连续合约的日频历史数据
 
 输入参数
 
 | 名称         | 类型  | 描述                                                                            |
 |------------|-----|-------------------------------------------------------------------------------|
-| symbol     | str | symbol="IF0"; 请参考 **新浪连续合约品种一览表**, 也可通过 **ak.futures_display_main_sina()** 获取 |
+| symbol     | str | symbol="IF0"；请参考 **新浪连续合约品种一览表**，也可通过 **ak.futures_display_main_sina()** 获取 |
 | start_date | str | start_date="19900101";                                                        |
 | end_date   | str | end_date="22220101";                                                          |
 
@@ -3772,21 +3772,21 @@ print(futures_display_main_sina_df)
 62    TS0    cffex    2年期国债期货连续
 ```
 
-### 期货合约详情-新浪
+## 期货合约详情-新浪
 
-接口: futures_contract_detail
+接口：futures_contract_detail
 
-目标地址: https://finance.sina.com.cn/futures/quotes/V2101.shtml
+目标地址：https://finance.sina.com.cn/futures/quotes/V2101.shtml
 
-描述: 新浪财经-期货-期货合约详情数据
+描述：新浪财经-期货-期货合约详情数据
 
-限量: 单次返回指定 symbol 的合约详情数据
+限量：单次返回指定 symbol 的合约详情数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                              |
 |--------|-----|---------------------------------------------------------------------------------|
-| symbol | str | symbol='AP2101'; 请参考**新浪连续合约品种一览表**, 也可通过 **ak.futures_display_main_sina()** 获取 |
+| symbol | str | symbol='AP2101'；请参考**新浪连续合约品种一览表**，也可通过 **ak.futures_display_main_sina()** 获取 |
 
 新浪连续合约品种一览表（更新于 20241226）
 
@@ -3906,21 +3906,21 @@ print(futures_contract_detail_df)
 14    上市交易所                                            大连商品交易所
 ```
 
-### 期货合约详情-东财
+## 期货合约详情-东财
 
-接口: futures_contract_detail_em
+接口：futures_contract_detail_em
 
-目标地址: https://quote.eastmoney.com/qihuo/v2602F.html
+目标地址：https://quote.eastmoney.com/qihuo/v2602F.html
 
-描述: 东方财富-期货-期货合约详情数据
+描述：东方财富-期货-期货合约详情数据
 
-限量: 单次返回指定 symbol 的合约详情数据
+限量：单次返回指定 symbol 的合约详情数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                              |
 |--------|-----|---------------------------------------------------------------------------------|
-| symbol | str | symbol='v2602F'; 请参考东方财富的期货品种标识：https://quote.eastmoney.com/center/futures.html |
+| symbol | str | symbol='v2602F'；请参考东方财富的期货品种标识：https://quote.eastmoney.com/center/futures.html |
 
 输出参数
 
@@ -3959,17 +3959,17 @@ print(futures_contract_detail_em_df)
 14    上市交易所                                            大连商品交易所
 ```
 
+## 中证商品指数
+
 ### 中证商品指数
 
-#### 中证商品指数
+接口：futures_index_ccidx
 
-接口: futures_index_ccidx
+目标地址：http://www.ccidx.com/index.html
 
-目标地址: http://www.ccidx.com/index.html
+描述：中证商品指数
 
-描述: 中证商品指数
-
-限量: 单次返回指定 symbol 的指数日频率数据
+限量：单次返回指定 symbol 的指数日频率数据
 
 输入参数
 
@@ -4015,15 +4015,15 @@ print(futures_index_ccidx_df)
 [965 rows x 6 columns]
 ```
 
-### 现货与股票
+## 现货与股票
 
-接口: futures_spot_stock
+接口：futures_spot_stock
 
-目标地址: https://data.eastmoney.com/ifdata/xhgp.html
+目标地址：https://data.eastmoney.com/ifdata/xhgp.html
 
-描述: 东方财富网-数据中心-现货与股票
+描述：东方财富网-数据中心-现货与股票
 
-限量: 单次返回指定 indicator 的所有数据
+限量：单次返回指定 indicator 的所有数据
 
 输入参数
 
@@ -4036,15 +4036,15 @@ print(futures_index_ccidx_df)
 | 名称     | 类型      | 描述        |
 |--------|---------|-----------|
 | 商品名称   | object  | -         |
-| 近5月    | float64 | 注意: 具体的日期 |
-| 近4月    | float64 | 注意: 具体的日期 |
-| 近3月    | float64 | 注意: 具体的日期 |
-| 近2月    | float64 | 注意: 具体的日期 |
-| 近1月    | float64 | 注意: 具体的日期 |
+| 近5月    | float64 | 注意：具体的日期 |
+| 近4月    | float64 | 注意：具体的日期 |
+| 近3月    | float64 | 注意：具体的日期 |
+| 近2月    | float64 | 注意：具体的日期 |
+| 近1月    | float64 | 注意：具体的日期 |
 | 最新价    | float64 | -         |
-| 近半年涨跌幅 | float64 | 注意单位: %   |
-| 生产商    | object  | 注意: 字符串组成 |
-| 下游用户   | object  | 注意: 字符串组成 |
+| 近半年涨跌幅 | float64 | 注意单位：%   |
+| 生产商    | object  | 注意：字符串组成 |
+| 下游用户   | object  | 注意：字符串组成 |
 
 接口示例
 
@@ -4069,15 +4069,15 @@ print(futures_spot_stock_df)
 [7 rows x 10 columns]
 ```
 
-### COMEX 库存数据
+## COMEX 库存数据
 
-接口: futures_comex_inventory
+接口：futures_comex_inventory
 
-目标地址: https://data.eastmoney.com/pmetal/comex/by.html
+目标地址：https://data.eastmoney.com/pmetal/comex/by.html
 
-描述: 东方财富网-数据中心-期货期权-COMEX 库存数据
+描述：东方财富网-数据中心-期货期权-COMEX 库存数据
 
-限量: 单次返回指定 symbol 的所有历史数据
+限量：单次返回指定 symbol 的所有历史数据
 
 输入参数
 
@@ -4091,8 +4091,8 @@ print(futures_spot_stock_df)
 |---------------------|---------|----------|
 | 序号                  | int64   | -        |
 | 日期                  | object  | -        |
-| COMEX{symbol}库存量-吨  | float64 | 注意单位: 盎司 |
-| COMEX{symbol}库存量-盎司 | float64 | 注意单位: 吨  |
+| COMEX{symbol}库存量-吨  | float64 | 注意单位：盎司 |
+| COMEX{symbol}库存量-盎司 | float64 | 注意单位：吨  |
 
 接口示例
 
@@ -4121,17 +4121,17 @@ print(futures_comex_inventory_df)
 [1249 rows x 4 columns]
 ```
 
-### 生猪信息
+## 生猪信息
 
-#### 核心数据
+### 核心数据
 
-接口: futures_hog_core
+接口：futures_hog_core
 
-目标地址: https://zhujia.zhuwang.com.cn
+目标地址：https://zhujia.zhuwang.com.cn
 
-描述: 玄田数据-核心数据
+描述：玄田数据-核心数据
 
-限量: 单次返回指定 symbol 的所有历史数据
+限量：单次返回指定 symbol 的所有历史数据
 
 输入参数
 
@@ -4173,15 +4173,15 @@ print(futures_hog_core_df)
 [367 rows x 2 columns]
 ```
 
-#### 成本维度
+### 成本维度
 
-接口: futures_hog_cost
+接口：futures_hog_cost
 
-目标地址: https://zhujia.zhuwang.com.cn
+目标地址：https://zhujia.zhuwang.com.cn
 
-描述: 玄田数据-成本维度
+描述：玄田数据-成本维度
 
-限量: 单次返回指定 symbol 的所有历史数据
+限量：单次返回指定 symbol 的所有历史数据
 
 输入参数
 
@@ -4223,15 +4223,15 @@ print(futures_hog_cost_df)
 [367 rows x 2 columns]
 ```
 
-#### 供应维度
+### 供应维度
 
-接口: futures_hog_supply
+接口：futures_hog_supply
 
-目标地址: https://zhujia.zhuwang.com.cn
+目标地址：https://zhujia.zhuwang.com.cn
 
-描述: 玄田数据-供应维度
+描述：玄田数据-供应维度
 
-限量: 单次返回指定 symbol 的所有历史数据
+限量：单次返回指定 symbol 的所有历史数据
 
 输入参数
 
@@ -4273,15 +4273,15 @@ print(futures_hog_supply_df)
 [90 rows x 2 columns]
 ```
 
-### 生猪市场价格指数
+## 生猪市场价格指数
 
-接口: index_hog_spot_price
+接口：index_hog_spot_price
 
-目标地址: https://hqb.nxin.com/pigindex/index.shtml
+目标地址：https://hqb.nxin.com/pigindex/index.shtml
 
-描述: 行情宝-生猪市场价格指数
+描述：行情宝-生猪市场价格指数
 
-限量: 单次返回所有数据
+限量：单次返回所有数据
 
 输入参数
 
@@ -4298,9 +4298,9 @@ print(futures_hog_supply_df)
 | 4个月均线  | float64 | -          |
 | 6个月均线  | float64 | -          |
 | 12个月均线 | float64 | -          |
-| 预售均价   | float64 | 注意单位: 元/公斤 |
-| 成交均价   | float64 | 注意单位: 元/公斤 |
-| 成交均重   | int64   | 注意单位: kg   |
+| 预售均价   | float64 | 注意单位：元/公斤 |
+| 成交均价   | float64 | 注意单位：元/公斤 |
+| 成交均重   | int64   | 注意单位：kg   |
 
 接口示例
 
@@ -4329,15 +4329,15 @@ print(index_hog_spot_price_df)
 [465 rows x 8 columns]
 ```
 
-### 期货资讯
+## 期货资讯
 
-接口: futures_news_shmet
+接口：futures_news_shmet
 
-目标地址: https://www.shmet.com/newsFlash/newsFlash.html?searchKeyword=
+目标地址：https://www.shmet.com/newsFlash/newsFlash.html?searchKeyword=
 
-描述: 上海金属网-快讯
+描述：上海金属网-快讯
 
-限量: 指定 symbol 的数据
+限量：指定 symbol 的数据
 
 输入参数
 

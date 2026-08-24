@@ -1,20 +1,20 @@
-## [AKShare](https://github.com/akfamily/akshare) 现货数据
+# [AKShare](https://github.com/akfamily/akshare) 现货数据
 
-### 99 现货走势
+## 99 现货走势
 
-接口: spot_price_qh
+接口：spot_price_qh
 
-目标地址: https://www.99qh.com/data/spotTrend
+目标地址：https://www.99qh.com/data/spotTrend
 
-描述: 99 期货-数据-期现-现货走势
+描述：99 期货-数据-期现-现货走势
 
-限量: 单次返回指定 symbol 的所有历史数据；由于数据源限制，只能获取个别品种
+限量：单次返回指定 symbol 的所有历史数据；由于数据源限制，只能获取个别品种
 
 输入参数
 
 | 名称     | 类型  | 描述                                                |
 |--------|-----|---------------------------------------------------|
-| symbol | str | symbol="螺纹钢"; 可以通过 ak.spot_price_table_qh() 获取品种表 |
+| symbol | str | symbol="螺纹钢"；可以通过 ak.spot_price_table_qh() 获取品种表 |
 
 输出参数
 
@@ -51,23 +51,23 @@ print(spot_price_qh_df)
 [2471 rows x 3 columns]
 ```
 
-### 上海黄金交易所
+## 上海黄金交易所
 
-#### 历史行情数据
+### 历史行情数据
 
-接口: spot_hist_sge
+接口：spot_hist_sge
 
-目标地址: https://www.sge.com.cn/sjzx/mrhq
+目标地址：https://www.sge.com.cn/sjzx/mrhq
 
-描述: 上海黄金交易所-数据资讯-行情走势-历史数据
+描述：上海黄金交易所-数据资讯-行情走势-历史数据
 
-限量: 单次返回指定 symbol 的所有历史数据
+限量：单次返回指定 symbol 的所有历史数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                      |
 |--------|-----|---------------------------------------------------------|
-| symbol | str | symbol="Au99.99"; 可以通过 ak.spot_symbol_table_sge() 获取品种表 |
+| symbol | str | symbol="Au99.99"；可以通过 ak.spot_symbol_table_sge() 获取品种表 |
 
 输出参数
 
@@ -106,21 +106,21 @@ print(spot_hist_sge_df)
 [1780 rows x 5 columns]
 ```
 
-#### 实时行情数据
+### 实时行情数据
 
-接口: spot_quotations_sge
+接口：spot_quotations_sge
 
-目标地址: https://www.sge.com.cn/
+目标地址：https://www.sge.com.cn/
 
-描述: 上海黄金交易所-数据资讯-行情走势-实时数据
+描述：上海黄金交易所-数据资讯-行情走势-实时数据
 
-限量: 单次返回指定 symbol 的所有行情数据
+限量：单次返回指定 symbol 的所有行情数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                      |
 |--------|-----|---------------------------------------------------------|
-| symbol | str | symbol="Au99.99"; 可以通过 ak.spot_symbol_table_sge() 获取品种表 |
+| symbol | str | symbol="Au99.99"；可以通过 ak.spot_symbol_table_sge() 获取品种表 |
 
 输出参数
 
@@ -158,15 +158,15 @@ print(spot_quotations_sge_df)
 [691 rows x 4 columns]
 ```
 
-#### 上海金基准价
+### 上海金基准价
 
-接口: spot_golden_benchmark_sge
+接口：spot_golden_benchmark_sge
 
-目标地址: https://www.sge.com.cn/sjzx/jzj
+目标地址：https://www.sge.com.cn/sjzx/jzj
 
-描述: 上海黄金交易所-数据资讯-上海金基准价-历史数据
+描述：上海黄金交易所-数据资讯-上海金基准价-历史数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -209,15 +209,15 @@ print(spot_golden_benchmark_sge_df)
 [1806 rows x 3 columns]
 ```
 
-#### 上海银基准价
+### 上海银基准价
 
-接口: spot_silver_benchmark_sge
+接口：spot_silver_benchmark_sge
 
-目标地址: https://www.sge.com.cn/sjzx/shyjzj
+目标地址：https://www.sge.com.cn/sjzx/shyjzj
 
-描述: 上海黄金交易所-数据资讯-上海银基准价-历史数据
+描述：上海黄金交易所-数据资讯-上海银基准价-历史数据
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -260,17 +260,17 @@ print(spot_silver_benchmark_sge_df)
 [958 rows x 3 columns]
 ```
 
-### 生猪大数据
+## 生猪大数据
 
-#### 各省均价实时排行榜
+### 各省均价实时排行榜
 
-接口: spot_hog_soozhu
+接口：spot_hog_soozhu
 
-目标地址: https://www.soozhu.com/price/data/center/
+目标地址：https://www.soozhu.com/price/data/center/
 
-描述: 搜猪-生猪大数据-各省均价实时排行榜
+描述：搜猪-生猪大数据-各省均价实时排行榜
 
-限量: 单次返回所有实时数据
+限量：单次返回所有实时数据
 
 输入参数
 
@@ -329,15 +329,15 @@ print(spot_hog_soozhu_df)
 27   贵州  19.18 -0.16
 ```
 
-#### 今年以来全国出栏均价走势
+### 今年以来全国出栏均价走势
 
-接口: spot_hog_year_trend_soozhu
+接口：spot_hog_year_trend_soozhu
 
-目标地址: https://www.soozhu.com/price/data/center/
+目标地址：https://www.soozhu.com/price/data/center/
 
-描述: 搜猪-生猪大数据-今年以来全国出栏均价走势
+描述：搜猪-生猪大数据-今年以来全国出栏均价走势
 
-限量: 单次返回近一年所有历史数据
+限量：单次返回近一年所有历史数据
 
 输入参数
 
@@ -379,15 +379,15 @@ print(spot_hog_year_trend_soozhu_df)
 [200 rows x 2 columns]
 ```
 
-#### 全国瘦肉型肉猪
+### 全国瘦肉型肉猪
 
-接口: spot_hog_lean_price_soozhu
+接口：spot_hog_lean_price_soozhu
 
-目标地址: https://www.soozhu.com/price/data/center/
+目标地址：https://www.soozhu.com/price/data/center/
 
-描述: 搜猪-生猪大数据-全国瘦肉型肉猪
+描述：搜猪-生猪大数据-全国瘦肉型肉猪
 
-限量: 单次返回近半个月的历史数据
+限量：单次返回近半个月的历史数据
 
 输入参数
 
@@ -432,15 +432,15 @@ print(spot_hog_lean_price_soozhu_df)
 14  2024-08-04  19.80
 ```
 
-#### 全国三元仔猪
+### 全国三元仔猪
 
-接口: spot_hog_three_way_soozhu
+接口：spot_hog_three_way_soozhu
 
-目标地址: https://www.soozhu.com/price/data/center/
+目标地址：https://www.soozhu.com/price/data/center/
 
-描述: 搜猪-生猪大数据-全国三元仔猪
+描述：搜猪-生猪大数据-全国三元仔猪
 
-限量: 单次返回近半个月的历史数据
+限量：单次返回近半个月的历史数据
 
 输入参数
 
@@ -485,15 +485,15 @@ print(spot_hog_three_way_soozhu_df)
 14  2024-08-06  718.02
 ```
 
-#### 全国后备二元母猪
+### 全国后备二元母猪
 
-接口: spot_hog_crossbred_soozhu
+接口：spot_hog_crossbred_soozhu
 
-目标地址: https://www.soozhu.com/price/data/center/
+目标地址：https://www.soozhu.com/price/data/center/
 
-描述: 搜猪-生猪大数据-全国后备二元母猪
+描述：搜猪-生猪大数据-全国后备二元母猪
 
-限量: 单次返回近半个月的历史数据
+限量：单次返回近半个月的历史数据
 
 输入参数
 
@@ -538,15 +538,15 @@ print(spot_hog_crossbred_soozhu_df)
 14  2024-08-09  1960.00
 ```
 
-#### 全国玉米价格走势
+### 全国玉米价格走势
 
-接口: spot_corn_price_soozhu
+接口：spot_corn_price_soozhu
 
-目标地址: https://www.soozhu.com/price/data/center/
+目标地址：https://www.soozhu.com/price/data/center/
 
-描述: 搜猪-生猪大数据-全国玉米价格走势
+描述：搜猪-生猪大数据-全国玉米价格走势
 
-限量: 单次返回近半个月的历史数据
+限量：单次返回近半个月的历史数据
 
 输入参数
 
@@ -591,15 +591,15 @@ print(spot_corn_price_soozhu_df)
 14  2024-08-10  2.57
 ```
 
-#### 全国豆粕价格走势
+### 全国豆粕价格走势
 
-接口: spot_soybean_price_soozhu
+接口：spot_soybean_price_soozhu
 
-目标地址: https://www.soozhu.com/price/data/center/
+目标地址：https://www.soozhu.com/price/data/center/
 
-描述: 搜猪-生猪大数据-全国豆粕价格走势
+描述：搜猪-生猪大数据-全国豆粕价格走势
 
-限量: 单次返回近半个月的历史数据
+限量：单次返回近半个月的历史数据
 
 输入参数
 
@@ -644,15 +644,15 @@ print(spot_soybean_price_soozhu_df)
 14  2024-08-11  3.18
 ```
 
-#### 全国育肥猪合料（含自配料）半月走势
+### 全国育肥猪合料（含自配料）半月走势
 
-接口: spot_mixed_feed_soozhu
+接口：spot_mixed_feed_soozhu
 
-目标地址: https://www.soozhu.com/price/data/center/
+目标地址：https://www.soozhu.com/price/data/center/
 
-描述: 搜猪-生猪大数据-全国育肥猪合料（含自配料）半月走势
+描述：搜猪-生猪大数据-全国育肥猪合料（含自配料）半月走势
 
-限量: 单次返回近半个月的历史数据
+限量：单次返回近半个月的历史数据
 
 输入参数
 

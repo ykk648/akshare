@@ -515,7 +515,9 @@ def stock_gdfx_free_holding_detail_em(date: str = "20210930") -> pd.DataFrame:
     params = {
         "sortColumns": "UPDATE_DATE,SECURITY_CODE,HOLDER_RANK",
         "sortTypes": "-1,1,1",
-        "pageSize": "500",
+        # EastMoney may return empty results once the page count reaches 100.
+        # Use a larger page size to keep `result.pages` below that threshold.
+        "pageSize": "2000",
         "pageNumber": "1",
         "reportName": "RPT_F10_EH_FREEHOLDERS",
         "columns": "ALL",
@@ -598,9 +600,9 @@ def stock_gdfx_holding_detail_em(
     https://data.eastmoney.com/gdfx/HoldingAnalyse.html
     :param date: 报告期
     :type date: str
-    :param indicator: 股东类型; choice of {"个人", "基金", "QFII", "社保", "券商", "信托"}
+    :param indicator: 股东类型；choice of {"个人", "基金", "QFII", "社保", "券商", "信托"}
     :type indicator: str
-    :param symbol: 持股变动; choice of {"新进", "增加", "不变", "减少"}
+    :param symbol: 持股变动；choice of {"新进", "增加", "不变", "减少"}
     :type symbol: str
     :return: 十大股东
     :rtype: pandas.DataFrame
@@ -891,7 +893,7 @@ def stock_gdfx_free_holding_teamwork_em(symbol: str = "社保") -> pd.DataFrame:
     """
     东方财富网-数据中心-股东分析-股东协同-十大流通股东
     https://data.eastmoney.com/gdfx/HoldingAnalyse.html
-    :param symbol: 全部; choice of {"全部", "个人", "基金", "QFII", "社保", "券商", "信托"}
+    :param symbol: 全部；choice of {"全部", "个人", "基金", "QFII", "社保", "券商", "信托"}
     :type symbol: str
     :return: 十大流通股东
     :rtype: pandas.DataFrame
@@ -954,7 +956,7 @@ def stock_gdfx_holding_teamwork_em(symbol: str = "社保") -> pd.DataFrame:
     """
     东方财富网-数据中心-股东分析-股东协同-十大股东
     https://data.eastmoney.com/gdfx/HoldingAnalyse.html
-    :param symbol: 全部; choice of {"全部", "个人", "基金", "QFII", "社保", "券商", "信托"}
+    :param symbol: 全部；choice of {"全部", "个人", "基金", "QFII", "社保", "券商", "信托"}
     :type symbol: str
     :return: 十大股东
     :rtype: pandas.DataFrame

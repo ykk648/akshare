@@ -1,14 +1,14 @@
-## [AKShare](https://github.com/akfamily/akshare) 外汇数据
+# [AKShare](https://github.com/akfamily/akshare) 外汇数据
 
-### 实时行情数据
+## 实时行情数据
 
-接口: forex_spot_em
+接口：forex_spot_em
 
-目标地址: https://quote.eastmoney.com/center/gridlist.html#forex_all
+目标地址：https://quote.eastmoney.com/center/gridlist.html#forex_all
 
-描述: 东方财富网-行情中心-外汇市场-所有汇率-实时行情数据
+描述：东方财富网-行情中心-外汇市场-所有汇率-实时行情数据
 
-限量: 单次返回所有实时行情数据
+限量：单次返回所有实时行情数据
 
 输入参数
 
@@ -58,21 +58,21 @@ print(forex_spot_em_df)
 [190 rows x 10 columns]
 ```
 
-### 历史行情数据
+## 历史行情数据
 
-接口: forex_hist_em
+接口：forex_hist_em
 
-目标地址: https://quote.eastmoney.com/cnyrate/EURCNYC.html
+目标地址：https://quote.eastmoney.com/cnyrate/EURCNYC.html
 
-描述: 东方财富网-行情中心-外汇市场-所有汇率-历史行情数据
+描述：东方财富网-行情中心-外汇市场-所有汇率-历史行情数据
 
-限量: 单次返回指定 symbol 的历史行情数据
+限量：单次返回指定 symbol 的历史行情数据
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                |
 |--------|-----|-------------------------------------------------------------------|
-| symbol | str | symbol="USDCNH"; 品种代码；可以通过 ak.forex_spot_em() 来获取所有可获取历史行情数据的品种代码 |
+| symbol | str | symbol="USDCNH"；品种代码；可以通过 ak.forex_spot_em() 来获取所有可获取历史行情数据的品种代码 |
 
 输出参数
 
@@ -116,33 +116,33 @@ print(forex_hist_em_df)
 [3781 rows x 8 columns]
 ```
 
-### 人民币牌价数据
+## 人民币牌价数据
 
-接口: currency_boc_sina
+接口：currency_boc_sina
 
-目标地址: https://biz.finance.sina.com.cn/forex/forex.php?startdate=2012-01-01&enddate=2021-06-14&money_code=EUR&type=0
+目标地址：https://biz.finance.sina.com.cn/forex/forex.php?startdate=2012-01-01&enddate=2021-06-14&money_code=EUR&type=0
 
-描述: 新浪财经-中行人民币牌价历史数据
+描述：新浪财经-中行人民币牌价历史数据
 
-限量: 单次返回指定日期的所有历史数据
+限量：单次返回指定日期的所有历史数据
 
 输入参数
 
 | 名称         | 类型  | 描述                                                                                                                                                   |
 |------------|-----|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | symbol     | str | symbol="美元"; choice of {'美元', '英镑', '欧元', '澳门元', '泰国铢', '菲律宾比索', '港币', '瑞士法郎', '新加坡元', '瑞典克朗', '丹麦克朗', '挪威克朗', '日元', '加拿大元', '澳大利亚元', '新西兰元', '韩国元'} |
-| start_date | str | start_date="20230304"; 开始日期和结束日期之间的间隔要超过 6 个月                                                                                                        |
-| end_date   | str | end_date="20231110"; 开始日期和结束日期之间的间隔要超过 6 个月                                                                                                          |
+| start_date | str | start_date="20230304"；开始日期和结束日期之间的间隔要超过 6 个月                                                                                                        |
+| end_date   | str | end_date="20231110"；开始日期和结束日期之间的间隔要超过 6 个月                                                                                                          |
 
 输出参数
 
 | 名称        | 类型      | 描述      |
 |-----------|---------|---------|
 | 日期        | object  | -       |
-| 中行汇买价     | float64 | 注意单位: 元 |
-| 中行钞买价     | float64 | 注意单位: 元 |
-| 中行钞卖价/汇卖价 | float64 | 注意单位: 元 |
-| 央行中间价     | float64 | 注意单位: 元 |
+| 中行汇买价     | float64 | 注意单位：元 |
+| 中行钞买价     | float64 | 注意单位：元 |
+| 中行钞卖价/汇卖价 | float64 | 注意单位：元 |
+| 央行中间价     | float64 | 注意单位：元 |
 
 接口示例
 
@@ -171,15 +171,15 @@ print(currency_boc_sina_df)
 [180 rows x 5 columns]
 ```
 
-### 人民币汇率中间价
+## 人民币汇率中间价
 
-接口: currency_boc_safe
+接口：currency_boc_safe
 
-目标地址: https://www.safe.gov.cn/safe/rmbhlzjj/index.html
+目标地址：https://www.safe.gov.cn/safe/rmbhlzjj/index.html
 
-描述: 外汇管理局-人民币汇率中间价
+描述：外汇管理局-人民币汇率中间价
 
-限量: 单次返回所有历史数据
+限量：单次返回所有历史数据
 
 输入参数
 
@@ -246,15 +246,15 @@ print(currency_boc_safe_df)
 [7323 rows x 25 columns]
 ```
 
-### 人民币外汇即期报价
+## 人民币外汇即期报价
 
-接口: fx_spot_quote
+接口：fx_spot_quote
 
-目标地址: http://www.chinamoney.com.cn/chinese/mkdatapfx/
+目标地址：http://www.chinamoney.com.cn/chinese/mkdatapfx/
 
-描述: 人民币外汇即期报价
+描述：人民币外汇即期报价
 
-限量: 单次返回实时行情数据
+限量：单次返回实时行情数据
 
 输入参数
 
@@ -272,7 +272,7 @@ print(currency_boc_safe_df)
 | 买报价 | float64 |     |
 | 卖报价 | float64 |     |
 
-**注：本行情为询价报价行情(美元为ODM), 实时更新**
+**注：本行情为询价报价行情（美元为ODM），实时更新**
 
 接口示例
 ```python
@@ -312,15 +312,15 @@ print(fx_spot_quote_df)
 23     CNY/THB    5.24800    5.25000
 ```
 
-### 人民币外汇远掉报价
+## 人民币外汇远掉报价
 
-接口: fx_swap_quote
+接口：fx_swap_quote
 
-目标地址: http://www.chinamoney.com.cn/chinese/mkdatapfx/
+目标地址：http://www.chinamoney.com.cn/chinese/mkdatapfx/
 
-描述: 人民币外汇远掉报价
+描述：人民币外汇远掉报价
 
-限量: 单次返回实时行情数据
+限量：单次返回实时行情数据
 
 输入参数
 
@@ -342,7 +342,7 @@ print(fx_spot_quote_df)
 | 9月  | object |                     |
 | 1年  | object |                     |
 
-**注：本行情为询价报价行情(美元为ODM), 实时更新**
+**注：本行情为询价报价行情（美元为ODM），实时更新**
 
 接口示例
 
@@ -383,15 +383,15 @@ print(fx_swap_quote_df)
 23     CNY/THB  -68.44/-43.00  ...    -514.60/-436.28    -675.05/-534.00
 ```
 
-### 外汇掉期 C-Swap 定盘曲线
+## 外汇掉期 C-Swap 定盘曲线
 
-接口: fx_c_swap_cm
+接口：fx_c_swap_cm
 
-目标地址: https://www.chinamoney.org.cn/chinese/bkcurvfsw
+目标地址：https://www.chinamoney.org.cn/chinese/bkcurvfsw
 
-描述: 中国外汇交易中心暨全国银行间同业拆借中心-基准-外汇市场-外汇掉期曲线-外汇掉期 C-Swap 定盘曲线
+描述：中国外汇交易中心暨全国银行间同业拆借中心-基准-外汇市场-外汇掉期曲线-外汇掉期 C-Swap 定盘曲线
 
-限量: 单次返回所有行情数据
+限量：单次返回所有行情数据
 
 输入参数
 
@@ -436,15 +436,15 @@ print(fx_c_swap_cm_df)
 11  2025-09-26 16:30:00.0   1Y   -1337.01   报价数据  7.0017
 ```
 
-### 外币对即期报价
+## 外币对即期报价
 
-接口: fx_pair_quote
+接口：fx_pair_quote
 
-目标地址: http://www.chinamoney.com.cn/chinese/mkdatapfx/
+目标地址：http://www.chinamoney.com.cn/chinese/mkdatapfx/
 
-描述: 外币对即期报价
+描述：外币对即期报价
 
-限量: 单次返回当前时点最近更新的即时数据
+限量：单次返回当前时点最近更新的即时数据
 
 输入参数
 
@@ -460,7 +460,7 @@ print(fx_c_swap_cm_df)
 | 买报价 | float64 | e.g., "0.68460" |
 | 卖报价 | float64 | e.g., "0.68461" |
 
-**注：本行情为询价报价行情(美元为ODM), 实时更新**
+**注：本行情为询价报价行情（美元为ODM），实时更新**
 
 接口示例
 
@@ -488,21 +488,21 @@ print(fx_pair_quote_df)
 10  EUR/GBP    0.86308    0.86308
 ```
 
-### 指定币种的所有货币对
+## 指定币种的所有货币对
 
-接口: currency_pair_map
+接口：currency_pair_map
 
-目标地址: https://cn.investing.com/currencies/cny-jmd
+目标地址：https://cn.investing.com/currencies/cny-jmd
 
-描述: 指定币种的所有能够获取到的货币对信息，历史数据可以调用 **ak.currency_history()** 获取
+描述：指定币种的所有能够获取到的货币对信息，历史数据可以调用 **ak.currency_history()** 获取
 
-限量: 单次返回指定币种的所有能获取数据的货币对
+限量：单次返回指定币种的所有能获取数据的货币对
 
 输入参数
 
 | 名称     | 类型  | 描述                                                                                       |
 |--------|-----|------------------------------------------------------------------------------------------|
-| symbol | str | symbol="人民币"; 此处提供中文的币种名称, 可以访问[网页](https://cn.investing.com/currencies/cny-jmd) 的页面下方查看 |
+| symbol | str | symbol="人民币"；此处提供中文的币种名称，可以访问[网页](https://cn.investing.com/currencies/cny-jmd) 的页面下方查看 |
 
 输出参数
 
@@ -538,22 +538,22 @@ print(currency_pair_map_df)
 [90 rows x 2 columns]
 ```
 
-### 货币对-投机情绪报告
+## 货币对-投机情绪报告
 
-接口: macro_fx_sentiment
+接口：macro_fx_sentiment
 
-目标地址: https://datacenter.jin10.com/reportType/dc_ssi_trends
+目标地址：https://datacenter.jin10.com/reportType/dc_ssi_trends
 
-描述: 货币对-投机情绪报告
+描述：货币对-投机情绪报告
 
-限量: 单次返回指定日期所有品种的数据(所指定的日期必须在当前交易日之前的30个交易日内)
+限量：单次返回指定日期所有品种的数据（所指定的日期必须在当前交易日之前的30个交易日内）
 
 输入参数
 
 | 名称         | 类型  | 描述                                                |
 |------------|-----|---------------------------------------------------|
-| start_date | str | start_date="2020-04-07"; 所指定的日期必须在当前交易日之前的30个交易日内 |
-| end_date   | str | end_date="2020-04-07"; 与 start_date 一致            |
+| start_date | str | start_date="2020-04-07"；所指定的日期必须在当前交易日之前的30个交易日内 |
+| end_date   | str | end_date="2020-04-07"；与 start_date 一致            |
 
 输出参数
 
@@ -602,21 +602,21 @@ print(macro_fx_sentiment_df)
 966  2022-10-17 20:10   55.51   67.39   36.80  ...   42.82   30.95  39.78   59.70
 ```
 
-### 外汇行情报价
+## 外汇行情报价
 
-接口: fx_quote_baidu
+接口：fx_quote_baidu
 
-目标地址: https://gushitong.baidu.com/top/foreign-rmb
+目标地址：https://gushitong.baidu.com/top/foreign-rmb
 
-描述: 百度股市通-外汇-行情榜单
+描述：百度股市通-外汇-行情榜单
 
-限量: 单次返回指定 symbol 当前时点的行情报价
+限量：单次返回指定 symbol 当前时点的行情报价
 
 输入参数
 
 | 名称     | 类型  | 描述                                   |
 |--------|-----|--------------------------------------|
-| symbol | str | symbol="人民币"; choice of {"人民币", 美元"} |
+| symbol | str | symbol="人民币"; choice of {"人民币"，美元"} |
 | token  | str | 目标网站复制 acs-token 后传入                 |
 
 输出参数
