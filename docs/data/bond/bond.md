@@ -1,7 +1,8 @@
-# [AKShare](https://github.com/akfamily/akshare) 债券数据
+# 债券数据
 
 ## 债券基础信息
 
+(bond_info_cm)=
 ### 债券查询
 
 接口：bond_info_cm
@@ -27,13 +28,13 @@
 
 | 名称       | 类型     | 描述  |
 |----------|--------|-----|
-| 债券简称     | object | -   |
-| 债券代码     | object | -   |
-| 发行人/受托机构 | object | -   |
-| 债券类型     | object | -   |
-| 发行日期     | object | -   |
-| 最新债项评级   | object | -   |
-| 查询代码     | object | -   |
+| 债券简称     | str    | -   |
+| 债券代码     | str    | -   |
+| 发行人/受托机构 | str    | -   |
+| 债券类型     | str    | -   |
+| 发行日期     | str    | -   |
+| 最新债项评级   | str    | -   |
+| 查询代码     | str    | -   |
 
 接口示例
 
@@ -53,6 +54,7 @@ print(bond_info_cm_df)
 2  19万林投资CP001  041900126  重庆万林投资发展有限公司  短期融资券  2019-03-25    A-1  695327xh9n
 ```
 
+(bond_info_detail_cm)=
 ### 债券基础信息
 
 接口：bond_info_detail_cm
@@ -71,8 +73,8 @@ print(bond_info_cm_df)
 
 | 名称    | 类型     | 描述  |
 |-------|--------|-----|
-| name  | object | -   |
-| value | object | -   |
+| name  | str    | -   |
+| value | str    | -   |
 
 接口示例
 
@@ -113,6 +115,7 @@ print(bond_info_detail_cm_df)
 
 ## 上交所债券
 
+(bond_cash_summary_sse)=
 ### 债券现券市场概览
 
 接口：bond_cash_summary_sse
@@ -133,7 +136,7 @@ print(bond_info_detail_cm_df)
 
 | 名称   | 类型      | 描述       |
 |------|---------|----------|
-| 债券现货 | object  | -        |
+| 债券现货 | str     | -        |
 | 托管只数 | int64   | -        |
 | 托管市值 | float64 | 注意单位：亿元 |
 | 托管面值 | float64 | 注意单位：亿元 |
@@ -164,6 +167,7 @@ print(bond_cash_summary_sse_df)
 9         合计  20469  132102.75  131997.40  2021-01-11
 ```
 
+(bond_deal_summary_sse)=
 ### 债券成交概览
 
 接口：bond_deal_summary_sse
@@ -184,7 +188,7 @@ print(bond_cash_summary_sse_df)
 
 | 名称     | 类型      | 描述       |
 |--------|---------|----------|
-| 债券类型   | object  | -        |
+| 债券类型   | str     | -        |
 | 当日成交笔数 | int64   | -        |
 | 当日成交金额 | float64 | 注意单位：万元 |
 | 当年成交笔数 | int64   | -        |
@@ -222,6 +226,7 @@ print(bond_summary_sse_df)
 
 ## 债券基础数据
 
+(bond_debt_nafmii)=
 ### 银行间市场债券发行基础数据
 
 接口：bond_debt_nafmii
@@ -242,13 +247,13 @@ print(bond_summary_sse_df)
 
 | 名称      | 类型      | 描述      |
 |---------|---------|---------|
-| 债券名称    | object  | -       |
-| 品种      | object  | -       |
-| 注册或备案   | object  | -       |
+| 债券名称    | str     | -       |
+| 品种      | str     | -       |
+| 注册或备案   | str     | -       |
 | 金额      | float64 | 注意单位：亿元 |
-| 注册通知书文号 | object  | -       |
+| 注册通知书文号 | str     | -       |
 | 更新日期    | object  | -       |
-| 项目状态    | object  | -       |
+| 项目状态    | str     | -       |
 
 接口示例
 
@@ -318,6 +323,7 @@ print(bond_debt_nafmii_df)
 
 ## 中国债券市场行情数据
 
+(bond_spot_quote)=
 ### 现券市场做市报价
 
 接口：bond_spot_quote
@@ -338,8 +344,8 @@ print(bond_debt_nafmii_df)
 
 | 名称    | 类型      | 描述      |
 |-------|---------|---------|
-| 报价机构  | object  |         |
-| 债券简称  | object  |         |
+| 报价机构  | str     |         |
+| 债券简称  | str     |         |
 | 买入净价  | float64 | 注意单位：元 |
 | 卖出净价  | float64 | 注意单位：元 |
 | 买入收益率 | float64 | 注意单位：% |
@@ -375,6 +381,7 @@ print(bond_spot_quote_df)
 14      平安证券  18进出03  102.35  102.52  2.295  2.1000
 ```
 
+(bond_spot_deal)=
 ### 现券市场成交行情
 
 接口：bond_spot_deal
@@ -395,7 +402,7 @@ print(bond_spot_quote_df)
 
 | 名称    | 类型      | 描述       |
 |-------|---------|----------|
-| 债券简称  | object  | -        |
+| 债券简称  | str     | -        |
 | 成交净价  | float64 | 注意单位：元  |
 | 最新收益率 | float64 | 注意单位：%  |
 | 涨跌    | float64 | 注意单位：BP |
@@ -429,6 +436,7 @@ print(bond_spot_deal_df)
 [1780 rows x 6 columns]
 ```
 
+(bond_china_yield)=
 ### 国债及其他债券收益率曲线
 
 接口：bond_china_yield
@@ -450,7 +458,7 @@ print(bond_spot_deal_df)
 
 | 名称   | 类型      | 描述  |
 |------|---------|-----|
-| 曲线名称 | object  |     |
+| 曲线名称 | str     |     |
 | 日期   | object  |     |
 | 3月   | float64 |     |
 | 6月   | float64 |     |
@@ -490,6 +498,7 @@ print(bond_china_yield_df)
 
 ## 沪深债券
 
+(bond_zh_hs_spot)=
 ### 实时行情数据
 
 接口：bond_zh_hs_spot
@@ -511,7 +520,7 @@ print(bond_china_yield_df)
 
 | 名称  | 类型      | 描述      |
 |-----|---------|---------|
-| 代码  | object  | -       |
+| 代码  | str     | -       |
 | 名称  | object  | -       |
 | 最新价 | float64 | -       |
 | 涨跌额 | float64 | -       |
@@ -552,6 +561,7 @@ print(bond_zh_hs_spot_df)
 [400 rows x 13 columns]
 ```
 
+(bond_zh_hs_daily)=
 ### 历史行情数据
 
 接口：bond_zh_hs_daily
@@ -608,6 +618,7 @@ print(bond_zh_hs_daily_df)
 
 ## 沪深可转债
 
+(bond_cb_profile_sina)=
 ### 可转债-详情资料
 
 接口：bond_cb_profile_sina
@@ -628,8 +639,8 @@ print(bond_zh_hs_daily_df)
 
 | 名称    | 类型     | 描述 |
 |-------|--------|----|
-| item  | object | -  |
-| value | object | -  |
+| item  | str    | -  |
+| value | str    | -  |
 
 接口示例
 
@@ -671,6 +682,7 @@ print(bond_cb_profile_sina_df)
 24  外部信用增级方式                                                 --
 ```
 
+(bond_cb_summary_sina)=
 ### 可转债-债券概况
 
 接口：bond_cb_summary_sina
@@ -691,8 +703,8 @@ print(bond_cb_profile_sina_df)
 
 | 名称    | 类型     | 描述 |
 |-------|--------|----|
-| item  | object | -  |
-| value | object | -  |
+| item  | str    | -  |
+| value | str    | -  |
 
 接口示例
 
@@ -724,6 +736,7 @@ print(bond_cb_summary_sina_df)
 14        凸性          --
 ```
 
+(bond_zh_hs_cov_spot)=
 ### 实时行情数据
 
 接口：bond_zh_hs_cov_spot
@@ -773,6 +786,7 @@ print(bond_zh_hs_cov_spot_df)
 [560 rows x 15 columns]
 ```
 
+(bond_zh_hs_cov_daily)=
 ### 历史行情数据-日频
 
 接口：bond_zh_hs_cov_daily
@@ -827,6 +841,7 @@ print(bond_zh_hs_cov_daily_df)
 [1375 rows x 6 columns]
 ```
 
+(bond_zh_hs_cov_min)=
 ### 历史行情数据-分时
 
 接口：bond_zh_hs_cov_min
@@ -928,6 +943,7 @@ print(bond_zh_hs_cov_min_df)
 1487  2021-11-02 15:00:00  120.018  120.099  ...    764406.0  0.10  0.12
 ```
 
+(bond_zh_hs_cov_pre_min)=
 ### 历史行情数据-盘前分时
 
 接口：bond_zh_hs_cov_pre_min
@@ -940,9 +956,9 @@ print(bond_zh_hs_cov_min_df)
 
 输入参数
 
-| 名称  | 类型  | 描述  |
-|-----|-----|-----|
-| -   | -   | -   |
+| 名称     | 类型  | 描述 |
+|--------|-----|----|
+| symbol | str | symbol="sh113570"；转债代码，需带交易所前缀 sh 或 sz |
 
 输出参数
 
@@ -983,6 +999,7 @@ print(bond_zh_hs_cov_pre_min_df)
 135  2022-07-27 11:30:00  128.81  128.78  ...    7    9016.0  128.4235
 ```
 
+(bond_zh_cov)=
 ### 可转债数据一览表
 
 接口：bond_zh_cov
@@ -1003,25 +1020,25 @@ print(bond_zh_hs_cov_pre_min_df)
 
 | 名称          | 类型      | 描述       |
 |-------------|---------|----------|
-| 债券代码        | object  | -        |
-| 债券简称        | object  | -        |
+| 债券代码        | str     | -        |
+| 债券简称        | str     | -        |
 | 申购日期        | object  | -        |
-| 申购代码        | object  | -        |
+| 申购代码        | str     | -        |
 | 申购上限        | float64 | 注意单位：万元 |
-| 正股代码        | object  | -        |
-| 正股简称        | object  | -        |
+| 正股代码        | str     | -        |
+| 正股简称        | str     | -        |
 | 正股价         | float64 | -        |
 | 转股价         | float64 | -        |
 | 转股价值        | float64 | -        |
 | 债现价         | float64 | -        |
 | 转股溢价率       | float64 | 注意单位：%  |
 | 原股东配售-股权登记日 | float64 | -        |
-| 原股东配售-每股配售额 | object  | -        |
+| 原股东配售-每股配售额 | float64 | -        |
 | 发行规模        | float64 | 注意单位：亿元 |
 | 中签号发布日      | object  | -        |
 | 中签率         | float64 | 注意单位：%  |
 | 上市时间        | object  | -        |
-| 信用评级        | object  | -        |
+| 信用评级        | str     | -        |
 
 接口示例
 
@@ -1050,6 +1067,7 @@ print(bond_zh_cov_df)
 [920 rows x 19 columns]
 ```
 
+(bond_zh_cov_info)=
 ### 可转债详情
 
 接口：bond_zh_cov_info
@@ -1071,7 +1089,7 @@ print(bond_zh_cov_df)
 
 | 名称   | 类型     | 描述        |
 |------|--------|-----------|
-| 债券代码 | object | 返回 67 个字段 |
+| 债券代码 | str    | 返回 67 个字段 |
 
 接口示例
 
@@ -1089,6 +1107,7 @@ print(bond_zh_cov_info_df)
 0        123121  123121.SZ       CNSESZ  ...                是         是           是
 ```
 
+(bond_zh_cov_info_ths)=
 ### 可转债详情-同花顺
 
 接口：bond_zh_cov_info_ths
@@ -1109,22 +1128,22 @@ print(bond_zh_cov_info_df)
 
 | 名称     | 类型      | 描述      |
 |--------|---------|---------|
-| 债券代码   | object  | -       |
-| 债券简称   | object  | -       |
+| 债券代码   | str     | -       |
+| 债券简称   | str     | -       |
 | 申购日期   | object  | -       |
-| 申购代码   | object  | -       |
-| 原股东配售码 | object  | -       |
+| 申购代码   | str     | -       |
+| 原股东配售码 | str     | -       |
 | 每股获配额  | float64 | -       |
 | 计划发行量  | float64 | -       |
 | 实际发行量  | float64 | -       |
 | 中签公布日  | object  | -       |
-| 中签号    | object  | -       |
+| 中签号    | str     | -       |
 | 上市日期   | object  | -       |
-| 正股代码   | object  | -       |
-| 正股简称   | object  | -       |
+| 正股代码   | str     | -       |
+| 正股简称   | str     | -       |
 | 转股价格   | float64 | -       |
 | 到期时间   | object  | -       |
-| 中签率    | object  | 注意单位：% |
+| 中签率    | str     | 注意单位：% |
 
 接口示例
 
@@ -1153,6 +1172,7 @@ print(bond_zh_cov_info_ths_df)
 [849 rows x 16 columns]
 ```
 
+(bond_cov_comparison)=
 ### 可转债比价表
 
 接口：bond_cov_comparison
@@ -1174,25 +1194,25 @@ print(bond_zh_cov_info_ths_df)
 | 名称    | 类型      | 描述      |
 |-------|---------|---------|
 | 序号    | int32   | -       |
-| 转债代码  | object  | -       |
-| 转债名称  | object  | -       |
-| 转债最新价 | object  | -       |
-| 转债涨跌幅 | object  | 注意单位：% |
-| 正股代码  | object  | -       |
-| 正股名称  | object  | -       |
-| 正股最新价 | object  | -       |
-| 正股涨跌幅 | object  | 注意单位：% |
-| 转股价   | object  | -       |
-| 转股价值  | object  | -       |
-| 转股溢价率 | object  | 注意单位：% |
-| 纯债溢价率 | object  | 注意单位：% |
-| 回售触发价 | object  | -       |
-| 强赎触发价 | object  | -       |
-| 到期赎回价 | object  | -       |
+| 转债代码  | str     | -       |
+| 转债名称  | str     | -       |
+| 转债最新价 | str     | -       |
+| 转债涨跌幅 | str     | 注意单位：% |
+| 正股代码  | str     | -       |
+| 正股名称  | str     | -       |
+| 正股最新价 | str     | -       |
+| 正股涨跌幅 | str     | 注意单位：% |
+| 转股价   | str     | -       |
+| 转股价值  | str     | -       |
+| 转股溢价率 | str     | 注意单位：% |
+| 纯债溢价率 | str     | 注意单位：% |
+| 回售触发价 | str     | -       |
+| 强赎触发价 | str     | -       |
+| 到期赎回价 | str     | -       |
 | 纯债价值  | float64 | -       |
-| 开始转股日 | object  | -       |
-| 上市日期  | object  | -       |
-| 申购日期  | object  | -       |
+| 开始转股日 | str     | -       |
+| 上市日期  | str     | -       |
+| 申购日期  | str     | -       |
 
 接口示例
 
@@ -1221,6 +1241,7 @@ print(bond_cov_comparison_df)
 [550 rows x 20 columns]
 ```
 
+(bond_zh_cov_value_analysis)=
 ### 可转债价值分析
 
 接口：bond_zh_cov_value_analysis
@@ -1330,6 +1351,7 @@ print(bond_zh_cov_value_analysis_df)
 
 ## 质押式回购
 
+(bond_sh_buy_back_em)=
 ### 上证质押式回购
 
 接口：bond_sh_buy_back_em
@@ -1351,7 +1373,7 @@ print(bond_zh_cov_value_analysis_df)
 | 名称  | 类型      | 描述 |
 |-----|---------|----|
 | 序号  | int64   | -  |
-| 代码  | object  | -  |
+| 代码  | str     | -  |
 | 名称  | object  | -  |
 | 最新价 | float64 | -  |
 | 涨跌额 | float64 | -  |
@@ -1388,6 +1410,7 @@ print(bond_sh_buy_back_em_df)
 [9 rows x 12 columns]
 ```
 
+(bond_sz_buy_back_em)=
 ### 深证质押式回购
 
 接口：bond_sz_buy_back_em
@@ -1409,7 +1432,7 @@ print(bond_sh_buy_back_em_df)
 | 名称  | 类型      | 描述 |
 |-----|---------|----|
 | 序号  | int64   | -  |
-| 代码  | object  | -  |
+| 代码  | str     | -  |
 | 名称  | object  | -  |
 | 最新价 | float64 | -  |
 | 涨跌额 | float64 | -  |
@@ -1446,6 +1469,7 @@ print(bond_sz_buy_back_em_df)
 [9 rows x 12 columns]
 ```
 
+(bond_buy_back_hist_em)=
 ### 质押式回购历史数据
 
 接口：bond_buy_back_hist_em
@@ -1501,6 +1525,7 @@ print(bond_buy_back_hist_em_df)
 [4570 rows x 7 columns]
 ```
 
+(bond_cb_jsl)=
 ## 可转债实时数据-集思录
 
 接口：bond_cb_jsl
@@ -1517,7 +1542,7 @@ print(bond_buy_back_hist_em_df)
 |--------|-----|----------------------------------------------------|
 | cookie | str | cookie=''；此处输入您的集思录 cookie 就可以获取完整数据，否则只能返回前 30 条 |
 
-1. 需要查看的链接为：https://app.jisilu.cn/data/cbnew/
+1. 需要查看的链接为：<https://app.jisilu.cn/data/cbnew/>
 2. 需要复制的 Cookie 为：![](https://pic2.zhimg.com/80/v2-c66f56a334e2c5642a9c8e2975b2f871_1440w.webp)
 3. 参考文章：[如何拿到集思录的可转债实时数据](https://zhuanlan.zhihu.com/p/607755294)
 
@@ -1525,19 +1550,19 @@ print(bond_buy_back_hist_em_df)
 
 | 名称     | 类型      | 描述       |
 |--------|---------|----------|
-| 代码     | object  | -        |
-| 转债名称   | object  | -        |
+| 代码     | str     | -        |
+| 转债名称   | str     | -        |
 | 现价     | float64 | -        |
 | 涨跌幅    | float64 | 注意单位：%  |
-| 正股代码   | object  | -        |
-| 正股名称   | object  | -        |
+| 正股代码   | str     | -        |
+| 正股名称   | str     | -        |
 | 正股价    | float64 | -        |
 | 正股涨跌   | float64 | 注意单位：%  |
 | 正股PB   | float64 | -        |
 | 转股价    | float64 | -        |
 | 转股价值   | float64 | -        |
 | 转股溢价率  | float64 | 注意单位：%  |
-| 债券评级   | object  | -        |
+| 债券评级   | str     | -        |
 | 回售触发价  | float64 | -        |
 | 强赎触发价  | float64 | -        |
 | 转债占比   | float64 | 注意单位：%  |
@@ -1595,6 +1620,7 @@ print(bond_cb_jsl_df)
 [30 rows x 23 columns]
 ```
 
+(bond_cb_redeem_jsl)=
 ## 可转债强赎
 
 接口：bond_cb_redeem_jsl
@@ -1615,11 +1641,11 @@ print(bond_cb_jsl_df)
 
 | 名称    | 类型      | 描述      |
 |-------|---------|---------|
-| 代码    | object  | -       |
+| 代码    | str     | -       |
 | 名称    | object  | -       |
 | 现价    | float64 | -       |
-| 正股代码  | object  | -       |
-| 正股名称  | object  | -       |
+| 正股代码  | str     | -       |
+| 正股名称  | str     | -       |
 | 规模    | float64 | 注意单位：亿 |
 | 剩余规模  | float64 | -       |
 | 转股起始日 | object  | -       |
@@ -1630,9 +1656,9 @@ print(bond_cb_jsl_df)
 | 强赎触发价 | float64 | -       |
 | 正股价   | float64 | -       |
 | 强赎价   | float64 | -       |
-| 强赎天计数 | object  | -       |
-| 强赎条款  | object  | -       |
-| 强赎状态  | object  | -       |
+| 强赎天计数 | str     | -       |
+| 强赎条款  | str     | -       |
+| 强赎状态  | str     | -       |
 
 接口示例
 
@@ -1660,6 +1686,7 @@ print(bond_cb_redeem_jsl_df)
 443  113646  永吉转债  253.950  ...   0/15 | 30  公司股票在任何连续三十个交易日中至少有十五个交易日的...
 ```
 
+(bond_cb_index_jsl)=
 ## 集思录可转债等权指数
 
 接口：bond_cb_index_jsl
@@ -1680,7 +1707,7 @@ print(bond_cb_redeem_jsl_df)
 
 | 名称                  | 类型      | 描述        |
 |---------------------|---------|-----------|
-| price_dt            | object  | 日期        |
+| price_dt            | str     | 日期        |
 | price               | float64 | 指数        |
 | amount              | float64 | 剩余规模（亿元）  |
 | volume              | float64 | 成交额（亿元）   |
@@ -1736,6 +1763,7 @@ print(bond_cb_index_jsl_df)
 1150  2022-09-23  1998.653  ...   3856.021            -0.34
 ```
 
+(bond_cb_adj_logs_jsl)=
 ## 可转债转股价格调整记录-集思录
 
 接口：bond_cb_adj_logs_jsl
@@ -1756,7 +1784,7 @@ print(bond_cb_index_jsl_df)
 
 | 名称       | 类型      | 描述  |
 |----------|---------|-----|
-| 转债名称     | object  | -   |
+| 转债名称     | str     | -   |
 | 股东大会日    | object  | -   |
 | 下修前转股价   | float64 | -   |
 | 下修后转股价   | float64 | -   |
@@ -1781,6 +1809,7 @@ print(bond_convert_adj_logs_jsl_df)
 2  洪涛转债  2019-11-20    9.97    8.00  2019-11-21  3.10
 ```
 
+(bond_china_close_return)=
 ## 收盘收益率曲线历史数据
 
 接口：bond_china_close_return
@@ -1838,6 +1867,7 @@ print(bond_china_close_return_df)
 14  2023-11-01  11.000  2.7115  2.7252  3.0458
 ```
 
+(bond_zh_us_rate)=
 ## 中美国债收益率
 
 接口：bond_zh_us_rate
@@ -1899,6 +1929,7 @@ print(bond_zh_us_rate_df)
 [8600 rows x 13 columns]
 ```
 
+(bond_gb_zh_sina)=
 ## 中国国债收益率行情
 
 接口：bond_gb_zh_sina
@@ -1953,6 +1984,7 @@ print(bond_gb_zh_sina_df)
 [1000 rows x 6 columns]
 ```
 
+(bond_gb_us_sina)=
 ## 美国国债收益率行情
 
 接口：bond_gb_us_sina
@@ -2009,6 +2041,7 @@ print(bond_gb_us_sina_df)
 
 ## 债券发行
 
+(bond_treasure_issue_cninfo)=
 ### 国债发行
 
 接口：bond_treasure_issue_cninfo
@@ -2028,8 +2061,8 @@ print(bond_gb_us_sina_df)
 
 | 名称     | 类型      | 描述       |
 |--------|---------|----------|
-| 债券代码   | object  | -        |
-| 债券简称   | object  | -        |
+| 债券代码   | str     | -        |
+| 债券简称   | str     | -        |
 | 发行起始日  | object  | -        |
 | 发行终止日  | object  | -        |
 | 计划发行总量 | float64 | 注意单位：亿元 |
@@ -2038,11 +2071,11 @@ print(bond_gb_us_sina_df)
 | 单位面值   | int64   | 注意单位：元  |
 | 缴款日    | object  | -        |
 | 增发次数   | int64   | -        |
-| 交易市场   | object  | -        |
-| 发行方式   | object  | -        |
-| 发行对象   | object  | -        |
+| 交易市场   | str     | -        |
+| 发行方式   | str     | -        |
+| 发行对象   | str     | -        |
 | 公告日期   | object  | -        |
-| 债券名称   | object  | -        |
+| 债券名称   | str     | -        |
 
 接口示例
 
@@ -2071,6 +2104,7 @@ print(bond_treasure_issue_cninfo_df)
 [104 rows x 15 columns]
 ```
 
+(bond_local_government_issue_cninfo)=
 ### 地方债发行
 
 接口：bond_local_government_issue_cninfo
@@ -2090,8 +2124,8 @@ print(bond_treasure_issue_cninfo_df)
 
 | 名称     | 类型      | 描述       |
 |--------|---------|----------|
-| 债券代码   | object  | -        |
-| 债券简称   | object  | -        |
+| 债券代码   | str     | -        |
+| 债券简称   | str     | -        |
 | 发行起始日  | object  | -        |
 | 发行终止日  | object  | -        |
 | 计划发行总量 | float64 | 注意单位：亿元 |
@@ -2100,11 +2134,11 @@ print(bond_treasure_issue_cninfo_df)
 | 单位面值   | int64   | 注意单位：元  |
 | 缴款日    | object  | -        |
 | 增发次数   | int64   | -        |
-| 交易市场   | object  | -        |
-| 发行方式   | object  | -        |
+| 交易市场   | str     | -        |
+| 发行方式   | str     | -        |
 | 发行对象   | object  | -        |
 | 公告日期   | object  | -        |
-| 债券名称   | object  | -        |
+| 债券名称   | str     | -        |
 
 接口示例
 
@@ -2133,6 +2167,7 @@ print(bond_local_government_issue_cninfo_df)
 [1449 rows x 15 columns]
 ```
 
+(bond_corporate_issue_cninfo)=
 ### 企业债发行
 
 接口：bond_corporate_issue_cninfo
@@ -2152,8 +2187,8 @@ print(bond_local_government_issue_cninfo_df)
 
 | 名称         | 类型      | 描述       |
 |------------|---------|----------|
-| 债券代码       | object  | -        |
-| 债券简称       | object  | -        |
+| 债券代码       | str     | -        |
+| 债券简称       | str     | -        |
 | 公告日期       | object  | -        |
 | 交易所网上发行起始日 | object  | -        |
 | 交易所网上发行终止日 | object  | -        |
@@ -2161,14 +2196,14 @@ print(bond_local_government_issue_cninfo_df)
 | 实际发行总量     | float64 | 注意单位：万元 |
 | 发行面值       | float64 | -        |
 | 发行价格       | int64   | 注意单位：元  |
-| 发行方式       | object  | -        |
-| 发行对象       | object  | -        |
-| 发行范围       | object  | -        |
-| 承销方式       | object  | -        |
+| 发行方式       | str     | -        |
+| 发行对象       | str     | -        |
+| 发行范围       | str     | -        |
+| 承销方式       | str     | -        |
 | 最小认购单位     | float64 | 注意单位：万元 |
-| 募资用途说明     | object  | -        |
+| 募资用途说明     | str     | -        |
 | 最低认购额      | float64 | 注意单位：万元 |
-| 债券名称       | object  | -        |
+| 债券名称       | str     | -        |
 
 接口示例
 
@@ -2197,6 +2232,7 @@ print(bond_corporate_issue_cninfo_df)
 [434 rows x 17 columns]
 ```
 
+(bond_cov_issue_cninfo)=
 ### 可转债发行
 
 接口：bond_cov_issue_cninfo
@@ -2216,8 +2252,8 @@ print(bond_corporate_issue_cninfo_df)
 
 | 名称              | 类型      | 描述       |
 |-----------------|---------|----------|
-| 债券代码            | object  | -        |
-| 债券简称            | object  | -        |
+| 债券代码            | str     | -        |
+| 债券简称            | str     | -        |
 | 公告日期            | object  | -        |
 | 发行起始日           | object  | -        |
 | 发行终止日           | object  | -        |
@@ -2225,17 +2261,17 @@ print(bond_corporate_issue_cninfo_df)
 | 实际发行总量          | float64 | 注意单位：万元 |
 | 发行面值            | int64   | 注意单位：元  |
 | 发行价格            | float64 | 注意单位：元  |
-| 发行方式            | object  | -        |
-| 发行对象            | object  | -        |
-| 发行范围            | object  | -        |
-| 承销方式            | object  | -        |
-| 募资用途说明          | object  | -        |
+| 发行方式            | str     | -        |
+| 发行对象            | str     | -        |
+| 发行范围            | str     | -        |
+| 承销方式            | str     | -        |
+| 募资用途说明          | str     | -        |
 | 初始转股价格          | float64 | 注意单位：元  |
 | 转股开始日期          | object  | -        |
 | 转股终止日期          | object  | -        |
 | 网上申购日期          | object  | -        |
-| 网上申购代码          | object  | -        |
-| 网上申购简称          | object  | -        |
+| 网上申购代码          | str     | -        |
+| 网上申购简称          | str     | -        |
 | 网上申购数量上限        | float64 | 注意单位：万元 |
 | 网上申购数量下限        | float64 | 注意单位：万元 |
 | 网上申购单位          | float64 | -        |
@@ -2244,9 +2280,9 @@ print(bond_corporate_issue_cninfo_df)
 | 配售价格            | float64 | 注意单位：元  |
 | 债权登记日           | object  | -        |
 | 优先申购缴款日         | object  | -        |
-| 转股代码            | object  | -        |
-| 交易市场            | object  | -        |
-| 债券名称            | object  | -        |
+| 转股代码            | str     | -        |
+| 交易市场            | str     | -        |
+| 债券名称            | str     | -        |
 
 接口示例
 
@@ -2279,6 +2315,7 @@ print(bond_cov_issue_cninfo_df)
 [15 rows x 31 columns]
 ```
 
+(bond_cov_stock_issue_cninfo)=
 ### 可转债转股
 
 接口：bond_cov_stock_issue_cninfo
@@ -2297,16 +2334,16 @@ print(bond_cov_issue_cninfo_df)
 
 | 名称       | 类型      | 描述      |
 |----------|---------|---------|
-| 债券代码     | object  | -       |
-| 债券简称     | object  | -       |
+| 债券代码     | str     | -       |
+| 债券简称     | str     | -       |
 | 公告日期     | object  | -       |
 | 转股代码     | object  | -       |
 | 转股简称     | object  | -       |
 | 转股价格     | float64 | 注意单位：元 |
 | 自愿转换期起始日 | object  | -       |
 | 自愿转换期终止日 | object  | -       |
-| 标的股票     | object  | -       |
-| 债券名称     | object  | -       |
+| 标的股票     | str     | -       |
+| 债券名称     | str     | -       |
 
 接口示例
 
@@ -2341,6 +2378,7 @@ print(bond_cov_stock_issue_cninfo_df)
 
 #### 综合类指数
 
+(bond_new_composite_index_cbond)=
 ##### 新综合指数
 
 接口：bond_new_composite_index_cbond
@@ -2390,6 +2428,7 @@ print(bond_new_composite_index_cbond_df)
 [5445 rows x 2 columns]
 ```
 
+(bond_composite_index_cbond)=
 ##### 综合指数
 
 接口：bond_composite_index_cbond
@@ -2439,6 +2478,7 @@ print(bond_composite_index_cbond_df)
 [5434 rows x 2 columns]
 ```
 
+(bond_treasury_index_cbond)=
 ##### 国债指数
 
 接口：bond_treasury_index_cbond
@@ -2490,6 +2530,7 @@ print(bond_treasury_index_cbond_df)
 
 ### 中债指数族系
 
+(bond_available_index_cbond)=
 #### 可选指数
 
 接口：bond_available_index_cbond
@@ -2508,7 +2549,7 @@ print(bond_treasury_index_cbond_df)
 
 | 名称    | 类型  | 描述 |
 |-------|-----|----|
-| index | int | -  |
+| index | int64 | -  |
 | value | str | -  |
 
 接口示例
@@ -2538,6 +2579,7 @@ print(bond_available_index_cbond_df)
 [313 rows x 2 columns]
 ```
 
+(bond_index_general_cbond)=
 #### 指数族系查询
 
 接口：bond_index_general_cbond
@@ -2552,7 +2594,7 @@ print(bond_available_index_cbond_df)
 |----------------|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | index_category | str | index_category="新综合指数"; index_category 取值参考 `ak.bond_available_index_cbond()` 的返回结果                                                                                                                      |
 | indicator      | str | indicator="财富"; choice of {"全价", "净价", "财富", "平均市值法久期", "平均现金流法久期", "平均市值法凸性", "平均现金流法凸性", "平均现金流法到期收益率", "平均市值法到期收益率", "平均基点价值", "平均待偿期", "平均派息率", "指数上日总市值", "财富指数涨跌幅", "全价指数涨跌幅", "净价指数涨跌幅", "现券结算量"} |
-| periods        | str | period="总值"; choice of {"总值", "1年以下", "1-3年", "3-5年", "5-7年", "7-10年", "10年以上", "0-3个月", "3-6个月", "6-9个月", "9-12个月", "0-6个月", "6-12个月"}                                                                  |
+| period         | str | period="总值"; choice of {"总值", "1年以下", "1-3年", "3-5年", "5-7年", "7-10年", "10年以上", "0-3个月", "3-6个月", "6-9个月", "9-12个月", "0-6个月", "6-12个月"}                                                                  |
 
 输出参数
 

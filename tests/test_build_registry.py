@@ -7,12 +7,14 @@ from build_registry import (
     collect_doc_records,
     collect_exports,
     diff_baseline,
+    find_missing_labels,
     merge_records,
     parse_segment,
     parse_table,
     render_all_block,
     replace_all_block,
     serialize,
+    write_if_changed,
 )
 
 SIMPLE = """
@@ -191,6 +193,29 @@ def test_collect_doc_records_supports_fullwidth_colon(tmp_path):
     assert records["prev_iface"]["desc"] == "前一个接口"
 
 
+def test_find_missing_labels_reports_entry_without_label(tmp_path):
+    stock_dir = tmp_path / "stock"
+    stock_dir.mkdir()
+    (stock_dir / "a.md").write_text(
+        "(labelled_iface)=\n### 有标签\n\n接口：labelled_iface\n\n"
+        "### 无标签\n\n接口：bare_iface\n",
+        encoding="utf-8",
+    )
+    assert find_missing_labels(tmp_path) == ["bare_iface"]
+
+
+def test_find_missing_labels_accepts_label_before_entry_line(tmp_path):
+    """同一标题下有两个接口时，第二个接口的标签写在其 "接口：" 行之前。"""
+    bond_dir = tmp_path / "bond"
+    bond_dir.mkdir()
+    (bond_dir / "a.md").write_text(
+        "(first_iface)=\n### 标题\n\n接口：first_iface\n\n"
+        "(second_iface)=\n接口：second_iface\n",
+        encoding="utf-8",
+    )
+    assert find_missing_labels(tmp_path) == []
+
+
 FAKE_INIT = '''"""模块文档字符串"""
 
 from akshare._version import __version__
@@ -248,7 +273,7 @@ def test_merge_uses_exports_as_primary_key():
     """文档孤儿不得进入结果；无文档的导出必须保留并标记。"""
     exports = {
         "index_all_cni": "akshare.index.index_cni",
-        "no_doc_func": "akshare.stock_feature.stock_info",
+        "no_doc_func": "akshare.stock.research.stock_info",
     }
     docs = {
         "index_all_cni": {
@@ -279,9 +304,9 @@ def test_merge_uses_exports_as_primary_key():
 
 
 def test_merge_infers_category_from_module_when_undocumented():
-    exports = {"no_doc_func": "akshare.stock_feature.stock_info"}
+    exports = {"no_doc_func": "akshare.stock.research.stock_info"}
     records = merge_records(exports, {})
-    assert records[0]["category"] == "stock_feature"
+    assert records[0]["category"] == "stock"
     assert records[0]["desc"] is None
 
 
@@ -432,3 +457,34 @@ def test_replace_all_block_updates_stale_content():
     assert "old_iface" not in fresh
     assert "new_iface" in fresh
     assert fresh.count(ALL_BEGIN) == 1
+
+
+def test_write_if_changed_skips_identical_content(tmp_path):
+    # 内容未变时不得写入：重写会改动 mtime 与行尾，让 git 把文件标为已修改
+    target = tmp_path / "a.json"
+    target.write_bytes(b"line1\r\nline2\r\n")
+    before = target.stat().st_mtime_ns
+    assert write_if_changed(target, "line1\nline2\n") is False
+    assert target.read_bytes() == b"line1\r\nline2\r\n"
+    assert target.stat().st_mtime_ns == before
+
+
+def test_write_if_changed_preserves_crlf(tmp_path):
+    # Windows 上 core.autocrlf=true 时工作区是 CRLF，写回时须沿用
+    target = tmp_path / "a.json"
+    target.write_bytes(b"old\r\n")
+    assert write_if_changed(target, "new1\nnew2\n") is True
+    assert target.read_bytes() == b"new1\r\nnew2\r\n"
+
+
+def test_write_if_changed_preserves_lf(tmp_path):
+    target = tmp_path / "a.json"
+    target.write_bytes(b"old\n")
+    assert write_if_changed(target, "new1\nnew2\n") is True
+    assert target.read_bytes() == b"new1\nnew2\n"
+
+
+def test_write_if_changed_creates_missing_file_with_lf(tmp_path):
+    target = tmp_path / "a.json"
+    assert write_if_changed(target, "new\n") is True
+    assert target.read_bytes() == b"new\n"

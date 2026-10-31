@@ -23,10 +23,10 @@ from io import StringIO
 
 import pandas as pd
 import py_mini_racer
-import requests
 from bs4 import BeautifulSoup
 
-from akshare.utils import demjson
+from akshare.utils import jsonish
+from akshare.utils import http
 from akshare.utils.cons import headers
 from akshare.utils.tqdm import get_tqdm
 
@@ -68,7 +68,7 @@ def _fetch_fund_value_estimation_index_page(page: int) -> str:
         "(KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
         "Referer": "https://fund.eastmoney.com/fundguzhi.html",
     }
-    r = requests.get(url, headers=headers)
+    r = http.get(url, headers=headers)
     r.encoding = "gb2312"
     return r.text
 
@@ -143,7 +143,7 @@ def _fund_value_estimation_index_em() -> pd.DataFrame:
         big_df = pd.concat([big_df, temp_df], ignore_index=True)
     if big_df.empty:
         return big_df
-    big_df.drop_duplicates(subset=["基金代码"], inplace=True, ignore_index=True)
+    big_df = big_df.drop_duplicates(subset=["基金代码"], ignore_index=True)
     big_df["序号"] = range(1, len(big_df) + 1)
     return big_df
 
@@ -162,11 +162,11 @@ def fund_purchase_em() -> pd.DataFrame:
         "js": "reData",
         "sort": "fcode,asc",
     }
-    r = requests.get(url, params=params, headers=headers)
+    r = http.get(url, params=params, headers=headers)
     data_text = r.text
-    data_json = demjson.decode(data_text.strip("var reData="))
+    data_json = jsonish.loads(data_text.strip("var reData="))
     temp_df = pd.DataFrame(data_json["datas"])
-    temp_df.reset_index(inplace=True)
+    temp_df = temp_df.reset_index()
     temp_df["index"] = temp_df.index + 1
     temp_df.columns = [
         "序号",
@@ -223,9 +223,9 @@ def fund_name_em() -> pd.DataFrame:
     :rtype: pandas.DataFrame
     """
     url = "https://fund.eastmoney.com/js/fundcode_search.js"
-    r = requests.get(url, headers=headers)
+    r = http.get(url, headers=headers)
     text_data = r.text
-    data_json = demjson.decode(text_data.strip("var r = ")[:-1])
+    data_json = jsonish.loads(text_data.strip("var r = ")[:-1])
     temp_df = pd.DataFrame(data_json)
     temp_df.columns = ["基金代码", "拼音缩写", "基金简称", "基金类型", "拼音全称"]
     return temp_df
@@ -310,7 +310,7 @@ def fund_info_index_em(
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/103.0.0.0 Safari/537.36",
     }
-    r = requests.get(url, params=params, headers=headers)
+    r = http.get(url, params=params, headers=headers)
     data_json = r.json()
     data_json = json.loads(data_json["Data"])
     temp_df = pd.DataFrame([item.split("|") for item in data_json["datas"]])
@@ -403,9 +403,9 @@ def fund_open_fund_daily_em() -> pd.DataFrame:
         "atfc": "",
         "onlySale": "0",
     }
-    res = requests.get(url, params=params, headers=headers)
+    res = http.get(url, params=params, headers=headers)
     text_data = res.text
-    data_json = demjson.decode(text_data.strip("var db="))
+    data_json = jsonish.loads(text_data.strip("var db="))
     temp_df = pd.DataFrame(data_json["datas"])
     show_day = data_json["showday"]
     temp_df.columns = [
@@ -451,7 +451,7 @@ def fund_open_fund_daily_em() -> pd.DataFrame:
 
 def fund_open_fund_info_em(
     symbol: str = "710001", indicator: str = "单位净值走势", period: str = "成立来"
-) -> pd.DataFrame:
+) -> pd.DataFrame | tuple[pd.DataFrame, pd.DataFrame]:
     """
     东方财富网-天天基金网-基金数据-开放式基金净值
     https://fund.eastmoney.com/fund.html
@@ -461,16 +461,15 @@ def fund_open_fund_info_em(
     :type indicator: str
     :param period: "成立来"; choice of {"1月", "3月", "6月", "1年", "3年", "5年", "今年来", "成立来"}
     :type period: str
-    :return: 指定基金指定指标的数据
-    :rtype: pandas.DataFrame
+    :return: 指定基金指定指标的数据；"分红拆分" 返回分红、拆分两个 DataFrame
     """
     from akshare.utils.cons import headers
 
     if indicator not in ["分红送配详情", "拆分详情", "分红拆分"]:
         url = f"https://fund.eastmoney.com/pingzhongdata/{symbol}.js"  # 各类数据都在里面
-        r = requests.get(url, headers=headers)
+        r = http.get(url, headers=headers)
         data_text = r.text
-    
+
         js_code = py_mini_racer.MiniRacer()
         js_code.eval(data_text)
 
@@ -606,7 +605,7 @@ def fund_open_fund_info_em(
             "indexcode": "000300",
             "type": period_map[period],
         }
-        r = requests.get(url, params=params, headers=headers)
+        r = http.get(url, params=params, headers=headers)
         data_json = r.json()
         temp_df = pd.DataFrame(data_json["Data"][0]["data"])
         temp_df.columns = ["日期", "累计收益率"]
@@ -675,61 +674,24 @@ def fund_open_fund_info_em(
         )
         return temp_df
 
-    if indicator == "分红拆分":
-
+    if indicator in ("分红送配详情", "拆分详情", "分红拆分"):
         url = f"https://fundf10.eastmoney.com/fhsp_{symbol}.html"
-        r = requests.get(url, headers=headers)
-        table_num = len(pd.read_html(StringIO(r.text)))
+        r = http.get(url, headers=headers)
+        tables = pd.read_html(StringIO(r.text))
+        offset = 1 if len(tables) == 3 else 0
 
-        fh_result = pd.DataFrame()
-        if table_num == 3:
-            temp_df = pd.read_html(StringIO(r.text))[1]
-        else:
-            temp_df = pd.read_html(StringIO(r.text))[0]
-        if temp_df.iloc[0, 1] == "暂无分红信息!":
-            pass
-        else:
-            fh_result =  temp_df
+        def action_table(index: int, empty_message: str) -> pd.DataFrame:
+            table = tables[offset + index]
+            return pd.DataFrame() if table.iloc[0, 1] == empty_message else table
 
-        cf_result = pd.DataFrame()
-        if table_num == 3:
-            temp_df = pd.read_html(StringIO(r.text))[2]
-        else:
-            temp_df = pd.read_html(StringIO(r.text))[1]
-        if temp_df.iloc[0, 1] == "暂无拆分信息!":
-            pass
-        else:
-            cf_result = temp_df
-
-        return (fh_result, cf_result)
-        
-    # 分红送配详情
-    if indicator == "分红送配详情":
-        url = f"https://fundf10.eastmoney.com/fhsp_{symbol}.html"
-        r = requests.get(url, headers=headers)
-        table_num = len(pd.read_html(StringIO(r.text)))
-        if table_num == 3:
-            temp_df = pd.read_html(StringIO(r.text))[1]
-        else:
-            temp_df = pd.read_html(StringIO(r.text))[0]
-        if temp_df.iloc[0, 1] == "暂无分红信息!":
-            return pd.DataFrame()
-        else:
-            return temp_df
-
-    # 拆分详情
-    if indicator == "拆分详情":
-        url = f"https://fundf10.eastmoney.com/fhsp_{symbol}.html"
-        r = requests.get(url, headers=headers)
-        table_num = len(pd.read_html(StringIO(r.text)))
-        if table_num == 3:
-            temp_df = pd.read_html(StringIO(r.text))[2]
-        else:
-            temp_df = pd.read_html(StringIO(r.text))[1]
-        if temp_df.iloc[0, 1] == "暂无拆分信息!":
-            return pd.DataFrame()
-        else:
-            return temp_df
+        if indicator == "分红送配详情":
+            return action_table(0, "暂无分红信息!")
+        if indicator == "拆分详情":
+            return action_table(1, "暂无拆分信息!")
+        return (
+            action_table(0, "暂无分红信息!"),
+            action_table(1, "暂无拆分信息!"),
+        )
     return pd.DataFrame()
 
 
@@ -741,7 +703,7 @@ def fund_money_fund_daily_em() -> pd.DataFrame:
     :rtype: pandas.DataFrame
     """
     url = "https://fund.eastmoney.com/HBJJ_pjsyl.html"
-    r = requests.get(url, headers=headers)
+    r = http.get(url, headers=headers)
     r.encoding = "gb2312"
     show_day = pd.read_html(StringIO(r.text))[1].iloc[0, 5:11].tolist()
     temp_df = pd.read_html(StringIO(r.text))[1].iloc[1:, 2:]
@@ -791,14 +753,14 @@ def fund_money_fund_info_em(symbol: str = "000009") -> pd.DataFrame:
         "endDate": "",
         "_": round(time.time() * 1000),
     }
-    r = requests.get(url, params=params, headers=headers)
+    r = http.get(url, params=params, headers=headers)
     data_json = r.json()
     total_page = math.ceil(int(data_json["TotalCount"]) / 20)
     tqdm = get_tqdm()
     big_list = []
     for page in tqdm(range(1, total_page + 1), leave=False):
         params.update({"pageIndex": page})
-        r = requests.get(url, params=params, headers=headers)
+        r = http.get(url, params=params, headers=headers)
         data_json = r.json()
         temp_df = pd.DataFrame(data_json["Data"]["LSJZList"])
         big_list.append(temp_df)
@@ -812,7 +774,7 @@ def fund_money_fund_info_em(symbol: str = "000009") -> pd.DataFrame:
             "SHZT": "赎回状态",
         }
     )
-    big_df.sort_values(by=["净值日期"], inplace=True, ignore_index=True)
+    big_df = big_df.sort_values(by=["净值日期"], ignore_index=True)
     big_df = big_df[["净值日期", "每万份收益", "7日年化收益率", "申购状态", "赎回状态"]]
     big_df["净值日期"] = pd.to_datetime(big_df["净值日期"], errors="coerce").dt.date
     big_df["每万份收益"] = pd.to_numeric(big_df["每万份收益"], errors="coerce")
@@ -844,7 +806,7 @@ def fund_financial_fund_daily_em() -> pd.DataFrame:
         "cycle": "",
         "OnlySale": "1",
     }
-    r = requests.get(url, params=params, headers=headers)
+    r = http.get(url, params=params, headers=headers)
     data_json = r.json()
     temp_df = pd.DataFrame(data_json["Data"]["List"])
     if temp_df.empty:
@@ -916,14 +878,14 @@ def fund_financial_fund_info_em(symbol: str = "000134") -> pd.DataFrame:
         "endDate": "",
         "_": round(time.time() * 1000),
     }
-    r = requests.get(url, params=params, headers=headers)
+    r = http.get(url, params=params, headers=headers)
     data_json = r.json()
     total_page = math.ceil(int(data_json["TotalCount"]) / 20)
     tqdm = get_tqdm()
     big_list = []
     for page in tqdm(range(1, total_page + 1), leave=False):
         params.update({"pageIndex": page})
-        r = requests.get(url, params=params, headers=headers)
+        r = http.get(url, params=params, headers=headers)
         data_json = r.json()
         temp_df = pd.DataFrame(data_json["Data"]["LSJZList"])
         big_list.append(temp_df)
@@ -950,7 +912,7 @@ def fund_financial_fund_info_em(symbol: str = "000134") -> pd.DataFrame:
             "分红送配",
         ]
     ]
-    temp_df.sort_values(["净值日期"], inplace=True, ignore_index=True)
+    temp_df = temp_df.sort_values(["净值日期"], ignore_index=True)
     temp_df["净值日期"] = pd.to_datetime(temp_df["净值日期"], errors="coerce").dt.date
     temp_df["单位净值"] = pd.to_numeric(temp_df["单位净值"], errors="coerce")
     temp_df["累计净值"] = pd.to_numeric(temp_df["累计净值"], errors="coerce")
@@ -982,9 +944,9 @@ def fund_graded_fund_daily_em() -> pd.DataFrame:
         "dt": "1580914040623",
         "atfc": "",
     }
-    res = requests.get(url, params=params, headers=headers)
+    res = http.get(url, params=params, headers=headers)
     text_data = res.text
-    data_json = demjson.decode(text_data.strip("var db="))
+    data_json = jsonish.loads(text_data.strip("var db="))
     temp_df = pd.DataFrame(data_json["datas"])
     show_day = data_json["showday"]
     temp_df.columns = [
@@ -1051,14 +1013,14 @@ def fund_graded_fund_info_em(symbol: str = "150232") -> pd.DataFrame:
         "endDate": "",
         "_": round(time.time() * 1000),
     }
-    r = requests.get(url, params=params, headers=headers)
+    r = http.get(url, params=params, headers=headers)
     data_json = r.json()
     total_page = math.ceil(int(data_json["TotalCount"]) / 20)
     tqdm = get_tqdm()
     big_list = []
     for page in tqdm(range(1, total_page + 1), leave=False):
         params.update({"pageIndex": page})
-        r = requests.get(url, params=params, headers=headers)
+        r = http.get(url, params=params, headers=headers)
         data_json = r.json()
         temp_df = pd.DataFrame(data_json["Data"]["LSJZList"])
         big_list.append(temp_df)
@@ -1073,7 +1035,7 @@ def fund_graded_fund_info_em(symbol: str = "150232") -> pd.DataFrame:
             "SHZT": "赎回状态",
         }
     )
-    big_df.sort_values(by=["净值日期"], inplace=True, ignore_index=True)
+    big_df = big_df.sort_values(by=["净值日期"], ignore_index=True)
     big_df = big_df[
         ["净值日期", "单位净值", "累计净值", "日增长率", "申购状态", "赎回状态"]
     ]
@@ -1092,7 +1054,7 @@ def fund_etf_fund_daily_em() -> pd.DataFrame:
     :rtype: pandas.DataFrame
     """
     url = "https://fund.eastmoney.com/cnjy_dwjz.html"
-    r = requests.get(url, headers=headers)
+    r = http.get(url, headers=headers)
     r.encoding = "gb2312"
     show_day = pd.read_html(StringIO(r.text))[1].iloc[0, 6:10].tolist()
     temp_df = pd.read_html(StringIO(r.text))[1].iloc[1:, 2:]
@@ -1100,7 +1062,7 @@ def fund_etf_fund_daily_em() -> pd.DataFrame:
     temp_df = temp_df.iloc[1:, 1:]
     temp_df.columns = temp_df_columns
     temp_df["基金简称"] = temp_df["基金简称"].str.replace("行情吧档案", "")
-    temp_df.reset_index(inplace=True, drop=True)
+    temp_df = temp_df.reset_index(drop=True)
     temp_df.columns = [
         "基金代码",
         "基金简称",
@@ -1148,14 +1110,14 @@ def fund_etf_fund_info_em(
         "endDate": "-".join([end_date[:4], end_date[4:6], end_date[6:]]),
         "_": round(time.time() * 1000),
     }
-    r = requests.get(url, params=params, headers=headers)
+    r = http.get(url, params=params, headers=headers)
     data_json = r.json()
     total_page = math.ceil(data_json["TotalCount"] / 20)
     df_list = []
     tqdm = get_tqdm()
     for page in tqdm(range(1, total_page + 1), leave=False):
         params.update({"pageIndex": page})
-        r = requests.get(url, params=params, headers=headers)
+        r = http.get(url, params=params, headers=headers)
         data_json = r.json()
         temp_df = pd.DataFrame(data_json["Data"]["LSJZList"])
         df_list.append(temp_df)
@@ -1177,7 +1139,7 @@ def fund_etf_fund_info_em(
     big_df["单位净值"] = pd.to_numeric(big_df["单位净值"], errors="coerce")
     big_df["累计净值"] = pd.to_numeric(big_df["累计净值"], errors="coerce")
     big_df["日增长率"] = pd.to_numeric(big_df["日增长率"], errors="coerce")
-    big_df.sort_values(["净值日期"], inplace=True, ignore_index=True)
+    big_df = big_df.sort_values(["净值日期"], ignore_index=True)
     return big_df
 
 
@@ -1221,7 +1183,7 @@ def fund_value_estimation_em(symbol: str = "全部") -> pd.DataFrame:
         "pageSize": "20000",
         "_": int(time.time() * 1000),
     }
-    r = requests.get(url, params=params, headers=headers)
+    r = http.get(url, params=params, headers=headers)
     json_data = r.json()
     data_content = json_data.get("Data")
     if not data_content or not data_content.get("list"):
@@ -1274,9 +1236,9 @@ def fund_value_estimation_em(symbol: str = "全部") -> pd.DataFrame:
             f"{value_day}-单位净值",
         ]
     ]
-    temp_df.reset_index(inplace=True)
+    temp_df = temp_df.reset_index()
     temp_df["index"] = range(1, len(temp_df) + 1)
-    temp_df.rename(columns={"index": "序号"}, inplace=True)
+    temp_df = temp_df.rename(columns={"index": "序号"})
     return temp_df
 
 
@@ -1305,7 +1267,7 @@ def fund_hk_fund_hist_em(
             "date1": "",
             "date2": "",
         }
-        r = requests.get(url, params=params, headers=headers)
+        r = http.get(url, params=params, headers=headers)
         data_json = r.json()
         temp_one_df = pd.DataFrame(data_json["Data"])
         temp_one_df.columns = [
@@ -1341,7 +1303,7 @@ def fund_hk_fund_hist_em(
             "date1": "",
             "date2": "",
         }
-        r = requests.get(url, params=params, headers=headers)
+        r = http.get(url, params=params, headers=headers)
         data_json = r.json()
         temp_one_df = pd.DataFrame(data_json["Data"])
         temp_one_df.columns = [

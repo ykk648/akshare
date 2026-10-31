@@ -1,47 +1,51 @@
-# [AKShare](https://github.com/akfamily/akshare) 安装指导
+# 安装指导
 
 ## 重要提示
 
 1. 目前 [AKShare](https://github.com/akfamily/akshare) 仅支持 64 位版本的操作系统安装和使用；
-2. 目前 [AKShare](https://github.com/akfamily/akshare) 仅支持 [Python](https://www.python.org/) 3.9(64 位) 及以上版本，
-3. 这里推荐 [Python](https://www.python.org/) 3.11.x(64 位) 版本；
-3. [AKShare](https://github.com/akfamily/akshare) 推荐安装最新版本的 [Anaconda (64 位)](https://www.anaconda.com/)，可以解决大部分环境配置问题；
-4. 对于熟悉容器技术的小伙伴，可以安装 Docker 使用，指导教程如下：[AKShare Docker 部署](https://akshare.akfamily.xyz/akdocker/akdocker.html).
+2. 目前 AKShare 仅支持 [Python](https://www.python.org/) 3.11(64 位) 及以上版本，这里推荐 [Python](https://www.python.org/) 3.13.x(64 位) 版本；
+3. AKShare 推荐使用 [uv](https://docs.astral.sh/uv/) 来安装 Python 和管理虚拟环境，详见 [AKShare uv 环境配置](uv.md)；如需在 R 语言或 MATLAB 中调用，请参考下文的“R 语言调用支持”和“MATLAB 调用支持”；
+4. 需要通过 HTTP 调用 AKShare 时，请使用 [AKTools](aktools.md) 部署 HTTP API 服务。
 
-## 安装 [AKShare](https://github.com/akfamily/akshare)
+## 安装 AKShare
 
-### 通用安装
+### 使用 uv 安装（推荐）
+
+在已激活的 uv 虚拟环境中运行，安装 uv 和创建虚拟环境的完整步骤详见 [AKShare uv 环境配置](uv.md)：
+
+```
+uv pip install akshare --upgrade
+```
+
+国内用户可以使用镜像源加速：
+
+```
+uv pip install akshare --upgrade --default-index https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+### 使用 pip 安装
 
 ```
 pip install akshare --upgrade
 ```
 
-注意：程序运行时，文件名、文件夹名不能是：akshare
-
-### 国内安装-Python
+国内用户可以使用镜像源加速：
 
 ```
 pip install akshare --upgrade -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-### 国内安装-Anaconda
-
-```
-pip install akshare --upgrade --user -i https://pypi.tuna.tsinghua.edu.cn/simple
+```{warning}
+程序运行时，文件名、文件夹名不能是 akshare
 ```
 
-## 升级 [AKShare](https://github.com/akfamily/akshare)
+## 升级 AKShare
 
-P.S. **由于目前版本更新迭代频繁，请在使用 [AKShare](https://github.com/akfamily/akshare) 前先升级，命令如下所示**
+P.S. **由于目前版本更新迭代频繁，请在使用 AKShare 前先升级，命令如下所示**
 
 ```
 pip install akshare --upgrade -i https://pypi.org/simple
 ```
-
-## M 系列芯片支持
-
-1. AKShare 目前已经默认适合苹果 M 系列芯片，直接通过 `pip install akshare --upgrade` 即可使用
-2. 如果需要编译，请参考该文章：[Building V8 on an M1 MacBook](https://joyeecheung.github.io/blog/2021/08/27/binding-v8-on-an-m1-macbook/)
 
 ## 树莓派支持
 
@@ -53,21 +57,22 @@ pip install akshare --upgrade -i https://pypi.org/simple
 4. 通过 `source myenv/bin/activate` 来激活创建好的虚拟环境
 5. 通过 `pip install akshare --upgrade` 来安装和升级 AKShare 到最新版本
 
+(install-r)=
 ## R 语言调用支持
 
-**推荐使用 [AKTools 项目](https://github.com/akfamily/aktools) 来部署 AKShare 的 HTTP API 使用，运行速度更快，更稳定，兼容各种编程语言，详情参考 [AKTools 文档](https://aktools.readthedocs.io/)**
+```{tip}
+推荐使用 [AKTools 项目](https://github.com/akfamily/aktools) 部署 AKShare 的 HTTP API，运行速度更快、更稳定，兼容各种编程语言，详情参考 [AKTools 文档](https://aktools.akfamily.xyz/)。
+```
 
-### 安装 Anaconda
+### 配置 Python 环境
 
-[下载 Windows 64 位 Python 3.9 的 Anaconda](https://repo.anaconda.com/archive/Anaconda3-2020.07-Windows-x86_64.exe)
-
-[安装教程参见 AKShare 文档的环境配置专栏](https://akshare.akfamily.xyz/anaconda.html)
+按 [AKShare uv 环境配置](uv.md) 中的“方式一：虚拟环境”，创建名为 `ak_test` 的工作目录和虚拟环境，并在其中安装 AKShare。Python 需为 3.11 及以上版本，推荐 3.13。
 
 ### 安装 R 语言
 
 [下载 R](https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/windows/)
 
-[下载 RStudio](https://download1.rstudio.org/desktop/windows/RStudio-1.3.959.exe)
+[下载 RStudio Desktop](https://posit.co/download/rstudio-desktop/)
 
 先安装 R，再安装 RStudio，选择默认步骤安装即可。
 
@@ -97,17 +102,18 @@ install.packages("reticulate")
 
 ```
 library(reticulate)
-use_python("/usr/local/bin/python")  # 默认使用本地的 Python, 如果需要使用虚拟环境的 Pyhton, 请参考 reticulate 的提示
+use_virtualenv("~/ak_test/.venv", required = TRUE)  # 使用 uv 创建的虚拟环境
 ```
 
-调用本地的 Python 程序，其中 usr 需要替换为本地计算机的用户名。
+即可调用已安装 AKShare 的 Python 环境，其中 `~/ak_test/.venv` 为虚拟环境所在目录，请替换为实际路径。
+也可以用 `use_python()` 直接指定 Python 解释器的完整路径，例如 Windows 上的 `use_python("C:/Users/用户名/ak_test/.venv/Scripts/python.exe")`，
+macOS 上的 `use_python("/Users/用户名/ak_test/.venv/bin/python")`，其中“用户名”需要替换为本地计算机的用户名。
 
-最后展示一段演示代码，此代码在 R 语言中通过 reticulate 包来调用 [AKShare](https://github.com/akfamily/akshare) 获取数据：
+最后展示一段演示代码，此代码在 R 语言中通过 reticulate 包来调用 AKShare 获取数据：
 
 ```
 library(reticulate)  # 导入 reticulate 包
-use_python("/king/local/bin/python")  # 其中的 king 为本地计算机用户名
-# use_condaenv(condaenv="ak_test", required = TRUE)  # 也可以使用 conda 创建的虚拟环境，其中的 ak_test 为虚拟环境名称
+use_virtualenv("~/ak_test/.venv", required = TRUE)  # 使用 uv 创建的虚拟环境
 ak <- import("akshare")  # 类似于 import akshare as ak
 stock_df <- ak$stock_zh_a_hist()  # 类似于 ak.stock_zh_a_hist()
 head(stock_df)  # 查看数据
@@ -123,22 +129,23 @@ head(stock_df)  # 查看数据
 6 1991-04-09 47.80 47.80 47.80 47.80      4  19000    0  -0.50  -0.24  0
 ```
 
+(install-matlab)=
 ## MATLAB 调用支持
 
-**推荐使用 [AKTools 项目](https://github.com/akfamily/aktools) 来部署 AKShare 的 HTTP API 使用，运行速度更快，更稳定，兼容各种编程语言，详情参考 [AKTools 文档](https://aktools.readthedocs.io/)**
+```{tip}
+推荐使用 [AKTools 项目](https://github.com/akfamily/aktools) 部署 AKShare 的 HTTP API，运行速度更快、更稳定，兼容各种编程语言，详情参考 [AKTools 文档](https://aktools.akfamily.xyz/)。
+```
 
-### 安装 Anaconda
+### 配置 Python 环境
 
-[下载 Windows 平台带 64 位 Python 的 Anaconda](https://repo.anaconda.com/archive/)，其需要符合
+按 [AKShare uv 环境配置](uv.md) 中的“方式一：虚拟环境”创建虚拟环境并安装 AKShare，其中 Python 的版本需要符合
 [Matlab 各版本对 Python 的支持](https://www.mathworks.com/support/requirements/python-compatibility.html?s_tid=srchtitle_site_search_1_python%20compatibility)
-，比如 `Matlab R2023b` 目前支持 `Python` 的 `3.9, 3.10, 3.11` 版本。
-
-[Anaconda 安装教程参见 AKShare 文档的环境配置专栏](https://akshare.akfamily.xyz/anaconda.html)
+，同时满足 AKShare 对 Python 3.11 及以上版本的要求。比如 `Matlab R2023b` 支持 `Python` 的 `3.9, 3.10, 3.11` 版本，只能选用 3.11；`Matlab R2024b` 至 `R2025b` 最高支持 3.12；`Matlab R2026a` 起支持推荐的 3.13。创建虚拟环境时用 `--python` 指定版本，例如 `uv venv --python 3.12`。
 
 ### 安装 MATLAB
 
-通过 [下载 64 位 MATLAB R2023b](https://ww2.mathworks.cn/downloads/message/error_page/unlicensed?release=R2023b) 页面
-来登录后下载激活。
+通过 [MATLAB 下载页面](https://ww2.mathworks.cn/downloads/) 登录 MathWorks 账号后下载并激活 64 位 MATLAB；
+由于下文的数据格式转换需要用到 R2024a 引入的功能，建议安装 R2024a 及以上版本。
 
 通过官方安装文档 [安装 64 位 MATLAB](https://ww2.mathworks.cn/help/install/ug/install-products-on-client-machines.html) 来
 进行安装配置。
@@ -148,8 +155,8 @@ head(stock_df)  # 查看数据
 1. Matlab 官方文档：[配置您的系统使用 Python](https://ww2.mathworks.cn/help/matlab/matlab_external/install-supported-python-implementation.html)
 2. 帮助社区解答：[Python virtual environments with MATLAB](https://www.mathworks.com/support/search.html/answers/1750425-python-virtual-environments-with-python-interface.html?fq%5B%5D=asset_type_name:answer&page=1)
 
-如果使用虚拟环境，则 `pyenv(Version="C:\Users\albert\.conda\envs\matlab\python.exe");` 即可激活相关环境，
-此处 `C:\Users\albert\.conda\envs\matlab\python.exe` 为本地虚拟环境的路径。
+如果使用虚拟环境，则 `pyenv(Version="C:\Users\用户名\ak_test\.venv\Scripts\python.exe");` 即可激活相关环境，
+此处 `C:\Users\用户名\ak_test\.venv\Scripts\python.exe` 为本地虚拟环境中 Python 解释器的路径，“用户名”需要替换为本地计算机的用户名；macOS 和 Linux 上为虚拟环境目录下的 `.venv/bin/python`。
 
 #### 测试环境配置
 
@@ -159,23 +166,8 @@ head(stock_df)  # 查看数据
 pyenv
 ```
 
-如返回：
-
-```
-ans =
-
-  PythonEnvironment - 属性:
-
-          Version: "3.10"
-       Executable: "C:\Users\albert\.conda\envs\matlab\python.EXE"
-          Library: "C:\Users\albert\.conda\envs\matlab\python310.dll"
-             Home: "C:\Users\albert\.conda\envs\matlab"
-           Status: NotLoaded
-    ExecutionMode: InProcess
-```
-
-则表示可以正常使用 `C:\Users\albert\.conda\envs\matlab\python` 虚拟环境中的 Python，
-同时确保在该环境中已经安装最新版的 AKShare（可以在本地 conda 中名为 `matlab` 的虚拟环境中查看）。
+如果返回结果中的 `Executable` 为上面指定的虚拟环境中的 Python 解释器路径，`Version` 为该环境的 Python 版本，则表示可以正常使用该虚拟环境中的 Python，
+同时确保在该环境中已经安装最新版的 AKShare（可以在激活该虚拟环境后运行 `uv pip show akshare` 查看）。
 
 #### 测试调用 AKShare 接口
 
@@ -337,10 +329,10 @@ ans =
 ```
 % 导入 AKShare 库
 ak = py.importlib.import_module('akshare');
-% 代用 AKShare 数据接口
+% 调用 AKShare 数据接口
 temp_df = ak.stock_zh_a_hist();
-% 转化数据格式
-df = py2matlab(temp_df);
+% 将 pandas.DataFrame 转换为 MATLAB 表格，需要 MATLAB R2024a 及以上版本
+df = table(temp_df);
 % 展示获取到本地的数据
 disp(df)
 ```
@@ -349,7 +341,7 @@ disp(df)
 
 ### 1. 安装超时的错误
 
-1.大致报错如下，出现关键词 **amt** :
+1. 大致报错如下，出现关键词 **amt**：
 
 ```
 Traceback (most recent call last):
@@ -361,7 +353,7 @@ File "/home/xiaoduc/.pyenv/versions/3.7.3/lib/python3.7/site-packages/pip/_vendo
 data = self.__fp.read(amt)
 ```
 
-2.解决方案如下：
+2. 解决方案如下：
 
 方法一
 
@@ -375,26 +367,24 @@ pip --default-timeout=100 install -U akshare
 
 ### 2. 拒绝访问错误
 
-1.大致报错如下，出现关键词 **拒绝访问** :
+1. 大致报错如下，出现关键词 **拒绝访问**：
 
 ```
 Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: '/Users/mac/Anaconda/anaconda3/lib/python3.7/site-packages/cv2/__init__.py'
 Consider using the `--user` option or check the permissions.
 ```
 
-2.解决方案如下：
+2. 解决方案如下：
 
 方法一
 
-```
-pip install akshare --user
-```
+在虚拟环境中安装，虚拟环境位于用户目录下，不需要管理员权限，详见 [AKShare uv 环境配置](uv.md)
 
 方法二
 
-使用管理员权限（右键单击选择管理员权限）打开 Anaconda Prompt 进行安装
+使用管理员权限（右键单击选择管理员权限）打开命令提示符或 PowerShell 进行安装
 
 ### 3. 提示其他的错误
 
-- 方法一：确认并升级您已安装 64 位的 **Python 3.9** 及以上版本
-- 方法二：使用 conda 的虚拟环境来安装，详见 **[AKShare](https://github.com/akfamily/akshare) 环境配置** 板块的内容
+- 方法一：确认并升级您已安装 64 位的 **Python 3.11** 及以上版本
+- 方法二：使用虚拟环境来安装，推荐使用 uv，详见 [AKShare uv 环境配置](uv.md)

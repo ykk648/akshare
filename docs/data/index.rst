@@ -1,10 +1,10 @@
-AKShare 数据字典
-=================
+数据字典
+========
 
 数据字典主要介绍 AKShare 提供的数据接口的详细说明
 
 .. toctree::
-    :maxdepth: 6
+    :maxdepth: 2
 
     stock/stock
     futures/futures
@@ -18,14 +18,13 @@ AKShare 数据字典
     fund/fund_public
     index/index
     macro/macro
-    dc/dc
+    crypto/crypto
     bank/bank
-    article/article
+    research/research
     energy/energy
-    event/event
-    hf/hf
+    migration/migration
+    high_freq/high_freq
     nlp/nlp
     qdii/qdii
-    others/others
-    qhkc/index
-    tool/tool
+    alternative/alternative
+    calendar/calendar

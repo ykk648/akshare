@@ -1,7 +1,8 @@
-# [AKShare](https://github.com/akfamily/akshare) QDII 数据
+# QDII 数据
 
 ## T+0 QDII 欧美市场
 
+(qdii_e_index_jsl)=
 ### 欧美指数
 
 接口：qdii_e_index_jsl
@@ -22,10 +23,10 @@
 
 | 名称      | 类型      | 描述       |
 |---------|---------|----------|
-| 代码      | object  |          |
+| 代码      | str     |          |
 | 名称      | object  |          |
 | 现价      | float64 |          |
-| 涨幅      | object  |          |
+| 涨幅      | str     |          |
 | 成交      | float64 | 注意单位：万元 |
 | 场内份额    | int64   | 注意单位：万份 |
 | 场内新增    | int64   | 注意单位：万份 |
@@ -33,13 +34,13 @@
 | 净值日期    | object  |          |
 | T-1估值   | float64 |          |
 | 估值日期    | object  |          |
-| T-1溢价率  | object  |          |
-| 相关标的    | object  |          |
-| T-1指数涨幅 | object  |          |
-| 申购费     | object  |          |
-| 赎回费     | object  |          |
+| T-1溢价率  | str     |          |
+| 相关标的    | str     |          |
+| T-1指数涨幅 | str     |          |
+| 申购费     | str     |          |
+| 赎回费     | str     |          |
 | 托管费     | float64 |          |
-| 基金公司    | object  |          |
+| 基金公司    | str     |          |
 
 接口示例
 
@@ -108,6 +109,7 @@ print(qdii_e_index_jsl_df)
 [51 rows x 18 columns]
 ```
 
+(qdii_e_comm_jsl)=
 ### 欧美商品
 
 接口：qdii_e_comm_jsl
@@ -128,10 +130,10 @@ print(qdii_e_index_jsl_df)
 
 | 名称      | 类型      | 描述       |
 |---------|---------|----------|
-| 代码      | object  |          |
+| 代码      | str     |          |
 | 名称      | object  |          |
 | 现价      | float64 |          |
-| 涨幅      | object  |          |
+| 涨幅      | str     |          |
 | 成交      | float64 | 注意单位：万元 |
 | 场内份额    | int64   | 注意单位：万份 |
 | 场内新增    | int64   | 注意单位：万份 |
@@ -139,13 +141,13 @@ print(qdii_e_index_jsl_df)
 | 净值日期    | object  |          |
 | T-1估值   | float64 |          |
 | 估值日期    | object  |          |
-| T-1溢价率  | object  |          |
-| 相关标的    | object  |          |
-| T-1指数涨幅 | object  |          |
-| 申购费     | object  |          |
-| 赎回费     | object  |          |
+| T-1溢价率  | str     |          |
+| 相关标的    | str     |          |
+| T-1指数涨幅 | str     |          |
+| 申购费     | str     |          |
+| 赎回费     | str     |          |
 | 托管费     | float64 |          |
-| 基金公司    | object  |          |
+| 基金公司    | str     |          |
 
 接口示例
 
@@ -178,6 +180,7 @@ print(qdii_e_comm_jsl_df)
 
 ## T+0 QDII 亚洲市场
 
+(qdii_a_index_jsl)=
 ### 亚洲指数
 
 接口：qdii_a_index_jsl
@@ -198,23 +201,23 @@ print(qdii_e_comm_jsl_df)
 
 | 名称   | 类型      | 描述       |
 |------|---------|----------|
-| 代码   | object  |          |
+| 代码   | str     |          |
 | 名称   | object  |          |
 | 现价   | float64 |          |
-| 涨幅   | object  |          |
+| 涨幅   | str     |          |
 | 成交   | float64 | 注意单位：万元 |
 | 场内份额 | int64   | 注意单位：万份 |
 | 场内新增 | int64   | 注意单位：万份 |
 | 净值   | float64 |          |
 | 净值日期 | object  |          |
 | 估值   | float64 |          |
-| 溢价率  | object  |          |
-| 相关标的 | object  |          |
-| 指数涨幅 | object  |          |
-| 申购费  | object  |          |
-| 赎回费  | object  |          |
+| 溢价率  | str     |          |
+| 相关标的 | str     |          |
+| 指数涨幅 | str     |          |
+| 申购费  | str     |          |
+| 赎回费  | str     |          |
 | 托管费  | float64 |          |
-| 基金公司 | object  |          |
+| 基金公司 | str     |          |
 
 接口示例
 

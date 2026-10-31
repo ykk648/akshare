@@ -1,4 +1,4 @@
-# [AKShare](https://github.com/akfamily/akshare) 期权数据
+# 期权数据
 
 ## 期权基础信息
 
@@ -207,6 +207,7 @@
 | 广州期货交易所 | 碳酸锂期权 | 美式   | 2023-07-24 |
 | 广州期货交易所 | 多晶硅期权 | 美式   | 2024-12-26 |
 
+(option_contract_info_ctp)=
 ## 期权合约信息
 
 接口：option_contract_info_ctp
@@ -227,11 +228,11 @@
 
 | 名称      | 类型      | 描述 |
 |---------|---------|----|
-| 交易所ID   | object  | -  |
-| 合约ID    | object  | -  |
-| 合约名称    | object  | -  |
-| 商品类别    | object  | -  |
-| 品种ID    | object  | -  |
+| 交易所ID   | str     | -  |
+| 合约ID    | str     | -  |
+| 合约名称    | str     | -  |
+| 商品类别    | str     | -  |
+| 品种ID    | str     | -  |
 | 合约乘数    | int64   | -  |
 | 最小变动价位  | float64 | -  |
 | 做多保证金率  | float64 | -  |
@@ -246,14 +247,14 @@
 | 平今手续费/手 | float64 | -  |
 | 交割年份    | int64   | -  |
 | 交割月份    | int64   | -  |
-| 上市日期    | object  | -  |
-| 最后交易日   | object  | -  |
-| 交割日     | object  | -  |
-| 标的合约ID  | object  | -  |
+| 上市日期    | str     | -  |
+| 最后交易日   | str     | -  |
+| 交割日     | str     | -  |
+| 标的合约ID  | str     | -  |
 | 标的合约乘数  | int64   | -  |
-| 期权类型    | object  | -  |
+| 期权类型    | str     | -  |
 | 行权价     | float64 | -  |
-| 合约状态    | object  | -  |
+| 合约状态    | str     | -  |
 
 接口示例
 
@@ -284,16 +285,17 @@ print(option_contract_info_ctp_df)
 
 ## 金融期权-三大交易所
 
+(option_finance_board)=
 ### 行情数据
 
 接口：option_finance_board
 
 目标地址：
 
-1. http://www.sse.com.cn/assortment/options/price/
-2. http://www.szse.cn/market/derivative/derivative_list/index.html
-3. http://www.cffex.com.cn/hs300gzqq/
-4. http://www.cffex.com.cn/zz1000gzqq/
+1. <http://www.sse.com.cn/assortment/options/price/>
+2. <http://www.szse.cn/market/derivative/derivative_list/index.html>
+3. <http://www.cffex.com.cn/hs300gzqq/>
+4. <http://www.cffex.com.cn/zz1000gzqq/>
 
 描述：上海证券交易所、深圳证券交易所、中国金融期货交易所的金融期权行情数据
 
@@ -315,8 +317,8 @@ P.S. 可以通过调用 ak.option_finance_sse_underlying(symbol="华夏上证50E
 
 | 名称     | 类型      | 描述       |
 |--------|---------|----------|
-| 日期     | object  | 日期时间     |
-| 合约交易代码 | object  |          |
+| 日期     | str     | 日期时间     |
+| 合约交易代码 | str     |          |
 | 当前价    | float64 |          |
 | 涨跌幅    | float64 |          |
 | 前结价    | float64 |          |
@@ -852,6 +854,7 @@ print(option_finance_board_df)
 49  HO2306-P-3200        58       0  ...        1   684.0        1
 ```
 
+(option_risk_indicator_sse)=
 ### 风险指标-上海证券交易所
 
 接口：option_risk_indicator_sse
@@ -873,9 +876,9 @@ print(option_finance_board_df)
 | 名称              | 类型      | 描述  |
 |-----------------|---------|-----|
 | TRADE_DATE      | object  | -   |
-| SECURITY_ID     | object  | -   |
-| CONTRACT_ID     | object  | -   |
-| CONTRACT_SYMBOL | object  | -   |
+| SECURITY_ID     | str     | -   |
+| CONTRACT_ID     | str     | -   |
+| CONTRACT_SYMBOL | str     | -   |
 | DELTA_VALUE     | float64 | -   |
 | THETA_VALUE     | float64 | -   |
 | GAMMA_VALUE     | float64 | -   |
@@ -910,6 +913,7 @@ print(option_risk_indicator_sse_df)
 [396 rows x 10 columns]
 ```
 
+(option_current_day_sse)=
 ### 当日合约-上海证券交易所
 
 接口：option_current_day_sse
@@ -930,17 +934,17 @@ print(option_risk_indicator_sse_df)
 
 | 名称       | 类型     | 描述 |
 |----------|--------|----|
-| 合约编码     | object | -  |
-| 合约交易代码   | object | -  |
-| 合约简称     | object | -  |
-| 标的券名称及代码 | object | -  |
-| 类型       | object | -  |
-| 行权价      | object | -  |
-| 合约单位     | object | -  |
-| 期权行权日    | object | -  |
-| 行权交收日    | object | -  |
-| 到期日      | object | -  |
-| 开始日期     | object | -  |
+| 合约编码     | str    | -  |
+| 合约交易代码   | str    | -  |
+| 合约简称     | str    | -  |
+| 标的券名称及代码 | str    | -  |
+| 类型       | str    | -  |
+| 行权价      | str    | -  |
+| 合约单位     | str    | -  |
+| 期权行权日    | str    | -  |
+| 行权交收日    | str    | -  |
+| 到期日      | str    | -  |
+| 开始日期     | str    | -  |
 
 接口示例
 
@@ -969,6 +973,7 @@ print(option_current_day_sse_df)
 [644 rows x 11 columns]
 ```
 
+(option_current_day_szse)=
 ### 当日合约-深圳证券交易所
 
 接口：option_current_day_szse
@@ -991,26 +996,26 @@ print(option_current_day_sse_df)
 |--------------|---------|----|
 | 序号           | int64   | -  |
 | 合约编码         | int64   | -  |
-| 合约代码         | object  | -  |
-| 合约简称         | object  | -  |
-| 标的证券简称（代码）   | object  | -  |
-| 合约类型         | object  | -  |
+| 合约代码         | str     | -  |
+| 合约简称         | str     | -  |
+| 标的证券简称（代码）   | str     | -  |
+| 合约类型         | str     | -  |
 | 行权价          | float64 | -  |
 | 合约单位         | int64   | -  |
 | 最后交易日        | object  | -  |
 | 行权日          | object  | -  |
 | 到期日          | object  | -  |
 | 交收日          | object  | -  |
-| 新挂           | object  | -  |
+| 新挂           | str     | -  |
 | 涨停价格         | float64 | -  |
 | 跌停价格         | float64 | -  |
 | 前结算价         | float64 | -  |
-| 合约调整         | object  | -  |
-| 停牌           | object  | -  |
+| 合约调整         | str     | -  |
+| 停牌           | str     | -  |
 | 合约总持仓        | float64 | -  |
-| 挂牌原因         | object  | -  |
-| 原合约代码        | object  | -  |
-| 原合约简称        | object  | -  |
+| 挂牌原因         | str     | -  |
+| 原合约代码        | str     | -  |
+| 原合约简称        | str     | -  |
 | 原行权价格        | float64 | -  |
 | 原合约单位        | int64   | -  |
 | 合约到期剩余交易天数   | int64   | -  |
@@ -1046,6 +1051,7 @@ print(option_current_day_szse_df)
 [656 rows x 29 columns]
 ```
 
+(option_daily_stats_sse)=
 ### 每日统计-上海证券交易所
 
 接口：option_daily_stats_sse
@@ -1066,8 +1072,8 @@ print(option_current_day_szse_df)
 
 | 名称       | 类型           | 描述       |
 |----------|--------------|----------|
-| 合约标的代码   | object       | -        |
-| 合约标的名称   | object       | -        |
+| 合约标的代码   | str          | -        |
+| 合约标的名称   | str          | -        |
 | 合约数量     | int64        | -        |
 | 总成交额     | int64        | 注意单位：万元 |
 | 总成交量     | int64        | 注意单位：张  |
@@ -1075,7 +1081,7 @@ print(option_current_day_szse_df)
 | 认沽成交量    | int64        | 注意单位：张  |
 | 认沽/认购    | float64      | 注意单位：%  |
 | 未平仓合约总数  | int64        | -        |
-| 未平仓认购合约数 | floaint64t64 | -        |
+| 未平仓认购合约数 | float64      | -        |
 | 未平仓认沽合约数 | int64        | -        |
 
 接口示例
@@ -1099,6 +1105,7 @@ print(option_daily_stats_sse_df)
 [5 rows x 12 columns]
 ```
 
+(option_daily_stats_szse)=
 ### 每日统计-深圳证券交易所
 
 接口：option_daily_stats_szse
@@ -1119,8 +1126,8 @@ print(option_daily_stats_sse_df)
 
 | 名称       | 类型      | 描述      |
 |----------|---------|---------|
-| 合约标的代码   | object  | -       |
-| 合约标的名称   | object  | -       |
+| 合约标的代码   | str     | -       |
+| 合约标的名称   | str     | -       |
 | 成交量      | int64   | 注意单位：张 |
 | 认购成交量    | int64   | 注意单位：张 |
 | 认沽成交量    | int64   | 注意单位：张 |
@@ -1155,6 +1162,7 @@ print(option_daily_stats_szse_df)
 
 ### 中金所
 
+(option_cffex_sz50_list_sina)=
 #### 上证50指数列表
 
 接口：option_cffex_sz50_list_sina
@@ -1192,6 +1200,7 @@ print(option_cffex_sz50_list_sina_df)
 {'上证50指数': ['ho2301', 'ho2303', 'ho2302', 'ho2306', 'ho2312', 'ho2309']}
 ```
 
+(option_cffex_hs300_list_sina)=
 #### 沪深300指数列表
 
 接口：option_cffex_hs300_list_sina
@@ -1229,6 +1238,7 @@ print(option_cffex_hs300_list_sina_df)
 {'沪深300指数': ['io2003', 'io2002', 'io2004', 'io2006', 'io2012', 'io2009']}
 ```
 
+(option_cffex_zz1000_list_sina)=
 #### 中证1000指数列表
 
 接口：option_cffex_zz1000_list_sina
@@ -1266,6 +1276,7 @@ print(option_cffex_zz1000_list_sina_df)
 {'中证1000指数': ['mo2208', 'mo2209', 'mo2212', 'mo2210', 'mo2306', 'mo2303']}
 ```
 
+(option_cffex_sz50_spot_sina)=
 #### 实时行情-上证50指数
 
 接口：option_cffex_sz50_spot_sina
@@ -1289,12 +1300,12 @@ print(option_cffex_zz1000_list_sina_df)
 | 看涨合约-买量  | int64   | -      |
 | 看涨合约-买价  | float64 | -      |
 | 看涨合约-最新价 | float64 | -      |
-| 看涨合约-卖价  | float   | -      |
+| 看涨合约-卖价  | float64 | -      |
 | 看涨合约-卖量  | int64   | -      |
 | 看涨合约-持仓量 | int64   | -      |
 | 看涨合约-涨跌  | float64 | -      |
 | 行权价      | int64   | -      |
-| 看涨合约-标识  | object  | 看涨合约代码 |
+| 看涨合约-标识  | str     | 看涨合约代码 |
 | 看跌合约-买量  | int64   | -      |
 | 看跌合约-买价  | float64 | -      |
 | 看跌合约-最新价 | float64 | -      |
@@ -1302,7 +1313,7 @@ print(option_cffex_zz1000_list_sina_df)
 | 看跌合约-卖量  | int64   | -      |
 | 看跌合约-持仓量 | int64   | -      |
 | 看跌合约-涨跌  | float64 | -      |
-| 看跌合约-标识  | object  | 看跌合约代码 |
+| 看跌合约-标识  | str     | 看跌合约代码 |
 
 接口示例
 
@@ -1337,6 +1348,7 @@ print(option_cffex_sz50_spot_sina_df)
 17        6     10.0      10.4  ...         6    15.58  ho2303P3000
 ```
 
+(option_cffex_hs300_spot_sina)=
 #### 实时行情-沪深300指数
 
 接口：option_cffex_hs300_spot_sina
@@ -1360,12 +1372,12 @@ print(option_cffex_sz50_spot_sina_df)
 | 看涨合约-买量  | int64   | -      |
 | 看涨合约-买价  | float64 | -      |
 | 看涨合约-最新价 | float64 | -      |
-| 看涨合约-卖价  | float   | -      |
+| 看涨合约-卖价  | float64 | -      |
 | 看涨合约-卖量  | int64   | -      |
 | 看涨合约-持仓量 | int64   | -      |
 | 看涨合约-涨跌  | float64 | -      |
 | 行权价      | int64   | -      |
-| 看涨合约-标识  | object  | 看涨合约代码 |
+| 看涨合约-标识  | str     | 看涨合约代码 |
 | 看跌合约-买量  | int64   | -      |
 | 看跌合约-买价  | float64 | -      |
 | 看跌合约-最新价 | float64 | -      |
@@ -1373,7 +1385,7 @@ print(option_cffex_sz50_spot_sina_df)
 | 看跌合约-卖量  | int64   | -      |
 | 看跌合约-持仓量 | int64   | -      |
 | 看跌合约-涨跌  | float64 | -      |
-| 看跌合约-标识  | object  | 看跌合约代码 |
+| 看跌合约-标识  | str     | 看跌合约代码 |
 
 接口示例
 
@@ -1412,6 +1424,7 @@ print(option_cffex_hs300_spot_sina_df)
 21       2    1.600    1.800    2.000  ...       1      196     5.18  io2202P5600
 ```
 
+(option_cffex_zz1000_spot_sina)=
 #### 实时行情-中证1000指数
 
 接口：option_cffex_zz1000_spot_sina
@@ -1435,12 +1448,12 @@ print(option_cffex_hs300_spot_sina_df)
 | 看涨合约-买量  | int64   | -      |
 | 看涨合约-买价  | float64 | -      |
 | 看涨合约-最新价 | float64 | -      |
-| 看涨合约-卖价  | float   | -      |
+| 看涨合约-卖价  | float64 | -      |
 | 看涨合约-卖量  | int64   | -      |
 | 看涨合约-持仓量 | int64   | -      |
 | 看涨合约-涨跌  | float64 | -      |
 | 行权价      | int64   | -      |
-| 看涨合约-标识  | object  | 看涨合约代码 |
+| 看涨合约-标识  | str     | 看涨合约代码 |
 | 看跌合约-买量  | int64   | -      |
 | 看跌合约-买价  | float64 | -      |
 | 看跌合约-最新价 | float64 | -      |
@@ -1448,7 +1461,7 @@ print(option_cffex_hs300_spot_sina_df)
 | 看跌合约-卖量  | int64   | -      |
 | 看跌合约-持仓量 | int64   | -      |
 | 看跌合约-涨跌  | float64 | -      |
-| 看跌合约-标识  | object  | 看跌合约代码 |
+| 看跌合约-标识  | str     | 看跌合约代码 |
 
 接口示例
 
@@ -1483,6 +1496,7 @@ print(option_cffex_zz1000_spot_sina_df)
 17        6      3.4       3.6  ...        21    30.39  mo2208P7900
 ```
 
+(option_cffex_sz50_daily_sina)=
 #### 日频行情-上证50指数
 
 接口：option_cffex_sz50_daily_sina
@@ -1534,6 +1548,7 @@ print(option_cffex_sz50_daily_sina_df)
 8  2023-01-03  10.6  12.0   7.4    7.6       4
 ```
 
+(option_cffex_hs300_daily_sina)=
 #### 日频行情-沪深300指数
 
 接口：option_cffex_hs300_daily_sina
@@ -1615,6 +1630,7 @@ print(option_cffex_hs300_daily_sina_df)
 38  2022-01-21   5.8   7.6   5.4    7.6     265
 ```
 
+(option_cffex_zz1000_daily_sina)=
 #### 日频行情-中证1000指数
 
 接口：option_cffex_zz1000_daily_sina
@@ -1664,6 +1680,7 @@ print(option_cffex_zz1000_daily_sina_df)
 
 ### 上交所
 
+(option_sse_list_sina)=
 #### 合约到期月份列表
 
 接口：option_sse_list_sina
@@ -1702,6 +1719,7 @@ print(option_sse_list_sina_df)
 ['202002', '202003', '202006', '202009']
 ```
 
+(option_sse_expire_day_sina)=
 #### 合约到期月份列表
 
 接口：option_sse_expire_day_sina
@@ -1741,6 +1759,7 @@ print(option_sse_expire_day_sina_df)
 ('2020-02-26', 3)
 ```
 
+(option_sse_codes_sina)=
 #### 所有合约的代码
 
 接口：option_sse_codes_sina
@@ -1764,7 +1783,7 @@ print(option_sse_expire_day_sina_df)
 | 名称   | 类型     | 描述  |
 |------|--------|-----|
 | 序号   | int64  | -   |
-| 期权代码 | object | -   |
+| 期权代码 | str    | -   |
 
 接口示例
 
@@ -1802,6 +1821,7 @@ print(option_sse_codes_sina_df)
 20  21  10003829
 ```
 
+(option_sse_spot_price_sina)=
 #### 实时数据
 
 接口：option_sse_spot_price_sina
@@ -1883,6 +1903,7 @@ print(option_sse_spot_price_sina_df)
 42     成交额           2851394.00
 ```
 
+(option_sse_underlying_spot_price_sina)=
 #### 期权标的物的实时数据
 
 接口：option_sse_underlying_spot_price_sina
@@ -1903,8 +1924,8 @@ print(option_sse_spot_price_sina_df)
 
 | 名称 | 类型     | 描述 |
 |----|--------|----|
-| 字段 | object | -  |
-| 值  | object | -  |
+| 字段 | str    | -  |
+| 值  | str    | -  |
 
 接口示例
 
@@ -1954,6 +1975,7 @@ print(option_sse_underlying_spot_price_sina_df)
 32   停牌状态              00
 ```
 
+(option_sse_greeks_sina)=
 #### 期权希腊字母信息表
 
 接口：option_sse_greeks_sina
@@ -1974,8 +1996,8 @@ print(option_sse_underlying_spot_price_sina_df)
 
 | 名称  | 类型     | 描述  |
 |-----|--------|-----|
-| 字段  | object | -   |
-| 值   | object | -   |
+| 字段  | str    | -   |
+| 值   | str    | -   |
 
 接口示例
 
@@ -2005,6 +2027,7 @@ print(option_sse_greeks_sina_df)
 12    理论价值             0.4591
 ```
 
+(option_sse_minute_sina)=
 #### 期权行情分钟数据
 
 接口：option_sse_minute_sina
@@ -2058,6 +2081,7 @@ print(option_sse_minute_sina_df)
 334  2022-01-21  15:00:00  0.0008   0  31866  0.0010
 ```
 
+(option_sse_daily_sina)=
 #### 期权行情日数据
 
 接口：option_sse_daily_sina
@@ -2078,7 +2102,7 @@ print(option_sse_minute_sina_df)
 
 | 名称  | 类型      | 描述  |
 |-----|---------|-----|
-| 时间  | object  | -   |
+| 时间  | str     | -   |
 | 开盘  | float64 | -   |
 | 最高  | float64 | -   |
 | 最低  | float64 | -   |
@@ -2114,6 +2138,7 @@ print(option_sse_daily_sina_df)
 13  2020-02-21  0.4550  0.4799  0.4477  0.4550   1892291
 ```
 
+(option_finance_minute_sina)=
 #### 期权行情分时数据-新浪
 
 接口：option_finance_minute_sina
@@ -2134,8 +2159,8 @@ print(option_sse_daily_sina_df)
 
 | 名称            | 类型      | 描述  |
 |---------------|---------|-----|
-| date          | object  | -   |
-| time          | object  | -   |
+| date          | str     | -   |
+| time          | str     | -   |
 | price         | float64 | -   |
 | average_price | float64 | -   |
 | volume        | int64   | -   |
@@ -2166,6 +2191,7 @@ print(option_finance_minute_sina_df)
 1223  2020-07-17  15:00:00  1.3757        1.3679      1
 ```
 
+(option_minute_em)=
 #### 期权行情分时数据-东财
 
 接口：option_minute_em
@@ -2186,7 +2212,7 @@ print(option_finance_minute_sina_df)
 
 | 名称     | 类型     | 描述      |
 |--------|--------|---------|
-| time   | object | -       |
+| time   | str    | -       |
 | close  | int64  | -       |
 | high   | int64  | -       |
 | low    | int64  | -       |
@@ -2220,6 +2246,7 @@ print(option_minute_em_df)
 [241 rows x 6 columns]
 ```
 
+(option_current_em)=
 ## 期权实时行情-东方财富
 
 接口：option_current_em
@@ -2240,7 +2267,7 @@ print(option_minute_em_df)
 
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
-| 代码   | object  | -       |
+| 代码   | str     | -       |
 | 名称   | object  | -       |
 | 最新价  | float64 | -       |
 | 涨跌额  | float64 | -       |
@@ -2282,6 +2309,7 @@ print(option_current_em_df)
 [16840 rows x 15 columns]
 ```
 
+(option_lhb_em)=
 ## 期权龙虎榜-金融期权
 
 接口：option_lhb_em
@@ -2304,12 +2332,12 @@ print(option_current_em_df)
 
 | 名称      | 类型      | 描述                   |
 |---------|---------|----------------------|
-| 交易类型    | object  | -                    |
+| 交易类型    | str     | -                    |
 | 交易日期    | object  | -                    |
-| 证券代码    | object  | -                    |
-| 标的名称    | object  | -                    |
+| 证券代码    | str     | -                    |
+| 标的名称    | str     | -                    |
 | 名次      | float64 | -                    |
-| 机构      | object  | -                    |
+| 机构      | str     | -                    |
 | XX量     | float64 | 注意：根据 indicator 而变化 |
 | 增减      | float64 | -                    |
 | 净XX量    | float64 | 注意：根据 indicator 而变化 |
@@ -2337,6 +2365,7 @@ print(option_lhb_em_df)
 6  认沽持仓量  2022-01-21  510300  300ETF  ...   700744.0  -4187.0  -65535.0  0.340073
 ```
 
+(option_value_analysis_em)=
 ## 期权价值分析-金融期权
 
 接口：option_value_analysis_em
@@ -2357,14 +2386,14 @@ print(option_lhb_em_df)
 
 | 名称       | 类型      | 描述                                                        |
 |----------|---------|-----------------------------------------------------------|
-| 期权代码     | object  | -                                                         |
-| 期权名称     | object  | -                                                         |
+| 期权代码     | str     | -                                                         |
+| 期权名称     | str     | -                                                         |
 | 最新价      | float64 | -                                                         |
 | 时间价值     | float64 | 注意：指在期权剩余有效期内，合约标的价格变动有利于期权权利方的可能性。时间价值和内在价值共同构成期权的总价值。  |
 | 内在价值     | float64 | 注意：指假如期权立即履行时该期权的价值，只能为正数或者为零。内在价值与时间价值共同构成期权的总价值。       |
 | 隐含波动率    | float64 | 注意：指期权市场投资者在进行期权交易时对未来波动率的认识，且该认识已反映在期权的定价过程中。           |
 | 理论价格     | float64 | 注意：采用 Black-Scholes 期权定价模型，推导出的期权理论价格。                   |
-| 标的名称     | object  | -                                                         |
+| 标的名称     | str     | -                                                         |
 | 标的最新价    | float64 | -                                                         |
 | 标的近一年波动率 | float64 | 注意：指一种衡量股票价格变化剧烈程度的指标，一般用百分数表示。股价波动率与认购期权、认沽期权价值均为正相关关系。 |
 | 到期日      | object  | -                                                         |
@@ -2396,6 +2425,7 @@ print(option_value_analysis_em_df)
 [664 rows x 11 columns]
 ```
 
+(option_risk_analysis_em)=
 ## 期权风险分析-金融期权
 
 接口：option_risk_analysis_em
@@ -2416,8 +2446,8 @@ print(option_value_analysis_em_df)
 
 | 名称     | 类型      | 描述                                                                                 |
 |--------|---------|------------------------------------------------------------------------------------|
-| 期权代码   | object  | -                                                                                  |
-| 期权名称   | object  | -                                                                                  |
+| 期权代码   | str     | -                                                                                  |
+| 期权名称   | str     | -                                                                                  |
 | 最新价    | float64 | -                                                                                  |
 | 涨跌幅    | float64 | 注意单位：%;                                                                           |
 | 杠杆比率   | float64 | 注意：杠杆比率=标价价格÷期权价格，杠杆反映投资标的相对投资期权的成本比例。                                            |
@@ -2456,6 +2486,7 @@ print(option_risk_analysis_em_df)
 [664 rows x 12 columns]
 ```
 
+(option_premium_analysis_em)=
 ## 期权折溢价-金融期权
 
 接口：option_premium_analysis_em
@@ -2476,13 +2507,13 @@ print(option_risk_analysis_em_df)
 
 | 名称    | 类型      | 描述                                                  |
 |-------|---------|-----------------------------------------------------|
-| 期权代码  | object  | -                                                   |
-| 期权名称  | object  | -                                                   |
+| 期权代码  | str     | -                                                   |
+| 期权名称  | str     | -                                                   |
 | 最新价   | float64 | -                                                   |
 | 涨跌幅   | float64 | 注意单位：%;                                            |
 | 行权价   | float64 | -                                                   |
 | 折溢价率  | float64 | 注意：折溢价反映的是投资者以现价买入某期权并持有至到期时，标的需要上升或下跌多少才能使这笔投资保本。 |
-| 标的名称  | object  | -                                                   |
+| 标的名称  | str     | -                                                   |
 | 标的最新价 | float64 | -                                                   |
 | 标的涨跌幅 | float64 | -                                                   |
 | 盈亏平衡价 | float64 | 注意：指期权投资者实现投资收益为零时标的证券的价格。                         |
@@ -2517,6 +2548,7 @@ print(option_premium_analysis_em_df)
 
 ## 商品期权-新浪
 
+(option_commodity_contract_sina)=
 ### 当前合约
 
 接口：option_commodity_contract_sina
@@ -2559,6 +2591,7 @@ print(option_commodity_contract_sina_df)
 3   4  au2203
 ```
 
+(option_commodity_contract_table_sina)=
 ### 当前合约
 
 接口：option_commodity_contract_table_sina
@@ -2583,12 +2616,12 @@ print(option_commodity_contract_sina_df)
 | 看涨合约-买量     | int64   | -      |
 | 看涨合约-买价     | float64 | -      |
 | 看涨合约-最新价    | float64 | -      |
-| 看涨合约-卖价     | float   | -      |
+| 看涨合约-卖价     | float64 | -      |
 | 看涨合约-卖量     | int64   | -      |
 | 看涨合约-持仓量    | int64   | -      |
 | 看涨合约-涨跌     | float64 | -      |
 | 行权价         | int64   | -      |
-| 看涨合约-看涨期权合约 | object  | 看涨合约代码 |
+| 看涨合约-看涨期权合约 | str     | 看涨合约代码 |
 | 看跌合约-买量     | int64   | -      |
 | 看跌合约-买价     | float64 | -      |
 | 看跌合约-最新价    | float64 | -      |
@@ -2596,7 +2629,7 @@ print(option_commodity_contract_sina_df)
 | 看跌合约-卖量     | int64   | -      |
 | 看跌合约-持仓量    | int64   | -      |
 | 看跌合约-涨跌     | float64 | -      |
-| 看跌合约-看跌期权合约 | object  | 看跌合约代码 |
+| 看跌合约-看跌期权合约 | str     | 看跌合约代码 |
 
 接口示例
 
@@ -2652,6 +2685,7 @@ print(option_commodity_contract_table_sina_df)
 38      NaN      NaN       NaN      NaN  ...        0         0    13.83   zc2103P880
 ```
 
+(option_commodity_hist_sina)=
 ### 历史行情
 
 接口：option_commodity_hist_sina
@@ -2705,6 +2739,7 @@ print(option_commodity_hist_sina_df)
 
 ## 商品期权
 
+(option_comm_info)=
 ### 商品期权手续费
 
 接口：option_comm_info
@@ -2725,23 +2760,23 @@ print(option_commodity_hist_sina_df)
 
 | 名称       | 类型     | 描述 |
 |----------|--------|----|
-| 期权品种     | object | -  |
+| 期权品种     | str    | -  |
 | 现价       | int64  | -  |
-| 涨/跌停板    | object | -  |
+| 涨/跌停板    | str    | -  |
 | 成交量      | int64  | -  |
-| 类型       | object | -  |
-| 权利金      | object | -  |
-| 开仓       | object | -  |
-| 平昨       | object | -  |
-| 平今       | object | -  |
-| 行权       | object | -  |
+| 类型       | str    | -  |
+| 权利金      | str    | -  |
+| 开仓       | str    | -  |
+| 平昨       | str    | -  |
+| 平今       | str    | -  |
+| 行权       | str    | -  |
 | 每跳毛利/元   | int64  | -  |
-| 手续费（开+平） | object | -  |
+| 手续费（开+平） | str    | -  |
 | 每跳净利/元   | int64  | -  |
-| 备注       | object | -  |
-| 交易所      | object | -  |
-| 手续费更新时间  | object | -  |
-| 价格更新时间   | object | -  |
+| 备注       | str    | -  |
+| 交易所      | str    | -  |
+| 手续费更新时间  | str    | -  |
+| 价格更新时间   | str    | -  |
 
 接口示例
 
@@ -2770,6 +2805,7 @@ print(option_comm_info_df)
 [308 rows x 17 columns]
 ```
 
+(option_margin)=
 ### 商品期权保证金
 
 接口：option_margin
@@ -2790,18 +2826,18 @@ print(option_comm_info_df)
 
 | 名称        | 类型      | 描述 |
 |-----------|---------|----|
-| 合约标的      | object  | -  |
-| 合约代码      | object  | -  |
+| 合约标的      | str     | -  |
+| 合约代码      | str     | -  |
 | 结算价       | float64 | -  |
 | 交易乘数      | int64   | -  |
 | 买方权利金     | int64   | -  |
 | 卖方保证金     | float64 | -  |
-| 手续费单位     | object  | -  |
+| 手续费单位     | str     | -  |
 | 开仓手续费     | int64   | -  |
 | 平今手续费     | int64   | -  |
 | 平昨手续费     | int64   | -  |
 | 手续费（开+平今） | int64   | -  |
-| 更新时间      | object  | -  |
+| 更新时间      | str     | -  |
 
 接口示例
 
@@ -2830,6 +2866,7 @@ print(option_margin_df)
 [106 rows x 12 columns]
 ```
 
+(option_hist_shfe)=
 ### 上海期货交易所
 
 接口：option_hist_shfe
@@ -2853,7 +2890,7 @@ Part-1: 上海期货交易所期权合约行情
 
 | 名称    | 类型      | 描述    |
 |-------|---------|-------|
-| 合约代码  | object  |       |
+| 合约代码  | str     |       |
 | 开盘价   | float64 |       |
 | 最高价   | float64 |       |
 | 最低价   | float64 |       |
@@ -2881,7 +2918,7 @@ Part-2: 上海期货交易所隐含波动参考值
 
 | 名称    | 类型      | 描述     |
 |-------|---------|--------|
-| 合约系列  | object  |        |
+| 合约系列  | str     |        |
 | 成交量   | float64 | 注意单位：手 |
 | 持仓量   | float64 | 注意单位：手 |
 | 持仓量变化 | float64 | 注意单位：手 |
@@ -2930,13 +2967,18 @@ part_2: 上海期货交易所隐含波动参考值
 14  al2101                             0    66      0    0.0000   0  0.150241
 ```
 
+(option_hist_dce)=
 ### 大连商品交易所
+
+```{warning}
+大连商品交易所网站目前启用了瑞数反爬虫验证，该接口暂时无法获取数据，详见{ref}`AKShare 常见问题 <faq-dce>`。
+```
 
 接口：option_hist_dce
 
 目标地址：http://www.dce.com.cn/dalianshangpin/xqsj/tjsj26/rtj/rxq/index.html
 
-描述：大连商品交易所-商品期权数据
+描述：大连商品交易所-商品期权数据；大连商品交易所网站目前启用了瑞数反爬虫验证，程序请求会被拒绝（HTTP 412），该接口暂时无法使用，详见[常见问题](https://akshare.akfamily.xyz/faq.html#faq-dce)
 
 限量：单次返回指定 symbol 和 trade_date 的期权日行情数据
 
@@ -2953,8 +2995,8 @@ Part-1: 大连商品交易所期权合约行情
 
 | 名称       | 类型      | 描述 |
 |----------|---------|----|
-| 品种名称     | object  |    |
-| 合约       | object  |    |
+| 品种名称     | str     |    |
+| 合约       | str     |    |
 | 开盘价      | float64 |    |
 | 最高价      | float64 |    |
 | 最低价      | float64 |    |
@@ -3009,6 +3051,7 @@ print(option_hist_dce_df)
 [355 rows x 17 columns]
 ```
 
+(option_hist_czce)=
 ### 郑州商品交易所
 
 接口：option_hist_czce
@@ -3032,7 +3075,7 @@ print(option_hist_dce_df)
 
 | 名称      | 类型      | 描述  |
 |---------|---------|-----|
-| 品种代码    | object  |     |
+| 品种代码    | str     |     |
 | 昨结算     | float64 |     |
 | 今开盘     | float64 |     |
 | 最高价     | float64 |     |
@@ -3086,6 +3129,7 @@ print(option_hist_czce_df)
 [182 rows x 16 columns]
 ```
 
+(option_hist_gfex)=
 ### 广州期货交易所
 
 接口：option_hist_gfex
@@ -3109,8 +3153,8 @@ print(option_hist_czce_df)
 
 | 名称    | 类型      | 描述 |
 |-------|---------|----|
-| 商品名称  | object  |    |
-| 合约名称  | object  |    |
+| 商品名称  | str     |    |
+| 合约名称  | str     |    |
 | 开盘价   | float64 |    |
 | 最高价   | float64 |    |
 | 最低价   | float64 |    |
@@ -3163,6 +3207,7 @@ print(option_hist_gfex_df)
 601     总计                  NaN  NaN  ...   -427  494.246    1        NaN
 ```
 
+(option_vol_gfex)=
 ### 广州期货交易所-隐含波动参考值
 
 接口：option_vol_gfex
@@ -3186,7 +3231,7 @@ print(option_hist_gfex_df)
 
 | 名称    | 类型      | 描述 |
 |-------|---------|----|
-| 合约系列  | object  |    |
+| 合约系列  | str     |    |
 | 隐含波动率 | float64 |    |
 
 说明：
@@ -3220,79 +3265,4 @@ print(option_vol_gfex_df)
 5  si2401  19.894257
 6  si2402  19.894257
 7  si2403  19.729307
-```
-
-### 历史数据
-
-接口：option_czce_hist
-
-目标地址：http://www.czce.com.cn/cn/jysj/lshqxz/H770319index_1.htm
-
-描述：郑州商品交易所的商品期权历史行情数据
-
-限量：单次返回指定年份指定品种期权历史行情数据
-
-输入参数
-
-| 名称     | 类型  | 描述                                                                                                                                                                                                                                                                |
-|--------|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| year   | str | year="2019"；指定年份                                                                                                                                                                                                                                                 |
-| symbol | str | symbol="SR"; choice of {"白糖": "SR", "棉花": "CF", "PTA": "TA", "甲醇": "MA", "菜籽粕": "RM", "动力煤": "ZC", "菜籽油": "OI", "花生": "PK", "对二甲苯": "PX", "烧碱": "SH", "纯碱": "SA", "短纤": "PF", "锰硅": "SM", "硅铁": "SF", "尿素": "UR", "苹果": "AP", "红枣": "CJ", "玻璃": "FG", "瓶片": "PR"} |
-
-输出参数
-
-| 名称      | 类型      | 描述  |
-|---------|---------|-----|
-| 交易日期    | object  |     |
-| 品种代码    | object  |     |
-| 昨结算     | float64 |     |
-| 今开盘     | float64 |     |
-| 最高价     | float64 |     |
-| 最低价     | float64 |     |
-| 今收盘     | float64 |     |
-| 今结算     | float64 |     |
-| 涨跌1     | float64 |     |
-| 涨跌2     | float64 |     |
-| 成交量（手）  | object  |     |
-| 空盘量     | object  |     |
-| 增减量     | object  |     |
-| 成交额（万元） | object  |     |
-| DELTA   | float64 |     |
-| 隐含波动率   | float64 |     |
-| 行权量     | float64 |     |
-
-说明：
-
-1. 价格：元/吨
-2. 成交量、空盘量：手
-3. 成交额：万元
-4. 涨跌一：今收盘-昨结算
-5. 涨跌二：今结算-昨结算
-6. 隐含波动率：将当日期权合约的结算价代入期权定价模型，反推出来的波动率数值
-
-接口示例
-
-```python
-import akshare as ak
-
-option_hist_yearly_czce_df = ak.option_hist_yearly_czce(symbol="RM", year="2025")
-print(option_hist_yearly_czce_df)
-```
-
-数据示例
-
-```
-       交易日期     合约代码     ...  隐含波动率                       行权量
-0      2025-01-02  RM503C1925  ...  22.64  0
-1      2025-01-02  RM503C1950  ...  22.42  0
-2      2025-01-02  RM503C1975  ...  22.25  0
-3      2025-01-02  RM503C2000  ...  22.12  0
-4      2025-01-02  RM503C2025  ...  22.05  0
-...           ...         ...  ...    ...                              ...
-16067  2025-03-21  RM601P2600  ...  21.49  0
-16068  2025-03-21  RM601P2650  ...  21.78  0
-16069  2025-03-21  RM601P2700  ...  22.11  0
-16070  2025-03-21  RM601P2750  ...  22.48  0
-16071  2025-03-21  RM601P2800  ...  22.90  0
-[16072 rows x 17 columns]
 ```

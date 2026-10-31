@@ -1,59 +1,8 @@
-# [AKShare](https://github.com/akfamily/akshare) 能源数据
+# 能源数据
 
 ## 碳排放
 
-### 碳排放权-国内
-
-接口：energy_carbon_domestic
-
-目标地址：http://www.tanjiaoyi.com/
-
-描述：碳交易网-行情信息
-
-限量：返回指定 symbol 的所有历史数据
-
-输入参数
-
-| 名称     | 类型  | 描述                                                                      |
-|--------|-----|-------------------------------------------------------------------------|
-| symbol | str | symbol="湖北"; choice of {'湖北', '上海', '北京', '重庆', '广东', '天津', '深圳', '福建'} |
-
-输出参数
-
-| 名称  | 类型      | 描述      |
-|-----|---------|---------|
-| 日期  | object  |         |
-| 成交价 | float64 | 注意单位：元 |
-| 成交量 | float64 | 注意单位：吨 |
-| 成交额 | float64 | -       |
-| 地点  | object  | -       |
-
-接口示例
-
-```python
-import akshare as ak
-
-energy_carbon_domestic_df = ak.energy_carbon_domestic(symbol="湖北")
-print(energy_carbon_domestic_df)
-```
-
-数据示例
-
-```
-      日期        成交价       成交量           成交额  地点
-0     2014-04-02  21.000000  510020.0  1.071040e+07  湖北
-1     2014-04-03  24.200001   51468.0  1.245530e+06  湖北
-2     2014-04-04  26.620001  304125.0  8.092670e+06  湖北
-3     2014-04-05  26.620001       0.0  0.000000e+00  湖北
-4     2014-04-06  26.620001       0.0  0.000000e+00  湖北
-          ...        ...       ...           ...  ..
-1847  2021-03-17  31.799999     535.0  1.701280e+04  湖北
-1848  2021-03-18  28.129999     551.0  1.550140e+04  湖北
-1849  2021-03-19  30.350000    2074.0  6.293808e+04  湖北
-1850  2021-03-22  30.350000    3073.0  9.326129e+04  湖北
-1851  2021-03-23  30.350000     100.0  3.508000e+03  湖北
-```
-
+(energy_carbon_bj)=
 ### 碳排放权-北京
 
 接口：energy_carbon_bj
@@ -62,7 +11,9 @@ print(energy_carbon_domestic_df)
 
 描述：北京市碳排放权电子交易平台-北京市碳排放权公开交易行情
 
-注意：注意在 2017-08-08 日的数据有误 70.074.00（BEA）
+```{note}
+在 2017-08-08 日的数据有误 70.074.00（BEA）
+```
 
 限量：全部历史数据
 
@@ -108,6 +59,7 @@ print(energy_carbon_bj_df)
 1460  2022-03-02     100  62.00     6200.0   BEA
 ```
 
+(energy_carbon_sz)=
 ### 碳排放权-深圳
 
 接口：energy_carbon_sz
@@ -129,7 +81,7 @@ print(energy_carbon_bj_df)
 | 名称     | 类型      | 描述  |
 |--------|---------|-----|
 | 交易日期   | object  | -   |
-| 市场交易指数 | object  | -   |
+| 市场交易指数 | str     | -   |
 | 开盘价    | float64 | -   |
 | 最高价    | float64 | -   |
 | 最低价    | float64 | -   |
@@ -164,6 +116,7 @@ print(energy_carbon_sz_df)
 199  2022-03-03  SZA-2020   4.78    NaN    NaN    NaN   4.78    0   0.00
 ```
 
+(energy_carbon_eu)=
 ### 碳排放权-国际
 
 接口：energy_carbon_eu
@@ -185,7 +138,7 @@ print(energy_carbon_sz_df)
 | 名称     | 类型      | 描述  |
 |--------|---------|-----|
 | 交易日期   | object  | -   |
-| 市场交易指数 | object  | -   |
+| 市场交易指数 | str     | -   |
 | 开盘价    | float64 | -   |
 | 最高价    | float64 | -   |
 | 最低价    | float64 | -   |
@@ -220,6 +173,7 @@ print(energy_carbon_eu_df)
 1001  2020-04-29  欧盟CER  NaN  NaN  NaN   NaN   0.25     96000.0  NaN
 ```
 
+(energy_carbon_hb)=
 ### 碳排放权-湖北
 
 接口：energy_carbon_hb
@@ -273,6 +227,7 @@ print(energy_carbon_hb_df)
 [2438 rows x 5 columns]
 ```
 
+(energy_carbon_gz)=
 ### 碳排放权-广州
 
 接口：energy_carbon_gz
@@ -294,7 +249,7 @@ print(energy_carbon_hb_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 日期   | object  | -       |
-| 品种   | object  | -       |
+| 品种   | str     | -       |
 | 开盘价  | float64 | -       |
 | 收盘价  | float64 | -       |
 | 最高价  | float64 | -       |
@@ -332,6 +287,7 @@ print(energy_carbon_gz_df)
 
 ## 中国油价
 
+(energy_oil_hist)=
 ### 汽柴油历史调价信息
 
 接口：energy_oil_hist
@@ -385,6 +341,7 @@ print(energy_oil_hist_df)
 [277 rows x 5 columns]
 ```
 
+(energy_oil_detail)=
 ### 地区油价
 
 接口：energy_oil_detail
@@ -406,7 +363,7 @@ print(energy_oil_hist_df)
 | 名称     | 类型      | 描述                    |
 |--------|---------|-----------------------|
 | 日期     | object  | 价格调整的日期               |
-| 地区     | object  | 地区                    |
+| 地区     | str     | 地区                    |
 | V_0    | float64 | 0#柴油价格（单位：元/升）        |
 | V_92   | float64 | 92#汽油价格（单位：元/升）       |
 | V_95   | float64 | 95#汽油价格（单位：元/升）       |

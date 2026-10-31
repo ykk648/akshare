@@ -1,0 +1,122 @@
+/* 右侧栏的公众号二维码，见 _templates/wechat.html */
+.ak-wechat {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--pst-color-border);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.ak-wechat-title {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.ak-wechat img {
+  display: block;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.ak-wechat-desc {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  color: var(--pst-color-text-muted);
+}
+
+/* 顶栏的合作推广入口（实盘交易、AKQuant），见 _templates/ak-navbar.html。
+   选择器要比主题的 .bd-header ul.navbar-nav > li.nav-item > .nav-link 更具体 */
+.bd-header ul.navbar-nav > li.nav-item.ak-nav-promo > .nav-link {
+  color: #d9480f;
+  font-weight: 700;
+}
+
+.bd-header ul.navbar-nav > li.nav-item.ak-nav-promo > .nav-link:hover {
+  color: #b33a0a;
+}
+
+html[data-theme="dark"] .bd-header ul.navbar-nav > li.nav-item.ak-nav-promo > .nav-link {
+  color: #ff922b;
+}
+
+/* 当前页面所在的下拉分组：与主题对普通导航项的高亮方式一致 */
+.bd-header ul.navbar-nav > li.nav-item.dropdown.current > .dropdown-toggle {
+  color: var(--pst-color-primary);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 0 var(--pst-color-primary);
+}
+
+/* 首页卡片：标题加粗、正文略小 */
+.ak-home .sd-card-title {
+  font-weight: 700;
+}
+
+.ak-home .sd-card-text {
+  font-size: 0.9rem;
+}
+
+/* 首页推荐卡片使用与顶栏推广入口一致的强调色边框 */
+.ak-promo-card.sd-card {
+  border: 2px solid #ffa94d;
+}
+
+/* 数据字典接口条目，类名由 conf.py 的 _ak_mark_entry_paragraphs 添加 */
+.bd-article p.ak-iface {
+  margin: 0.25rem 0 0.5rem;
+  font-family: var(--pst-font-family-monospace);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--pst-color-primary);
+}
+
+.bd-article p.ak-meta {
+  margin: 0 0 0.25rem;
+  font-size: 0.92rem;
+  color: var(--pst-color-text-muted);
+}
+
+.bd-article p.ak-label {
+  margin: 1.25rem 0 0.4rem;
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--pst-color-primary);
+  font-weight: 600;
+}
+
+/* 首页的公众号横幅：小尺寸二维码加文字，见 docs/index.rst */
+.ak-wechat-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--pst-color-border);
+  border-left: 4px solid #07c160;
+  border-radius: 0.5rem;
+}
+
+.ak-wechat-banner img {
+  flex: none;
+  background: #fff;
+}
+
+.ak-wechat-banner p {
+  margin: 0;
+}
+
+.ak-wechat-banner .ak-wechat-banner-title {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+/* 页面顶部公告横幅（conf.py 的 announcement）：使用品牌蓝，替换主题默认的紫色 */
+.bd-header-announcement {
+  background-color: #23238e;
+  color: #fff;
+}
+
+.bd-header-announcement a,
+.bd-header-announcement a:visited {
+  color: #ffd43b;
+  font-weight: 700;
+}

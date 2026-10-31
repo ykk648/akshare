@@ -13,7 +13,7 @@
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/akshare.svg)](https://pypi.org/project/akshare/)
 [![PyPI](https://img.shields.io/pypi/v/akshare.svg)](https://pypi.org/project/akshare/)
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/akshare?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/akshare)
-[![Documentation Status](https://readthedocs.org/projects/akshare/badge/?version=latest)](https://akshare.readthedocs.io/?badge=latest)
+[![Documentation Status](https://img.shields.io/readthedocs/akshare/latest)](https://akshare.akfamily.xyz/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![akshare](https://img.shields.io/badge/Data%20Science-AKShare-green)](https://github.com/akfamily/akshare)
 [![Checks Status](https://github.com/akfamily/akshare/actions/workflows/main_dev_check.yml/badge.svg)](https://github.com/akfamily/akshare/actions/workflows/main_dev_check.yml)
@@ -31,10 +31,19 @@ aims to simplify the process of fetching financial data.
 **Write less, get more!**
 
 - Documentation: [中文文档](https://akshare.akfamily.xyz/)
+- HTTP API & MCP server: [AKTools](https://aktools.akfamily.xyz/) lets other programming languages and AI assistants (Claude, Cursor) use AKShare data
 
 ## Installation
 
-### General
+### uv (Recommended)
+
+```shell
+uv pip install akshare --upgrade
+```
+
+See the [uv environment guide](https://akshare.akfamily.xyz/uv.html) for installing uv and creating a virtual environment.
+
+### pip
 
 ```shell
 pip install akshare --upgrade
@@ -43,29 +52,9 @@ pip install akshare --upgrade
 ### China
 
 ```shell
-pip install akshare -i https://mirrors.aliyun.com/pypi/simple/ --upgrade
-```
-
-### Docker
-
-#### Pull images
-
-```shell
-docker pull registry.cn-shanghai.aliyuncs.com/akfamily/aktools:jupyter
-```
-
-#### Run Container
-
-```shell
-docker run -it registry.cn-shanghai.aliyuncs.com/akfamily/aktools:jupyter python
-```
-
-#### Test
-
-```python
-import akshare as ak
-
-print(ak.__version__)
+uv pip install akshare --upgrade --default-index https://pypi.tuna.tsinghua.edu.cn/simple
+# or
+pip install akshare --upgrade -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 ## Usage
@@ -133,7 +122,7 @@ Output:
 Passing a full interface name always ranks that interface first, which makes it
 a reliable way to confirm a half-remembered name. Note this is keyword matching
 rather than semantic search — see the
-[interface search docs](https://akshare.akfamily.xyz/registry.html) for what it
+[interface search docs](https://akshare.akfamily.xyz/search.html) for what it
 can and cannot do.
 
 ### Plot
@@ -160,11 +149,11 @@ mpf.plot(stock_us_daily_df, type="candle", mav=(3, 6, 9), volume=True, show_nont
 
 1. [Overview](https://akshare.akfamily.xyz/introduction.html)
 2. [Installation](https://akshare.akfamily.xyz/installation.html)
-3. [Interface Search](https://akshare.akfamily.xyz/registry.html)
+3. [Interface Search](https://akshare.akfamily.xyz/search.html)
 4. [Tutorial](https://akshare.akfamily.xyz/tutorial.html)
 5. [Data Dict](https://akshare.akfamily.xyz/data/index.html)
 6. [Indicator](https://akshare.akfamily.xyz/indicator.html)
-7. [Data Tips](https://akshare.akfamily.xyz/data_tips.html)
+7. [FAQ](https://akshare.akfamily.xyz/faq.html)
 8. [Trade](https://akshare.akfamily.xyz/trade.html)
 
 ## Contribution
@@ -189,7 +178,7 @@ opening a pull request.
 4. [AKShare](https://github.com/akfamily/akshare) will insist on providing open-source financial data;
 5. Based on some uncontrollable factors, some data interfaces in [AKShare](https://github.com/akfamily/akshare) may be removed;
 6. Please follow the relevant open-source protocol used by [AKShare](https://github.com/akfamily/akshare);
-7. Provide HTTP API for the person who uses other program language: [AKTools](https://aktools.readthedocs.io/).
+7. Provide HTTP API and MCP server for other programming languages and AI assistants: [AKTools](https://aktools.akfamily.xyz/).
 
 ## Show your style
 
@@ -251,7 +240,7 @@ Thanks for the data provided by [DACHENG-XIU 网站](https://dachxiu.chicagoboot
 
 Thanks for the data provided by [上海证券交易所网站](http://www.sse.com.cn/assortment/options/price/);
 
-Thanks for the data provided by [深证证券交易所网站](http://www.szse.cn/);
+Thanks for the data provided by [深圳证券交易所网站](http://www.szse.cn/);
 
 Thanks for the data provided by [北京证券交易所网站](http://www.bse.cn/);
 

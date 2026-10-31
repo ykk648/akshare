@@ -1,10 +1,13 @@
-# [AKShare](https://github.com/akfamily/akshare) 货币数据
+# 汇率换算数据
 
+(currency_latest)=
 ## 货币报价最新数据
 
 接口：currency_latest
 
-注意：此接口使用外部 API，免费账号每月限量访问 5000 次，可以在 [currencyscoop](https://currencyscoop.com/) 注册
+```{note}
+此接口使用外部 API，免费账号每月限量访问 5000 次，可以在 [currencyscoop](https://currencyscoop.com/) 注册
+```
 
 目标地址：https://currencyscoop.com/
 
@@ -20,15 +23,15 @@
 | symbols | str | symbols=""；默认返回全部，可以在此处设置 symbols="AUD"，则返回 AUD 的数据；可以在此处设置 symbols: str = "AUD,CNY"，则返回 AUD 和 CNY 的数据 |
 | api_key | str | api_key="此处输入 API";                                                                                         |
 
-更多相关参数可以访问：https://currencybeacon.com/api-documentation 和 https://currencybeacon.com/supported-currencies
+更多相关参数可以访问：<https://currencybeacon.com/api-documentation> 和 <https://currencybeacon.com/supported-currencies>
 
 输出参数
 
 | 名称       | 类型                  | 描述        |
 |----------|---------------------|-----------|
-| currency | object              | 货币代码      |
+| currency | str                 | 货币代码      |
 | date     | datetime64[ns, UTC] | 日期时间-注意时区 |
-| base     | object              | 货币        |
+| base     | str                 | 货币        |
 | rates    | float64             | 比率        |
 
 接口示例
@@ -58,11 +61,14 @@ print(currency_latest_df)
 [220 rows x 4 columns]
 ```
 
+(currency_history)=
 ## 货币报价历史数据
 
 接口：currency_history
 
-注意：此接口使用外部 API，免费账号每月限量访问 5000 次，可以在 [currencyscoop](https://currencyscoop.com/) 注册
+```{note}
+此接口使用外部 API，免费账号每月限量访问 5000 次，可以在 [currencyscoop](https://currencyscoop.com/) 注册
+```
 
 目标地址：https://currencyscoop.com/
 
@@ -83,7 +89,7 @@ print(currency_latest_df)
 
 | 名称       | 类型      | 描述   |
 |----------|---------|------|
-| currency | object  | 货币代码 |
+| currency | str     | 货币代码 |
 | date     | object  | 日期   |
 | base     | float64 | 货币   |
 | rates    | float64 | 比率   |
@@ -115,11 +121,14 @@ print(currency_history_df)
 [220 rows x 4 columns]
 ```
 
+(currency_time_series)=
 ## 货币报价时间序列数据
 
 接口：currency_time_series
 
-注意：此接口使用外部 API，免费账号每月限量访问 5000 次，可以在 [currencyscoop](https://currencyscoop.com/) 注册
+```{note}
+此接口使用外部 API，免费账号每月限量访问 5000 次，可以在 [currencyscoop](https://currencyscoop.com/) 注册
+```
 
 目标地址：https://currencyscoop.com/
 
@@ -190,11 +199,14 @@ print(currency_time_series_df)
 [30 rows x 221 columns]
 ```
 
+(currency_currencies)=
 ## 货币基础信息查询
 
 接口：currency_currencies
 
-注意：此接口使用外部 API，免费账号每月限量访问 5000 次，可以在 [currencyscoop](https://currencyscoop.com/) 注册
+```{note}
+此接口使用外部 API，免费账号每月限量访问 5000 次，可以在 [currencyscoop](https://currencyscoop.com/) 注册
+```
 
 目标地址：https://currencyscoop.com/
 
@@ -214,15 +226,15 @@ print(currency_time_series_df)
 | 名称                  | 类型     | 描述 |
 |---------------------|--------|----|
 | id                  | int64  | -  |
-| name                | object | -  |
-| short_code          | object | -  |
-| code                | object | -  |
+| name                | str    | -  |
+| short_code          | str    | -  |
+| code                | str    | -  |
 | precision           | int64  | -  |
 | subunit             | int64  | -  |
-| symbol              | object | -  |
+| symbol              | str    | -  |
 | symbol_first        | bool   | -  |
-| decimal_mark        | object | -  |
-| thousands_separator | object | -  |
+| decimal_mark        | str    | -  |
+| thousands_separator | str    | -  |
 
 接口示例
 
@@ -251,11 +263,14 @@ print(currency_currencies_df)
 [161 rows x 10 columns]
 ```
 
+(currency_convert)=
 ## 货币对价格转换
 
 接口：currency_convert
 
-注意：此接口使用外部 API，免费账号每月限量访问 5000 次，可以在 [currencyscoop](https://currencyscoop.com/) 注册
+```{note}
+此接口使用外部 API，免费账号每月限量访问 5000 次，可以在 [currencyscoop](https://currencyscoop.com/) 注册
+```
 
 目标地址：https://currencyscoop.com/
 
@@ -276,8 +291,8 @@ print(currency_currencies_df)
 
 | 名称    | 类型     | 描述 |
 |-------|--------|----|
-| item  | object | -  |
-| value | object | -  |
+| item  | str    | -  |
+| value | str    | -  |
 
 接口示例
 

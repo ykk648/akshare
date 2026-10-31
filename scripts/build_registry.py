@@ -48,7 +48,7 @@ def parse_table(segment: str, header: str) -> List[Dict[str, Optional[str]]]:
     return result
 
 
-# 冒号必须同时容错半角 ":" 与全角 "："。实测 docs/data/stock/stock.md 中有 10 个
+# 冒号必须同时容错半角 ":" 与全角 "："。实测拆分前的 docs/data/stock/stock.md 中有 10 个
 # 接口条目使用全角冒号（stock_info_global_em/sina/ths/futu/cls、stock_info_cjzc_em、
 # stock_rank_cxg/cxd/lxsz/lxxd_ths），它们都是真实导出的接口。只匹配半角会让这些
 # 条目不被识别为边界，其正文被并入前一条记录，接口本身则从 registry 中彻底消失。
@@ -104,6 +104,27 @@ def collect_doc_records(docs_dir: pathlib.Path) -> Dict[str, Dict]:
     return records
 
 
+LABEL_RE = re.compile(r"^\(([A-Za-z0-9_]+)\)=\s*$", re.M)
+
+
+def find_missing_labels(docs_dir: pathlib.Path) -> List[str]:
+    """
+    找出缺少 MyST 锚点标签的接口条目。
+
+    中文标题生成的锚点是按顺序编号的 #idN，会随前面的标题增减而错位，因此
+    每个接口都要在标题前写一行 "(接口名)="，以获得固定锚点 #接口名。
+
+    :param docs_dir: docs/data 目录
+    :return: 缺少标签的接口名，按字典序排列
+    """
+    names, labels = set(), set()
+    for path in sorted(docs_dir.rglob("*.md")):
+        text = path.read_text(encoding="utf-8", errors="replace")
+        names.update(match.group(1) for match in BLOCK_RE.finditer(text))
+        labels.update(match.group(1) for match in LABEL_RE.finditer(text))
+    return sorted(names - labels)
+
+
 # 非数据接口，必须显式排除。不可依赖「category 能否推断」判定：
 # 实测 1100 个顶层导出中 6 个不可推断 category，而这 6 个恰好只是异常类
 # （相对导入 from .exceptions）；__version__ / pro_api / set_token / get_token
@@ -120,6 +141,11 @@ EXCLUDE = {
     "pro_api",
     "set_token",
     "get_token",
+    "set_proxies",
+    "get_proxies",
+    "ProxyContext",
+    "set_timeout",
+    "get_timeout",
     "AkshareException",
     "APIError",
     "DataParsingError",
@@ -255,6 +281,29 @@ def serialize(records: List[Dict]) -> str:
     )
 
 
+def write_if_changed(path: pathlib.Path, text: str) -> bool:
+    """
+    仅在内容变化时写入，并沿用目标文件现有的行尾风格。
+
+    本仓库在 Windows 上 core.autocrlf=true，工作区文件是 CRLF。若无条件地以 LF
+    重写，内容未变的文件也会被 git 标为已修改；pre-commit 钩子每次提交都会运行
+    本脚本，于是提交后工作区总残留一个只有行尾差异的 interfaces.json。
+
+    :param path: 目标文件
+    :param text: 以 LF 分行的新内容
+    :return: 是否实际写入
+    """
+    if path.exists():
+        raw = path.read_bytes()
+        if raw.decode("utf-8").replace("\r\n", "\n") == text:
+            return False
+        newline = "\r\n" if b"\r\n" in raw else "\n"
+    else:
+        newline = "\n"
+    path.write_text(text, encoding="utf-8", newline=newline)
+    return True
+
+
 def build(repo_root: pathlib.Path) -> str:
     """
     生成完整的 registry JSON 文本。
@@ -316,6 +365,10 @@ def main() -> int:
         exports = collect_exports(init_path)
         docs = collect_doc_records(repo_root / "docs" / "data")
         problems = diff_baseline(exports, docs, baseline)
+        for name in find_missing_labels(repo_root / "docs" / "data"):
+            problems.append(
+                f"接口 {name} 的文档条目缺少锚点标签，请在其标题前加一行 ({name})="
+            )
         current = (repo_root / OUTPUT_RELPATH).read_text(encoding="utf-8")
         if current != text:
             problems.append(
@@ -332,10 +385,11 @@ def main() -> int:
             return 1
         print("[registry] 校验通过")
         return 0
-    (repo_root / OUTPUT_RELPATH).write_text(text, encoding="utf-8", newline="\n")
-    print(f"已写入 {OUTPUT_RELPATH}")
-    if new_init_text != init_text:
-        init_path.write_text(new_init_text, encoding="utf-8", newline="\n")
+    if write_if_changed(repo_root / OUTPUT_RELPATH, text):
+        print(f"已写入 {OUTPUT_RELPATH}")
+    else:
+        print(f"{OUTPUT_RELPATH} 无变化")
+    if write_if_changed(init_path, new_init_text):
         print(
             f"已更新 {init_path.name} 的 __all__（{len(collect_all_names(init_path))} 项）"
         )

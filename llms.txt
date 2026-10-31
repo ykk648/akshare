@@ -13,7 +13,9 @@ top-level package.
 
 ## Install
 
-Use pip:
+Use uv (recommended) or pip:
+
+`uv pip install akshare --upgrade`
 
 `pip install akshare --upgrade`
 
@@ -86,24 +88,24 @@ Recommended workflow:
 
 ## Major Categories
 
-Common data categories include:
+Common data categories include (these are the `category` values accepted by
+`ak.search()`; run `ak.list_categories()` for the full list):
 
-- `stock`: stock market data, including A-share, Hong Kong stocks, U.S.
-  stocks, spot data, historical data, and stock information
-- `stock_feature`: rankings, capital flow, margin trading, technical data, and
-  market feature datasets
-- `stock_fundamental`: company fundamentals, financial statements, equity
-  structure, and disclosures
-- `fund`: public fund data, ETFs, rankings, holdings, managers, and net value
+- `stock`: stock market data, including A-share, Hong Kong and U.S. stocks,
+  quotes, fundamentals, capital flow, shareholders and research
+- `fund`: public and private fund data, ETFs, REITs, holdings and net value
 - `futures`: domestic and global futures market data
 - `option`: option market data
 - `bond`: bond and convertible bond data
 - `index`: market index data
-- `forex` and `fx`: foreign exchange data
-- `macro` and `economic`: macroeconomic and statistical data
-- `news`: financial news and information
+- `macro`: macroeconomic data for China, the U.S. and other economies
+- `fx` and `currency`: foreign exchange and currency conversion data
+- `interest_rate`: interest rate data
 - `crypto`: cryptocurrency market data
-- `tool`: trading calendar and utility datasets
+- `alternative`: alternative data such as box office, car sales and air quality
+- `research`: academic research datasets such as realized volatility and FRED-MD
+- `indicator`: quantitative indicators computed from market data
+- `calendar`: trading calendar
 
 ## Naming Conventions
 
@@ -143,6 +145,11 @@ When helping users with AKShare:
   upstream source still provides updated data.
 - Inspect returned columns before making assumptions about field names, units,
   or semantics.
+- Network settings are global and apply to every interface:
+  `ak.set_proxies({"http": ..., "https": ...})`, `ak.set_timeout(seconds)`
+  (default `(10, 60)` connect/read seconds), and `with ak.ProxyContext(...):`
+  for a temporary proxy. When no proxy is set, the standard `HTTP_PROXY` /
+  `HTTPS_PROXY` environment variables are honoured.
 
 ## Example Function Families
 
@@ -157,7 +164,7 @@ Representative examples:
 - `ak.bond_zh_hs_cov_spot()`
 - `ak.macro_china_cpi()`
 - `ak.news_cctv()`
-- `ak.crypto_hist(...)`
+- `ak.crypto_js_spot()`
 
 ## Project Structure
 
@@ -180,6 +187,13 @@ When adding or fixing a public interface:
   `ak.function_name(...)`.
 - Update the corresponding documentation under `docs/data/`.
 - Update `docs/changelog.md` for user-visible fixes or new interfaces.
+- Send HTTP requests through `akshare.utils.http` (`http.get`, `http.post`,
+  `http.Session`), not `requests.get` directly, so the global timeout and proxy
+  settings apply; Ruff rule TID251 enforces this. For retries use
+  `http.request_with_retry(method, url, ...)` instead of a hand-written loop;
+  it backs off on connection errors, timeouts, 429 and 5xx, and raises
+  `RateLimitError` at once when Eastmoney's push2 servers drop the connection
+  (an IP rate limit that retrying only prolongs).
 
 ## Preferred Guidance Style
 

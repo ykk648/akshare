@@ -1,9 +1,10 @@
-# [AKShare](https://github.com/akfamily/akshare) 私募基金数据
+# 私募基金数据
 
 ## 中国证券投资基金业协会
 
 ### 会员信息
 
+(amac_member_info)=
 #### 会员机构综合查询
 
 接口：amac_member_info
@@ -24,13 +25,13 @@
 
 | 名称       | 类型     | 描述 |
 |----------|--------|----|
-| 机构（会员）名称 | object | -  |
-| 会员代表     | object | -  |
-| 会员类型     | object | -  |
-| 会员编号     | object | -  |
+| 机构（会员）名称 | str    | -  |
+| 会员代表     | str    | -  |
+| 会员类型     | str    | -  |
+| 会员编号     | str    | -  |
 | 入会时间     | object | -  |
-| 机构类型     | object | -  |
-| 是否星标     | object | -  |
+| 机构类型     | str    | -  |
+| 是否星标     | str    | -  |
 
 接口示例
 
@@ -61,6 +62,7 @@ print(amac_member_info_df)
 
 ### 从业人员信息
 
+(amac_person_fund_org_list)=
 #### 基金从业人员资格注册信息
 
 接口：amac_person_fund_org_list
@@ -82,8 +84,8 @@ print(amac_member_info_df)
 | 名称       | 类型     | 描述  |
 |----------|--------|-----|
 | 序号       | int64  | -   |
-| 机构名称     | object | -   |
-| 员工人数     | object | -   |
+| 机构名称     | str    | -   |
+| 员工人数     | int64  | -   |
 | 基金从业资格   | int64  | -   |
 | 基金销售业务资格 | int64  | -   |
 | 基金经理     | int64  | -   |
@@ -116,6 +118,7 @@ print(amac_person_fund_org_list_df)
 [146 rows x 8 columns]
 ```
 
+(amac_person_bond_org_list)=
 #### 债券投资交易相关人员公示
 
 接口：amac_person_bond_org_list
@@ -137,9 +140,9 @@ print(amac_person_fund_org_list_df)
 | 名称   | 类型     | 描述  |
 |------|--------|-----|
 | 序号   | int64  | -   |
-| 机构类型 | object | -   |
-| 机构名称 | object | -   |
-| 公示网址 | object | -   |
+| 机构类型 | str    | -   |
+| 机构名称 | str    | -   |
+| 公示网址 | str    | -   |
 
 接口示例
 
@@ -170,6 +173,7 @@ print(amac_person_bond_org_list_df)
 
 ### 私募基金管理人公示
 
+(amac_manager_info)=
 #### 私募基金管理人综合查询
 
 接口：amac_manager_info
@@ -190,11 +194,11 @@ print(amac_person_bond_org_list_df)
 
 | 名称                    | 类型     | 描述 |
 |-----------------------|--------|----|
-| 私募基金管理人名称             | object | -  |
-| 法定代表人/执行事务合伙人（委派代表）姓名 | object | -  |
-| 机构类型                  | object | -  |
-| 注册地                   | object | -  |
-| 登记编号                  | object | -  |
+| 私募基金管理人名称             | str    | -  |
+| 法定代表人/执行事务合伙人（委派代表）姓名 | str    | -  |
+| 机构类型                  | str    | -  |
+| 注册地                   | str    | -  |
+| 登记编号                  | str    | -  |
 | 成立时间                  | object | -  |
 | 登记时间                  | object | -  |
 
@@ -225,6 +229,7 @@ print(amac_manager_info_df)
 [21092 rows x 7 columns]
 ```
 
+(amac_manager_classify_info)=
 #### 私募基金管理人分类公示
 
 接口：amac_manager_classify_info
@@ -245,18 +250,18 @@ print(amac_manager_info_df)
 
 | 名称                    | 类型     | 描述  |
 |-----------------------|--------|-----|
-| 私募基金管理人名称             | object | -   |
-| 法定代表人/执行事务合伙人（委派代表）姓名 | object | -   |
-| 机构类型                  | object | -   |
-| 登记编号                  | object | -   |
-| 注册地                   | object | -   |
-| 办公地                   | object | -   |
+| 私募基金管理人名称             | str    | -   |
+| 法定代表人/执行事务合伙人（委派代表）姓名 | str    | -   |
+| 机构类型                  | str    | -   |
+| 登记编号                  | str    | -   |
+| 注册地                   | str    | -   |
+| 办公地                   | str    | -   |
 | 成立时间                  | object | -   |
 | 登记时间                  | object | -   |
 | 在管基金数量                | int64  | -   |
-| 会员类型                  | object | -   |
-| 是否有提示信息               | object | -   |
-| 是否有诚信信息               | object | -   |
+| 会员类型                  | str    | -   |
+| 是否有提示信息               | str    | -   |
+| 是否有诚信信息               | str    | -   |
 
 接口示例
 
@@ -285,6 +290,7 @@ print(amac_manager_classify_info_df)
 [21092 rows x 12 columns]
 ```
 
+(amac_member_sub_info)=
 #### 证券公司私募基金子公司管理人信息公示
 
 接口：amac_member_sub_info
@@ -341,6 +347,7 @@ print(amac_member_sub_info_df)
 
 ### 基金产品
 
+(amac_fund_info)=
 #### 私募基金管理人基金产品
 
 接口：amac_fund_info
@@ -362,13 +369,13 @@ print(amac_member_sub_info_df)
 
 | 名称        | 类型     | 描述 |
 |-----------|--------|----|
-| 基金名称      | object | -  |
-| 私募基金管理人名称 | object | -  |
-| 私募基金管理人类型 | object | -  |
-| 运行状态      | object | -  |
+| 基金名称      | str    | -  |
+| 私募基金管理人名称 | str    | -  |
+| 私募基金管理人类型 | str    | -  |
+| 运行状态      | str    | -  |
 | 备案时间      | object | -  |
 | 建立时间      | object | -  |
-| 托管人名称     | object | -  |
+| 托管人名称     | str    | -  |
 
 接口示例
 
@@ -397,6 +404,7 @@ print(amac_fund_info_df)
 [10000 rows x 7 columns]
 ```
 
+(amac_securities_info)=
 #### 证券公司集合资管产品公示
 
 接口：amac_securities_info
@@ -455,6 +463,7 @@ print(amac_securities_info_df)
 [20291 rows x 10 columns]
 ```
 
+(amac_aoin_info)=
 #### 证券公司直投基金
 
 接口：amac_aoin_info
@@ -508,6 +517,7 @@ print(amac_aoin_info_df)
 [224 rows x 5 columns]
 ```
 
+(amac_fund_sub_info)=
 #### 证券公司私募投资基金
 
 接口：amac_fund_sub_info
@@ -562,6 +572,7 @@ print(amac_fund_sub_info_df)
 [1692 rows x 6 columns]
 ```
 
+(amac_fund_account_info)=
 #### 基金公司及子公司集合资管产品公示
 
 接口：amac_fund_account_info
@@ -614,6 +625,7 @@ print(amac_fund_account_info_df)
 [38249 rows x 4 columns]
 ```
 
+(amac_fund_abs)=
 #### 资产支持专项计划
 
 接口：amac_fund_abs
@@ -635,10 +647,10 @@ print(amac_fund_account_info_df)
 | 名称     | 类型     | 描述 |
 |--------|--------|----|
 | 编号     | int64  | -  |
-| 备案编号   | object | -  |
-| 专项计划全称 | object | -  |
-| 管理人    | object | -  |
-| 托管人    | object | -  |
+| 备案编号   | str    | -  |
+| 专项计划全称 | str    | -  |
+| 管理人    | str    | -  |
+| 托管人    | str    | -  |
 | 成立日期   | object | -  |
 | 预期到期时间 | object | -  |
 | 备案通过时间 | object | -  |
@@ -670,6 +682,7 @@ print(amac_fund_abs_df)
 [8340 rows x 8 columns]
 ```
 
+(amac_futures_info)=
 #### 期货公司集合资管产品公示
 
 接口：amac_futures_info
@@ -730,6 +743,7 @@ print(amac_futures_info_df)
 
 ### 诚信信息
 
+(amac_manager_cancelled_info)=
 #### 已注销私募基金管理人名单
 
 接口：amac_manager_cancelled_info

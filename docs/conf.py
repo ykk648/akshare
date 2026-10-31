@@ -11,6 +11,7 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
 import ast
+import pathlib
 import re
 from datetime import datetime
 
@@ -59,7 +60,37 @@ release = get_version_string()
 # ones.
 # 不再需要 sphinx_markdown_tables：它当年存在的唯一理由是 recommonmark 不支持
 # Markdown 表格，而 myst_parser 原生渲染 GFM 表格（本文档有 16000+ 行表格）。
-extensions = ["myst_parser", "sphinx_rtd_theme"]
+# sphinx_copybutton：代码块右上角的复制按钮，与 pandas 文档相同。
+# sphinx_design：首页的卡片布局（grid / grid-item-card），与 pandas 文档首页相同。
+# sphinx_reredirects：为改名或删除的页面生成跳转页，旧链接继续可用，无需在 Read the Docs 后台配置。
+extensions = ["myst_parser", "sphinx_copybutton", "sphinx_design", "sphinx_reredirects"]
+
+# 旧页面名 -> 新网址（相对于旧页面所在目录）。只增不减：删掉一条，对应的旧链接就会 404。
+redirects = {
+    "anaconda": "uv.html",
+    "registry": "search.html",
+    "answer": "faq.html",
+    "demo": "backtest.html",
+    "platform": "quant_platforms.html",
+    "deploy_http": "aktools.html",
+    "akdocker/akdocker": "../aktools.html",
+    # 1.20.1 移除 Docker 镜像，改用 pip 安装 AKTools
+    "docker": "aktools.html",
+    "data_tips": "faq.html#known-data-issues",
+    "special": "acknowledgements.html",
+    "dependency": "contributing.html",
+    # 1.19.7 数据字典类目目录改名
+    "data/dc/dc": "../crypto/crypto.html",
+    "data/event/event": "../migration/migration.html",
+    "data/article/article": "../research/research.html",
+    "data/others/others": "../alternative/alternative.html",
+    "data/tool/tool": "../calendar/calendar.html",
+    "data/hf/hf": "../high_freq/high_freq.html",
+}
+
+# 复制时去掉交互式提示符，粘贴后可以直接运行
+copybutton_prompt_text = r">>> |\.\.\. |\$ "
+copybutton_prompt_is_regexp = True
 
 # Add any paths that contain templates here, relative to this directory.
 
@@ -81,11 +112,65 @@ exclude_patterns = ["_build", "**.ipynb_checkpoints"]
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+# 与 pandas、numpy 文档相同的主题。选用它主要是为了右侧的“当前页面”目录：
+# 数据字典单页有数百个接口，sphinx_rtd_theme 没有页内目录，左侧导航又会被
+# 当前页的章节占满。
+html_theme = "pydata_sphinx_theme"
+html_theme_options = {
+    # 每个页面顶部的公告横幅（与 pandas 文档的版本公告相同的位置），用于推荐 AKQuant
+    "announcement": (
+        "推荐：高性能量化投研框架 AKQuant，与 AKShare 数据无缝衔接，"
+        "<a href='https://akquant.akfamily.xyz/'>立即了解</a>"
+    ),
+    # 右侧页内目录默认只展开到二级标题，数据字典需要看到三级的接口分组
+    "show_toc_level": 2,
+    # 顶栏改用 _templates/ak-navbar.html 固定列出常用入口，见该文件说明
+    "navbar_center": ["ak-navbar"],
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/akfamily/akshare",
+            "icon": "fa-brands fa-github",
+        },
+    ],
+    # 页脚只保留版权与更新日期，不显示 Sphinx 与主题的版本
+    "footer_start": ["copyright"],
+    "footer_end": ["last-updated"],
+    # 右侧栏顶部放公众号二维码（_templates/wechat.html）。首页正文已有大图，不再重复
+    "secondary_sidebar_items": {
+        "**": ["wechat", "page-toc", "sourcelink"],
+        "index": [],
+        # 实盘交易页已有合作方的联系二维码，不再显示公众号卡片
+        "trade": ["page-toc"],
+    },
+    # 设置 logo 图片后主题默认不再显示站点标题，需显式给出文字
+    "logo": {
+        "image_light": "_static/akshare_icon.png",
+        "image_dark": "_static/akshare_icon.png",
+        "text": f"AKShare {version} 文档",
+    },
+}
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
+# 图标是 assets/images/akshare_logo.jpg 中一上一下两个箭头的简化版：品牌蓝圆角方块
+# 加白色粗箭头。原 logo 线条太细，直接缩小到 16/32 像素几乎看不清
+html_favicon = "_static/favicon.ico"
+html_static_path = ["_static"]
+html_css_files = ["custom.css"]
+
+# 左侧“章节导航”只列出当前页面下级的页面。数据字典以外的页面都没有下级页面，
+# 侧栏会只剩一个空标题，因此对这些页面直接去掉侧栏，把宽度留给正文。
+# 这里必须逐页写出页面名：若同时使用 "**" 与 "data/**" 两个通配模式，
+# Sphinx 会对数据字典页面报 “matches two patterns” 警告。
+_DOCS_DIR = pathlib.Path(__file__).parent
+html_sidebars = {
+    page.relative_to(_DOCS_DIR).with_suffix("").as_posix(): []
+    for page in _DOCS_DIR.glob("*.md")
+}
+
+# 页脚显示文档构建日期。每次推送 main 都会触发 Read the Docs 重新构建，
+# 因此它就是文档的最近更新日期，取代了以前在 introduction.md 中手工维护的
+# “本文档更新时间”。
+html_last_updated_fmt = "%Y-%m-%d"
 
 
 master_doc = "index"
@@ -99,3 +184,46 @@ master_doc = "index"
 # 未转义的下划线与星号（接口名如 stock_zh_a_hist），因此刻意不开启
 # 额外的行内语法扩展，避免把接口名误解析为强调。
 myst_heading_anchors = 3
+
+# 数据示例等未标语言的代码块是程序输出，不按 Python 高亮；接口示例写明了 python，不受影响
+highlight_language = "text"
+
+# 数据字典接口条目的固定段落（“接口：”“目标地址：”“描述：”“限量：”与
+# “输入参数”“输出参数”“接口示例”“数据示例”标签）在 Markdown 里是普通段落。
+# 构建时给它们加上样式类（见 _static/custom.css），源文件格式保持不变，
+# scripts/build_registry.py 仍按原格式解析。
+_AK_LABELS = (
+    "输入参数",
+    "输出参数",
+    "接口示例",
+    "数据示例",
+    "股票数据复权",
+    "数据复权",
+)
+_AK_META = ("目标地址：", "描述：", "限量：")
+
+
+def _ak_mark_entry_paragraphs(app, doctree, docname):
+    """
+    为数据字典页面中接口条目的固定段落添加 CSS 类。
+
+    :param app: Sphinx 应用
+    :param doctree: 文档树
+    :param docname: 文档名
+    """
+    from docutils import nodes
+
+    if not docname.startswith("data/"):
+        return
+    for paragraph in doctree.findall(nodes.paragraph):
+        text = paragraph.astext().strip()
+        if text.startswith("接口："):
+            paragraph["classes"].append("ak-iface")
+        elif text.startswith(_AK_META):
+            paragraph["classes"].append("ak-meta")
+        elif text.startswith(_AK_LABELS) and len(text) <= 30 and "\n" not in text:
+            paragraph["classes"].append("ak-label")
+
+
+def setup(app):
+    app.connect("doctree-resolved", _ak_mark_entry_paragraphs)

@@ -17,7 +17,10 @@ import re
 from io import BytesIO, StringIO
 
 import pandas as pd
-import requests
+from bs4 import BeautifulSoup
+
+from akshare.exceptions import APIError
+from akshare.utils import http
 
 
 def futures_warehouse_receipt_czce(date: str = "20251103") -> dict:
@@ -29,9 +32,7 @@ def futures_warehouse_receipt_czce(date: str = "20251103") -> dict:
     :return: 指定日期的仓单日报数据
     :rtype: dict
     """
-    import urllib3
 
-    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     if int(date) > 20251101:
         url = f"http://www.czce.com.cn/cn/DFSStaticFiles/Future/{date[:4]}/{date}/FutureDataWhsheet.xlsx"
     else:
@@ -40,7 +41,7 @@ def futures_warehouse_receipt_czce(date: str = "20251103") -> dict:
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/83.0.4103.116 Safari/537.36"
     }
-    r = requests.get(url, verify=False, headers=headers)
+    r = http.get(url, headers=headers)
     temp_df = pd.read_excel(BytesIO(r.content))
     index_list = temp_df[temp_df.iloc[:, 0].str.find("品种") == 0.0].index.to_list()
     index_list.append(len(temp_df))
@@ -49,11 +50,11 @@ def futures_warehouse_receipt_czce(date: str = "20251103") -> dict:
         inner_df = temp_df[index_list[inner_index] : index_list[inner_index + 1]]
         inner_key = re.findall(pattern=r"[a-zA-Z]+", string=inner_df.iloc[0, 0])[0]
         inner_df = inner_df.iloc[1:, :]
-        inner_df.dropna(axis=0, how="all", inplace=True)
-        inner_df.dropna(axis=1, how="all", inplace=True)
+        inner_df = inner_df.dropna(axis=0, how="all")
+        inner_df = inner_df.dropna(axis=1, how="all")
         inner_df.columns = inner_df.iloc[0, :].to_list()
         inner_df = inner_df.iloc[1:, :]
-        inner_df.reset_index(inplace=True, drop=True)
+        inner_df = inner_df.reset_index(drop=True)
         big_dict[inner_key] = inner_df
     return big_dict
 
@@ -66,16 +67,24 @@ def futures_warehouse_receipt_dce(date: str = "20251027") -> pd.DataFrame:
     :type date: str
     :return: 指定日期的仓单日报数据
     :rtype: dict
+    :raises APIError: 大连商品交易所网站启用瑞数反爬虫验证，拒绝程序请求时抛出
     """
     url = "http://www.dce.com.cn/dcereport/publicweb/dailystat/wbillWeeklyQuotes"
     payload = {
         "tradeDate": date,
         "varietyId": "all",
     }
-    r = requests.post(url, json=payload)
+    r = http.post(url, json=payload)
+    # 瑞数反爬虫对未通过浏览器验证的请求返回 412 挑战页，其 cookie 需每次请求前由 JS 重新生成
+    if r.status_code == 412:
+        raise APIError(
+            "大连商品交易所网站启用了瑞数反爬虫验证，暂时无法通过程序获取仓单日报数据",
+            status_code=r.status_code,
+        )
+    r.raise_for_status()
     data_json = r.json()
     temp_df = pd.DataFrame(data_json["data"]["entityList"])
-    temp_df.rename(
+    temp_df = temp_df.rename(
         columns={
             "variety": "品种名称",
             "whAbbr": "仓库/分库",
@@ -85,7 +94,6 @@ def futures_warehouse_receipt_dce(date: str = "20251027") -> pd.DataFrame:
             "diff": "增减（手）",
             "varietyOrder": "品种代码",
         },
-        inplace=True,
     )
     temp_df = temp_df[
         [
@@ -101,11 +109,102 @@ def futures_warehouse_receipt_dce(date: str = "20251027") -> pd.DataFrame:
     return temp_df
 
 
-def futures_shfe_warehouse_receipt(date: str = "20200702") -> dict:
+def __futures_shfe_warehouse_receipt_html(date: str, headers: dict) -> dict:
+    """
+    上海期货交易所指定交割仓库期货仓单日报（2025-11-18 起的网页版）
+    自 2025-11-18 起，交易所不再提供 dailydata/{date}dailystock.dat 数据文件（返回 404），
+    改为按品种分表的网页 stockdata/dailystock_{date}/ZH/all.html；
+    键为品种名称，如“螺纹钢仓库”“铜”“铜(BC)”，
+    值为包含 VARNAME, REGNAME, WHABBRNAME, WRTWGHTS, WRTCHANGE, ROWSTATUS 的 pandas.DataFrame，
+    其中 ROWSTATUS 为 "0" 表示仓库，"1" 表示合计，"2" 表示总计
+    :param date: 交易日，e.g., "20260924"
+    :type date: str
+    :param headers: 请求头
+    :type headers: dict
+    :return: 指定日期的仓单日报数据
+    :rtype: dict
+    """
+    url = f"https://www.shfe.com.cn/data/tradedata/future/stockdata/dailystock_{date}/ZH/all.html"
+    r = http.get(url, headers=headers)
+    r.raise_for_status()
+    r.encoding = "utf-8"
+    soup = BeautifulSoup(r.text, features="lxml")
+    # 各表列顺序不一：多数为“地区、仓库/厂库”，部分厂库表为“厂库、地区”，原油为“地区、交割仓库、本日数量”
+    column_map = {
+        "地区": "REGNAME",
+        "仓库": "WHABBRNAME",
+        "厂库": "WHABBRNAME",
+        "交割仓库": "WHABBRNAME",
+        "期货": "WRTWGHTS",
+        "本日数量": "WRTWGHTS",
+        "增减": "WRTCHANGE",
+    }
+    big_dict = {}
+    for table in soup.find_all("table"):
+        header = [th.get_text(strip=True) for th in table.find_all("th")]
+        title_tr = table.find("tr", class_="special_row_type")
+        if not header or title_tr is None:
+            continue
+        columns = [column_map.get(item, item) for item in header]
+        # "螺纹钢(仓库)" -> "螺纹钢仓库"；"铜(BC)" 保持不变
+        var_name = (
+            title_tr.td.get_text(strip=True)
+            .replace("(仓库)", "仓库")
+            .replace("(厂库)", "厂库")
+        )
+        spans = {}  # 记录被 rowspan 纵向合并的单元格：列序号映射到其文本与剩余行数
+        rows = []
+        for tr in table.find_all("tr"):
+            if tr is title_tr or tr.find("th") is not None:
+                continue
+            cells = tr.find_all("td")
+            row = []
+            while len(row) < len(columns):
+                col = len(row)
+                if spans.get(col, ("", 0))[1] > 0:
+                    text, remaining = spans[col]
+                    spans[col] = (text, remaining - 1)
+                    row.append(text)
+                    continue
+                if not cells:
+                    break
+                td = cells.pop(0)
+                text = td.get_text(strip=True)
+                rowspan = int(td.get("rowspan", 1))
+                if rowspan > 1:
+                    spans[col] = (text, rowspan - 1)
+                # colspan 单元格的文本放在其覆盖的最后一列，如“总计”、黄金的“上期所指定交割金库”
+                row.extend([""] * (int(td.get("colspan", 1)) - 1) + [text])
+            if len(row) != len(columns):
+                continue
+            item = dict(zip(columns, row))
+            if item["REGNAME"].endswith("总计") or item["WHABBRNAME"].endswith("总计"):
+                item["WHABBRNAME"] = item["REGNAME"] + item["WHABBRNAME"]
+                item["REGNAME"] = ""
+                item["ROWSTATUS"] = "2"
+            elif "合计" in (item["REGNAME"], item["WHABBRNAME"]):
+                item["ROWSTATUS"] = "1"
+            else:
+                item["ROWSTATUS"] = "0"
+            rows.append(item)
+        if not rows:
+            continue
+        temp_df = pd.DataFrame(rows)
+        temp_df["VARNAME"] = var_name
+        temp_df = temp_df[
+            ["VARNAME", "REGNAME", "WHABBRNAME", "WRTWGHTS", "WRTCHANGE", "ROWSTATUS"]
+        ]
+        temp_df["WRTWGHTS"] = pd.to_numeric(temp_df["WRTWGHTS"], errors="coerce")
+        temp_df["WRTCHANGE"] = pd.to_numeric(temp_df["WRTCHANGE"], errors="coerce")
+        big_dict[var_name] = temp_df
+    return big_dict
+
+
+def futures_shfe_warehouse_receipt(date: str = "20260924") -> dict:
     """
     上海期货交易所指定交割仓库期货仓单日报
-    https://tsite.shfe.com.cn/statements/dataview.html?paramid=dailystock&paramdate=20200703
-    :param date: 交易日，e.g., "20200702"
+    https://www.shfe.com.cn/reports/tradedata/dailyandweeklydata/
+    :param date: 交易日，e.g., "20260924"
     :type date: str
     :return: 指定日期的仓单日报数据
     :rtype: dict
@@ -114,11 +213,13 @@ def futures_shfe_warehouse_receipt(date: str = "20200702") -> dict:
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/83.0.4103.116 Safari/537.36"
     }
+    if date >= "20251118":
+        return __futures_shfe_warehouse_receipt_html(date=date, headers=headers)
     url = (
         f"https://www.shfe.com.cn/data/tradedata/future/dailydata/{date}dailystock.dat"
     )
     if date >= "20140519":
-        r = requests.get(url, headers=headers)
+        r = http.get(url, headers=headers)
         data_json = r.json()
         temp_df = pd.DataFrame(data_json["o_cursor"])
         temp_df["VARNAME"] = temp_df["VARNAME"].str.split(r"$", expand=True).iloc[:, 0]
@@ -127,11 +228,11 @@ def futures_shfe_warehouse_receipt(date: str = "20200702") -> dict:
             temp_df["WHABBRNAME"].str.split(r"$", expand=True).iloc[:, 0]
         )
         big_dict = {}
-        for item in set(temp_df["VARNAME"]):
+        for item in dict.fromkeys(temp_df["VARNAME"]):
             big_dict[item] = temp_df[temp_df["VARNAME"] == item]
     else:
         url = f"https://www.shfe.com.cn/data/tradedata/future/dailydata/{date}dailystock.html"
-        r = requests.get(url, headers=headers)
+        r = http.get(url, headers=headers)
         temp_df = pd.read_html(StringIO(r.text))[0]
         index_list = temp_df[
             temp_df.iloc[:, 3].str.contains("单位：") == 1
@@ -147,11 +248,11 @@ def futures_shfe_warehouse_receipt(date: str = "20200702") -> dict:
             else:
                 temp_index_end = index_list[inner_index + 1]
             inner_df = temp_df[temp_index_start:temp_index_end]
-            inner_df.reset_index(inplace=True, drop=True)
+            inner_df = inner_df.reset_index(drop=True)
             inner_key = inner_df.iloc[0, 0]
             inner_df.columns = inner_df.iloc[1].to_list()
             inner_df = inner_df[2:]
-            inner_df.reset_index(inplace=True, drop=True)
+            inner_df = inner_df.reset_index(drop=True)
             big_dict[inner_key] = inner_df
     return big_dict
 
@@ -171,27 +272,28 @@ def futures_gfex_warehouse_receipt(date: str = "20240122") -> dict:
         "Chrome/83.0.4103.116 Safari/537.36"
     }
     payload = {"gen_date": date}
-    r = requests.post(url=url, data=payload, headers=headers)
+    r = http.post(url=url, data=payload, headers=headers)
+    r.raise_for_status()
     data_json = r.json()
     temp_df = pd.DataFrame(data_json["data"])
     symbol_list = list(
-        set([item.upper() for item in temp_df["varietyOrder"].tolist() if item != ""])
+        dict.fromkeys(
+            item.upper() for item in temp_df["varietyOrder"].tolist() if item != ""
+        )
     )
-    temp_df.rename(
+    temp_df = temp_df.rename(
         columns={
             "varietyOrder": "symbol",
             "variety": "品种",
             "whAbbr": "仓库/分库",
             "lastWbillQty": "昨日仓单量",
             "wbillQty": "今日仓单量",
-            "regWbillQty": "增减",
+            "diff": "增减",
         },
-        inplace=True,
     )
     temp_df = temp_df[
         [
             "symbol",
-            "whType",
             "品种",
             "仓库/分库",
             "昨日仓单量",
@@ -199,10 +301,10 @@ def futures_gfex_warehouse_receipt(date: str = "20240122") -> dict:
             "增减",
         ]
     ]
-    temp_df["whType"] = pd.to_numeric(temp_df["whType"], errors="coerce")
-    temp_df.dropna(
-        subset=["whType"], how="any", axis=0, ignore_index=True, inplace=True
-    )
+    # 去掉“碳酸锂小计”“总计”等汇总行，它们的仓库名为空。上游原先另有 whType 字段，
+    # 汇总行的值不是数字，代码据此过滤；2026-10 起上游不再返回该字段，接口报 KeyError
+    temp_df = temp_df[temp_df["仓库/分库"].fillna("").str.strip() != ""]
+    temp_df = temp_df.reset_index(drop=True)
     big_dict = dict()
     for symbol in symbol_list:
         inner_temp_df = temp_df[temp_df["symbol"] == symbol.lower()].copy()
@@ -222,7 +324,7 @@ def futures_gfex_warehouse_receipt(date: str = "20240122") -> dict:
             inner_temp_df["今日仓单量"], errors="coerce"
         )
         inner_temp_df["增减"] = pd.to_numeric(inner_temp_df["增减"], errors="coerce")
-        inner_temp_df.reset_index(inplace=True, drop=True)
+        inner_temp_df = inner_temp_df.reset_index(drop=True)
         big_dict[symbol] = inner_temp_df
     return big_dict
 
@@ -231,8 +333,8 @@ if __name__ == "__main__":
     futures_warehouse_receipt_czce_df = futures_warehouse_receipt_czce(date="20251014")
     print(futures_warehouse_receipt_czce_df)
 
-    futures_warehouse_receipt_dce_df = futures_warehouse_receipt_dce(date="20251014")
-    print(futures_warehouse_receipt_dce_df)
+    futures_shfe_warehouse_receipt_df = futures_shfe_warehouse_receipt(date="20260924")
+    print(futures_shfe_warehouse_receipt_df)
 
     futures_shfe_warehouse_receipt_df = futures_shfe_warehouse_receipt(date="20200702")
     print(futures_shfe_warehouse_receipt_df)
@@ -245,3 +347,6 @@ if __name__ == "__main__":
 
     futures_gfex_warehouse_receipt_df = futures_gfex_warehouse_receipt(date="20260226")
     print(futures_gfex_warehouse_receipt_df)
+
+    futures_warehouse_receipt_dce_df = futures_warehouse_receipt_dce(date="20251014")
+    print(futures_warehouse_receipt_dce_df)

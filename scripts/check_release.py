@@ -4,14 +4,15 @@
 Date: 2026/8/14
 Desc: 发布前校验版本元数据自洽，供 release_and_deploy.yml 在构建与上传之前调用
 
-必须在 twine upload 之前运行：PyPI 的版本号一经占用即不可重用，
+必须在上传 PyPI 之前运行：PyPI 的版本号一经占用即不可重用，
 发错版本号只能改用下一个号，无法撤回。
 
-校验四处必须一致，正是 CLAUDE.md 发布清单要求同步的那几处：
-    1. git tag（release-v1.2.3）
+校验三处必须一致，正是 CLAUDE.md 发布清单要求同步的那几处：
+    1. git tag（v1.2.3；1.20.0 及以前为 release-v1.2.3）
     2. akshare/_version.py
-    3. akshare/__init__.py 的版本历史 docstring
-    4. docs/changelog.md 的版本条目
+    3. docs/changelog.md 的版本条目
+
+1.20.0 起版本历史只记录在 docs/changelog.md，akshare/__init__.py 不再保留副本。
 
 本脚本只依赖标准库，因此 CI 中无需安装任何依赖即可运行。
 """
@@ -21,7 +22,7 @@ import pathlib
 import re
 from typing import List
 
-TAG_RE = re.compile(r"^release-v(\d+\.\d+\.\d+)$")
+TAG_RE = re.compile(r"^v(\d+\.\d+\.\d+)$")
 VERSION_RE = re.compile(r'__version__\s*=\s*"([^"]+)"')
 
 
@@ -29,13 +30,13 @@ def parse_tag(tag: str) -> str:
     """
     从 git tag 中取出版本号。
 
-    :param tag: 形如 release-v1.18.91 的 tag 名
+    :param tag: 形如 v1.20.1 的 tag 名
     :return: 版本号字符串
     :rtype: str
     """
     match = TAG_RE.match(tag)
     if not match:
-        raise ValueError(f"tag 格式不合法，应为 release-vX.Y.Z，实际为 {tag!r}")
+        raise ValueError(f"tag 格式不合法，应为 vX.Y.Z，实际为 {tag!r}")
     return match.group(1)
 
 
@@ -58,16 +59,17 @@ def read_version(path: pathlib.Path) -> str:
 
 def has_version_entry(text: str, version: str) -> bool:
     """
-    判断文本中是否存在以该版本号开头的行。
+    判断文本中是否存在以该版本号开头的行（允许前置 Markdown 标题标记）。
 
-    changelog 与 __init__.py 的版本历史都使用「1.18.91 type: desc」这一行首格式。
+    changelog 的版本条目使用「### 1.18.91 type: desc」标题格式；
+    同时兼容旧的不带标题标记的「1.18.91 type: desc」行首格式。
 
     :param text: 待检查的全文
     :param version: 版本号
     :return: 是否存在对应条目
     :rtype: bool
     """
-    return re.search(rf"^{re.escape(version)} ", text, re.M) is not None
+    return re.search(rf"^(?:#+ )?{re.escape(version)} ", text, re.M) is not None
 
 
 def collect_problems(repo_root: pathlib.Path, tag: str) -> List[str]:
@@ -88,10 +90,6 @@ def collect_problems(repo_root: pathlib.Path, tag: str) -> List[str]:
             f"tag 版本 {tag_version} 与 akshare/_version.py 的 {file_version} 不一致"
         )
 
-    init_text = (repo_root / "akshare" / "__init__.py").read_text(encoding="utf-8")
-    if not has_version_entry(init_text, file_version):
-        problems.append(f"akshare/__init__.py 的版本历史缺少 {file_version} 条目")
-
     changelog_text = (repo_root / "docs" / "changelog.md").read_text(encoding="utf-8")
     if not has_version_entry(changelog_text, file_version):
         problems.append(f"docs/changelog.md 缺少 {file_version} 的版本说明")
@@ -101,7 +99,7 @@ def collect_problems(repo_root: pathlib.Path, tag: str) -> List[str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="校验发布版本元数据是否自洽")
-    parser.add_argument("tag", help="git tag 名，形如 release-v1.18.91")
+    parser.add_argument("tag", help="git tag 名，形如 v1.20.1")
     args = parser.parse_args()
     repo_root = pathlib.Path(__file__).resolve().parent.parent
 

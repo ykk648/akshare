@@ -1,5 +1,6 @@
-# [AKShare](https://github.com/akfamily/akshare) 公募基金数据
+# 公募基金数据
 
+(fund_name_em)=
 ## 基金基本信息
 
 接口：fund_name_em
@@ -20,11 +21,11 @@
 
 | 名称   | 类型     | 描述  |
 |------|--------|-----|
-| 基金代码 | object | -   |
-| 拼音缩写 | object | -   |
-| 基金简称 | object | -   |
-| 基金类型 | object | -   |
-| 拼音全称 | object | -   |
+| 基金代码 | str    | -   |
+| 拼音缩写 | str    | -   |
+| 基金简称 | str    | -   |
+| 基金类型 | str    | -   |
+| 拼音全称 | str    | -   |
 
 接口示例
 
@@ -52,6 +53,7 @@ print(fund_name_em_df)
 10227  980003   TPYLGYGDCYZ  ...   债券型   TAIPINGYANGLIUGEYUEGUNDONGCHIYOUZHAI
 ```
 
+(fund_info_ths)=
 ## 基金基本信息-同花顺
 
 接口：fund_info_ths
@@ -72,8 +74,8 @@ print(fund_name_em_df)
 
 | 名称     | 类型     | 描述  |
 |--------|--------|-----|
-| 字段     | object | -   |
-| 值      | object | -   |
+| 字段     | str    | -   |
+| 值      | str    | -   |
 
 接口示例
 
@@ -108,6 +110,7 @@ print(fund_info_ths_df)
 15    业绩比较基准  纳斯达克100指数收益率(使用估值汇率折算)*95%+活期存款利率(税后)*5%
 ```
 
+(fund_individual_basic_info_xq)=
 ## 基金基本信息-雪球
 
 接口：fund_individual_basic_info_xq
@@ -123,13 +126,12 @@ print(fund_info_ths_df)
 | 名称      | 类型    | 描述                      |
 |---------|-------|-------------------------|
 | symbol  | str   | symbol="000001"；基金代码   |
-| timeout | float | timeout=None；默认不设置超时参数 |
 
 输出参数
 
 | 名称    | 类型     | 描述 |
 |-------|--------|----|
-| item  | object | -  |
+| item  | str    | -  |
 | value | object | -  |
 
 接口示例
@@ -161,6 +163,7 @@ print(fund_individual_basic_info_xq_df)
 13  业绩比较基准                                       本基金暂不设业绩比较基准
 ```
 
+(fund_info_index_em)=
 ## 基金基本信息-指数型
 
 接口：fund_info_index_em
@@ -182,10 +185,10 @@ print(fund_individual_basic_info_xq_df)
 
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
-| 基金代码 | object  | -       |
-| 基金名称 | object  | -       |
+| 基金代码 | str     | -       |
+| 基金名称 | str     | -       |
 | 单位净值 | float64 | -       |
-| 日期   | object  | -       |
+| 日期   | str     | -       |
 | 日增长率 | float64 | 注意单位：% |
 | 近1周  | float64 | 注意单位：% |
 | 近1月  | float64 | 注意单位：% |
@@ -197,9 +200,9 @@ print(fund_individual_basic_info_xq_df)
 | 今年来  | float64 | 注意单位：% |
 | 成立来  | float64 | 注意单位：% |
 | 手续费  | float64 | 注意单位：% |
-| 起购金额 | object  | -       |
-| 跟踪标的 | object  | -       |
-| 跟踪方式 | object  | -       |
+| 起购金额 | str     | -       |
+| 跟踪标的 | str     | -       |
+| 跟踪方式 | str     | -       |
 
 接口示例
 
@@ -227,6 +230,7 @@ print(fund_info_index_em_df)
 279  016134       嘉实沪深300指数研究增强C  0.9614  2022-07-26  ...  0.00   10元  沪深指数  增强指数型
 ```
 
+(fund_purchase_em)=
 ## 基金申购状态
 
 接口：fund_purchase_em
@@ -247,14 +251,14 @@ print(fund_info_index_em_df)
 
 | 名称             | 类型      | 描述      |
 |----------------|---------|---------|
-| 序号             | object  | -       |
-| 基金代码           | object  | -       |
-| 基金简称           | object  | -       |
-| 基金类型           | object  | -       |
+| 序号             | int64   | -       |
+| 基金代码           | str     | -       |
+| 基金简称           | str     | -       |
+| 基金类型           | str     | -       |
 | 最新净值/万份收益      | float64 | -       |
-| 最新净值/万份收益-报告时间 | object  | -       |
-| 申购状态           | object  | -       |
-| 赎回状态           | object  | -       |
+| 最新净值/万份收益-报告时间 | str     | -       |
+| 申购状态           | str     | -       |
+| 赎回状态           | str     | -       |
 | 下一开放日          | object  | -       |
 | 购买起点           | float64 | -       |
 | 日累计限定金额        | float64 | -       |
@@ -288,6 +292,7 @@ print(fund_purchase_em_df)
 
 ## 基金行情
 
+(fund_etf_spot_em)=
 ### ETF基金实时行情-东财
 
 接口：fund_etf_spot_em
@@ -308,7 +313,7 @@ print(fund_purchase_em_df)
 
 | 名称         | 类型      | 描述      |
 |------------|---------|---------|
-| 代码         | object  | -       |
+| 代码         | str     | -       |
 | 名称         | object  | -       |
 | 最新价        | float64 | -       |
 | IOPV实时估值   | float64 | -       |
@@ -372,6 +377,7 @@ print(fund_etf_spot_em_df)
 [1010 rows x 37 columns]
 ```
 
+(fund_etf_category_ths)=
 ### 基金实时行情-同花顺
 
 接口：fund_etf_category_ths
@@ -394,20 +400,20 @@ print(fund_etf_spot_em_df)
 | 名称       | 类型      | 描述      |
 |----------|---------|---------|
 | 序号       | int64   | -       |
-| 基金代码     | object  | -       |
-| 基金名称     | object  | -       |
+| 基金代码     | str     | -       |
+| 基金名称     | str     | -       |
 | 当前-单位净值  | float64 | -       |
 | 当前-累计净值  | float64 | -       |
 | 前一日-单位净值 | float64 | -       |
 | 前一日-累计净值 | float64 |         |
 | 增长值      | float64 | -       |
 | 增长率      | float64 | 注意单位：% |
-| 赎回状态     | object  | -       |
-| 申购状态     | object  | -       |
+| 赎回状态     | str     | -       |
+| 申购状态     | str     | -       |
 | 最新-交易日   | object  | -       |
 | 最新-单位净值  | float64 | -       |
 | 最新-累计净值  | float64 | -       |
-| 基金类型     | object  | -       |
+| 基金类型     | str     | -       |
 | 查询日期     | object  | -       |
 
 接口示例
@@ -437,6 +443,7 @@ print(fund_etf_category_ths_df)
 [984 rows x 16 columns]
 ```
 
+(fund_etf_spot_ths)=
 ### ETF基金实时行情-同花顺
 
 接口：fund_etf_spot_ths
@@ -458,20 +465,20 @@ print(fund_etf_category_ths_df)
 | 名称       | 类型      | 描述      |
 |----------|---------|---------|
 | 序号       | int64   | -       |
-| 基金代码     | object  | -       |
-| 基金名称     | object  | -       |
+| 基金代码     | str     | -       |
+| 基金名称     | str     | -       |
 | 当前-单位净值  | float64 | -       |
 | 当前-累计净值  | float64 | -       |
 | 前一日-单位净值 | float64 | -       |
 | 前一日-累计净值 | float64 |         |
 | 增长值      | float64 | -       |
 | 增长率      | float64 | 注意单位：% |
-| 赎回状态     | object  | -       |
-| 申购状态     | object  | -       |
+| 赎回状态     | str     | -       |
+| 申购状态     | str     | -       |
 | 最新-交易日   | object  | -       |
 | 最新-单位净值  | float64 | -       |
 | 最新-累计净值  | float64 | -       |
-| 基金类型     | object  | -       |
+| 基金类型     | str     | -       |
 | 查询日期     | object  | -       |
 
 接口示例
@@ -501,6 +508,7 @@ print(fund_etf_spot_ths_df)
 [984 rows x 16 columns]
 ```
 
+(fund_lof_spot_em)=
 ### LOF基金实时行情-东财
 
 接口：fund_lof_spot_em
@@ -521,7 +529,7 @@ print(fund_etf_spot_ths_df)
 
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
-| 代码   | object  | -       |
+| 代码   | str     | -       |
 | 名称   | object  | -       |
 | 最新价  | float64 | -       |
 | 涨跌额  | float64 | -       |
@@ -563,6 +571,7 @@ print(fund_lof_spot_em_df)
 [151 rows x 14 columns]
 ```
 
+(fund_etf_category_sina)=
 ### 基金实时行情-新浪
 
 接口：fund_etf_category_sina
@@ -583,7 +592,7 @@ print(fund_lof_spot_em_df)
 
 | 名称  | 类型      | 描述      |
 |-----|---------|---------|
-| 代码  | object  | -       |
+| 代码  | str     | -       |
 | 名称  | object  | -       |
 | 最新价 | float64 | -       |
 | 涨跌额 | float64 | -       |
@@ -664,6 +673,7 @@ print(fund_etf_category_sina_df)
 [51 rows x 13 columns]
 ```
 
+(fund_etf_hist_min_em)=
 ### ETF基金分时行情-东财
 
 接口：fund_etf_hist_min_em
@@ -804,6 +814,7 @@ print(fund_etf_hist_min_em_df)
 [48 rows x 11 columns]
 ```
 
+(fund_lof_hist_min_em)=
 ### LOF基金分时行情-东财
 
 接口：fund_lof_hist_min_em
@@ -944,6 +955,7 @@ print(fund_lof_hist_min_em_df)
 [48 rows x 11 columns]
 ```
 
+(fund_etf_hist_em)=
 ### ETF基金历史行情-东财
 
 接口：fund_etf_hist_em
@@ -964,7 +976,7 @@ print(fund_lof_hist_min_em_df)
 | end_date   | str | end_date='20230104'；结束查询的日期                                    |
 | adjust     | str | 默认返回不复权的数据；qfq: 返回前复权后的数据；hfq: 返回后复权后的数据                      |
 
-**数据复权**
+数据复权
 
 1.为何要复权：由于股票存在配股、分拆、合并和发放股息等事件，会导致股价出现较大的缺口。
 若使用不复权的价格处理数据、计算各种指标，将会导致它们失去连续性，且使用不复权价格计算收益也会出现错误。
@@ -1079,6 +1091,7 @@ print(fund_etf_hist_em_df)
 2183  2023-01-04  2.494  2.490  2.498  ...  0.40 -0.40 -0.010  1.86
 ```
 
+(fund_lof_hist_em)=
 ### LOF基金历史行情-东财
 
 接口：fund_lof_hist_em
@@ -1099,7 +1112,7 @@ print(fund_etf_hist_em_df)
 | end_date   | str | end_date='20230104'；结束查询的日期                             |
 | adjust     | str | 默认返回不复权的数据；qfq: 返回前复权后的数据；hfq: 返回后复权后的数据               |
 
-**数据复权**
+数据复权
 
 1.为何要复权：由于股票存在配股、分拆、合并和发放股息等事件，会导致股价出现较大的缺口。
 若使用不复权的价格处理数据、计算各种指标，将会导致它们失去连续性，且使用不复权价格计算收益也会出现错误。
@@ -1217,6 +1230,7 @@ print(fund_lof_hist_em_df)
 [2520 rows x 11 columns]
 ```
 
+(fund_etf_hist_sina)=
 ### 基金历史行情-新浪
 
 接口：fund_etf_hist_sina
@@ -1273,6 +1287,7 @@ print(fund_etf_hist_sina_df)
 
 ## 基金净值
 
+(fund_open_fund_daily_em)=
 ### 开放式基金-实时数据
 
 接口：fund_open_fund_daily_em
@@ -1295,12 +1310,12 @@ print(fund_etf_hist_sina_df)
 |-----------|-------|---------|
 | 基金代码      | str   | -       |
 | 基金简称      | str   | -       |
-| 单位净值      | float | 随时间变动   |
-| 累计净值      | float | 随时间变动   |
-| 前交易日-单位净值 | float | 随时间变动   |
-| 前交易日-累计净值 | float | 随时间变动   |
-| 日增长值      | float | -       |
-| 日增长率      | float | -       |
+| 单位净值      | float64 | 随时间变动   |
+| 累计净值      | float64 | 随时间变动   |
+| 前交易日-单位净值 | float64 | 随时间变动   |
+| 前交易日-累计净值 | float64 | 随时间变动   |
+| 日增长值      | float64 | -       |
+| 日增长率      | float64 | -       |
 | 申购状态      | str   | -       |
 | 赎回状态      | str   | -       |
 | 手续费       | str   | 注意单位：% |
@@ -1331,6 +1346,7 @@ print(fund_open_fund_daily_em_df)
 10009  010650       易方达创新未来18个月封闭混合B                  ...   封闭期  开放赎回
 ```
 
+(fund_open_fund_info_em)=
 ### 开放式基金-历史数据
 
 接口：fund_open_fund_info_em
@@ -1537,11 +1553,11 @@ print(fund_open_fund_info_em_df)
 
 | 名称    | 类型     | 描述  |
 |-------|--------|-----|
-| 年份    | object | -   |
-| 权益登记日 | object | -   |
-| 除息日   | object | -   |
-| 每份分红  | object | -   |
-| 分红发放日 | object | -   |
+| 年份    | str    | -   |
+| 权益登记日 | str    | -   |
+| 除息日   | str    | -   |
+| 每份分红  | str    | -   |
+| 分红发放日 | str    | -   |
 
 接口示例-分红送配详情
 
@@ -1568,10 +1584,10 @@ print(fund_open_fund_info_em_df)
 
 | 名称     | 类型     | 描述  |
 |--------|--------|-----|
-| 年份     | object | -   |
-| 拆分折算日  | object | -   |
-| 拆分类型   | object | -   |
-| 拆分折算比例 | object | -   |
+| 年份     | str    | -   |
+| 拆分折算日  | str    | -   |
+| 拆分类型   | str    | -   |
+| 拆分折算比例 | str    | -   |
 
 接口示例-拆分详情
 
@@ -1597,6 +1613,7 @@ print(fund_open_fund_info_em_df)
 8  2015年  2015-12-15  份额折算  1:1.0180
 ```
 
+(fund_money_fund_daily_em)=
 ### 货币型基金-实时数据
 
 接口：fund_money_fund_daily_em
@@ -1619,12 +1636,12 @@ print(fund_open_fund_info_em_df)
 |-------------|-------|-----|
 | 基金代码        | str   | -   |
 | 基金简称        | str   | -   |
-| 当前交易日-万份收益  | float | -   |
-| 当前交易日-7日年化% | float | -   |
-| 当前交易日-单位净值  | float | -   |
-| 前一交易日-万份收益  | float | -   |
-| 前一交易日-7日年化% | float | -   |
-| 前一交易日-单位净值  | float | -   |
+| 当前交易日-万份收益  | float64 | -   |
+| 当前交易日-7日年化% | float64 | -   |
+| 当前交易日-单位净值  | float64 | -   |
+| 前一交易日-万份收益  | float64 | -   |
+| 前一交易日-7日年化% | float64 | -   |
+| 前一交易日-单位净值  | float64 | -   |
 | 日涨幅         | str   | -   |
 | 成立日期        | str   | -   |
 | 基金经理        | str   | -   |
@@ -1657,6 +1674,7 @@ print(fund_money_fund_daily_em_df)
 452  519507       万家货币B        ---         ---  ...  2013-08-15    郅元  0费率   购买
 ```
 
+(fund_money_fund_info_em)=
 ### 货币型基金-历史数据
 
 接口：fund_money_fund_info_em
@@ -1682,8 +1700,8 @@ print(fund_money_fund_daily_em_df)
 | 净值日期    | object  | -  |
 | 每万份收益   | float64 | -  |
 | 7日年化收益率 | float64 | -  |
-| 申购状态    | object  | -  |
-| 赎回状态    | object  | -  |
+| 申购状态    | str     | -  |
+| 赎回状态    | str     | -  |
 
 接口示例
 
@@ -1712,6 +1730,7 @@ print(fund_money_fund_info_em_df)
 [4192 rows x 5 columns]
 ```
 
+(fund_financial_fund_daily_em)=
 ### 理财型基金-实时数据
 
 接口：fund_financial_fund_daily_em
@@ -1732,15 +1751,15 @@ print(fund_money_fund_info_em_df)
 
 | 名称          | 类型    | 描述  |
 |-------------|-------|-----|
-| 序号          | int   | -   |
+| 序号          | int64 | -   |
 | 基金代码        | str   | -   |
 | 基金简称        | str   | -   |
-| 上一期年化收益率    | float | -   |
-| 当前交易日-万份收益  | float | -   |
-| 当前交易日-7日年华  | float | -   |
-| 前一个交易日-万份收益 | float | -   |
-| 前一个交易日-7日年华 | float | -   |
-| 封闭期         | float | -   |
+| 上一期年化收益率    | float64 | -   |
+| 当前交易日-万份收益  | float64 | -   |
+| 当前交易日-7日年华  | float64 | -   |
+| 前一个交易日-万份收益 | float64 | -   |
+| 前一个交易日-7日年华 | float64 | -   |
+| 封闭期         | float64 | -   |
 | 申购状态        | str   | -   |
 
 接口示例
@@ -1768,6 +1787,7 @@ print(fund_financial_fund_daily_em_df)
 9  10  000322    农银14天理财债券A           ...      0.4592      1.6080  14天  限大额
 ```
 
+(fund_financial_fund_info_em)=
 ### 理财型基金-历史数据
 
 接口：fund_financial_fund_info_em
@@ -1792,9 +1812,9 @@ print(fund_financial_fund_daily_em_df)
 | 单位净值 | float64 | -       |
 | 累计净值 | float64 | -       |
 | 日增长率 | float64 | -       |
-| 申购状态 | object  | -       |
-| 赎回状态 | object  | -       |
-| 分红送配 | object  | 注意单位：% |
+| 申购状态 | str     | -       |
+| 赎回状态 | str     | -       |
+| 分红送配 | str     | 注意单位：% |
 
 接口示例
 
@@ -1822,6 +1842,7 @@ print(fund_financial_fund_info_em_df)
 667  2023-03-22  1.0303  1.0963  0.00  限制大额申购  开放赎回
 ```
 
+(fund_graded_fund_daily_em)=
 ### 分级基金-实时数据
 
 接口：fund_graded_fund_daily_em
@@ -1844,12 +1865,12 @@ print(fund_financial_fund_info_em_df)
 |-----------|-------|---------|
 | 基金代码      | str   | -       |
 | 基金简称      | str   | -       |
-| 单位净值      | float | -       |
-| 累计净值      | float | -       |
-| 前交易日-单位净值 | float | -       |
-| 前交易日-累计净值 | float | -       |
-| 日增长值      | float | -       |
-| 日增长率      | float | 注意单位：% |
+| 单位净值      | float64 | -       |
+| 累计净值      | float64 | -       |
+| 前交易日-单位净值 | float64 | -       |
+| 前交易日-累计净值 | float64 | -       |
+| 日增长值      | float64 | -       |
+| 日增长率      | float64 | 注意单位：% |
 | 市价        | str   | -       |
 | 折价率       | str   | -       |
 | 手续费       | str   | -       |
@@ -1880,6 +1901,7 @@ print(fund_graded_fund_daily_em_df)
 345  161825       银华中证800分级                  ...                         1.20%
 ```
 
+(fund_graded_fund_info_em)=
 ### 分级基金-历史数据
 
 接口：fund_graded_fund_info_em
@@ -1901,9 +1923,9 @@ print(fund_graded_fund_daily_em_df)
 | 名称   | 类型    | 描述                                                                       |
 |------|-------|--------------------------------------------------------------------------|
 | 净值日期 | str   | -                                                                        |
-| 单位净值 | float | -                                                                        |
-| 累计净值 | float | -                                                                        |
-| 日增长率 | float | 注意单位：%；日增长率为空原因如下：1. 非交易日净值不参与日增长率计算（灰色数据行）. 2. 上一交易日净值未披露，日增长率无法计算。 |
+| 单位净值 | float64 | -                                                                        |
+| 累计净值 | float64 | -                                                                        |
+| 日增长率 | float64 | 注意单位：%；日增长率为空原因如下：1. 非交易日净值不参与日增长率计算（灰色数据行）. 2. 上一交易日净值未披露，日增长率无法计算。 |
 | 申购状态 | str   | -                                                                        |
 | 赎回状态 | str   | -                                                                        |
 
@@ -1934,6 +1956,7 @@ print(fund_graded_fund_info_em_df)
 [1343 rows x 6 columns]
 ```
 
+(fund_etf_fund_daily_em)=
 ### 场内交易基金-实时数据
 
 接口：fund_etf_fund_daily_em
@@ -1954,17 +1977,17 @@ print(fund_graded_fund_info_em_df)
 
 | 名称          | 类型      | 描述            |
 |-------------|---------|---------------|
-| 基金代码        | object  | -             |
-| 基金简称        | object  | -             |
+| 基金代码        | str     | -             |
+| 基金简称        | str     | -             |
 | 类型          | float64 | -             |
 | 当前交易日-单位净值  | float64 | 会返回具体的日期值作为字段 |
 | 当前交易日-累计净值  | float64 | 会返回具体的日期值作为字段 |
 | 前一个交易日-单位净值 | float64 | 会返回具体的日期值作为字段 |
 | 前一个交易日-累计净值 | float64 | 会返回具体的日期值作为字段 |
 | 增长值         | float64 | -             |
-| 增长率         | object  | -             |
-| 市价          | object  | -             |
-| 折价率         | object  | -             |
+| 增长率         | str     | -             |
+| 市价          | str     | -             |
+| 折价率         | str     | -             |
 
 接口示例
 
@@ -1992,6 +2015,7 @@ print(fund_etf_fund_daily_em_df)
 478  515790  华泰柏瑞中证光伏产业ETF行情  ETF-场内  ...     ---     ---     ---
 ```
 
+(fund_etf_fund_info_em)=
 ### 场内交易基金-历史数据
 
 接口：fund_etf_fund_info_em
@@ -2018,8 +2042,8 @@ print(fund_etf_fund_daily_em_df)
 | 单位净值 | float64 | -       |
 | 累计净值 | float64 | -       |
 | 日增长率 | float64 | 注意单位：% |
-| 申购状态 | object  | -       |
-| 赎回状态 | object  | -       |
+| 申购状态 | str     | -       |
+| 赎回状态 | str     | -       |
 
 接口示例
 
@@ -2048,6 +2072,7 @@ print(fund_etf_fund_info_em_df)
 [784 rows x 6 columns]
 ```
 
+(fund_hk_fund_hist_em)=
 ### 香港基金-历史数据
 
 接口：fund_hk_fund_hist_em
@@ -2062,18 +2087,18 @@ print(fund_etf_fund_info_em_df)
 
 | 名称     | 类型  | 描述                                                            |
 |--------|-----|---------------------------------------------------------------|
-| code   | str | code="1002200683"；香港基金代码，可以通过调用 **ak.fund_em_hk_rank()** 获取 |
+| code   | str | code="1002200683"；香港基金代码，可以通过调用 **ak.fund_hk_rank_em()** 获取 |
 | symbol | str | symbol="历史净值明细"; choice of {"历史净值明细", "分红送配详情"}               |
 
 输出参数-历史净值明细
 
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
-| 净值日期 | object  | -       |
+| 净值日期 | str     | -       |
 | 单位净值 | float64 | -       |
 | 日增长值 | float64 | -       |
 | 日增长率 | float64 | 注意单位：% |
-| 单位   | object  | -       |
+| 单位   | str     | -       |
 
 接口示例-历史净值明细
 
@@ -2105,12 +2130,12 @@ print(fund_hk_fund_hist_em_df)
 
 | 名称    | 类型      | 描述  |
 |-------|---------|-----|
-| 年份    | object  | -   |
-| 权益登记日 | object  | -   |
-| 除息日   | object  | -   |
-| 分红发放日 | object  | -   |
+| 年份    | str     | -   |
+| 权益登记日 | str     | -   |
+| 除息日   | str     | -   |
+| 分红发放日 | str     | -   |
 | 分红金额  | float64 | -   |
-| 单位    | object  | -   |
+| 单位    | str     | -   |
 
 接口示例-分红送配详情
 
@@ -2136,6 +2161,7 @@ print(fund_hk_fund_hist_em_df)
 
 ## 分红送配
 
+(fund_etf_dividend_sina)=
 ### 基金累计分红
 
 接口：fund_etf_dividend_sina
@@ -2191,6 +2217,7 @@ print(fund_etf_dividend_sina_df)
 16 2024-12-02  0.717
 ```
 
+(fund_fh_em)=
 ### 基金分红
 
 接口：fund_fh_em
@@ -2215,8 +2242,8 @@ print(fund_etf_dividend_sina_df)
 | 名称    | 类型      | 描述        |
 |-------|---------|-----------|
 | 序号    | int64   | -         |
-| 基金代码  | object  | -         |
-| 基金简称  | object  | -         |
+| 基金代码  | str     | -         |
+| 基金简称  | str     | -         |
 | 权益登记日 | object  | -         |
 | 除息日期  | object  | -         |
 | 分红    | float64 | 注意单位：元/份 |
@@ -2249,6 +2276,7 @@ print(fund_fh_em_df)
 [6454 rows x 7 columns]
 ```
 
+(fund_cf_em)=
 ### 基金拆分
 
 接口：fund_cf_em
@@ -2274,10 +2302,10 @@ print(fund_fh_em_df)
 | 名称    | 类型      | 描述       |
 |-------|---------|----------|
 | 序号    | int64   | -        |
-| 基金代码  | object  | -        |
-| 基金简称  | object  | -        |
+| 基金代码  | str     | -        |
+| 基金简称  | str     | -        |
 | 拆分折算日 | object  | -        |
-| 拆分类型  | object  | -        |
+| 拆分类型  | str     | -        |
 | 拆分折算  | float64 | 注意单位：每份 |
 
 接口示例
@@ -2307,6 +2335,7 @@ print(fund_cf_em_df)
 [82 rows x 6 columns]
 ```
 
+(fund_fh_rank_em)=
 ### 基金分红排行
 
 接口：fund_fh_rank_em
@@ -2328,8 +2357,8 @@ print(fund_cf_em_df)
 | 名称   | 类型      | 描述        |
 |------|---------|-----------|
 | 序号   | int64   | -         |
-| 基金代码 | object  | -         |
-| 基金简称 | object  | -         |
+| 基金代码 | str     | -         |
+| 基金简称 | str     | -         |
 | 累计分红 | float64 | 注意单位：元/份 |
 | 累计次数 | int64   | -         |
 | 成立日期 | object  | -         |
@@ -2362,6 +2391,7 @@ print(fund_fh_rank_em_df)
 
 ## 基金排行
 
+(fund_open_fund_rank_em)=
 ### 开放式基金排行
 
 接口：fund_open_fund_rank_em
@@ -2383,8 +2413,8 @@ print(fund_fh_rank_em_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 序号   | int64   | -       |
-| 基金代码 | object  | -       |
-| 基金简称 | object  | -       |
+| 基金代码 | str     | -       |
+| 基金简称 | str     | -       |
 | 日期   | object  | -       |
 | 单位净值 | float64 | -       |
 | 累计净值 | float64 | -       |
@@ -2399,7 +2429,7 @@ print(fund_fh_rank_em_df)
 | 今年来  | float64 | 注意单位：% |
 | 成立来  | float64 | 注意单位：% |
 | 自定义  | float64 | 注意单位：% |
-| 手续费  | object  | -       |
+| 手续费  | str     | -       |
 
 接口示例
 
@@ -2428,6 +2458,7 @@ print(fund_open_fund_rank_em_df)
 [15010 rows x 18 columns]
 ```
 
+(fund_exchange_rank_em)=
 ### 场内交易基金排行榜
 
 接口：fund_exchange_rank_em
@@ -2449,9 +2480,9 @@ print(fund_open_fund_rank_em_df)
 | 名称   | 类型      | 描述      |
 |------|---------|---------|
 | 序号   | int64   | -       |
-| 基金代码 | object  | -       |
-| 基金简称 | object  | -       |
-| 类型   | object  | -       |
+| 基金代码 | str     | -       |
+| 基金简称 | str     | -       |
+| 类型   | str     | -       |
 | 日期   | object  | -       |
 | 单位净值 | float64 | -       |
 | 累计净值 | float64 | -       |
@@ -2493,6 +2524,7 @@ print(fund_exchange_rank_em_df)
 [880 rows x 17 columns]
 ```
 
+(fund_money_rank_em)=
 ### 货币型基金排行
 
 接口：fund_money_rank_em
@@ -2514,8 +2546,8 @@ print(fund_exchange_rank_em_df)
 | 名称       | 类型      | 描述      |
 |----------|---------|---------|
 | 序号       | int64   | -       |
-| 基金代码     | object  | -       |
-| 基金简称     | object  | -       |
+| 基金代码     | str     | -       |
+| 基金简称     | str     | -       |
 | 日期       | object  | -       |
 | 万份收益     | float64 | 注意单位：% |
 | 年化收益率7日  | float64 | 注意单位：% |
@@ -2530,7 +2562,7 @@ print(fund_exchange_rank_em_df)
 | 近5年      | float64 | 注意单位：% |
 | 今年来      | float64 | 注意单位：% |
 | 成立来      | float64 | 注意单位：% |
-| 手续费      | object  | -       |
+| 手续费      | str     | -       |
 
 接口示例
 
@@ -2559,6 +2591,7 @@ print(fund_money_rank_em_df)
 [544 rows x 18 columns]
 ```
 
+(fund_lcx_rank_em)=
 ### 理财基金排行
 
 接口：fund_lcx_rank_em
@@ -2580,9 +2613,9 @@ print(fund_money_rank_em_df)
 | 名称       | 类型      | 描述      |
 |----------|---------|---------|
 | 序号       | int64   | -       |
-| 基金代码     | object  | -       |
-| 基金简称     | object  | -       |
-| 日期       | object  | -       |
+| 基金代码     | str     | -       |
+| 基金简称     | str     | -       |
+| 日期       | str     | -       |
 | 万份收益     | float64 | -       |
 | 年化收益率7日  | float64 | 注意单位：% |
 | 年化收益率14日 | float64 | 注意单位：% |
@@ -2594,7 +2627,7 @@ print(fund_money_rank_em_df)
 | 今年来      | float64 | 注意单位：% |
 | 成立来      | float64 | 注意单位：% |
 | 可购买      | float64 | 可购买     |
-| 手续费      | object  | -       |
+| 手续费      | str     | -       |
 
 接口示例
 
@@ -2613,6 +2646,7 @@ print(fund_lcx_rank_em_df)
 1   2  530014  建信双周理财A  2021-01-17  0.7035  ...  0.98  0.12   33.374   1  0.00%
 ```
 
+(fund_hk_rank_em)=
 ### 香港基金排行
 
 接口：fund_hk_rank_em
@@ -2634,9 +2668,9 @@ print(fund_lcx_rank_em_df)
 | 名称     | 类型      | 描述                       |
 |--------|---------|--------------------------|
 | 序号     | int64   | -                        |
-| 基金代码   | object  | -                        |
-| 基金简称   | object  | -                        |
-| 币种     | object  | -                        |
+| 基金代码   | str     | -                        |
+| 基金简称   | str     | -                        |
+| 币种     | str     | -                        |
 | 日期     | object  | -                        |
 | 单位净值   | float64 | -                        |
 | 日增长率   | float64 | 注意单位：%                  |
@@ -2649,8 +2683,8 @@ print(fund_lcx_rank_em_df)
 | 近3年    | float64 | 注意单位：%                  |
 | 今年来    | float64 | 注意单位：%                  |
 | 成立来    | float64 | 注意单位：%                  |
-| 可购买    | object  | -                        |
-| 香港基金代码 | object  | 用于查询历史净值数据，通过该字段查询相关的数据 |
+| 可购买    | str     | -                        |
+| 香港基金代码 | str     | 用于查询历史净值数据，通过该字段查询相关的数据 |
 
 接口示例
 
@@ -2679,6 +2713,7 @@ print(fund_hk_rank_em_df)
 [112 rows x 18 columns]
 ```
 
+(fund_individual_achievement_xq)=
 ## 基金业绩-雪球
 
 接口：fund_individual_achievement_xq
@@ -2694,17 +2729,16 @@ print(fund_hk_rank_em_df)
 | 名称      | 类型    | 描述                      |
 |---------|-------|-------------------------|
 | symbol  | str   | symbol="000001"；基金代码   |
-| timeout | float | timeout=None；默认不设置超时参数 |
 
 输出参数
 
 | 名称       | 类型      | 描述      |
 |----------|---------|---------|
-| 业绩类型     | object  | -       |
-| 周期       | object  | -       |
+| 业绩类型     | str     | -       |
+| 周期       | str     | -       |
 | 本产品区间收益  | float64 | 注意单位：% |
 | 本产品最大回撒  | float64 | 注意单位：% |
-| 周期收益同类排名 | object  | -       |
+| 周期收益同类排名 | str     | -       |
 
 接口示例
 
@@ -2751,6 +2785,7 @@ print(fund_individual_achievement_xq_df)
 29  阶段业绩   近5年   -3.250474    48.55  2300/2414
 ```
 
+(fund_value_estimation_em)=
 ## 净值估算
 
 接口：fund_value_estimation_em
@@ -2776,9 +2811,9 @@ print(fund_individual_achievement_xq_df)
 | 序号             | str   | -   |
 | 基金代码           | str   | -   |
 | 基金名称           | str   | -   |
-| 交易日-估算数据-估算值   | float | -   |
+| 交易日-估算数据-估算值   | float64 | -   |
 | 交易日-估算数据-估算增长率 | str   | -   |
-| 交易日-公布数据-单位净值  | float | -   |
+| 交易日-公布数据-单位净值  | float64 | -   |
 | 交易日-公布数据-日增长率  | str   | -   |
 | 估算偏差           | str   | -   |
 | 交易日-单位净值       | str   | -   |
@@ -2809,6 +2844,7 @@ print(fund_value_estimation_em_df)
 4850  4851  011059  ...     ---             ---
 ```
 
+(fund_individual_analysis_xq)=
 ## 基金数据分析
 
 接口：fund_individual_analysis_xq
@@ -2824,13 +2860,12 @@ print(fund_value_estimation_em_df)
 | 名称      | 类型    | 描述                      |
 |---------|-------|-------------------------|
 | symbol  | str   | symbol="000001"；基金代码   |
-| timeout | float | timeout=None；默认不设置超时参数 |
 
 输出参数
 
 | 名称       | 类型      | 描述     |
 |----------|---------|--------|
-| 周期       | object  | -      |
+| 周期       | str     | -      |
 | 较同类风险收益比 | int64   | 注意单位：% |
 | 较同类抗风险波动 | int64   | 注意单位：% |
 | 年化波动率    | float64 | 注意单位：% |
@@ -2855,6 +2890,7 @@ print(fund_individual_analysis_xq_df)
 2  近5年         2        57  19.04   -0.11  48.55
 ```
 
+(fund_individual_profit_probability_xq)=
 ## 基金盈利概率
 
 接口：fund_individual_profit_probability_xq
@@ -2870,15 +2906,14 @@ print(fund_individual_analysis_xq_df)
 | 名称      | 类型    | 描述                      |
 |---------|-------|-------------------------|
 | symbol  | str   | symbol="000001"；基金代码   |
-| timeout | float | timeout=None；默认不设置超时参数 |
 
 输出参数
 
 | 名称   | 类型     | 描述     |
 |------|--------|--------|
-| 持有时长 | object | -      |
-| 盈利概率 | object | 注意单位：% |
-| 平均收益 | object | 注意单位：% |
+| 持有时长 | str    | -      |
+| 盈利概率 | int64  | 注意单位：% |
+| 平均收益 | float64| 注意单位：% |
 
 接口示例
 
@@ -2899,6 +2934,7 @@ print(fund_individual_profit_probability_xq_df)
 3   满3年    76  51.16
 ```
 
+(fund_individual_detail_hold_xq)=
 ## 基金持仓资产比例
 
 接口：fund_individual_detail_hold_xq
@@ -2915,13 +2951,12 @@ print(fund_individual_profit_probability_xq_df)
 |---------|-------|-------------------------|
 | symbol  | str   | symbol="000001"；基金代码   |
 | date    | str   | date="20231231"；季度日期   |
-| timeout | float | timeout=None；默认不设置超时参数 |
 
 输出参数
 
 | 名称   | 类型      | 描述     |
 |------|---------|--------|
-| 资产类型 | object  | -      |
+| 资产类型 | str     | -      |
 | 仓位占比 | float64 | 注意单位：% |
 
 接口示例
@@ -2942,6 +2977,7 @@ print(fund_individual_detail_hold_xq_df)
 2   其他  29.09
 ```
 
+(fund_overview_em)=
 ## 基金基本概况
 
 接口：fund_overview_em
@@ -2962,24 +2998,24 @@ print(fund_individual_detail_hold_xq_df)
 
 | 名称      | 类型     | 描述 |
 |---------|--------|----|
-| 基金全称    | object | -  |
-| 基金简称    | object | -  |
-| 基金代码    | object | -  |
-| 基金类型    | object | -  |
-| 发行日期    | object | -  |
-| 成立日期/规模 | object | -  |
-| 资产规模    | object | -  |
-| 份额规模    | object | -  |
-| 基金管理人   | object | -  |
-| 基金托管人   | object | -  |
-| 基金经理人   | object | -  |
-| 成立来分红   | object | -  |
-| 管理费率    | object | -  |
-| 托管费率    | object | -  |
-| 销售服务费率  | object | -  |
-| 最高认购费率  | object | -  |
-| 业绩比较基准  | object | -  |
-| 跟踪标的    | object | -  |
+| 基金全称    | str    | -  |
+| 基金简称    | str    | -  |
+| 基金代码    | str    | -  |
+| 基金类型    | str    | -  |
+| 发行日期    | str    | -  |
+| 成立日期/规模 | str    | -  |
+| 资产规模    | str    | -  |
+| 份额规模    | str    | -  |
+| 基金管理人   | str    | -  |
+| 基金托管人   | str    | -  |
+| 基金经理人   | str    | -  |
+| 成立来分红   | str    | -  |
+| 管理费率    | str    | -  |
+| 托管费率    | str    | -  |
+| 销售服务费率  | str    | -  |
+| 最高认购费率  | str    | -  |
+| 业绩比较基准  | str    | -  |
+| 跟踪标的    | str    | -  |
 
 接口示例
 
@@ -2998,6 +3034,7 @@ print(fund_overview_em_df)
 [1 rows x 18 columns]
 ```
 
+(fund_fee_em)=
 ## 基金交易费率
 
 接口：fund_fee_em
@@ -3019,8 +3056,8 @@ print(fund_overview_em_df)
 
 | 名称    | 类型      | 描述 |
 |-------|---------|----|
-| 费用类型  | object  | -  |
-| 条件或名称 | object  | -  |
+| 费用类型  | str     | -  |
+| 条件或名称 | str     | -  |
 | 费用    | float64 | -  |
 
 接口示例
@@ -3042,6 +3079,7 @@ print(fund_fee_em_df)
 3          大于等于500万元  ---  每笔1000元  每笔1000元
 ```
 
+(fund_individual_detail_info_xq)=
 ## 基金交易规则
 
 接口：fund_individual_detail_info_xq
@@ -3057,14 +3095,13 @@ print(fund_fee_em_df)
 | 名称      | 类型    | 描述                      |
 |---------|-------|-------------------------|
 | symbol  | str   | symbol="000001"；基金代码   |
-| timeout | float | timeout=None；默认不设置超时参数 |
 
 输出参数
 
 | 名称    | 类型      | 描述 |
 |-------|---------|----|
-| 费用类型  | object  | -  |
-| 条件或名称 | object  | -  |
+| 费用类型  | str     | -  |
+| 条件或名称 | str     | -  |
 | 费用    | float64 | -  |
 
 接口示例
@@ -3090,6 +3127,7 @@ print(fund_individual_detail_info_xq_df)
 7  其他费用                 基金托管费     0.2
 ```
 
+(fund_portfolio_hold_em)=
 ## 基金持仓
 
 接口：fund_portfolio_hold_em
@@ -3112,12 +3150,12 @@ print(fund_individual_detail_info_xq_df)
 | 名称    | 类型      | 描述       |
 |-------|---------|----------|
 | 序号    | int64   | -        |
-| 股票代码  | object  | -        |
-| 股票名称  | object  | -        |
+| 股票代码  | str     | -        |
+| 股票名称  | str     | -        |
 | 占净值比例 | float64 | 注意单位：%  |
 | 持股数   | float64 | 注意单位：万股 |
 | 持仓市值  | float64 | 注意单位：万元 |
-| 季度    | object  | -        |
+| 季度    | str     | -        |
 
 接口示例
 
@@ -3144,6 +3182,7 @@ print(fund_portfolio_hold_em_df)
 9  10  000100  TCL科技   1.82  893.37  4172.03  2024年1季度股票投资明细
 ```
 
+(fund_portfolio_bond_hold_em)=
 ## 债券持仓
 
 接口：fund_portfolio_bond_hold_em
@@ -3166,11 +3205,11 @@ print(fund_portfolio_hold_em_df)
 | 名称    | 类型      | 描述       |
 |-------|---------|----------|
 | 序号    | int64   | -        |
-| 债券代码  | object  | -        |
-| 债券名称  | object  | -        |
+| 债券代码  | str     | -        |
+| 债券名称  | str     | -        |
 | 占净值比例 | float64 | 注意单位：%  |
 | 持仓市值  | float64 | 注意单位：万元 |
-| 季度    | object  | -        |
+| 季度    | str     | -        |
 
 接口示例
 
@@ -3238,6 +3277,7 @@ print(fund_portfolio_bond_hold_em_df)
 50  51     123107         温氏转债   0.00      0.03  2023年1季度债券投资明细
 ```
 
+(fund_portfolio_industry_allocation_em)=
 ## 行业配置
 
 接口：fund_portfolio_industry_allocation_em
@@ -3260,10 +3300,10 @@ print(fund_portfolio_bond_hold_em_df)
 | 名称    | 类型      | 描述       |
 |-------|---------|----------|
 | 序号    | int64   | -        |
-| 行业类别  | object  | -        |
+| 行业类别  | str     | -        |
 | 占净值比例 | float64 | 注意单位：%  |
 | 市值    | float64 | 注意单位：万元 |
-| 截止时间  | object  | -        |
+| 截止时间  | str     | -        |
 
 接口示例
 
@@ -3317,6 +3357,7 @@ print(fund_portfolio_industry_allocation_em_df)
 36  37     水利、环境和公共设施管理业   0.00      10.346959  2023-03-31
 ```
 
+(fund_portfolio_change_em)=
 ## 重大变动
 
 接口：fund_portfolio_change_em
@@ -3340,11 +3381,11 @@ print(fund_portfolio_industry_allocation_em_df)
 | 名称          | 类型      | 描述       |
 |-------------|---------|----------|
 | 序号          | int64   | -        |
-| 股票代码        | object  | -        |
-| 股票名称        | object  | -        |
+| 股票代码        | str     | -        |
+| 股票名称        | str     | -        |
 | 本期累计买入金额    | float64 | 注意单位：万元 |
 | 占期初基金资产净值比例 | float64 | 注意单位：%  |
-| 季度          | object  | -        |
+| 季度          | str     | -        |
 
 接口示例
 
@@ -3383,6 +3424,7 @@ print(fund_portfolio_change_em_df)
 
 ## 基金评级
 
+(fund_rating_all)=
 ### 基金评级总汇
 
 接口：fund_rating_all
@@ -3403,16 +3445,16 @@ print(fund_portfolio_change_em_df)
 
 | 名称     | 类型      | 描述  |
 |--------|---------|-----|
-| 代码     | object  | -   |
-| 简称     | object  | -   |
-| 基金经理   | object  | -   |
-| 基金公司   | object  | -   |
+| 代码     | str     | -   |
+| 简称     | str     | -   |
+| 基金经理   | str     | -   |
+| 基金公司   | str     | -   |
 | 5星评级家数 | int64   | -   |
 | 上海证券   | float64 | -   |
 | 招商证券   | float64 | -   |
 | 济安金信   | float64 | -   |
 | 手续费    | float64 | -   |
-| 类型     | object  | -   |
+| 类型     | str     | -   |
 
 接口示例
 
@@ -3441,6 +3483,7 @@ print(fund_rating_all_df)
 [14523 rows x 11 columns]
 ```
 
+(fund_rating_sh)=
 ### 上海证券评级
 
 接口：fund_rating_sh
@@ -3461,10 +3504,10 @@ print(fund_rating_all_df)
 
 | 名称         | 类型      | 描述      |
 |------------|---------|---------|
-| 代码         | object  | -       |
-| 简称         | object  | -       |
-| 基金经理       | object  | -       |
-| 基金公司       | object  | -       |
+| 代码         | str     | -       |
+| 简称         | str     | -       |
+| 基金经理       | str     | -       |
+| 基金公司       | str     | -       |
 | 3年期评级-3年评级 | int64   | -       |
 | 3年期评级-较上期  | float64 | -       |
 | 5年期评级-5年评级 | float64 | -       |
@@ -3475,8 +3518,8 @@ print(fund_rating_all_df)
 | 近1年涨幅      | float64 | 注意单位：% |
 | 近3年涨幅      | float64 | 注意单位：% |
 | 近5年涨幅      | float64 | 注意单位：% |
-| 手续费        | object  | -       |
-| 类型         | object  | -       |
+| 手续费        | str     | -       |
+| 类型         | str     | -       |
 
 接口示例
 
@@ -3505,6 +3548,7 @@ print(fund_rating_sh_df)
 [4637 rows x 16 columns]
 ```
 
+(fund_rating_zs)=
 ### 招商证券评级
 
 接口：fund_rating_zs
@@ -3525,10 +3569,10 @@ print(fund_rating_sh_df)
 
 | 名称         | 类型      | 描述      |
 |------------|---------|---------|
-| 代码         | object  | -       |
-| 简称         | object  | -       |
-| 基金经理       | object  | -       |
-| 基金公司       | object  | -       |
+| 代码         | str     | -       |
+| 简称         | str     | -       |
+| 基金经理       | str     | -       |
+| 基金公司       | str     | -       |
 | 3年期评级-3年评级 | int64   | -       |
 | 3年期评级-较上期  | float64 | -       |
 | 单位净值       | float64 | -       |
@@ -3537,7 +3581,7 @@ print(fund_rating_sh_df)
 | 近1年涨幅      | float64 | 注意单位：% |
 | 近3年涨幅      | float64 | 注意单位：% |
 | 近5年涨幅      | float64 | 注意单位：% |
-| 手续费        | object  | -       |
+| 手续费        | str     | -       |
 
 接口示例
 
@@ -3566,6 +3610,7 @@ print(fund_rating_zs_df)
 [3324 rows x 13 columns]
 ```
 
+(fund_rating_ja)=
 ### 济安金信评级
 
 接口：fund_rating_ja
@@ -3586,10 +3631,10 @@ print(fund_rating_zs_df)
 
 | 名称         | 类型      | 描述      |
 |------------|---------|---------|
-| 代码         | object  | -       |
-| 简称         | object  | -       |
-| 基金经理       | object  | -       |
-| 基金公司       | object  | -       |
+| 代码         | str     | -       |
+| 简称         | str     | -       |
+| 基金经理       | str     | -       |
+| 基金公司       | str     | -       |
 | 3年期评级-3年评级 | int64   | -       |
 | 3年期评级-较上期  | float64 | -       |
 | 单位净值       | float64 | -       |
@@ -3598,8 +3643,8 @@ print(fund_rating_zs_df)
 | 近1年涨幅      | float64 | 注意单位：% |
 | 近3年涨幅      | float64 | 注意单位：% |
 | 近5年涨幅      | float64 | 注意单位：% |
-| 手续费        | object  | -       |
-| 类型         | object  | -       |
+| 手续费        | str     | -       |
+| 类型         | str     | -       |
 
 接口示例
 
@@ -3628,6 +3673,7 @@ print(fund_rating_ja_df)
 [7723 rows x 14 columns]
 ```
 
+(fund_manager_em)=
 ## 基金经理
 
 接口：fund_manager_em
@@ -3649,10 +3695,10 @@ print(fund_rating_ja_df)
 | 名称        | 类型      | 描述       |
 |-----------|---------|----------|
 | 序号        | int64   | -        |
-| 姓名        | object  | -        |
-| 所属公司      | object  | -        |
-| 现任基金代码    | object  | -        |
-| 现任基金      | object  | -        |
+| 姓名        | str     | -        |
+| 所属公司      | str     | -        |
+| 现任基金代码    | str     | -        |
+| 现任基金      | str     | -        |
 | 累计从业时间    | int64   | 注意单位：天  |
 | 现任基金资产总规模 | float64 | 注意单位：亿元 |
 | 现任基金最佳回报  | float64 | 注意单位：%  |
@@ -3684,6 +3730,7 @@ print(fund_manager_em_df)
 [32083 rows x 8 columns]
 ```
 
+(fund_new_found_em)=
 ## 新发基金
 
 接口：fund_new_found_em
@@ -3704,16 +3751,16 @@ print(fund_manager_em_df)
 
 | 名称    | 类型      | 描述       |
 |-------|---------|----------|
-| 基金代码  | object  | -        |
-| 基金简称  | object  | -        |
-| 发行公司  | object  | -        |
-| 基金类型  | object  | -        |
-| 集中认购期 | object  | -        |
+| 基金代码  | str     | -        |
+| 基金简称  | str     | -        |
+| 发行公司  | str     | -        |
+| 基金类型  | str     | -        |
+| 集中认购期 | str     | -        |
 | 募集份额  | float64 | 注意单位：亿份 |
 | 成立日期  | object  | -        |
 | 成立来涨幅 | float64 | 注意单位：%  |
-| 基金经理  | object  | -        |
-| 申购状态  | object  | -        |
+| 基金经理  | str     | -        |
+| 申购状态  | str     | -        |
 | 优惠费率  | float64 | 注意单位：%  |
 
 接口示例
@@ -3743,6 +3790,7 @@ print(fund_new_found_em_df)
 [7315 rows x 11 columns]
 ```
 
+(fund_new_found_ths)=
 接口：fund_new_found_ths
 
 目标地址：https://fund.10jqka.com.cn/datacenter/xfjj/
@@ -3767,7 +3815,7 @@ print(fund_new_found_em_df)
 | 募集起始日 | object  | -        |
 | 募集终止日 | object  | -        |
 | 管理人   | object  | -        |
-| 基金经理  | object  | -        |
+| 基金经理  | str     | -        |
 | 认购费率  | float64 | 注意单位：%  |
 | 最低认购  | float64 | -        |
 | 基金类型  | object  | -        |
@@ -3802,6 +3850,7 @@ print(fund_new_found_ths_df)
 
 ## 基金规模
 
+(fund_scale_open_sina)=
 ### 开放式基金
 
 接口：fund_scale_open_sina
@@ -3824,12 +3873,12 @@ print(fund_new_found_ths_df)
 |-------|---------|----------|
 | 序号    | int64   | -        |
 | 基金代码  | object  | -        |
-| 基金简称  | object  | -        |
+| 基金简称  | str     | -        |
 | 单位净值  | float64 | 注意单位：元  |
 | 总募集规模 | float64 | 注意单位：万份 |
 | 最近总份额 | float64 | 注意单位：份  |
 | 成立日期  | object  | -        |
-| 基金经理  | object  | -        |
+| 基金经理  | str     | -        |
 | 更新日期  | object  | -        |
 
 接口示例
@@ -3859,6 +3908,7 @@ print(fund_scale_open_sina_df)
 [3682 rows x 9 columns]
 ```
 
+(fund_scale_close_sina)=
 ### 封闭式基金
 
 接口：fund_scale_close_sina
@@ -3881,12 +3931,12 @@ print(fund_scale_open_sina_df)
 |-------|---------|----------|
 | 序号    | int64   | -        |
 | 基金代码  | object  | -        |
-| 基金简称  | object  | -        |
+| 基金简称  | str     | -        |
 | 单位净值  | float64 | 注意单位：元  |
 | 总募集规模 | float64 | 注意单位：万份 |
 | 最近总份额 | float64 | 注意单位：份  |
 | 成立日期  | object  | -        |
-| 基金经理  | object  | -        |
+| 基金经理  | str     | -        |
 | 更新日期  | object  | -        |
 
 接口示例
@@ -3916,6 +3966,7 @@ print(fund_scale_close_sina_df)
 [140 rows x 9 columns]
 ```
 
+(fund_scale_structured_sina)=
 ### 分级子基金
 
 接口：fund_scale_structured_sina
@@ -3938,12 +3989,12 @@ print(fund_scale_close_sina_df)
 |-------|---------|----------|
 | 序号    | int64   | -        |
 | 基金代码  | object  | -        |
-| 基金简称  | object  | -        |
+| 基金简称  | str     | -        |
 | 单位净值  | float64 | 注意单位：元  |
 | 总募集规模 | float64 | 注意单位：万份 |
 | 最近总份额 | float64 | 注意单位：份  |
 | 成立日期  | object  | -        |
-| 基金经理  | object  | -        |
+| 基金经理  | str     | -        |
 | 更新日期  | object  | -        |
 
 接口示例
@@ -3973,6 +4024,7 @@ print(fund_scale_structured_sina_df)
 [402 rows x 9 columns]
 ```
 
+(fund_etf_scale_sse)=
 ### ETF 基金份额-上交所
 
 接口：fund_etf_scale_sse
@@ -3994,9 +4046,9 @@ print(fund_scale_structured_sina_df)
 | 名称    | 类型      | 描述 |
 |-------|---------|----|
 | 序号    | int64   | -  |
-| 基金代码  | object  | -  |
-| 基金简称  | object  | -  |
-| ETF类型 | object  | -  |
+| 基金代码  | str     | -  |
+| 基金简称  | str     | -  |
+| ETF类型 | str     | -  |
 | 统计日期  | object  | -  |
 | 基金份额  | float64 | -  |
 
@@ -4027,6 +4079,7 @@ print(fund_etf_scale_sse_df)
 [593 rows x 6 columns]
 ```
 
+(fund_etf_scale_szse)=
 ### ETF 基金份额-深交所
 
 接口：fund_etf_scale_szse
@@ -4047,13 +4100,13 @@ print(fund_etf_scale_sse_df)
 
 | 名称    | 类型      | 描述 |
 |-------|---------|----|
-| 基金代码  | object  | -  |
-| 基金简称  | object  | -  |
-| 基金类别  | object  | -  |
-| 投资类别  | object  | -  |
+| 基金代码  | str     | -  |
+| 基金简称  | str     | -  |
+| 基金类别  | str     | -  |
+| 投资类别  | str     | -  |
 | 上市日期  | object  | -  |
 | 基金份额  | float64 | -  |
-| 基金管理人 | object  | -  |
+| 基金管理人 | str     | -  |
 | 基金发起人 | float64 | -  |
 | 基金托管人 | float64 | -  |
 | 净值    | float64 | -  |
@@ -4085,6 +4138,7 @@ print(fund_etf_scale_szse_df)
 [903 rows x 10 columns]
 ```
 
+(fund_scale_daily_szse)=
 ### 基金规模日频-深交所
 
 接口：fund_scale_daily_szse
@@ -4108,8 +4162,8 @@ print(fund_etf_scale_szse_df)
 | 名称   | 类型      | 描述 |
 |------|---------|----|
 | 日期   | object  | -  |
-| 基金代码 | object  | -  |
-| 基金简称 | object  | -  |
+| 基金代码 | str     | -  |
+| 基金简称 | str     | -  |
 | 基金份额 | float64 | -  |
 
 接口示例
@@ -4141,6 +4195,7 @@ print(fund_scale_daily_szse_df)
 
 ## 基金公司规模
 
+(fund_aum_em)=
 ### 基金规模详情
 
 接口：fund_aum_em
@@ -4162,12 +4217,12 @@ print(fund_scale_daily_szse_df)
 | 名称     | 类型      | 描述       |
 |--------|---------|----------|
 | 序号     | int64   | -        |
-| 基金公司   | object  | -        |
+| 基金公司   | str     | -        |
 | 成立时间   | object  | -        |
 | 全部管理规模 | float64 | 注意单位：亿元 |
 | 全部基金数  | int64   | -        |
 | 全部经理数  | int64   | -        |
-| 更新日期   | object  | -        |
+| 更新日期   | str     | -        |
 
 接口示例
 
@@ -4196,6 +4251,7 @@ print(fund_aum_em_df)
 [205 rows x 7 columns]
 ```
 
+(fund_aum_trend_em)=
 ### 基金规模走势
 
 接口：fund_aum_trend_em
@@ -4255,6 +4311,7 @@ print(fund_aum_trend_em_df)
 20  2021-06-28  2.233053e+13
 ```
 
+(fund_aum_hist_em)=
 ### 基金公司历年管理规模
 
 接口：fund_aum_hist_em
@@ -4276,7 +4333,7 @@ print(fund_aum_trend_em_df)
 | 名称   | 类型      | 描述  |
 |------|---------|-----|
 | 序号   | int64   | -   |
-| 基金公司 | object  | -   |
+| 基金公司 | str     | -   |
 | 总规模  | float64 | -   |
 | 股票型  | float64 | -   |
 | 混合型  | float64 | -   |
@@ -4314,6 +4371,7 @@ print(fund_aum_hist_em_df)
 
 ## REITs
 
+(reits_realtime_em)=
 ### REITs-实时行情
 
 接口：reits_realtime_em
@@ -4335,7 +4393,7 @@ print(fund_aum_hist_em_df)
 | 名称  | 类型      | 描述      |
 |-----|---------|---------|
 | 序号  | int64   | -       |
-| 代码  | object  | -       |
+| 代码  | str     | -       |
 | 名称  | object  | -       |
 | 最新价 | float64 | -       |
 | 涨跌额 | float64 | -       |
@@ -4374,6 +4432,7 @@ print(reits_realtime_em_df)
 [63 rows x 12 columns]
 ```
 
+(reits_hist_em)=
 ### REITs-历史行情
 
 接口：reits_hist_em
@@ -4433,6 +4492,7 @@ print(reits_hist_em_df)
 
 ## 基金报告
 
+(fund_report_stock_cninfo)=
 ### 基金重仓股
 
 接口：fund_report_stock_cninfo
@@ -4454,12 +4514,12 @@ print(reits_hist_em_df)
 | 名称     | 类型     | 描述  |
 |--------|--------|-----|
 | 序号     | int64  | -   |
-| 股票代码   | object | -   |
-| 股票简称   | object | -   |
+| 股票代码   | str    | -   |
+| 股票简称   | str    | -   |
 | 报告期    | object | -   |
 | 基金覆盖家数 | int64  | -   |
-| 持股总数   | object | -   |
-| 持股总市值  | object | -   |
+| 持股总数   | int64  | -   |
+| 持股总市值  | float64| -   |
 
 接口示例
 
@@ -4487,6 +4547,7 @@ print(fund_report_stock_cninfo_df)
 3955  3956  839167  同享科技  2021-06-30       1   315074    667.96
 ```
 
+(fund_report_industry_allocation_cninfo)=
 ### 基金行业配置
 
 接口：fund_report_industry_allocation_cninfo
@@ -4507,8 +4568,8 @@ print(fund_report_stock_cninfo_df)
 
 | 名称      | 类型      | 描述       |
 |---------|---------|----------|
-| 行业编码    | object  | -        |
-| 证监会行业名称 | object  | -        |
+| 行业编码    | str     | -        |
+| 证监会行业名称 | str     | -        |
 | 报告期     | object  | -        |
 | 基金覆盖家数  | int64   | 注意单位：只  |
 | 行业规模    | float64 | 注意单位：亿元 |
@@ -4548,6 +4609,7 @@ print(fund_report_industry_allocation_cninfo_df)
 18    S                综合  2021-06-30     278     60.31    0.03
 ```
 
+(fund_report_asset_allocation_cninfo)=
 ### 基金资产配置
 
 接口：fund_report_asset_allocation_cninfo
@@ -4569,11 +4631,11 @@ print(fund_report_industry_allocation_cninfo_df)
 | 名称            | 类型     | 描述       |
 |---------------|--------|----------|
 | 报告期           | object | -        |
-| 基金覆盖家数        | object | 注意单位：只  |
-| 股票权益类占净资产比例   | object | 注意单位：%  |
-| 债券固定收益类占净资产比例 | object | 注意单位：%  |
-| 现金货币类占净资产比例   | object | 注意单位：%  |
-| 基金市场净资产规模     | object | 注意单位：亿元 |
+| 基金覆盖家数        | int64  | 注意单位：只  |
+| 股票权益类占净资产比例   | float64| 注意单位：%  |
+| 债券固定收益类占净资产比例 | float64| 注意单位：%  |
+| 现金货币类占净资产比例   | float64| 注意单位：%  |
+| 基金市场净资产规模     | float64| 注意单位：亿元 |
 
 接口示例
 
@@ -4604,6 +4666,7 @@ print(fund_report_asset_allocation_cninfo_df)
 
 ## 规模份额
 
+(fund_scale_change_em)=
 ### 规模变动
 
 接口：fund_scale_change_em
@@ -4659,6 +4722,7 @@ print(fund_scale_change_em_df)
 [102 rows x 7 columns]
 ```
 
+(fund_hold_structure_em)=
 ### 持有人结构
 
 接口：fund_hold_structure_em
@@ -4743,6 +4807,7 @@ print(fund_hold_structure_em_df)
 
 ## 基金仓位
 
+(fund_stock_position_lg)=
 ### 股票型基金仓位
 
 接口：fund_stock_position_lg
@@ -4793,6 +4858,7 @@ print(fund_stock_position_lg_df)
 260  2022-12-23  3828.22     89.67
 ```
 
+(fund_balance_position_lg)=
 ### 平衡混合型基金仓位
 
 接口：fund_balance_position_lg
@@ -4843,6 +4909,7 @@ print(fund_balance_position_lg_df)
 260  2022-12-23  3828.22     68.28
 ```
 
+(fund_linghuo_position_lg)=
 ### 灵活配置型基金仓位
 
 接口：fund_linghuo_position_lg
@@ -4895,6 +4962,7 @@ print(fund_linghuo_position_lg_df)
 
 ## 基金公告
 
+(fund_announcement_dividend_em)=
 ### 分红配送
 
 接口：fund_announcement_dividend_em
@@ -4915,11 +4983,11 @@ print(fund_linghuo_position_lg_df)
 
 | 名称   | 类型     | 描述                     |
 |------|--------|------------------------|
-| 基金代码 | object | 基金代码                   |
-| 公告标题 | object | -                      |
-| 基金名称 | object | 基金名称                   |
+| 基金代码 | str    | 基金代码                   |
+| 公告标题 | str    | -                      |
+| 基金名称 | str    | 基金名称                   |
 | 公告日期 | object | 公告的发布日期                |
-| 报告ID | object | 获取报告详情的依据；拼接后可以获取公告地址 |
+| 报告ID | str    | 获取报告详情的依据；拼接后可以获取公告地址 |
 
 接口示例
 
@@ -4950,6 +5018,7 @@ print(fund_announcement_dividend_em_df)
 13  000001                华夏成长证券投资基金第二十四次分红公告  华夏成长混合  2023-01-10  AN202301101581832718
 ```
 
+(fund_announcement_report_em)=
 ### 定期报告
 
 接口：fund_announcement_report_em
@@ -4970,11 +5039,11 @@ print(fund_announcement_dividend_em_df)
 
 | 名称   | 类型     | 描述                     |
 |------|--------|------------------------|
-| 基金代码 | object | 基金代码                   |
-| 公告标题 | object | -                      |
-| 基金名称 | object | 基金名称                   |
+| 基金代码 | str    | 基金代码                   |
+| 公告标题 | str    | -                      |
+| 基金名称 | str    | 基金名称                   |
 | 公告日期 | object | 公告的发布日期                |
-| 报告ID | object | 获取报告详情的依据；拼接后可以获取公告地址 |
+| 报告ID | str    | 获取报告详情的依据；拼接后可以获取公告地址 |
 
 接口示例
 
@@ -5003,6 +5072,7 @@ print(fund_announcement_report_em_df)
 [100 rows x 5 columns]
 ```
 
+(fund_announcement_personnel_em)=
 ### 人事公告
 
 接口：fund_announcement_personnel_em
@@ -5023,11 +5093,11 @@ print(fund_announcement_report_em_df)
 
 | 名称   | 类型     | 描述                     |
 |------|--------|------------------------|
-| 基金代码 | object | 基金代码                   |
-| 公告标题 | object | -                      |
-| 基金名称 | object | 基金名称                   |
+| 基金代码 | str    | 基金代码                   |
+| 公告标题 | str    | -                      |
+| 基金名称 | str    | 基金名称                   |
 | 公告日期 | object | 公告的发布日期                |
-| 报告ID | object | 获取报告详情的依据；拼接后可以获取公告地址 |
+| 报告ID | str    | 获取报告详情的依据；拼接后可以获取公告地址 |
 
 接口示例
 

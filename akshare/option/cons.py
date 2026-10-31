@@ -5,10 +5,11 @@ Date: 2019/9/30 13:58
 Desc: 期权配置文件
 """
 
+from akshare.datasets import get_data_file
 import datetime
 import json
-import os
 import re
+import warnings
 
 # 中国金融期货交易所
 
@@ -88,8 +89,7 @@ def get_json_path(name, module_file):
     :param module_file: filename
     :return: str json_file_path
     """
-    module_folder = os.path.abspath(os.path.dirname(os.path.dirname(module_file)))
-    module_json_path = os.path.join(module_folder, "file_fold", name)
+    module_json_path = str(get_data_file(name))
     return module_json_path
 
 
@@ -113,7 +113,7 @@ def last_trading_day(day):
 
     if isinstance(day, str):
         if day not in calendar:
-            print("Today is not trading day: " + day)
+            warnings.warn("Today is not trading day: " + day)
             return False
         pos = calendar.index(day)
         last_day = calendar[pos - 1]
@@ -122,7 +122,7 @@ def last_trading_day(day):
     elif isinstance(day, datetime.date):
         d_str = day.strftime("%Y%m%d")
         if d_str not in calendar:
-            print("Today is not working day: " + d_str)
+            warnings.warn("Today is not working day: " + d_str)
             return False
         pos = calendar.index(d_str)
         last_day = calendar[pos - 1]

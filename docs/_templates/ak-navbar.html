@@ -1,0 +1,64 @@
+{#- 顶栏导航：与首页目录的分组一致（入门、数据字典、进阶、项目），每组一个下拉菜单；
+    “实盘交易”与 AKQuant 是合作推广入口，单独放在顶栏并加强调样式（见 custom.css 的 .ak-nav-promo）。
+    每项为（页面名或外部网址, 显示文字）。新增页面后需要手动加到这里。 -#}
+{%- set groups = [
+  ("入门", [
+    ("tutorial", "快速入门"),
+    ("installation", "安装指导"),
+    ("uv", "uv 环境配置"),
+    ("search", "接口检索"),
+    ("faq", "常见问题"),
+    ("introduction", "项目概览"),
+  ]),
+  ("数据字典", [
+    ("data/index", "全部类目"),
+    ("data/stock/stock", "股票数据"),
+    ("data/futures/futures", "期货数据"),
+    ("data/option/option", "期权数据"),
+    ("data/bond/bond", "债券数据"),
+    ("data/fund/fund_public", "公募基金数据"),
+    ("data/index/index", "指数数据"),
+    ("data/macro/macro", "宏观数据"),
+  ]),
+  ("进阶", [
+    ("backtest", "策略回测"),
+    ("indicator", "量化指标"),
+    ("quant_platforms", "量化平台"),
+    ("aktools", "HTTP API（AKTools）"),
+    ("articles", "相关文章"),
+  ]),
+  ("项目", [
+    ("changelog", "更新日志"),
+    ("changelog_archive", "历史更新日志"),
+    ("migration", "1.20.0 迁移说明"),
+    ("contributing", "贡献指南"),
+    ("acknowledgements", "致谢与声明"),
+  ]),
+] -%}
+{%- macro is_active(target) -%}
+  {{- pagename == target or (target == "data/index" and pagename.startswith("data/")) -}}
+{%- endmacro -%}
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    {%- for label, items in groups %}
+    {%- set ns = namespace(active=false) %}
+    {%- for target, title in items %}{% if is_active(target) == "True" %}{% set ns.active = true %}{% endif %}{% endfor %}
+    <li class="nav-item dropdown {{ 'current active' if ns.active else '' }}">
+      <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="ak-nav-{{ loop.index }}">{{ label }}</button>
+      <ul id="ak-nav-{{ loop.index }}" class="dropdown-menu">
+        {%- for target, title in items %}
+        <li class="{{ 'current active' if pagename == target else '' }}">
+          <a class="nav-link dropdown-item nav-internal" href="{{ pathto(target) }}">{{ title }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </li>
+    {%- endfor %}
+    <li class="nav-item ak-nav-promo {{ 'current active' if pagename == 'trade' else '' }}">
+      <a class="nav-link nav-internal" href="{{ pathto('trade') }}">实盘交易</a>
+    </li>
+    <li class="nav-item ak-nav-promo">
+      <a class="nav-link nav-external" href="https://akquant.akfamily.xyz/" target="_blank" rel="noopener">AKQuant</a>
+    </li>
+  </ul>
+</nav>

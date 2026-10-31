@@ -1,4 +1,4 @@
-# [AKShare](https://github.com/akfamily/akshare) 指标计算
+# 量化指标
 
 ## 已实现波动率指标
 
